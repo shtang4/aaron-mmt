@@ -1,0 +1,724 @@
+<title>MMT Pre-Trade Check</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #f3f2ee;
+    --surface: #fbfaf7;
+    --surface-2: #ecebe5;
+    --line: #d8d5cc;
+    --line-strong: #b9b5a8;
+    --ink: #1f2229;
+    --ink-2: #4c5160;
+    --ink-3: #7d8290;
+    --accent: #b8741f;
+    --accent-ink: #ffffff;
+    --accent-soft: #f4e6d0;
+    --long: #1f8a5b;
+    --long-soft: #dcefe5;
+    --short: #c23f3f;
+    --short-soft: #f6dcdc;
+    --warn: #a8641a;
+    --warn-soft: #f7e8d3;
+    --crit: #b02a2a;
+    --crit-soft: #f6d9d9;
+    --ok: #1f8a5b;
+    --ok-soft: #dcefe5;
+    --focus: #b8741f;
+    --shadow: 0 1px 2px rgba(31,34,41,.06), 0 8px 24px rgba(31,34,41,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171c;
+      --surface: #1c1f26;
+      --surface-2: #232730;
+      --line: #2f343f;
+      --line-strong: #444a58;
+      --ink: #e8e6df;
+      --ink-2: #b4b2a9;
+      --ink-3: #7f8290;
+      --accent: #d99a3f;
+      --accent-ink: #15171c;
+      --accent-soft: #3a2c16;
+      --long: #3fb97f;
+      --long-soft: #16342a;
+      --short: #e0605f;
+      --short-soft: #3d1f1f;
+      --warn: #d99a3f;
+      --warn-soft: #3a2c16;
+      --crit: #e0605f;
+      --crit-soft: #3d1f1f;
+      --ok: #3fb97f;
+      --ok-soft: #16342a;
+      --focus: #d99a3f;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171c;
+    --surface: #1c1f26;
+    --surface-2: #232730;
+    --line: #2f343f;
+    --line-strong: #444a58;
+    --ink: #e8e6df;
+    --ink-2: #b4b2a9;
+    --ink-3: #7f8290;
+    --accent: #d99a3f;
+    --accent-ink: #15171c;
+    --accent-soft: #3a2c16;
+    --long: #3fb97f;
+    --long-soft: #16342a;
+    --short: #e0605f;
+    --short-soft: #3d1f1f;
+    --warn: #d99a3f;
+    --warn-soft: #3a2c16;
+    --crit: #e0605f;
+    --crit-soft: #3d1f1f;
+    --ok: #3fb97f;
+    --ok-soft: #16342a;
+    --focus: #d99a3f;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding-inline: 16px;
+    padding-block: 0 48px;
+  }
+  h1, h2, h3 {
+    font-family: "IBM Plex Sans Condensed", "Arial Narrow", "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .mono, input, select, output, .num {
+    font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+
+  /* Header */
+  header { padding-block: 22px 12px; display: flex; flex-direction: column; gap: 8px; }
+  header h1 { font-size: 26px; letter-spacing: -.01em; }
+  header .sub { color: var(--ink-2); max-width: 70ch; margin: 0; }
+  header .eyebrow { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+
+  /* Verdict bar */
+  .verdict {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 10px 14px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px 18px;
+    align-items: center;
+    margin-block: 8px 20px;
+  }
+  .verdict .state {
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 600; font-size: 20px; letter-spacing: .02em;
+    padding: 6px 14px; border-radius: 6px;
+    background: var(--surface-2); color: var(--ink-2);
+    min-width: 128px; text-align: center;
+  }
+  .verdict[data-state="valid"] .state { background: var(--ok); color: var(--accent-ink); }
+  .verdict[data-state="refused"] .state { background: var(--crit); color: #fff; }
+  .verdict[data-state="incomplete"] .state { background: var(--surface-2); color: var(--ink-2); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px 3px 8px; border-radius: 999px;
+    font-size: 12px; font-weight: 500;
+    background: var(--surface-2); color: var(--ink-2);
+    border: 1px solid transparent;
+  }
+  .chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ink-3); }
+  .chip[data-s="ok"] { background: var(--ok-soft); color: var(--ok); }
+  .chip[data-s="ok"]::before { background: var(--ok); }
+  .chip[data-s="warn"] { background: var(--warn-soft); color: var(--warn); }
+  .chip[data-s="warn"]::before { background: var(--warn); }
+  .chip[data-s="fail"] { background: var(--crit-soft); color: var(--crit); }
+  .chip[data-s="fail"]::before { background: var(--crit); }
+  .risk-tile { text-align: right; }
+  .risk-tile .lbl { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+  .risk-tile .val { font-size: 22px; font-weight: 500; line-height: 1.1; }
+  .risk-tile .val small { font-size: 12px; color: var(--ink-3); font-weight: 400; }
+
+  /* Columns */
+  .cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } .verdict { grid-template-columns: 1fr; } .risk-tile { text-align: left; } }
+  section.d {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  section.d > h2 { font-size: 20px; display: flex; align-items: baseline; gap: 10px; }
+  section.d > h2 .q { font-family: "IBM Plex Sans", sans-serif; font-weight: 400; font-size: 13px; color: var(--ink-3); }
+  .field { display: flex; flex-direction: column; gap: 4px; }
+  .field label { font-size: 12px; font-weight: 500; color: var(--ink-2); }
+  .field .hint { font-size: 11.5px; color: var(--ink-3); line-height: 1.35; }
+  input[type="number"], input[type="text"], select {
+    width: 100%; padding: 7px 9px;
+    background: var(--bg); color: var(--ink);
+    border: 1px solid var(--line-strong); border-radius: 6px;
+    font-size: 13.5px;
+  }
+  input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .seg { display: flex; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+  .seg button {
+    flex: 1; padding: 7px 4px; border: 0; background: var(--bg); color: var(--ink-2);
+    font: inherit; font-weight: 500; cursor: pointer;
+  }
+  .seg button + button { border-left: 1px solid var(--line-strong); }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .seg button[data-v="long"][aria-pressed="true"] { background: var(--long); color: #fff; }
+  .seg button[data-v="short"][aria-pressed="true"] { background: var(--short); color: #fff; }
+  .seg button[data-v="skip"][aria-pressed="true"], .seg button[data-v="ranging"][aria-pressed="true"], .seg button[data-v="cross"][aria-pressed="true"] { background: var(--crit); color: #fff; }
+  .check { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .check input { margin-top: 3px; accent-color: var(--accent); }
+  .check .hint { display: block; color: var(--ink-3); font-size: 11.5px; }
+  .grid4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 10px; }
+  .grid4 .check { font-size: 12.5px; }
+
+  /* Computed panel */
+  .calc {
+    background: var(--surface-2); border-radius: 8px; padding: 10px 12px;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, auto); gap: 5px 12px; align-items: baseline;
+    font-size: 13px;
+  }
+  .calc .k { color: var(--ink-2); }
+  .calc .v { text-align: right; font-weight: 500; overflow-wrap: anywhere; }
+  .calc .v.long { color: var(--long); }
+  .calc .v.short { color: var(--short); }
+  .calc .v.bad { color: var(--crit); }
+  .calc .v.warn { color: var(--warn); }
+  .calc .sep { grid-column: 1 / -1; border-top: 1px solid var(--line); margin-block: 3px; }
+
+  .notes { display: flex; flex-direction: column; gap: 6px; }
+  .note {
+    font-size: 12.5px; padding: 7px 10px; border-radius: 6px; border-left: 3px solid;
+    background: var(--surface-2); border-color: var(--line-strong); color: var(--ink-2);
+  }
+  .note.fail { background: var(--crit-soft); border-color: var(--crit); color: var(--ink); }
+  .note.warn { background: var(--warn-soft); border-color: var(--warn); color: var(--ink); }
+  .note.ok { background: var(--ok-soft); border-color: var(--ok); color: var(--ink); }
+
+  /* Plan card */
+  .plan {
+    margin-top: 20px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px; box-shadow: var(--shadow);
+  }
+  .plan header { padding: 0 0 10px; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+  .plan h2 { font-size: 20px; }
+  .plan pre {
+    margin: 0; white-space: pre-wrap; word-break: break-word;
+    font-family: "IBM Plex Mono", monospace; font-size: 13px; line-height: 1.55;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 14px;
+    color: var(--ink);
+  }
+  .plan[data-state="refused"] pre { border-color: var(--crit); }
+  .btn {
+    font: inherit; font-weight: 500; padding: 7px 14px; border-radius: 6px; cursor: pointer;
+    background: var(--accent); color: var(--accent-ink); border: 0;
+  }
+  .btn.ghost { background: transparent; color: var(--ink-2); border: 1px solid var(--line-strong); }
+  .btn:disabled { opacity: .45; cursor: not-allowed; }
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; }
+  .foot { color: var(--ink-3); font-size: 12px; margin-top: 18px; max-width: 80ch; }
+  .foot a { color: var(--ink-2); }
+  @media (prefers-reduced-motion: no-preference) { .chip, .state { transition: background-color .15s, color .15s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Momentum Mastery Trading · 3D method · Bybit USDT perpetuals · 1-minute chart</div>
+      <h1>MMT Pre-Trade Check</h1>
+    </div>
+    <p class="sub">Diagnose, Dose, Discharge, in that order. Every price the course leaves you to compute is computed here. If any cell is blank, or the plan breaks a rule the course itself states, the verdict is not VALID and you do not click Long or Short.</p>
+  </header>
+
+  <div class="verdict" id="verdict" data-state="incomplete" aria-live="polite">
+    <div class="state" id="state">INCOMPLETE</div>
+    <div class="chips" id="chips">
+      <span class="chip" data-s="" id="chipD1">Diagnose</span>
+      <span class="chip" data-s="" id="chipD2">Dose</span>
+      <span class="chip" data-s="" id="chipD3">Discharge</span>
+      <span class="chip" data-s="" id="chipRR">Reward : Risk</span>
+    </div>
+    <div class="risk-tile">
+      <div class="lbl">Money at risk if stopped</div>
+      <div class="val" id="riskVal">— <small>USDT</small></div>
+    </div>
+  </div>
+
+  <div class="cols">
+
+    <!-- DIAGNOSE -->
+    <section class="d" id="secD1">
+      <h2>Diagnose <span class="q">Is the entry valid, and which way?</span></h2>
+
+      <div class="row">
+        <div class="field">
+          <label for="coin">Coin</label>
+          <input type="text" id="coin" value="SEIUSDT" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field">
+          <label>Direction</label>
+          <div class="seg" role="group" aria-label="Direction" id="side">
+            <button type="button" data-v="long" aria-pressed="true">Long</button>
+            <button type="button" data-v="short" aria-pressed="false">Short</button>
+            <button type="button" data-v="skip" aria-pressed="false">Skip</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Bybit heatmap today</label>
+        <div class="seg" role="group" aria-label="Heatmap regime" id="regime">
+          <button type="button" data-v="bullish" aria-pressed="true">Mostly green</button>
+          <button type="button" data-v="bearish" aria-pressed="false">Mostly red</button>
+          <button type="button" data-v="ranging" aria-pressed="false">Mixed</button>
+        </div>
+        <div class="hint">Mixed is the ranging condition. The course says skip.</div>
+      </div>
+
+      <label class="check"><input type="checkbox" id="ema155" checked>
+        <span>Three consecutive full-body candles on the trade side of <b>EMA 155</b>
+          <span class="hint">The only mechanical direction rule in the course. Also the confirmed hockey-stick entry.</span></span></label>
+
+      <label class="check"><input type="checkbox" id="seahorse">
+        <span>Chart shows a seahorse: vertical move already done, flat beak forming, EMAs converging
+          <span class="hint">If ticked, the course says stay out.</span></span></label>
+
+      <div class="field">
+        <label>Coin Trend Screener (tick what passes for this direction)</label>
+        <div class="grid4">
+          <label class="check"><input type="checkbox" class="scr" id="scrEma" checked><span>EMA aligned 1D → 1m</span></label>
+          <label class="check"><input type="checkbox" class="scr" id="scrOi" checked><span>Open interest rising</span></label>
+          <label class="check"><input type="checkbox" class="scr" id="scrFr"><span>Funding on your side</span></label>
+          <label class="check"><input type="checkbox" class="scr" id="scrDepth" checked><span>Book thinner ahead</span></label>
+        </div>
+        <div class="hint">The course never states a minimum. Below 3 of 4 is flagged, not refused.</div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="zoneNear">SMC zone edge (near)</label>
+          <input type="number" id="zoneNear" step="any" value="0.3490" inputmode="decimal">
+          <div class="hint">Top of demand for a long, bottom of supply for a short. TradingView.</div>
+        </div>
+        <div class="field">
+          <label for="emaPrice">Nearest 5-line EMA</label>
+          <input type="number" id="emaPrice" step="any" value="0.3496" inputmode="decimal">
+          <div class="hint">On Bybit. This is the SPE limit price.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="entry">Entry (limit)</label>
+          <input type="number" id="entry" step="any" value="0.3496" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="structural">Structural level</label>
+          <input type="number" id="structural" step="any" value="0.3478" inputmode="decimal">
+          <div class="hint">Far edge of the zone, or the heel low. The stop must sit beyond it.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOSE -->
+    <section class="d" id="secD2">
+      <h2>Dose <span class="q">How much is at risk?</span></h2>
+
+      <div class="row">
+        <div class="field">
+          <label for="wallet">Derivatives wallet (USDT)</label>
+          <input type="number" id="wallet" step="any" value="2000" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="stake">Margin this trade (USDT)</label>
+          <input type="number" id="stake" step="any" value="20" inputmode="decimal">
+          <div class="hint">SSWB stake is 20. Course ceiling is 10% of wallet.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Margin mode</label>
+          <div class="seg" role="group" aria-label="Margin mode" id="mode">
+            <button type="button" data-v="isolated" aria-pressed="true">Isolated</button>
+            <button type="button" data-v="cross" aria-pressed="false">Cross</button>
+          </div>
+          <div class="hint">Cross puts the whole wallet behind the position. Refused.</div>
+        </div>
+        <div class="field">
+          <label for="lev">Leverage ×</label>
+          <input type="number" id="lev" step="1" min="1" max="100" value="10" inputmode="numeric">
+          <div class="hint">Course prescribes 5× to 10×. Above 10 is flagged.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="tier">Stop-loss tier</label>
+          <select id="tier">
+            <option value="10">Beginner · 5–20% ROI</option>
+            <option value="35">Intermediate · 20–50% ROI</option>
+            <option value="60">Advanced · above 50% ROI</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="stopRoi">Stop at ROI %</label>
+          <input type="number" id="stopRoi" step="any" min="1" max="99" value="10" inputmode="decimal">
+          <div class="hint">Bybit "Trigger by ROI". Price distance = entry × ROI ÷ leverage.</div>
+        </div>
+      </div>
+
+      <div class="calc" id="doseCalc">
+        <span class="k">Notional</span><span class="v" id="notional">—</span>
+        <span class="k">Stake as % of wallet</span><span class="v" id="stakePct">—</span>
+        <span class="sep"></span>
+        <span class="k">Stop price · Mark</span><span class="v" id="stopPrice">—</span>
+        <span class="k">Stop distance</span><span class="v" id="stopDist">—</span>
+        <span class="k">Structural level</span><span class="v" id="structOut">—</span>
+        <span class="k">Max leverage for that stop</span><span class="v" id="levMax">—</span>
+        <span class="sep"></span>
+        <span class="k">Est. liquidation</span><span class="v" id="liq">—</span>
+        <span class="k">Loss if stopped, with fees</span><span class="v" id="lossAbs">—</span>
+      </div>
+    </section>
+
+    <!-- DISCHARGE -->
+    <section class="d" id="secD3">
+      <h2>Discharge <span class="q">Where do you get out, both ways?</span></h2>
+
+      <div class="row">
+        <div class="field">
+          <label for="tpMode">Take-profit target</label>
+          <select id="tpMode">
+            <option value="price">Wick level (price)</option>
+            <option value="roi">ROI % on margin</option>
+          </select>
+        </div>
+        <div class="field" id="tpPriceField">
+          <label for="tpPrice">Wick Tracker price</label>
+          <input type="number" id="tpPrice" step="any" value="0.3576" inputmode="decimal">
+          <div class="hint">Prior wick high, supply-zone bottom, or a liquidation cluster.</div>
+        </div>
+        <div class="field" id="tpRoiField" hidden>
+          <label for="tpRoi">Net ROI wanted %</label>
+          <input type="number" id="tpRoi" step="any" value="50" inputmode="decimal">
+          <div class="hint">SSWB default is 50. Gross target is raised to cover fees.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="ptp">Partial take-profit %</label>
+          <input type="number" id="ptp" step="1" min="0" max="100" value="75" inputmode="numeric">
+          <div class="hint">Course: 75% at volume-maximal + MACD peak. Then stop to entry.</div>
+        </div>
+        <div class="field">
+          <label for="lockRoi">Hunting SL, lock ROI %</label>
+          <input type="number" id="lockRoi" step="any" min="0" value="20" inputmode="decimal">
+          <div class="hint">Trailing stop for the runner, in ROI on margin.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="fee">Taker fee % per side</label>
+          <input type="number" id="fee" step="any" value="0.055" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label class="check" style="margin-top:22px"><input type="checkbox" id="trig" checked>
+            <span>TP triggers on <b>Last</b>, SL on <b>Mark</b></span></label>
+        </div>
+      </div>
+
+      <div class="calc" id="disCalc">
+        <span class="k">TP price · Last</span><span class="v" id="tpOut">—</span>
+        <span class="k">Gross ROI at TP</span><span class="v" id="tpGross">—</span>
+        <span class="k">Fees, round trip</span><span class="v" id="feeRoi">—</span>
+        <span class="k">Net ROI at TP</span><span class="v" id="tpNet">—</span>
+        <span class="k">Net profit at TP</span><span class="v" id="tpAbs">—</span>
+        <span class="sep"></span>
+        <span class="k">Reward : risk</span><span class="v" id="rr">—</span>
+        <span class="k">Breakeven win rate</span><span class="v" id="beWr">—</span>
+        <span class="sep"></span>
+        <span class="k">Runner after partial</span><span class="v" id="runner">—</span>
+        <span class="k">Hunting SL trigger</span><span class="v" id="huntPrice">—</span>
+      </div>
+    </section>
+  </div>
+
+  <div class="notes" id="notes" style="margin-top:16px"></div>
+
+  <div class="plan" id="plan" data-state="incomplete">
+    <header>
+      <h2>Written plan</h2>
+      <div class="toolbar">
+        <button type="button" class="btn ghost" id="resetBtn">Reset to example</button>
+        <button type="button" class="btn" id="copyBtn">Copy plan</button>
+      </div>
+    </header>
+    <pre id="planText" aria-live="polite"></pre>
+  </div>
+
+  <p class="foot">Rules and numbers come from the course notes in this repository: stop tiers and the ROI-to-price conversion (Module 5 §3.2–3.3), the Hunting SL formula (§3.3), the isolated-margin and 5–10× guidance (§3.2), the SPE entry (Module 4 §1), the climax take-profit with 75% partial (Module 4 §2), and the Wick Tracker trigger types (Module 4 §3.2). Fields prefilled with an example from the SEI hockey-stick screenshot; replace them. Liquidation is an estimate using a 0.5% maintenance margin. Not financial advice.</p>
+</div>
+
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = (id) => { const v = parseFloat($(id).value); return Number.isFinite(v) ? v : NaN; };
+  const MMR = 0.005;
+
+  // Segmented controls
+  const segs = { side: 'long', regime: 'bullish', mode: 'isolated' };
+  for (const name of Object.keys(segs)) {
+    $(name).addEventListener('click', (e) => {
+      const b = e.target.closest('button'); if (!b) return;
+      segs[name] = b.dataset.v;
+      [...$(name).querySelectorAll('button')].forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      update();
+    });
+  }
+  function setSeg(name, v) {
+    segs[name] = v;
+    [...$(name).querySelectorAll('button')].forEach(x => x.setAttribute('aria-pressed', String(x.dataset.v === v)));
+  }
+
+  // Tier -> stop ROI
+  $('tier').addEventListener('change', () => {
+    if ($('tier').value !== 'custom') $('stopRoi').value = $('tier').value;
+    update();
+  });
+  $('stopRoi').addEventListener('input', () => { $('tier').value = 'custom'; });
+
+  $('tpMode').addEventListener('change', () => {
+    const roi = $('tpMode').value === 'roi';
+    $('tpPriceField').hidden = roi; $('tpRoiField').hidden = !roi;
+    update();
+  });
+
+  // EMA price -> entry default, unless user has edited entry
+  let entryTouched = false;
+  $('entry').addEventListener('input', () => { entryTouched = true; });
+  $('emaPrice').addEventListener('input', () => { if (!entryTouched) $('entry').value = $('emaPrice').value; });
+
+  document.querySelectorAll('input, select').forEach(el => el.addEventListener('input', update));
+
+  const fmtP = (x, ref) => {
+    if (!Number.isFinite(x)) return '—';
+    const r = Number.isFinite(ref) ? ref : x;
+    const d = r >= 1000 ? 1 : r >= 100 ? 2 : r >= 1 ? 4 : r >= 0.01 ? 5 : 7;
+    return x.toFixed(d);
+  };
+  const fmtN = (x, d = 2) => Number.isFinite(x) ? x.toFixed(d) : '—';
+  const pct = (x, d = 1) => Number.isFinite(x) ? x.toFixed(d) + '%' : '—';
+  const setV = (id, text, cls) => { const el = $(id); el.textContent = text; el.className = 'v' + (cls ? ' ' + cls : ''); };
+
+  function update() {
+    const side = segs.side, regime = segs.regime, mode = segs.mode;
+    const dir = side === 'short' ? -1 : 1;
+    const coin = $('coin').value.trim().toUpperCase();
+    const entry = num('entry'), structural = num('structural');
+    const zoneNear = num('zoneNear'), emaP = num('emaPrice');
+    const wallet = num('wallet'), stake = num('stake'), lev = num('lev'), stopRoi = num('stopRoi');
+    const fee = num('fee'), ptp = num('ptp'), lockRoi = num('lockRoi');
+    const tpMode = $('tpMode').value;
+
+    const fails = [], warns = [], oks = [];
+    const missing = [];
+
+    // ---- Diagnose
+    if (!coin) missing.push('coin');
+    if (!Number.isFinite(entry)) missing.push('entry price');
+    if (side === 'skip') fails.push('Direction is Skip. There is no trade to size.');
+    if (regime === 'ranging') fails.push('Heatmap is mixed. That is the ranging condition; the course says skip.');
+    if (regime === 'bearish' && side === 'long') warns.push('Long on a mostly-red heatmap: only valid if this coin is decoupling (an uncorrelated pump). Size as if it is not.');
+    if (regime === 'bullish' && side === 'short') warns.push('Short on a mostly-green heatmap: against the money flow.');
+    if (!$('ema155').checked) fails.push('EMA 155 three-candle rule not confirmed. Direction is not set.');
+    if ($('seahorse').checked) fails.push('Seahorse shape on the chart. Stay out.');
+    const scr = ['scrEma', 'scrOi', 'scrFr', 'scrDepth'].filter(id => $(id).checked).length;
+    if (scr < 3) warns.push(`Screener confluence ${scr}/4. The course never states a minimum; below 3 is thin.`);
+    if (!$('scrFr').checked) warns.push('Funding is against you. You pay every 8 hours you hold; close-and-go matters more.');
+    if (Number.isFinite(entry) && Number.isFinite(zoneNear) && Number.isFinite(emaP)) {
+      const zoneOk = side === 'long' ? entry <= Math.max(zoneNear, emaP) + 1e-12 : entry >= Math.min(zoneNear, emaP) - 1e-12;
+      if (!zoneOk) warns.push('Entry is beyond both the zone edge and the EMA. That is chasing, not a sniper entry.');
+    }
+
+    // ---- Dose
+    if (!Number.isFinite(wallet) || wallet <= 0) missing.push('wallet');
+    if (!Number.isFinite(stake) || stake <= 0) missing.push('margin');
+    if (!Number.isFinite(lev) || lev < 1) missing.push('leverage');
+    if (!Number.isFinite(stopRoi) || stopRoi <= 0) fails.push('No stop loss. The Dose is position size AND stop; without a stop there is no dose.');
+    if (mode === 'cross') fails.push('Cross margin. Liquidation takes the whole derivatives wallet. The course prescribes isolated.');
+    const notional = stake * lev;
+    const stakePct = wallet > 0 ? stake / wallet * 100 : NaN;
+    if (Number.isFinite(stakePct) && stakePct > 10) fails.push(`Margin is ${stakePct.toFixed(1)}% of the wallet. Course ceiling is 10%.`);
+    else if (Number.isFinite(stakePct) && stakePct > 1 && $('tier').value === '10') warns.push(`Margin is ${stakePct.toFixed(1)}% of the wallet on the beginner tier. Start at 1%.`);
+    if (Number.isFinite(lev) && lev > 10) warns.push(`Leverage ${lev}× is above the prescribed 5× to 10×. Every ROI% is a smaller price move.`);
+    if (Number.isFinite(stopRoi) && stopRoi >= 100 - MMR * lev * 100) fails.push('Stop ROI is at or past liquidation. It will never trigger.');
+
+    const stopDist = entry * (stopRoi / 100) / lev;
+    const stopPrice = entry - dir * stopDist;
+    const liq = entry * (1 - dir * (1 / lev - MMR));
+    const feeRoi = 2 * fee * lev; // % of margin, round trip
+    const lossAbs = stake * (stopRoi / 100) + stake * (feeRoi / 100);
+    let levMax = NaN, structFail = false;
+    if (Number.isFinite(structural) && Number.isFinite(entry)) {
+      const structDist = dir * (entry - structural);
+      if (structDist <= 0) fails.push('Structural level is on the wrong side of the entry.');
+      else {
+        levMax = entry * (stopRoi / 100) / structDist;
+        if (stopDist < structDist) {
+          structFail = true;
+          fails.push(`Stop (${fmtP(stopPrice, entry)}) sits inside the structural level (${fmtP(structural, entry)}). Drop leverage to ${Math.floor(levMax)}× or lower, or widen the tier. Do not move the level.`);
+        }
+      }
+    } else missing.push('structural level');
+
+    setV('notional', fmtN(notional) + ' USDT');
+    setV('stakePct', pct(stakePct, 2), stakePct > 10 ? 'bad' : stakePct > 1 ? 'warn' : '');
+    setV('stopPrice', fmtP(stopPrice, entry), structFail ? 'bad' : side === 'long' ? 'short' : 'long');
+    setV('stopDist', Number.isFinite(stopDist) ? `${fmtP(stopDist, entry)} (${pct(stopDist / entry * 100, 2)})` : '—');
+    setV('structOut', fmtP(structural, entry));
+    setV('levMax', Number.isFinite(levMax) ? `${Math.floor(levMax)}×` : '—', Number.isFinite(levMax) && lev > levMax ? 'bad' : '');
+    setV('liq', fmtP(liq, entry));
+    setV('lossAbs', Number.isFinite(lossAbs) ? `${fmtN(lossAbs)} USDT (${pct(lossAbs / wallet * 100, 2)} of wallet)` : '—', 'bad');
+
+    // ---- Discharge
+    let tpPrice, tpGross;
+    if (tpMode === 'roi') {
+      const net = num('tpRoi');
+      if (!Number.isFinite(net) || net <= 0) missing.push('TP ROI');
+      tpGross = net + feeRoi;
+      tpPrice = entry * (1 + dir * (tpGross / 100) / lev);
+    } else {
+      tpPrice = num('tpPrice');
+      if (!Number.isFinite(tpPrice)) missing.push('TP price');
+      tpGross = dir * (tpPrice - entry) / entry * lev * 100;
+    }
+    const tpNet = tpGross - feeRoi;
+    const tpAbs = stake * tpNet / 100;
+    if (Number.isFinite(tpGross) && tpGross <= 0) fails.push('Take-profit is on the wrong side of the entry.');
+    else if (Number.isFinite(tpNet) && tpNet <= 0) fails.push('Take-profit does not cover fees.');
+    if (!$('trig').checked) warns.push('TP must trigger on Last (to catch the wick) and SL on Mark (to ignore it). Set both before entry.');
+    const rr = Number.isFinite(tpPrice) && Number.isFinite(stopPrice) ? Math.abs(tpPrice - entry) / Math.abs(entry - stopPrice) : NaN;
+    const beWr = Number.isFinite(rr) ? 100 / (1 + rr) : NaN;
+    if (Number.isFinite(rr) && rr < 1) warns.push(`Reward:risk is ${rr.toFixed(2)}. The course states no minimum; below 1 you need better than a ${beWr.toFixed(0)}% win rate just to break even.`);
+    const runnerPct = Number.isFinite(ptp) ? 100 - ptp : NaN;
+    const huntPrice = entry * (1 + dir * (lockRoi / 100) / lev);
+
+    setV('tpOut', fmtP(tpPrice, entry), side === 'long' ? 'long' : 'short');
+    setV('tpGross', pct(tpGross));
+    setV('feeRoi', pct(feeRoi, 2));
+    setV('tpNet', pct(tpNet), tpNet <= 0 ? 'bad' : '');
+    setV('tpAbs', Number.isFinite(tpAbs) ? `${fmtN(tpAbs)} USDT` : '—', tpAbs <= 0 ? 'bad' : side === 'long' ? 'long' : 'short');
+    setV('rr', Number.isFinite(rr) ? `1 : ${rr.toFixed(2)}` : '—', rr < 1 ? 'warn' : '');
+    setV('beWr', pct(beWr, 0));
+    setV('runner', Number.isFinite(runnerPct) ? `${runnerPct.toFixed(0)}% of position, stop moved to ${fmtP(entry, entry)}` : '—');
+    setV('huntPrice', Number.isFinite(huntPrice) ? `${fmtP(huntPrice, entry)} (locks +${pct(lockRoi, 0)})` : '—');
+
+    // ---- Chips and verdict
+    const d1 = fails.some(f => /Skip|ranging|EMA 155|Seahorse/.test(f)) ? 'fail' : warns.some(w => /confluence|Funding|chasing|heatmap/.test(w)) ? 'warn' : 'ok';
+    const d2 = fails.some(f => /stop loss|Cross|wallet|liquidation|structural|Structural/.test(f)) ? 'fail' : warns.some(w => /Leverage|beginner tier/.test(w)) ? 'warn' : 'ok';
+    const d3 = fails.some(f => /Take-profit/.test(f)) ? 'fail' : warns.some(w => /trigger|Reward/.test(w)) ? 'warn' : 'ok';
+    const rrS = !Number.isFinite(rr) ? '' : rr < 1 ? 'warn' : 'ok';
+    $('chipD1').dataset.s = d1; $('chipD2').dataset.s = d2; $('chipD3').dataset.s = d3;
+    $('chipRR').dataset.s = rrS; $('chipRR').textContent = Number.isFinite(rr) ? `R:R 1 : ${rr.toFixed(1)}` : 'Reward : Risk';
+
+    let state = 'valid';
+    if (missing.length) state = 'incomplete';
+    if (fails.length) state = 'refused';
+    $('verdict').dataset.state = state; $('plan').dataset.state = state;
+    $('state').textContent = state === 'valid' ? 'VALID' : state === 'refused' ? 'REFUSED' : 'INCOMPLETE';
+    $('riskVal').innerHTML = Number.isFinite(lossAbs) && state !== 'incomplete'
+      ? `${fmtN(lossAbs)} <small>USDT · ${pct(lossAbs / wallet * 100, 2)} of wallet</small>` : '— <small>USDT</small>';
+
+    // ---- Notes
+    const notes = [];
+    if (missing.length) notes.push(['', `Blank: ${missing.join(', ')}. "Do you have a discharge plan written?" means every cell filled.`]);
+    fails.forEach(f => notes.push(['fail', f]));
+    warns.forEach(w => notes.push(['warn', w]));
+    if (state === 'valid' && !warns.length) notes.push(['ok', 'All three Ds answered, no rule broken. Place the limit, the stop (Mark) and the TP (Last) before anything else. Then close and go.']);
+    $('notes').innerHTML = notes.map(([c, t]) => `<div class="note ${c}">${escapeHtml(t)}</div>`).join('');
+
+    // ---- Written plan
+    const lines = [];
+    lines.push(`${coin || '(coin)'}  ${side.toUpperCase()}  ${new Date().toISOString().slice(0, 16).replace('T', ' ')}  verdict: ${$('state').textContent}`);
+    lines.push('');
+    lines.push('DIAGNOSE');
+    lines.push(`  heatmap ${regime} · EMA155 ${$('ema155').checked ? 'confirmed' : 'NOT confirmed'} · seahorse ${$('seahorse').checked ? 'YES' : 'no'} · screener ${scr}/4`);
+    lines.push(`  zone edge ${fmtP(zoneNear, entry)} · nearest EMA ${fmtP(emaP, entry)} · structural ${fmtP(structural, entry)}`);
+    lines.push(`  entry: limit ${fmtP(entry, entry)}`);
+    lines.push('');
+    lines.push('DOSE');
+    lines.push(`  ${mode} · ${fmtN(stake, 0)} USDT margin (${pct(stakePct, 2)} of ${fmtN(wallet, 0)}) · ${fmtN(lev, 0)}× · notional ${fmtN(notional)}`);
+    lines.push(`  stop: ${fmtP(stopPrice, entry)} (Mark) = ${pct(stopRoi, 0)} ROI · loss if hit ${fmtN(lossAbs)} USDT incl. fees`);
+    lines.push(`  est. liquidation ${fmtP(liq, entry)}`);
+    lines.push('');
+    lines.push('DISCHARGE');
+    lines.push(`  TP: ${fmtP(tpPrice, entry)} (Last) = ${pct(tpNet, 0)} net ROI, +${fmtN(tpAbs)} USDT · R:R 1:${Number.isFinite(rr) ? rr.toFixed(2) : '—'}`);
+    lines.push(`  climax exit: volume maximal + MACD histogram peak → close ${fmtN(ptp, 0)}%, stop to entry`);
+    lines.push(`  runner ${fmtN(runnerPct, 0)}%: Hunting SL at ${fmtP(huntPrice, entry)} once open ROI > ${pct(lockRoi, 0)}; EMA cross-back is the backstop`);
+    lines.push(`  after close: sweep profit to Funding · next coin · stop at daily target`);
+    $('planText').textContent = lines.join('\n');
+    $('copyBtn').disabled = state !== 'valid';
+
+    try {
+      localStorage.setItem('mmt-check', JSON.stringify({
+        wallet: $('wallet').value, lev: $('lev').value, tier: $('tier').value, stopRoi: $('stopRoi').value,
+        fee: $('fee').value, ptp: $('ptp').value, lockRoi: $('lockRoi').value, stake: $('stake').value
+      }));
+    } catch (e) {}
+  }
+
+  function escapeHtml(s) { return s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+  $('copyBtn').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText($('planText').textContent); $('copyBtn').textContent = 'Copied'; }
+    catch (e) { $('copyBtn').textContent = 'Select and copy'; }
+    setTimeout(() => { $('copyBtn').textContent = 'Copy plan'; }, 1500);
+  });
+
+  const example = { coin: 'SEIUSDT', zoneNear: '0.3490', emaPrice: '0.3496', entry: '0.3496', structural: '0.3478',
+    wallet: '2000', stake: '20', lev: '10', stopRoi: '10', tpPrice: '0.3576', tpRoi: '50', ptp: '75', lockRoi: '20', fee: '0.055' };
+  $('resetBtn').addEventListener('click', () => {
+    for (const k in example) $(k).value = example[k];
+    $('tier').value = '10'; $('tpMode').value = 'price'; $('tpPriceField').hidden = false; $('tpRoiField').hidden = true;
+    $('ema155').checked = true; $('seahorse').checked = false; $('trig').checked = true;
+    ['scrEma', 'scrOi', 'scrDepth'].forEach(id => $(id).checked = true); $('scrFr').checked = false;
+    setSeg('side', 'long'); setSeg('regime', 'bullish'); setSeg('mode', 'isolated');
+    entryTouched = false; update();
+  });
+
+  // Restore per-viewer preferences
+  try {
+    const saved = JSON.parse(localStorage.getItem('mmt-check') || 'null');
+    if (saved) {
+      for (const k of ['wallet', 'lev', 'stopRoi', 'fee', 'ptp', 'lockRoi', 'stake']) if (saved[k] != null) $(k).value = saved[k];
+      if (saved.tier) $('tier').value = saved.tier;
+    }
+  } catch (e) {}
+  update();
+})();
+</script>
