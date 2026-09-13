@@ -32,9 +32,9 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | # | Question | Module | Why it matters |
 |---|----------|--------|----------------|
 | C1 | Where does the SPE stop go when "beyond the zone" and the ROI tier disagree? | 4 §1.2 | SPE names no stop at all. |
-| C2 | Does the SSWB SOP use a stop, and at what ROI? | 5 §3.12 | The eight steps name only the take-profit. Breakeven win rate is 29% with a 20% stop and 50% with a 50% stop. |
+| ~~C2~~ | ~~Does the SSWB SOP use a stop?~~ Session: yes, with isolated margin. The ROI tier is the Module 5 §3.2 table. | 5 §3.12 | |
 | ~~C3~~ | ~~Is the stop ever stated as the rule?~~ Yes, in both handouts: "Always set your stop loss before the entry order fills." The hedging section stands contradicted by the course's own handouts. | 7 §1.5 | |
-| C4 | What does "hedging when suitable" mean? | 5 §4.12 | "Suitable" is undefined. |
+| ~~C4~~ | ~~What does "hedging when suitable" mean?~~ Session: hedge only for a trade accidentally opened in cross mode. Never as a substitute for the stop on an isolated position. | 5 §4.12 | |
 | C5 | Was Bybit hedge mode mentioned? | 5 §4.5 | Without it a short against a long on one contract closes the long. |
 
 ## D. Questions that change position size

@@ -50,7 +50,8 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 1. The stop is the answer. It was written before entry; honour it.
 2. If you skipped the stop and are underwater: close it. The loss is the loss.
 3. If you want the opposite direction: close the loser first, open the new trade as its own sized position with its own stop. Never both legs at once.
-4. News, FOMC, black-swan candles: no method is 100%. Smaller dose, or flat.
+4. **The one hedging case:** a position opened in cross mode by mistake. Hedge it to freeze exposure, then close it or switch it to isolated, then close the hedge. Damage control for an execution error, nothing more.
+5. News, FOMC, black-swan candles: no method is 100%. Smaller dose, or flat.
 
 ## Formulas
 | | |
@@ -65,7 +66,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 ## Never, because the course's own risk module says so
 - Cross margin. Liquidation takes the whole wallet.
 - A position without a resting stop. Handouts: "set it before the entry order fills."
-- Hedging instead of taking the stop.
+- Hedging instead of taking the stop. The only hedge is on an accidental cross-mode position, and it ends with closing it.
 - Holding a loser to breakeven.
 - Trading a mixed heatmap or a seahorse.
 - Entering on a chat call without the chart check.

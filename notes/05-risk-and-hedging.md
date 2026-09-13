@@ -336,7 +336,7 @@ This is the first end-to-end procedure in the course, and it fixes the meaning o
 **The "compounding" table** ("$100 USDT profit in 30 mins?"): ten trades at $20, each +50%, each +$10, total +$100 a day, "30 days = 100 × 30 = 3,000 USDT (~RM 12,000+) per month".
 
 - It does not compound. The stake is fixed at $20 and the profits are swept out (step 6). It is linear: 10 × $10.
-- It assumes ten wins out of ten, every day, thirty days a month. No losing trade appears in the table and no stop loss appears in the eight steps.
+- It assumes ten wins out of ten, every day, thirty days a month. No losing trade appears in the table and no stop loss appears in the eight steps. **Confirmed from the session: SSWB is traded with a stop loss and isolated margin.** The stop is the Module 5 §3.2 ROI tier; the slide simply omits it.
 - With a stop, the expectancy is easy to state. At the beginner tier (20% ROI stop = $4 loss) against a $10 win, breakeven is a 29% win rate. At a 50% ROI stop ($10 loss), breakeven is 50%. The course does not say which stop the SOP uses, and step 4 names only the TP. On cross margin without a stop, the loss is whatever the wallet allows.
 - The "30 mins" in the title and the "30 minutes to 1 hour or more" in step 5 do not fit ten trades into 30 minutes. Ten trades at 30 to 60 minutes each is a five to ten hour session.
 
@@ -545,7 +545,7 @@ So the example is honest in one respect that the formula slide was not: it ends 
 
 Four bullets: partial TP / breakeven plan; hedging when suitable; exit discipline; how to protect your trade when the market moves fast.
 
-"Hedging when suitable" is the only qualifier the module puts on hedging, and "suitable" is never defined. On the arithmetic in 4.4 and 4.11, the answer is: when you would have been better off taking the stop earlier, which is always.
+"Hedging when suitable" is the only qualifier the module puts on hedging. **Confirmed from the session: "suitable" means one case only, a trade accidentally opened in cross mode.** On an isolated position with a stop, hedging is never the tool. For the accidental-cross case the hedge freezes exposure while you fix the mistake; the fix is to close the position, or to switch it to isolated where Bybit allows it (no pending orders on the symbol), and then the hedge leg is closed too. It is damage control for an execution error, not a strategy.
 
 ## 5. MMT Golden Rules (Follow up)
 
@@ -589,7 +589,7 @@ Twelve rules across two slides, transcribed with light cleanup:
 1. Cross margin as a working mode.
 2. The hedging formula (over-sized counter trade at maximum leverage).
 3. Holding a losing position to breakeven (GMX).
-4. Opening a hedge instead of taking the stop (PEOPLE), when the same short as a fresh trade after the stop nets more.
+4. Opening a hedge instead of taking the stop (PEOPLE), when the same short as a fresh trade after the stop nets more. Session: hedging is only for a position accidentally opened on cross.
 5. The "90% mindset" framing as an explanation for losses.
 
 
