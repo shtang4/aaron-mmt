@@ -93,7 +93,7 @@
     <section>
       <h2><span class="n">2</span> Set direction <span class="d">Diagnose</span></h2>
       <ol>
-        <li><b>EMA 155 rule:</b> three consecutive full-body candles <span class="long">above</span> → long only; <span class="short">below</span> → short only. Nothing else sets direction.</li>
+        <li><b>EMA 155 rule, on the Heikin-Ashi chart:</b> three consecutive candles with the body <span class="long">above</span> and no lower wick → long only; body <span class="short">below</span> and no upper wick → short only. Nothing else sets direction. Order prices still from real candles.</li>
         <li>Heikin-Ashi run with no trend-side wicks confirms. Dojis or small-body clusters → wait.</li>
         <li>Donchian ribbon solid in the same colour confirms. Mixed → skip.</li>
         <li><b>Seahorse</b> (vertical move done, flat beak, EMAs converging) → stay out.</li>
@@ -126,7 +126,7 @@
       <ol>
         <li><b>TP first.</b> Wick Tracker is a Bybit TP trigger at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on <b>Last</b>; set it slightly inside the expected wick so it fills.</li>
         <li><b>SL</b> from step 4, trigger on Mark, <b>resting before the entry fills</b>. Both in before you look away.</li>
-        <li><b>Climax exit:</b> volume bar far above VOLMA + MACD histogram at its <b>tallest bar</b>, confirmed when the next bar prints shorter → close <b>75%</b>. Move SL on the runner to entry.</li>
+        <li><b>Climax exit:</b> volume bar tallest since entry and ≥ 2× VOLMA 10 (working rule) + MACD histogram at its <b>tallest bar</b>, confirmed when the next bar prints shorter → close <b>75%</b>. Move SL on the runner to entry.</li>
         <li><b>Runner:</b> Hunting SL locks a rising ROI, <code>entry ± entry × ROI ÷ leverage</code>. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.</li>
         <li>Stop hit = the plan worked. Take it. Nothing replaces it.</li>
       </ol>

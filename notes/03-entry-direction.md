@@ -168,7 +168,7 @@ Slide rules for the 5-line set, verbatim:
   - If 3 consecutive full-body candles form **above** this line → considered uptrend, can **LONG**.
   - If 3 consecutive full-body candles form **below** this line → considered downtrend, can **SHORT**.
 
-This is the first fully mechanical direction rule in the course. It replaces the vague "golden cross, look for a long" with a countable condition: three closed, full-bodied candles on one side of EMA 155. "Full body" is not defined; the sensible reading is a candle whose body is clear of the line, not one that wicks through it.
+This is the first fully mechanical direction rule in the course. It replaces the vague "golden cross, look for a long" with a countable condition: three closed, full-bodied candles on one side of EMA 155. **Confirmed from the session: the rule is read on the Heikin-Ashi chart** with the Bybit setup switched on. So "full body" is the Heikin-Ashi strong-trend candle from section 1.2: the body sits on the trade side of EMA 155 and there is no wick on the opposite side (no lower wick on a green candle for a long, no upper wick on a red candle for a short). Three of those in a row, closed, and direction is set. Two consequences: Heikin-Ashi smooths, so the rule confirms a little earlier and a little more often than it would on real candles; and every price that goes into an order (entry, stop, TP) is still read from real candles, because Heikin-Ashi prices are averages.
 
 ### 2.3 "Real example: Sniper Entry", 2 EMA versus 5 EMA
 
@@ -445,4 +445,3 @@ Reading:
 - When two of the seven chart tools disagree, which wins? Only EMA 155 has stated priority.
 - In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?
 - Which two of the five EMAs (9, 25, 55, 155, 255) are the "basic" pair, and does the Module 1 stop rule's "EMA 50" mean EMA 55?
-- What counts as a "full body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles?

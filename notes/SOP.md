@@ -15,7 +15,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 4. Sentiment gauge is a clue, not a signal.
 
 ## 2. Set direction (Diagnose)
-1. **EMA 155 rule:** three consecutive full-body candles above → long only; below → short only. Nothing else sets direction.
+1. **EMA 155 rule, read on the Heikin-Ashi chart:** three consecutive candles with the body on one side of EMA 155 and no wick on the other side. Above → long only; below → short only. Nothing else sets direction. Order prices still come from real candles.
 2. Heikin-Ashi run with no trend-side wicks confirms. Dojis or small-body clusters → wait.
 3. Donchian ribbon solid in the same colour confirms. Mixed → skip.
 4. Seahorse (vertical move done, flat beak, EMAs converging) → stay out.
@@ -36,7 +36,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 ## 5. Exit plan, both ways (Discharge)
 1. TP first. Wick Tracker is a Bybit TP trigger at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on **Last**; set it slightly inside the expected wick so it fills.
 2. SL from step 4, trigger on Mark, **resting before the entry fills**. Both orders in before you look away.
-3. Climax exit: volume bar far above VOLMA + MACD histogram at its **tallest bar**, confirmed when the next bar prints shorter → close 75%. Move the runner's SL to entry.
+3. Climax exit: volume bar that is the tallest since entry and at least 2× VOLMA 10 (working rule) + MACD histogram at its **tallest bar**, confirmed when the next bar prints shorter → close 75%. Move the runner's SL to entry.
 4. Runner: Hunting SL locks a rising ROI. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.
 5. Stop hit = the plan worked. Take it.
 

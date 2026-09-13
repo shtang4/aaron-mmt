@@ -66,6 +66,8 @@ Five-step flow, verbatim:
 
 **Step 1, volume maximal.** The exhaustion spike from Module 3 section 2.7: a volume bar far above the VOLMA 5 and 10 lines, at the climax of the move. In a long, that bar is the buyers' last push. The take-profit process starts on that candle, not after it.
 
+Confirmed from the session: the course has **no numeric definition** of "maximal". Working rule, mine, to be checked against the journal after 30 trades: the bar counts as maximal when it is **both** the tallest volume bar since the entry candle **and** at least **2× the VOLMA 10** line. The first condition stops an early spike from firing the exit on a move that is still building; the second stops a quiet swing's biggest bar, which may be nothing, from counting. If the journal shows exits firing too early, raise the multiple to 3×; if too late, drop the "tallest since entry" condition.
+
 **Steps 2 and 3, MACD mid histogram.** With the MMT setting (8, 13, 9) the histogram reacts fast. Confirmed from the session: "mid histogram" is **the tallest bar** of the swing. The partial fires when the next bar prints shorter than it: momentum has peaked even though price may still be rising. That is the same signal the RAVE example in Module 5 annotated "IceBerg Tip" at the bottom of a crash, used in reverse at a top. In practice the tallest bar is only known once the next bar is shorter, so the exit is one candle after the peak, on the 1-minute chart.
 
 **Step 4, TP or PTP 75%.** Either close the whole position, or close **75%** and keep 25% as the runner. On the runner, move the stop to entry (it can no longer lose) or apply the Hunting SL from Module 5 section 3.3 (lock a rising fraction of ROI). Note the number: 75% off is a much larger partial than the Module 5 example's "take 20% profit, leave 80% for the wick", which was about locking ROI with a stop, not about position size. Here most of the position is closed at the climax.
@@ -135,4 +137,5 @@ Module 5's rule 11 teased "how to be a Wick Catcher without a Master". This slid
 ## Open questions
 
 - Where does the SPE stop go: below the zone, or at the ROI tier, when the two disagree?
-- Does the course have a worked example of the full sequence on one trade, with entry, stop, PTP and runner all shown?
+- Does the course have a worked example of the full sequence on one trade, with entry, stop, PTP and runner all shown? (No: see Module 6.)
+- Volume "maximal" is defined by my working rule (tallest since entry and ≥ 2× VOLMA 10), not the course's. Validate against the journal.

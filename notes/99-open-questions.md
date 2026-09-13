@@ -10,7 +10,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | ~~A2~~ | ~~Depth check definition?~~ Answered: lighter ask → long, lighter bid → short, equal → skip; beware a single hidden wall. | 7 §1.2 | |
 | ~~A3~~ | ~~Does the hockey stick override funding?~~ Answered: funding is a scored layer with a bull-market override; the SOL long was a 3/4 and should have been at reduced size. | 7 §1.3 | |
 | A4 | When two of the seven chart tools disagree, which wins? | 3 §4.3 | Only EMA 155 has stated priority. Disagreement is the normal case. |
-| A5 | What counts as a "full-body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles? | 3 §2.2 | The only mechanical direction rule in the course depends on it. |
+| ~~A5~~ | ~~Full-body candle, and on which chart?~~ Session: read on the **Heikin-Ashi** chart with the Bybit setup on. "Full body" is therefore the Heikin-Ashi strong-trend candle from Module 3 §1.2: body on the trade side of EMA 155 with no wick on the opposite side. | 3 §2.2 | |
 | A6 | In the hockey stick rule, is "the EMA" the 155 or a faster line? | 2 §6.4 | Moves the entry by minutes and percent. |
 | A7 | Is the RAVE crash-bottom (heel) entry a taught setup or a one-off? | 5 §3.9 | It contradicts the confirmed hockey stick rule. |
 | A8 | Does the uncorrelated-pump trade during a BTC crash have rules (scan, stop, exit) or is it one observation? | 6 §4 | AERGO on 7 April 2025 is the only evidence. |
@@ -53,7 +53,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | # | Question | Module | Why it matters |
 |---|----------|--------|----------------|
 | ~~E1~~ | ~~What is "mid histogram"?~~ Session: **the tallest bar** of the swing. The 75% partial fires when the next bar is shorter. | 4 §2.1 | |
-| E2 | What volume multiple counts as a spike on the 1-minute chart, and is the baseline VOLMA 5 or 10? | 3 §2.7 | "2× average" is hit constantly on 1m. |
+| ~~E2~~ | ~~Volume "maximal" definition?~~ Session: no specific rule. **Working rule (mine, to be validated in the journal):** the bar is the tallest since entry and at least 2× VOLMA 10. | 4 §2.1 | |
 | ~~E3~~ | ~~Wick Tracker: limit or trigger?~~ Session: a **TP trigger**; when price reaches it the position closes automatically. Set it to trigger on Last so a wick reaches it; expect the fill a few ticks after the touch. | 4 §3.2 | |
 | E4 | Which timeframe is the EMA cross-back exit read on? | 1 §3.3 | On 1m it is late; on 15m it is a different trade. |
 | E5 | Is there a minimum reward-to-risk ratio? | 1 §3.3 | Never stated in six modules. |
