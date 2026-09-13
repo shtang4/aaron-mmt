@@ -18,6 +18,12 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 
 All modules are captured. Remaining gaps are listed in file 99. until those modules are captured.
 
+## Tools
+
+| File | What it does |
+|------|-------------|
+| [tools/pretrade-checklist.html](tools/pretrade-checklist.html) | Pre-trade check. Walks Diagnose, Dose, Discharge; computes stop, TP net of fees, reward-to-risk, runner and Hunting SL; refuses plans that break rules the course itself states; emits the written plan. Open the file in a browser. |
+
 ## Conventions
 
 - One file per course module, numbered in course order.
