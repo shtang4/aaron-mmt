@@ -244,24 +244,59 @@ Putting the five steps in order:
 
 Every step except the last is a Bybit screen. The course's contribution is the ordering and the repeated instruction that none of these screens is an entry signal.
 
-## 5. Advance tool: MMT Coin Trend Screener
+## 5. Advance tool: MMT Coin Trend Screener (MMT加密货币趋势筛选器)
 
-_Not yet captured._
+A four-check confluence table run on a candidate coin after the Bybit scan. Order on the flow slide: **EMA (all TF) → OI Data → Contract (FR): counter/opposite → Depth (choose the lower volume)**.
+
+The worked example on the second slide, for a long:
+
+| # | Indicator | Trend reading | Signal |
+|---|-----------|---------------|--------|
+| 1 | EMA, checked on every timeframe: Day → 1 Hour → 4 Hours → 15 Mins → 5 Mins → 1 Min | Up | Long |
+| 2 | OI (open interest) data | Up | Long |
+| 3 | Contract funding rate | Negative | Long ("no funding rate", i.e. longs do not pay) |
+| 4 | Depth volume | Low | Long |
+| | **Overall confluence** | **4/4** | **Long** |
+
+Slide notes, verbatim:
+
+- Use additional complementary indicator to enhance accuracy and entry.
+- Some trade might not fulfil all indicators.
+- Risk management for manipulation (pump and dump, news, black swan event).
+- Vice versa for short.
+
+### 5.1 What each check means
+
+**1. EMA on all timeframes.** The EMA direction (from the Module 1 golden/death cross) must agree from the daily chart down to the 1-minute chart. This is the multi-timeframe alignment the earlier slides implied but never stated. It also settles the scalping-versus-daily tension: direction is confirmed top-down, and the 1m and 5m charts are where the entry is timed.
+
+The slide lists the order as Day → 1H → 4H → 15m → 5m → 1m. The 1H and 4H are out of sequence; the intended order is almost certainly Day → 4H → 1H → 15m → 5m → 1m.
+
+**2. Open interest.** Rising OI with rising price means new money is entering longs, which confirms the uptrend. "Vice versa for short" is loose here: for a short, the confirming pattern is OI rising while price falls (new shorts entering), not OI falling. Falling OI in either direction means positions are closing, which is a weakening trend, not a signal.
+
+**3. Funding rate, counter or opposite.** The flow slide says "counter/opposite" and the table says negative funding = long. Read together: trade against the funding rate. Negative funding means the crowd is net short and shorts pay longs. Going long means you are paid to hold, and you are positioned against a crowded side that can be squeezed. For a short, look for positive funding.
+
+**4. Depth, "choose the lower volume".** The least explained check. Depth is the order book. The reading most consistent with the other three checks: compare the bid-side and ask-side depth, and trade in the direction where the book is thinner, because price meets less resistance moving that way. For a long, a thin ask side (low sell-wall volume) is the confirming condition. This is an inference; the slide does not define which side's volume is being compared.
+
+### 5.2 What the screener does and does not do
+
+- It is the only place in Module 2 where a coin gets a **rule-based** direction rather than a list-based or sentiment-based bias. This is the real tool in the module.
+- It **does not** set a threshold. "Some trade might not fulfil all indicators" means 4/4 is not required, and 3/4 or 2/4 is left to judgement. Ask what the minimum confluence is.
+- It **does not** replace the Bybit Opportunities scan. The scan produces candidates; the screener grades them. The scan is broad and free, the screener is per coin and manual.
+- The manipulation warning is the course acknowledging that all four checks can be gamed on a thin coin. That points back to the volume criterion in section 1: run the screener on liquid coins only.
 
 ## 6. Hockey stick pattern
 
-_Not yet captured._
+_Listed in the course outline under this module. Not on the section title slide and not yet seen. May be covered elsewhere or dropped._
 
-## Timeframe tension in this module
+## Timeframe: resolved by the screener
 
-The four-phase diagram is built on a **200-period moving average** and describes ranges lasting **six months**. That is a daily or weekly chart. The scalping definition in Module 1 says holding periods of seconds to minutes. The two only reconcile if the course uses the higher timeframe to pick the coin and its direction (this module) and a lower timeframe to time the entry (Modules 3 and 4). The slides do not say this explicitly. Confirm when the indicator modules arrive.
+The four-phase diagram in section 3.1 is daily. The scalping definition in Module 1 is minutes. The screener's EMA check runs on every timeframe from daily to 1 minute, which makes the method explicitly multi-timeframe: **direction is set from the daily down, entry is timed on 1m to 15m.** A coin whose EMAs disagree across timeframes fails check 1.
 
 ## Open questions
 
 - What is the course's definition of a strong coin versus a shit coin, so that a coin on neither list can be classified?
-- Does the Coin Trend Screener replace the manual Bybit Opportunities scan, or sit on top of it?
+- What is the minimum confluence on the screener: 4/4, 3/4, or judgement?
+- In the depth check, which side of the order book is "the lower volume" compared against?
 - Are the 15m Gainers / 15m Losers tabs used anywhere in the course, or only the 24h list?
 - Where does the "wait for retrace, breakout, or confirmation" instruction get made precise: Module 3 (direction) or Module 4 (SPE)?
-- Is there a volume threshold, or is "high volume" satisfied by appearing on the Gainers or Hot tab?
-- How are "new coins" handled, given the thin history for any 200 MA or EMA calculation?
-- Which timeframe is the trend phase judged on, and which timeframe is the entry taken on?
+- Does the hockey stick pattern appear anywhere in the delivered slides?

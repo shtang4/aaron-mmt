@@ -121,4 +121,4 @@ If any cell is blank, the framework says the trade is not valid.
 - Does the course define Dose as a fixed percentage of account per trade, or does it vary by "risk level"?
 - Is there a minimum reward-to-risk ratio, or is any nearest-resistance TP acceptable?
 - In Discharge, is hedging (Module 5) a replacement for the EMA 50 stop or a tool used alongside it?
-- Which chart timeframe does the course scalp on in practice (1m, 5m, 15m)? The EMA example chart is daily.
+- ~~Which chart timeframe does the course scalp on in practice?~~ Answered in Module 2: EMA direction is checked on every timeframe from daily to 1 minute; entries are timed on the 1m to 15m charts.
