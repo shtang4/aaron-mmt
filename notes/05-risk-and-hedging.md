@@ -2,11 +2,18 @@
 
 Source: Module 5 slides, Momentum Mastery Trading (MMT), Dr. Aaron MMT, 2026.
 
-Module contents (from the course outline):
+Module contents (from the Module 5 section title slide, which maps each item to the 3D method):
 
-- Basic tool: risk management strategy, trading style and risk level
-- Advance tool: MMT Hedging
-- MMT Golden Rules
+| Item | 3D role |
+|------|---------|
+| Basic tool: risk management strategy by trading style and risk level | **Basic Dose** |
+| SSWB | **Advance Dose** |
+| Advance tool: MMT Hedging | **Discharge** |
+| MMT Golden Rules | Follow up |
+
+SSWB is new: it is not in the course outline from the opening slides. The acronym is not expanded on the title slide.
+
+The last three slides of this batch carry a different copyright line, "Future Trends FZCO", instead of "Dr. Aaron MMT". They may be shared with another product of the same company.
 
 ## 1. Scalping tips (delivered at the end of Module 3)
 
@@ -50,11 +57,46 @@ Read the table against the course as taught so far:
 
 Pick a column and stay in it. The failure mode the table is guarding against is mixing columns within a session: a high-risk entry (1-minute, quick) with a low-risk exit (tight stop, conservative target) gets stopped out constantly; a low-risk entry with high-risk sizing blows up on the one loss. The style, the stop width, the position size and the monitoring cadence have to come from the same row.
 
-## 3. Advance tool: MMT Hedging
+
+### 2.3 The ZETA case: "Right trade, but take profit too early?"
+
+TradingView, ZETAUSDT perpetual (Bybit), **4-hour** chart, with a Multi EMA overlay. Trade markers on the chart:
+
+| Event | Chart marker | Price | Date on chart |
+|-------|-------------|-------|---------------|
+| Entry | "SPE Entry" line, "Buy 1000" | 0.8570 | around day 2 |
+| Retrace | Orange circle labelled "Take Profit?" | from about 1.90 down to about 1.20, over roughly a week | days 4 to 10 |
+| Exit | "Wick tracker, Exit" and "Sell 1000" | 2.8530 | around day 16 |
+
+The entry price is the same 0.8570 as the ZETA 1-minute SPE example in Module 3. It is one trade shown at two timeframes: entered on the 1-minute chart, held for about two weeks on the 4-hour chart, exited at roughly +233%.
+
+Slide caption: "You exited early, then watched the price pump without you." Follow-up slides:
+
+- **"The problem wasn't the trade."** Your direction and entry (Diagnose) may be correct. The wrong position size (Dose) created too much pressure to hold.
+- **"Do you know exactly how much you could lose?** Or do you decide your position size based on how confident you feel?"
+- **"What is your risk level?** Can you stay calm when the position moves against you? Your position size must match your capital, experience and emotional tolerance."
+
+### 2.4 What is right and what is wrong in the ZETA argument
+
+**The behavioural claim is sound.** An oversized position makes a normal retrace feel unbearable, and the trader exits to relieve the pressure rather than because the chart said to. Sizing so that the retrace is tolerable is the correct fix, and it is the first time the course states *why* Dose matters rather than *that* it matters.
+
+**The example undermines three things the course has already taught:**
+
+1. **It is not a scalp.** A two-week hold on a 4-hour chart is a swing trade. Module 1 defined scalping as seconds to minutes. The course's showcase trade is the opposite of its definition.
+2. **It contradicts the Module 1 exit rule.** "Short-term EMA crosses back below long-term EMA, exit, no questions." On the chart, the retrace from 1.90 to 1.20 gave back more than half the open gain and the fast EMAs crossed down during it. The Discharge rule as written would have exited in the 1.4 to 1.6 area. The slide says the correct behaviour was to hold. Both cannot be the rule. Either Module 4's "New TP" and Wick Tracker replace the EMA cross-back exit, or the ZETA hold was luck presented as discipline.
+3. **It is hindsight-selected.** The lesson "hold through the retrace" is only visible because ZETA then tripled. The same retrace on a coin that did not recover would be the seahorse pattern from Module 3, with the instruction "don't go in". Nothing on the slide distinguishes the two at the time the circle was drawn.
+
+The safe reading: size so you *could* hold, then let the written Discharge plan decide whether you *do*. Do not convert "I sized correctly" into "therefore I never take profit on a retrace".
+
+## 3. SSWB (Advance Dose)
+
+_Not yet captured. Acronym not expanded on the title slide._
+
+## 4. Advance tool: MMT Hedging (Discharge)
 
 _Not yet captured._
 
-## 4. MMT Golden Rules
+## 5. MMT Golden Rules (Follow up)
 
 _Not yet captured._
 
@@ -62,5 +104,7 @@ _Not yet captured._
 
 - Is the "1% to 10% amount" margin per trade or risk per trade?
 - Does the course prescribe a maximum leverage for the conservative style beyond "1× to 10×", and a number for the aggressive style beyond "maximise"?
-- Is hedging (section 3) a replacement for the stop loss or a tool used alongside it? This is the question that decides whether the Discharge rule survives contact with Module 5.
+- What does SSWB stand for, and what does it add to the 1% to 10% amount rule?
+- Does Module 4's New TP or Wick Tracker replace the Module 1 "EMA cross-back, exit, no questions" rule? The ZETA case says hold through a cross-back; Module 1 says exit on it.
+- Is hedging (section 4) a replacement for the stop loss or a tool used alongside it? This is the question that decides whether the Discharge rule survives contact with Module 5.
 - What are the Golden Rules, and do they resolve the "no SL, cross margin" contradiction in the Module 3 seahorse slide?
