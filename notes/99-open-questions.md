@@ -1,0 +1,68 @@
+# 99 — Consolidated open questions
+
+The full deck (Modules 0 to 6) is captured. These are the questions the slides do not answer, grouped by what they would change. Each links to the module where it arose. Items answered from the session so far are recorded in the module files and not repeated here.
+
+## A. Questions that change whether a trade is taken
+
+| # | Question | Module | Why it matters |
+|---|----------|--------|----------------|
+| A1 | Minimum screener confluence: 4/4, 3/4, or judgement? | 2 §5 | Decides whether a coin with one failing check (e.g. positive funding on SOL in the hockey stick example) is tradeable. |
+| A2 | Depth check: which side of the order book is "the lower volume"? | 2 §5.1 | The fourth screener check is undefined. |
+| A3 | Does the hockey stick override the funding check? | 2 §6.3 | SOL was longed into positive funding. |
+| A4 | When two of the seven chart tools disagree, which wins? | 3 §4.3 | Only EMA 155 has stated priority. Disagreement is the normal case. |
+| A5 | What counts as a "full-body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles? | 3 §2.2 | The only mechanical direction rule in the course depends on it. |
+| A6 | In the hockey stick rule, is "the EMA" the 155 or a faster line? | 2 §6.4 | Moves the entry by minutes and percent. |
+| A7 | Is the RAVE crash-bottom (heel) entry a taught setup or a one-off? | 5 §3.9 | It contradicts the confirmed hockey stick rule. |
+| A8 | Does the uncorrelated-pump trade during a BTC crash have rules (scan, stop, exit) or is it one observation? | 6 §4 | AERGO on 7 April 2025 is the only evidence. |
+| A9 | Is a strong coin versus a shit coin defined, so a coin on neither list can be classified? | 2 §2 | The lists are a 2023 snapshot. |
+
+## B. Questions that change the entry price
+
+| # | Question | Module | Why it matters |
+|---|----------|--------|----------------|
+| B1 | Which EMA does SPE target first on a pullback: 9, 25, or 55? | 4 §1.2 | Nearest gives most fills and most failures. |
+| B2 | Which EMA did the ZETA pullback touch at 0.8570? | 3 §2.3 | The course's showcase SPE entry, unlabelled. |
+| B3 | Are the 15m Gainers/Losers tabs used, or only 24h? | 2 §4.4 | The 15m tabs match the holding period; the course uses 24h. |
+
+## C. Questions that change the stop
+
+| # | Question | Module | Why it matters |
+|---|----------|--------|----------------|
+| C1 | Where does the SPE stop go when "beyond the zone" and the ROI tier disagree? | 4 §1.2 | SPE names no stop at all. |
+| C2 | Does the SSWB SOP use a stop, and at what ROI? | 5 §3.12 | The eight steps name only the take-profit. Breakeven win rate is 29% with a 20% stop and 50% with a 50% stop. |
+| C3 | Did Dr. Aaron ever say to take the stop on a losing position? | 5 §4 | The hedging section, GMX and PEOPLE all describe alternatives to it. The Golden Rules omit it. |
+| C4 | What does "hedging when suitable" mean? | 5 §4.12 | "Suitable" is undefined. |
+| C5 | Was Bybit hedge mode mentioned? | 5 §4.5 | Without it a short against a long on one contract closes the long. |
+
+## D. Questions that change position size
+
+| # | Question | Module | Why it matters |
+|---|----------|--------|----------------|
+| D1 | Which stake is the taught one: $20 (SOP), $150 (real example), 1% to 10% of wallet, or the $1,000 on the 1% slide? | 5 §3.13 | Four unreconciled numbers. |
+| D2 | Is the 1% to 10% margin per trade or maximum loss per trade? | 5 §3.5 | Differs by the leverage factor. |
+| D3 | Is 25× (demo) or 5× to 10× (slide) the recommendation? | 5 §3.4 | The demo and the rule disagree. |
+| D4 | Was the THETA demo isolated or cross? | 5 §3.4 | Its liquidation distance does not match isolated 25×. |
+| D5 | How were the six simultaneous cross-margin positions on the "execute 10 trades" slide explained? | 5 §3.12 | They contradict the SOP's TP, hold time and margin mode. |
+| D6 | Was BMT on cross 15× presented as the recommended setup? | 5 §3.10 | The showcase trade used the mode the risk slide prohibits. |
+
+## E. Questions that change the exit
+
+| # | Question | Module | Why it matters |
+|---|----------|--------|----------------|
+| E1 | What is "mid histogram": the tallest bar, or half the peak height? | 4 §2.1 | Decides how early the 75% partial fires. |
+| E2 | What volume multiple counts as a spike on the 1-minute chart, and is the baseline VOLMA 5 or 10? | 3 §2.7 | "2× average" is hit constantly on 1m. |
+| E3 | Is the Wick Tracker a resting limit or a TP trigger? | 4 §3.2 | A trigger fills after the wick retraces; a limit fills at the wick or not at all. |
+| E4 | Which timeframe is the EMA cross-back exit read on? | 1 §3.3 | On 1m it is late; on 15m it is a different trade. |
+| E5 | Is there a minimum reward-to-risk ratio? | 1 §3.3 | Never stated in six modules. |
+
+## F. Questions about the evidence
+
+| # | Question | Module | Why it matters |
+|---|----------|--------|----------------|
+| F1 | Over what period did 1,993 → 18,288 USDT happen, and how many losing trades were in it? | 5 §3.10 | The only account-level result, undated and loss-free. |
+| F2 | How many held-to-breakeven positions did not recover? | 5 §4.8 | GMX is one that did. |
+| F3 | Does any complete trade exist with entry, stop, partial TP and runner all shown? | 6 | None in the deck. |
+
+## What the deck settles without the session
+
+For contrast, the things that needed no clarification: the exchange and product (Bybit USDT perpetuals), the 1-minute entry chart, the five EMA periods and colours, the MACD and volume settings, the TradingView SMC and Donchian settings, the Coinglass heatmap, the EMA 155 three-candle direction rule, the SPE two-platform procedure, the climax take-profit with PTP 75%, the Hunting SL formula, the ROI-tier stop conversion, the SSWB eight steps, the twelve Golden Rules, and the arithmetic on every result card, all of which reconciles.

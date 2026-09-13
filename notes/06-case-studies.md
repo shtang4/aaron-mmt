@@ -115,12 +115,11 @@ What the timestamps say: the first card is from about 09:49 on 7 April and the s
 
 ## 6. Q&A
 
-_Not yet received._
+No Q&A slides exist. The deck ends at the Synchronization slide.
 
 
 ## Open questions
 
 - Is trading uncorrelated pumps during a BTC crash a taught setup with rules (which scan, which stop, which exit), or a single observation from 7 April 2025?
 
-- Are there further Module 6 case studies showing a complete trade with all three Ds executed, rather than one skipped?
-- Does the Q&A address any of the open questions in Modules 1 to 5?
+- The deck contains no case study showing one trade with all three Ds executed and shown (entry, stop, partial TP, runner). Every case study is either a result card or a skipped-D example.

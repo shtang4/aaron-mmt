@@ -324,19 +324,26 @@ So the hockey stick is a **V-bottom reversal caught on the 1-minute chart**: the
 - **The funding check fails on SOL.** Funding was +0.0671% per 8 hours, meaning longs pay. The screener (section 5) says negative funding for a long. The example longs anyway. Either the screener's funding rule is a tiebreaker rather than a filter, or the hockey stick overrides it. The slide does not say.
 - **JASMY on the daily is a different thing.** A months-long decline turning up is the four-phase diagram itself, not a scalp. Its inclusion says the shape is meant to be timeframe-independent. The trade off a daily hockey stick is a swing trade, which Golden Rule 6 says the course does not do.
 
-### 6.4 How to trade it, assembled from the rest of the course
+### 6.4 The entry rule, confirmed from the session
 
-The slide gives no entry rule. Everything else in the course points to the same one:
+**Enter long on the golden cross, with three candlesticks above the EMA.** That is the Module 3 section 2.2 direction rule (three consecutive full-body candles above EMA 155) applied to the blade: the hockey stick is recognised on the chart, and the entry waits for the EMA confirmation, not the heel and not the first green candle.
 
-1. **Do not buy the blade.** The blade is the airport "last call" (Module 3 section 2.5). By the time three green candles are visible the move is 2% to 4% in, and on a 1-minute chart that is most of it.
-2. **Wait for the first pullback** after the blade, to EMA 9 or 25, and enter there with SPE (Module 4 section 1). Direction is confirmed once price holds above EMA 25 on the pullback; the EMA 155 three-candle rule (Module 3 section 2.2) will lag this by several minutes and is the stricter confirmation.
-3. **Stop** below the heel's low. That is the structural level, and it is usually 1% to 3% below the pullback entry on these examples, which at 10× is a 10% to 30% ROI stop, inside the beginner tier (Module 5 section 3.2).
-4. **Take profit** at the prior swing high on the shaft (the first resistance), or on the volume-maximal-plus-MACD-peak rule (Module 4 section 2), whichever comes first. Wick Tracker resting at that level.
-5. **Treat the correlated cluster as one position.** If four coins are making the blade together, size the total across them as one trade.
+What this choice means:
+
+- It is the **latest** of the three versions the course shows. RAVE (Module 5 section 3.9) bought the heel with no confirmation. The blade screenshots show the move already under way. This rule waits for the blade to carry price through the EMAs and hold there for three candles.
+- On a 1-minute chart after a long shaft, EMA 155 sits well above the heel. Three full candles above it means the blade has already retraced most of the shaft. The trade is a **continuation** of the reversal, not the reversal itself. Expect to capture the second leg, not the V.
+- The cost is a worse price and a missed move when the blade fails at the EMAs, which on the SEI and SOL examples it nearly did. The benefit is that most false heels never produce three candles above EMA 155, so the rule filters them without a stop being hit.
+- If "the EMA" in the session meant the faster lines (9 or 25) rather than 155, the entry is much earlier and the filter much weaker. The Module 3 slide names EMA 155 as the pivot line for the three-candle rule, so that is the reading taken here.
+
+The rest of the trade follows the course's other rules:
+
+1. **Stop** below the heel's low, sized by the ROI tier (Module 5 section 3.2). After waiting for three candles above EMA 155 the heel can be 3% to 5% away, so leverage may need to come down to keep the stop inside the tier.
+2. **Take profit** at the prior swing high on the shaft, or the volume-maximal-plus-MACD-peak rule (Module 4 section 2), with the Wick Tracker resting there.
+3. **Correlated cluster is one position.** Four coins making the blade at 16:06 is one trade with four tickets.
 
 ### 6.5 Hockey stick versus the RAVE "IceBerg Tip" entry
 
-The RAVE example in Module 5 section 3.9 bought the heel itself, at 0.507, on the deepest MACD bar and the volume spike, before any blade existed. That is the aggressive version: earlier, better price, no confirmation, and a stop that is only a few ticks away or does not exist. The hockey stick as shown here is the confirmed version: the blade is already visible. The pullback entry in 6.4 is the compromise between them. The course shows all three and names none of them as the rule.
+The RAVE example in Module 5 section 3.9 bought the heel itself, at 0.507, on the deepest MACD bar and the volume spike, before any blade existed. That is the aggressive version: earlier, better price, no confirmation, and a stop that is only a few ticks away or does not exist. The hockey stick as shown here is the confirmed version: the blade is already visible. The pullback entry in 6.4 is the compromise between them. The session named the confirmed version (golden cross plus three candles above the EMA) as the rule.
 
 ## Timeframe: resolved by the screener
 
@@ -351,5 +358,6 @@ The four-phase diagram in section 3.1 is daily. The scalping definition in Modul
 - Are the 15m Gainers / 15m Losers tabs used anywhere in the course, or only the 24h list?
 - Where does the "wait for retrace, breakout, or confirmation" instruction get made precise: Module 3 (direction) or Module 4 (SPE)?
 - ~~Does the hockey stick pattern appear?~~ Yes, in a late batch, as eight screenshots with no text. See section 6.
-- Is the hockey stick entry on the blade, on the pullback after it, or on the heel (as in RAVE)? The slides show the shape, not the entry.
+- ~~Where is the hockey stick entry?~~ Confirmed: golden cross plus three candlesticks above the EMA.
+- In the hockey stick rule, is "the EMA" the 155 (as in Module 3) or a faster line? The answer moves the entry by several minutes and several percent.
 - Does the hockey stick override the screener's funding-rate check? The SOL example longs into positive funding.
