@@ -575,12 +575,12 @@
     const notional = stake * lev;
     const stakePct = wallet > 0 ? stake / wallet * 100 : NaN;
     if (Number.isFinite(stakePct) && stakePct > 10) fails.push(`Margin is ${stakePct.toFixed(1)}% of the wallet. Course ceiling is 10%.`);
+    else if (Number.isFinite(stakePct) && stakePct > 1 && $('tier').value === '10') warns.push(`Margin is ${stakePct.toFixed(1)}% of the wallet on the beginner tier. Start at 1%.`);
     {
       const lossPctPre = wallet > 0 && Number.isFinite(stake) && Number.isFinite(stopRoi) ? stake * (stopRoi / 100 + 2 * fee * lev / 100) / wallet * 100 : NaN;
       if (Number.isFinite(lossPctPre) && lossPctPre > 2) fails.push(`Loss at the stop is ${lossPctPre.toFixed(2)}% of equity. Handouts: never above 1% to 2% on one trade.`);
       else if (Number.isFinite(lossPctPre) && lossPctPre > 1) warns.push(`Loss at the stop is ${lossPctPre.toFixed(2)}% of equity, inside the 1% to 2% ceiling but at the top of it.`);
     }
-    else if (Number.isFinite(stakePct) && stakePct > 1 && $('tier').value === '10') warns.push(`Margin is ${stakePct.toFixed(1)}% of the wallet on the beginner tier. Start at 1%.`);
     if (Number.isFinite(lev) && lev > 10) warns.push(`Leverage ${lev}× is above the prescribed 5× to 10×. Every ROI% is a smaller price move.`);
     if (Number.isFinite(stopRoi) && stopRoi >= 100 - MMR * lev * 100) fails.push('Stop ROI is at or past liquidation. It will never trigger.');
 
