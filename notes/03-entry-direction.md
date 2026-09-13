@@ -303,16 +303,76 @@ Net: the slide gets supply and demand, CHoCH and equal highs right, and gets FVG
 - **Demand zones and FVGs are pullback targets**, the same role the faster EMAs play in the 5-line set. A pullback that lands on an EMA *and* a demand zone or FVG is a stronger SPE entry than either alone.
 - **Equal highs and lows are where the stop must not be.** Liquidity rests just beyond them and gets swept. A stop placed just below an equal low is the stop most likely to be run before the move. The Module 1 rule of a structural stop below EMA 55 (or 155) generally sits further away than an equal low, which is the safer side of this.
 - **CHoCH on the 1-minute chart is the early exit warning**, ahead of the EMA cross-back. It fires when price breaks the last higher low in an uptrend, which usually happens before EMA 9 crosses EMA 25.
-- No SMC indicator settings are given, and the Bybit app does not have a native SMC indicator in the list shown. This add-on is presumably a TradingView indicator; confirm which one.
+- The SMC add-on runs on **TradingView**, not Bybit. Settings from the "Steps to setting" screenshot (TradingView mobile app, THETAUSDT 1-minute chart):
+
+| Indicator | Setting | Value |
+|-----------|---------|-------|
+| **Market Structure - By Leviathan** | BOS Confirmation | Candle (close) |
+| | Show CHoCH | On |
+| | Show Swing Points | On |
+| | Show 0.5 Retracement Level | Off |
+| | BOS line style | Dashed, grey |
+
+This indicator labels BOS and CHoCH by the **standard** definitions in section 3.3, so on the chart BOS means continuation and CHoCH means a shift, whatever the slide's glossary says. "BOS Confirmation: Candle" means a break counts on a candle close beyond the swing point, not on a wick. That is the stricter and better choice on a 1-minute chart, where wicks through levels are constant.
 
 
-## 4. Advance tool: New Indicators
+## 4. Advance tool: New Indicators (添加新指标)
 
-_Not yet captured._
+Two indicators, both on TradingView.
+
+### 4.1 Donchian Trend Ribbon (唐奇安趋势带)
+
+Slide definition: a technical indicator that displays the trend of price movements. Based on the Donchian Channel, it shows the direction of the trend over different time periods by plotting a series of coloured ribbon-like areas on the chart, to help traders identify trends more clearly.
+
+**Setting** (TradingView, from the screenshot): Donchian Channel Period = **20**. Nothing else is changed.
+
+What it is, beyond the slide: the Donchian Channel is the highest high and lowest low of the last N candles. The ribbon version stacks several Donchian lookbacks and colours each strip green or red depending on whether the current close is nearer the upper or lower band of that lookback. A solid green ribbon means price is at or near its N-bar highs across all lookbacks; solid red is the mirror; a mixed ribbon means the trend is not aligned across horizons.
+
+How it fits: it is a second, indicator-based version of the "EMA on all timeframes" check from the Module 2 screener, but done on one chart with one glance. A solid ribbon in the direction EMA 155 gives is confirmation. A mixed ribbon is a Skip.
+
+### 4.2 Liquidation Heatmap (清算热力图)
+
+Slide definition: a visual tool, particularly in futures, showing price areas where a high number of liquidations (forced selling or buying from insufficient margin) have occurred or are likely to occur. Three features listed:
+
+| Feature | Slide text |
+|---------|-----------|
+| Colour coding | Warmer colours (red, orange) mark high-liquidation areas; cooler colours (blue, green) mark low. |
+| Clusters | Clusters at specific price levels show where many traders are trapped, which can lead to rapid moves. |
+| Support and resistance | Liquidation clusters frequently align with support and resistance zones, giving possible reversal points. |
+
+Closing text: anticipate where liquidations might create volatility, and use that to plan entries and exits or to avoid high-risk areas.
+
+No source or setting is given. Liquidation heatmaps are not a TradingView indicator; the usual sources are Coinglass or Hyblock, and the slide does not name either. The slide text also contains literal markdown bold markers (`**Liquidation Heatmap**`), so it was pasted from an AI-generated answer.
+
+How it fits: a liquidation cluster is a **liquidity target**, the same thing SMC calls an equal high or equal low. Price is drawn toward it and often reverses after sweeping it. Two uses that follow from that:
+
+- A cluster just beyond your stop is a reason to move the stop, because the sweep will take it before the move you want.
+- A cluster ahead of your entry in the trade direction is a natural take-profit level, and often a better one than "nearest resistance" from the Module 1 Discharge rules, because it is where the opposing side gets forced out.
+
+### 4.3 The full chart stack, assembled
+
+| Platform | Indicator | Setting | Job |
+|----------|-----------|---------|-----|
+| Bybit | Heikin-Ashi candles | on | Trend strength and exhaustion by candle shape |
+| Bybit | EMA ×5 | 9, 25, 55, 155, 255 | Direction (155) and pullback levels |
+| Bybit | MACD | 8, 13, 9 | Momentum on the pullback |
+| Bybit | Volume | VOLMA 5, 10 | Confirmation, 2× spike = exhaustion |
+| TradingView | Market Structure (Leviathan) | BOS on close, CHoCH on | Structure: continuation vs shift |
+| TradingView | Donchian Trend Ribbon | 20 | Multi-horizon trend alignment |
+| External | Liquidation heatmap | none given | Liquidity targets for stops and TP |
+
+Seven tools on a 1-minute chart. The course has not said how they are prioritised when they disagree. The only ordering stated so far is EMA 155 first (direction), then the others. Treat the rest as confirmations, and treat any two in conflict as a Skip until a slide says otherwise.
 
 ## 5. Trend line, Support & Resistance, Tunnel trend line
 
-_Not yet captured._
+Title slide only: "How to draw: trend line, support and resistant line, tunnel trend line" (如何画出：趋势线、支撑线和阻力线、通道趋势线). The drawing was presumably done live on a chart in the session, with no content slide. Capture from the recording if one exists.
+
+Standard construction, for reference until the course's own version is available:
+
+- **Trend line**: in an uptrend, a line under at least two higher lows; in a downtrend, over at least two lower highs. A third touch validates it.
+- **Support and resistance**: horizontal lines at prior swing lows (support) and swing highs (resistance). The Module 1 take-profit rule, "nearest resistance", is read off these.
+- **Tunnel (channel) trend line**: the trend line plus a parallel line through the opposite swing points. Price oscillates between the two; the far line is the take-profit target and the near line is the pullback entry.
+
 
 ## 6. Seahorse pattern
 
@@ -324,7 +384,10 @@ _Not yet captured._
 - Is the EMA in Module 1 computed on Heikin-Ashi candles or real candles? The two give different crosses.
 - ~~Which are the 3 Main Indicators and the MACD setting?~~ Answered: EMA (9/25/55/155/255), MACD (8/13/9), Volume (default).
 - What volume multiple counts as a spike on the 1-minute chart, and is the baseline VOLMA 5 or VOLMA 10?
-- Which SMC indicator does the course use, and on which platform, given Bybit has none in its list?
+- ~~Which SMC indicator and platform?~~ Answered: TradingView, Market Structure by Leviathan.
+- Which site supplies the liquidation heatmap (Coinglass, Hyblock, other)?
+- When two of the seven chart tools disagree, which wins? Only EMA 155 has stated priority.
+- Was the trend line / tunnel drawing demonstrated live? There is no content slide for it.
 - In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?
 - Which two of the five EMAs (9, 25, 55, 155, 255) are the "basic" pair, and does the Module 1 stop rule's "EMA 50" mean EMA 55?
 - What counts as a "full body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles?
