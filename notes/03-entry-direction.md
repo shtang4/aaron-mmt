@@ -118,7 +118,7 @@ The point is aimed at students who copy signals (the "GPS") without being able t
 
 ## 2. 3 Main Indicators (三大主要指标)
 
-The Bybit Indicator Settings screen (shown on the "Steps to setting" slide) groups indicators as **Main Indicator: Moving Average, Moving Average Exponential, Bollinger Bands** and **Secondary Indicator: Volume, MACD, KDJ, Relative Strength Index, WR**. The course's "3 Main Indicators" most plausibly refers to Bybit's three Main Indicator entries, with EMA as the one actually taught. Treat that as a likely reading until a slide names the three.
+The slides delivered so far teach **EMA** (the MMT 5-line set) and **MACD**, and the course's own 1-minute chart examples show both on screen at once. The third is not yet named. The Bybit Indicator Settings screen groups indicators as Main (Moving Average, Moving Average Exponential, Bollinger Bands) and Secondary (Volume, MACD, KDJ, RSI, WR); MACD being taught rules out the reading that "3 Main" simply means Bybit's Main group.
 
 ### 2.1 EMA concept
 
@@ -140,17 +140,19 @@ The smoothing factor is not given on the slide. Standard value: 2 / (N + 1) for 
 
 ### 2.2 The MMT 5-line EMA set
 
-From the Bybit chart header on the setup slide, the five EMAs and their values at the moment of the screenshot:
+Exact settings from the "MMT 5 Lines EMA setting" screenshot (Bybit → Chart Settings → Indicators → Main Indicator → **Moving Average Exponential**). Tick exactly these five rows and set the periods; leave the rest unticked:
 
-| EMA | Colour on chart | Role |
-|-----|----------------|------|
-| EMA 9 | Purple / blue (fastest) | Fast line |
-| EMA 25 | Yellow | |
-| EMA 55 | Pink / magenta | |
-| **EMA 155** | **Green** | **Pivot of the trend** |
-| EMA 255 | Indigo (slowest) | Slow line |
+| Ticked | Period | Colour on chart | Role |
+|--------|--------|----------------|------|
+| ✓ | **9** | Purple | Fastest line |
+| ✓ | **25** | Blue | |
+| ✓ | **55** | Pink / magenta | |
+| ✓ | **155** | **Green** | **Pivot of the trend** |
+| ✓ | **255** | Indigo | Slowest line |
 
-Bybit setup: Chart Settings → **Indicators** → Main Indicator → **Moving Average Exponential**, then set the five periods.
+Unticked rows in the screenshot (Bybit defaults, not used): 7, 14, 28, 0, a second 25, a second 55. Press **Confirm**.
+
+The five values agree with the earlier chart header (EMA9, EMA25, EMA155, EMA55, EMA255), so the set is now confirmed from two independent slides.
 
 Slide rules for the 5-line set, verbatim:
 
@@ -176,9 +178,19 @@ What this means in practice: with two lines, the only entries are the cross and 
 
 The example also shows the downside. After the spike to 0.0680 at 09:00, price fell through EMA 9, 25 and 55 in a few minutes. A pullback entry at any of those lines during the fall would have been stopped. The 5-EMA method produces more entries, and more of them are in the last leg of a move. The Discharge rules from Module 1 (take profit set first at the nearest resistance) are what make the extra entries survivable.
 
+
+**Second example: ZETAUSDT, 1-minute chart.** Same chart shown twice, both with "Entry 0.8570" drawn as a horizontal line and a highlighted box at about 17:30 to 18:00, after a spike to 0.9828 and a pullback.
+
+- 2 EMA (Basic): labelled **"No clue"**. With two lines there is nothing at 0.8570 to justify an entry.
+- 5 EMA (Advance): labelled **"SPE Entry"** and "LONG". The pullback lands on one of the faster EMAs of the 5-line set, price holds it, and that touch is the entry. Price then grinds higher to about 0.90.
+
+This is the clearest statement yet of what Sniper Price Entry (Module 4) is: **a pullback to an EMA of the 5-line set, in the direction EMA 155 confirms**. The 2-EMA chart cannot produce it because the intermediate lines do not exist.
+
+Both ZETA screenshots also show MACD in the lower pane, which is why MACD is the next indicator taught.
+
 ### 2.4 Which pair is the "basic" 2 EMA, and what is "EMA 50"?
 
-Neither slide names the basic pair. The colours do not settle it either: on the 2-EMA chart the blue line is the slower one, while on the 5-EMA chart the blue-purple line is EMA 9, the fastest. The Module 1 stop-loss rule says "below EMA 50", and there is no EMA 50 in the 5-line set. The closest is **EMA 55**. Most consistent reading: the basic pair is two of the five, the stop rule's "EMA 50" is EMA 55, and the "long-term EMA" in the exit signal is probably EMA 55 or EMA 155. This needs confirming from the session, and it matters, because the exit and stop rules hang on it.
+No slide names the basic pair. On the ZETA 2-EMA chart the lines are yellow and magenta, which match the colours of Bybit's default, unticked EMA rows (7 is yellow, 28 is pink) rather than any of the five MMT lines. So the "basic" chart may simply be Bybit's out-of-the-box EMA overlay, not a deliberate pair. That is an inference from colours only. The Module 1 stop-loss rule says "below EMA 50", and there is no EMA 50 in the 5-line set. The closest is **EMA 55**. Most consistent reading: the basic pair is two of the five, the stop rule's "EMA 50" is EMA 55, and the "long-term EMA" in the exit signal is probably EMA 55 or EMA 155. This needs confirming from the session, and it matters, because the exit and stop rules hang on it.
 
 ### 2.5 The airport analogy
 
@@ -189,6 +201,31 @@ Neither slide names the basic pair. The colours do not settle it either: on the 
 | Last call, boarding close. Run after the plane. | Arrive before boarding. Wait at the premium lounge. On time, board to destination. |
 
 Applied: do not chase a candle that has already left an EMA. Wait for price to come back to the line (the lounge) and board there. This is the behavioural rule behind the 5-EMA pullback entries.
+
+
+### 2.6 MACD concept
+
+Slide text, condensed. MACD (Moving Average Convergence Divergence) has two lines, the MACD line and the signal line, plus a histogram. Three standard readings:
+
+| # | Reading | Bullish | Bearish |
+|---|---------|---------|---------|
+| 1 | **Signal line crossover** | MACD line crosses above signal line | MACD line crosses below signal line |
+| 2 | **Zero line crossover** | MACD line crosses above zero: momentum turns positive | MACD line crosses below zero: momentum turns negative |
+| 3 | **Divergence** | Price makes lower lows while MACD makes higher lows | Price makes higher highs while MACD makes lower highs |
+
+Closing caution on the slide: MACD "should not be used in isolation".
+
+No MACD settings are given despite the slide title "Concept & Setting". Assume Bybit's default (12, 26, 9) unless a later slide changes it. The ZETA screenshots show MACD with the default look.
+
+How it fits: EMA 155 gives direction, the faster EMAs give the pullback level, and MACD is the momentum check on the pullback. A long on an EMA touch is stronger when the histogram is contracting toward zero and turning up, and weaker when MACD has already crossed down hard. Reading 3, divergence, is the one that argues against an entry: a pullback after bearish divergence is more likely a reversal than a continuation. The slides do not say any of this; it is how the two tools are normally combined.
+
+### 2.7 What the course claims Diagnose gives you
+
+Two framing slides. The pain points quoted: "I never know exactly when to enter a trade." "I always feel like I'm too early or too late." "I have followed the same signals before and lost." Answer: "The EMA tells you. Every time. Diagnose removes the guesswork entirely."
+
+What you will have when implementing Diagnose: why the call was made, when to enter, when to exit, when to skip, how to find better entry timing.
+
+"Every time" and "entirely" are marketing. The course's own examples show the EMA cross firing after half a move, and the 5-EMA pullback entries clustering in the last leg. What the EMA set does give you is a **written reason** for every entry, which is the Module 1 checklist requirement. That is the defensible claim.
 
 ## 3. Add-on SMC indicator
 
@@ -210,6 +247,8 @@ _Not yet captured._
 
 - ~~Which timeframe is the Heikin-Ashi read on for entries?~~ Answered: the Bybit setup screenshots use the 1-minute chart.
 - Is the EMA in Module 1 computed on Heikin-Ashi candles or real candles? The two give different crosses.
-- Are the "3 Main Indicators" Bybit's Main Indicator group (MA, EMA, Bollinger Bands), or a course-specific set? Only EMA has been taught so far.
+- The "3 Main Indicators" are EMA, MACD and one more. Which is the third: Volume, RSI, KDJ, or Bollinger Bands?
+- What MACD settings does the course use, if not the Bybit default 12 / 26 / 9?
+- In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?
 - Which two of the five EMAs (9, 25, 55, 155, 255) are the "basic" pair, and does the Module 1 stop rule's "EMA 50" mean EMA 55?
 - What counts as a "full body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles?
