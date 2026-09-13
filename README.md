@@ -8,14 +8,14 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 | # | File | Topic |
 |---|------|-------|
 | 0 | [notes/00-mindset-and-outline.md](notes/00-mindset-and-outline.md) | Mindset pyramid, learning outcomes, full course outline |
-| 1 | notes/01-what-is-scalping.md | Scalping definition, MMT 3D framework |
+| 1 | [notes/01-what-is-scalping.md](notes/01-what-is-scalping.md) | Scalping definition, MMT 3D framework |
 | 2 | notes/02-coin-selection.md | Coin selection, Trend is King, Potential Coin Finder, Coin Trend Screener, hockey stick pattern |
 | 3 | notes/03-entry-direction.md | Heikin-Ashi, 3 main indicators, SMC, new indicators, trend lines / S&R / tunnel, seahorse pattern |
 | 4 | notes/04-sniper-entry-exit.md | MMT New TP, Sniper Price Entry (SPE), Wick Tracker |
 | 5 | notes/05-risk-and-hedging.md | Risk management, MMT Hedging, MMT Golden Rules |
 | 6 | notes/06-case-studies.md | Case studies, Q&A |
 
-Files 1–6 are placeholders until those modules are captured.
+Files 2–6 are placeholders until those modules are captured.
 
 ## Conventions
 
