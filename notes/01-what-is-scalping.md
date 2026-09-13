@@ -117,7 +117,7 @@ If any cell is blank, the framework says the trade is not valid.
 
 ## Open questions
 
-- Which EMA periods are the "short-term" and "long-term" EMA? The stop rule names EMA 50, which suggests the long-term EMA is the 50. The short-term period is not given.
+- ~~Which EMA periods are used?~~ Partly answered in Module 3: the MMT set is EMA 9, 25, 55, 155, 255, with EMA 155 as the trend pivot. Which two form the "basic" pair is still unstated. There is no EMA 50 in the set; the stop rule's "EMA 50" most likely means EMA 55.
 - Does the course define Dose as a fixed percentage of account per trade, or does it vary by "risk level"?
 - Is there a minimum reward-to-risk ratio, or is any nearest-resistance TP acceptable?
 - In Discharge, is hedging (Module 5) a replacement for the EMA 50 stop or a tool used alongside it?

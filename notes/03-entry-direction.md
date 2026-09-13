@@ -118,7 +118,77 @@ The point is aimed at students who copy signals (the "GPS") without being able t
 
 ## 2. 3 Main Indicators (三大主要指标)
 
-_Not yet captured._
+The Bybit Indicator Settings screen (shown on the "Steps to setting" slide) groups indicators as **Main Indicator: Moving Average, Moving Average Exponential, Bollinger Bands** and **Secondary Indicator: Volume, MACD, KDJ, Relative Strength Index, WR**. The course's "3 Main Indicators" most plausibly refers to Bybit's three Main Indicator entries, with EMA as the one actually taught. Treat that as a likely reading until a slide names the three.
+
+### 2.1 EMA concept
+
+Definition table, transcribed:
+
+| Term | Definition |
+|------|------------|
+| EMA (Exponential Moving Average) | A popular technical indicator used in financial markets to analyse price trends and identify potential entry or exit points for trades. |
+| Calculation | Assigns more weight to recent price data, making it more responsive to short-term price changes. |
+| Weighting | The most recent price data points are given more weight, while older data points receive less weight. |
+| Formula | EMA = (Close − EMA(previous)) × Smoothing factor + EMA(previous) |
+| Smoothing factor | A smoothing constant that determines the weight given to the current closing price. |
+| Purpose | Identifies the direction of a price trend and potential points of support or resistance. |
+| Crossovers | Crossovers between different EMA periods are often used as signals for potential buying (bullish) or selling (bearish) opportunities. |
+| Timeframes | EMA can be applied to various timeframes, such as daily, weekly, or hourly charts. |
+| Application | Used in technical analysis to assist in making informed trading decisions. |
+
+The smoothing factor is not given on the slide. Standard value: 2 / (N + 1) for an N-period EMA.
+
+### 2.2 The MMT 5-line EMA set
+
+From the Bybit chart header on the setup slide, the five EMAs and their values at the moment of the screenshot:
+
+| EMA | Colour on chart | Role |
+|-----|----------------|------|
+| EMA 9 | Purple / blue (fastest) | Fast line |
+| EMA 25 | Yellow | |
+| EMA 55 | Pink / magenta | |
+| **EMA 155** | **Green** | **Pivot of the trend** |
+| EMA 255 | Indigo (slowest) | Slow line |
+
+Bybit setup: Chart Settings → **Indicators** → Main Indicator → **Moving Average Exponential**, then set the five periods.
+
+Slide rules for the 5-line set, verbatim:
+
+- Each individual line can be the support line or resistance line for entry-point consideration.
+- Each line is a guidance line of SPE (Sniper Price Entry, Module 4).
+- **Green line EMA 155 always acts as the pivotal point of the trend.**
+  - If 3 consecutive full-body candles form **above** this line → considered uptrend, can **LONG**.
+  - If 3 consecutive full-body candles form **below** this line → considered downtrend, can **SHORT**.
+
+This is the first fully mechanical direction rule in the course. It replaces the vague "golden cross, look for a long" with a countable condition: three closed, full-bodied candles on one side of EMA 155. "Full body" is not defined; the sensible reading is a candle whose body is clear of the line, not one that wicks through it.
+
+### 2.3 "Real example: Sniper Entry", 2 EMA versus 5 EMA
+
+Side by side on the same 1-minute chart (a coin rising from about 0.0562 to 0.0680 between 08:22 and 09:19, then pulling back):
+
+| | 2 EMA (Basic) | 5 EMA (Advance) |
+|-|---------------|-----------------|
+| Lines | Yellow (faster) and blue (slower) | All five |
+| Entries marked | Two: the golden cross near 08:30 and a touch of the slower EMA near 09:12 | Six or more: every pullback that tags one of the faster EMAs on the way up |
+| Slide caption | "Less entry" | "More entry opportunity" |
+
+What this means in practice: with two lines, the only entries are the cross and the occasional pullback to the slow line. With five lines, each faster EMA becomes a pullback level, so a strong trend offers an entry on every dip to EMA 9, 25 or 55. That is the "advance method to find more entry": **buy the pullback to an EMA in the direction EMA 155 says**, rather than waiting for the next cross.
+
+The example also shows the downside. After the spike to 0.0680 at 09:00, price fell through EMA 9, 25 and 55 in a few minutes. A pullback entry at any of those lines during the fall would have been stopped. The 5-EMA method produces more entries, and more of them are in the last leg of a move. The Discharge rules from Module 1 (take profit set first at the nearest resistance) are what make the extra entries survivable.
+
+### 2.4 Which pair is the "basic" 2 EMA, and what is "EMA 50"?
+
+Neither slide names the basic pair. The colours do not settle it either: on the 2-EMA chart the blue line is the slower one, while on the 5-EMA chart the blue-purple line is EMA 9, the fastest. The Module 1 stop-loss rule says "below EMA 50", and there is no EMA 50 in the 5-line set. The closest is **EMA 55**. Most consistent reading: the basic pair is two of the five, the stop rule's "EMA 50" is EMA 55, and the "long-term EMA" in the exit signal is probably EMA 55 or EMA 155. This needs confirming from the session, and it matters, because the exit and stop rules hang on it.
+
+### 2.5 The airport analogy
+
+"Trading is like an airport flight. Wrong timing will miss flight."
+
+| Ride dangerously like James Bond | Ride calmly like Business Class |
+|----------------------------------|--------------------------------|
+| Last call, boarding close. Run after the plane. | Arrive before boarding. Wait at the premium lounge. On time, board to destination. |
+
+Applied: do not chase a candle that has already left an EMA. Wait for price to come back to the line (the lounge) and board there. This is the behavioural rule behind the 5-EMA pullback entries.
 
 ## 3. Add-on SMC indicator
 
@@ -140,5 +210,6 @@ _Not yet captured._
 
 - ~~Which timeframe is the Heikin-Ashi read on for entries?~~ Answered: the Bybit setup screenshots use the 1-minute chart.
 - Is the EMA in Module 1 computed on Heikin-Ashi candles or real candles? The two give different crosses.
-- Are the "3 Main Indicators" the EMA, OI and funding rate from the screener, or three from the Bybit indicator bar (MA, EMA, BOLL, MAVOL, MACD, KDJ, RSI)?
-- What are the two EMA periods? Still unstated after four slides showing the pair.
+- Are the "3 Main Indicators" Bybit's Main Indicator group (MA, EMA, Bollinger Bands), or a course-specific set? Only EMA has been taught so far.
+- Which two of the five EMAs (9, 25, 55, 155, 255) are the "basic" pair, and does the Module 1 stop rule's "EMA 50" mean EMA 55?
+- What counts as a "full body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles?
