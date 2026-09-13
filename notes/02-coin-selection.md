@@ -151,14 +151,98 @@ Deng Xiaoping's pragmatism line with a Maneki-neko (lucky cat) substituted. Appl
 
 ## 4. Basic tool: Potential Coins Finder (潜在币种寻找器)
 
-Not a tool in the software sense. It is a navigation path in the Bybit app:
+Not a tool in the software sense. It is a navigation path in the Bybit app, and a set of screens under it:
 
 1. Bottom menu: **Markets**
 2. Top menu: **Opportunities**
 
-The Opportunities screen is where the Hot, Gainers, New and Leaderboard tabs from section 1.2 live. So the "basic tool" is: open Bybit's own ranked lists and pick from the coins already moving on USDT perpetuals.
+The Opportunities screen (tabs: Hot, New, Gainers, Turnover, Opportunities) contains four panels the course walks through: **Market Sentiment**, **Hot Sectors**, **Heatmap**, and **Top Movers**. The "Steps to find coin to trade" slides use each in turn.
 
 This confirms the exchange (Bybit) and the product (USDT perpetuals) for the whole course.
+
+### 4.1 Step: Market Sentiment. "Use sentiment as a clue, not a signal."
+
+The Market Sentiment panel shows a Fear and Greed gauge (screenshot: 71, Greed), the BTC long/short ratio (68.0 / 32.0), a gainers-vs-losers bar, a "How do you feel about the market today?" poll, and a TrendMiner card of the coin with the most KOL (key opinion leader) mentions in the last hour (screenshot: SOL, 100% bullish).
+
+Slide's rules, verbatim:
+
+- Greed ≠ auto long. Confirm first.
+- Greed sentiment ≠ blindly go long.
+- Greed = bullish bias, not buy signal.
+
+And the reason: greed also means price may already be extended, late buyers may get trapped, and a pullback or reversal is possible.
+
+So sentiment sets **bias** only. It has the same standing as the coin lists in section 1.3: it tells you which direction to look, not when to enter.
+
+### 4.2 Step: Hot Sectors. "Follow the money flow if you want to make the money."
+
+Hot Sectors panel: sector cards with 24H change and the leading coin in each (screenshot: Zero Knowledge +8.07% led by ZEN, DCG Portfolio +6.71%, Privacy Coins +6.39% led by SCRT, Layer 1 +6.16% led by SEI, a16z Portfolio +6.12% led by AR, NFT +6.03% led by CHZ).
+
+Slide text: "Hot sectors = where the volume, hype, attention are right now." Procedure, "Spot active narrative":
+
+1. Top-performing sectors (highest percentage gain).
+2. Leading coins in each sector.
+3. Short-term momentum = possible trade setups.
+
+"Smart traders watch for fast-moving plays."
+
+This is the operational meaning of the "not against Money" maxim in section 3.3: money flow is read off the sector ranking. Sector first, then the leader within it.
+
+### 4.3 Step: Heatmap. "Market Sentiment Scanning."
+
+The Heatmap panel tiles the USDT-perp market by size, green for up and red for down, with 24H change. Two screenshots are contrasted: one almost entirely green (BTC +3.32%, ETH +4.33%, SOL +5.38%, most alts up), one mixed (BTC +1.57% but ETH, SOL, XRP, DOGE red, a few alts strongly green).
+
+Classification rule:
+
+| Heatmap | Market sentiment |
+|---------|-----------------|
+| Mostly green | Bullish |
+| Mostly red | Bearish |
+| Green and red distributed evenly | Ranging |
+
+This is the intraday version of the four-phase diagram in section 3.1. "Ranging" here is the Skip condition: when the heatmap is mixed, the market has no direction to follow, and individual green tiles are idiosyncratic pumps rather than money flow.
+
+### 4.4 Step: Top Movers, and the SOMI case study
+
+Top Movers panel (tabs: All, 15m Gainers, 15m Losers, 24h Gainers, Breakout). The case study walks Heatmap → Opportunities → Top Movers and lands on **SOMI**, showing +46.56% on the heatmap tile and +47.39% as a 24h gainer, top of the list by a wide margin (next best CORN +16.29%, DRIFT +20.76%).
+
+Stated conclusion: a 24H top gainer is a **potential coin to further analyse**. Not a trade.
+
+The slide also shows a BTCC share card: SOMIUSDT, "Open Long Perp 50x", +554.50%, average open 0.9901, latest 1.0999, with an invitation code. Two things to notice:
+
+- The arithmetic checks: 0.9901 → 1.0999 is +11.1% on price, and 11.1% × 50 leverage = 555%. The headline number is the leverage, not the trade.
+- The card is from BTCC, not Bybit, and carries a referral code. It is promotional material inside the lesson. The scanning method is Bybit's; the result card is a different exchange's marketing graphic. Treat the +554% as an illustration of leverage, not as evidence the method produced it.
+
+Note that the 15m Gainers and 15m Losers tabs exist on the Top Movers screen. They are the scalping-timeframe equivalent of the 24h list, and the slides do not mention them. Worth testing whether they are the better feed for a minutes-long holding period.
+
+### 4.5 Step: Confirm first. "Volume and narrative drive opportunity."
+
+Warnings, verbatim:
+
+- Sector pumping ≠ safe to enter now.
+- Hot narrative doesn't mean good entry. Confirm first.
+
+How to confirm:
+
+| Method | Slide detail |
+|--------|-------------|
+| Fundamental analysis (FA) | Check background and news |
+| Technical analysis (TA) | Analyse the chart |
+| Trading strategy | Wait for a retrace, a breakout, or confirmation before trading |
+
+The third row is the bridge to Modules 3 and 4. "Wait for retrace, breakout, or confirmation" is what the Sniper Price Entry is presumably formalising.
+
+### 4.6 The workflow, assembled
+
+Putting the five steps in order:
+
+1. **Sentiment gauge**: read the Fear and Greed value and long/short ratio. Sets bias only.
+2. **Heatmap**: classify the day as bullish, bearish, or ranging. Ranging means skip.
+3. **Hot Sectors**: find the top sectors and the leading coin in each. This is where money is flowing.
+4. **Top Movers**: cross-check the leaders against the 24h (or 15m) gainers list. A top gainer is a candidate, not a trade.
+5. **Confirm**: check news, read the chart, and wait for a retrace or breakout. Then hand off to the Diagnose step (Module 1) and the entry modules.
+
+Every step except the last is a Bybit screen. The course's contribution is the ordering and the repeated instruction that none of these screens is an entry signal.
 
 ## 5. Advance tool: MMT Coin Trend Screener
 
@@ -176,6 +260,8 @@ The four-phase diagram is built on a **200-period moving average** and describes
 
 - What is the course's definition of a strong coin versus a shit coin, so that a coin on neither list can be classified?
 - Does the Coin Trend Screener replace the manual Bybit Opportunities scan, or sit on top of it?
+- Are the 15m Gainers / 15m Losers tabs used anywhere in the course, or only the 24h list?
+- Where does the "wait for retrace, breakout, or confirmation" instruction get made precise: Module 3 (direction) or Module 4 (SPE)?
 - Is there a volume threshold, or is "high volume" satisfied by appearing on the Gainers or Hot tab?
 - How are "new coins" handled, given the thin history for any 200 MA or EMA calculation?
 - Which timeframe is the trend phase judged on, and which timeframe is the entry taken on?
