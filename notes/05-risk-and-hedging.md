@@ -88,9 +88,9 @@ Slide caption: "You exited early, then watched the price pump without you." Foll
 
 The safe reading: size so you *could* hold, then let the written Discharge plan decide whether you *do*. Do not convert "I sized correctly" into "therefore I never take profit on a retrace".
 
-## 3. Enhancement of Risks Management (Advance Dose; possibly the SSWB item)
+## 3. Advance Dose: Enhancement of Risks Management, and SSWB (Start Small Win Big)
 
-Five slides titled "Enhancement of Risks Management" plus a "1% Risk Rule" slide. The title slide listed "SSWB (Advance Dose)" in this position; the acronym does not appear on any of these slides, so the mapping is an inference.
+Five slides titled "Enhancement of Risks Management", a "1% Risk Rule" slide, and then the SSWB slides. SSWB is expanded on its own slide as **Start Small Win Big**.
 
 ### 3.1 Basic trading concepts
 
@@ -199,6 +199,59 @@ Putting sections 3.2 to 3.5 together into the order you would do it:
 5. On a partial take-profit, move the stop to entry.
 6. Thereafter, trail with the Hunting SL formula, locking a rising fraction of the open ROI.
 
+
+### 3.7 High-capital trading risk
+
+A table of ten trades at increasing capital, with the loss at 5%, 10% and 30% per trade, in USD and MYR (at RM 4.50 per USD):
+
+| Trades | Capital per trade | 5% loss | 10% loss | 30% loss |
+|--------|------------------|---------|----------|----------|
+| 1 to 2 | $1,000 | $50 | $100 | $300 |
+| 3 to 7 | $2,500 | $125 | $250 | $750 |
+| 8 to 10 | $3,000 | $150 | $300 | $900 |
+| **Total** | **$23,500 (RM 105,750)** | **$1,175 (RM 5,287.50)** | **$2,350 (RM 10,575)** | **$7,050 (RM 31,725)** |
+
+The totals add up. The point of the slide is the bottom-right cell: at this scale, a bad run of 30% losses costs RM 31,725, which for the course's Malaysian audience is a serious sum. It is the setup for the "start small" argument.
+
+Followed by the disclaimer slide: "There is no always 100% guaranteed method in future trading, especially during the news, FOMC, or unexpected market events."
+
+### 3.8 SSWB: Start Small Win Big
+
+Framing slide. Three student objections quoted: "How much money am I risking each trade?", "Small capital can start?", "Small capital cannot make meaningful returns from trading." Verdict: **"Wrong. Capital size does not determine your result. The correct Dose does: how much you are putting in for a trade. The percentage is identical."**
+
+Comparison slide:
+
+| Common people | Our students |
+|---------------|--------------|
+| Feel capital too small | Start small |
+| Overleverage to grow fast | Trade with structure |
+| One loss hurts badly | Scale with discipline |
+| | **$150 trade capital method** |
+| | Risk control first |
+| | Grow through execution, not gambling |
+
+**The $150 number.** This is the concrete Dose for students: $150 of margin per trade. Against the 1% rule slide (1% = $1,000 implies a $100,000 wallet), $150 at 1% implies a $15,000 wallet, and at 10% a $1,500 wallet. The course does not say which; "start small" suggests $150 is simply the fixed starting stake regardless of wallet, and the percentage rule applies once the wallet grows. The two slides are not reconciled.
+
+"The percentage is identical" is true and also the weak point of the argument. Returns scale with capital, so a $150 stake at the RAVE example's +277% is about $415 of profit. The claim that small capital *can* start is correct; the implied claim that it makes meaningful money is only true after compounding, and compounding a 1-minute scalping method assumes a positive expectancy the course has not yet demonstrated on a sample of trades.
+
+### 3.9 Real example: RAVE, "$150 per trade that changed everything"
+
+Three screenshots, captioned "Advance method: how to enter and exit."
+
+| Screen | Platform | What it shows |
+|--------|----------|--------------|
+| Left | **Coinglass** Liquidation Heatmap, Binance RAVE/USDT, 1-week view, liquidity threshold 0.26 | Liquidation clusters as horizontal bands; the densest sit below price after the pump |
+| Middle | TradingView, RAVEUSDT perpetual, 1-minute, with the Leviathan Market Structure indicator | BOS, CHoCH, EQL (equal lows) and "Strong Low" labels, plus horizontal liquidity levels at 19.19, 20.02, 21.65, and a low at 15.80 |
+| Right | **Bitunix** app, RAVEUSDT, 5-minute | A spike to 1.86, a crash to 0.53, then an "Entry" arrow at about 0.507 on 04/02 17:45, followed by a recovery to 0.709. Position shows +277.33%. The MACD (8, 13, 9) panel has an annotation "IceBerg Tip" at the deepest point of the histogram trough |
+
+Observations:
+
+- **Three exchanges now appear in the course**: Bybit (main), BTCC (SOMI card, Module 2), Bitunix (this). The scanning and indicator setup is Bybit and TradingView; the result screenshots come from wherever the trade happened to be.
+- **The entry is a crash-bottom buy.** RAVE pumped from about 0.5 to 1.86 and collapsed back to 0.53 within hours. The entry at 0.507 is a bid into the collapse, at the level where the Coinglass map shows liquidations clustered. That is a liquidity-sweep reversal, and it is the opposite of the trend-following entries in Modules 1 to 3 (EMA 155 direction, pullback to an EMA). The "advance method" is a different trade type.
+- **"IceBerg Tip"** appears to name the extreme of the MACD histogram trough as the reversal cue: the deepest red bar, with the next bar shorter. Read alongside the volume spike at the same candle, it is the exhaustion signal from the Module 3 volume section. This is an inference from the annotation; the slide gives no definition.
+- **The arithmetic**: 0.507 to 0.709 is +40% on price. +277% ROI implies roughly 7× leverage on $150, so about $415 of profit. Consistent with the "start small" numbers.
+- **The heatmap dates (04-12 to 04-19) do not match the trade date (04/02).** The heatmap screenshot is illustrative, not the one used for this entry.
+
 ## 4. Advance tool: MMT Hedging (Discharge)
 
 _Not yet captured._
@@ -212,7 +265,9 @@ _Not yet captured._
 - Is the "1% to 10% amount" margin per trade or maximum loss per trade? The isolated-margin framing in section 3 points to margin. Confirm.
 - The demo account trades at 25× while the slide prescribes 5× to 10×. Which is the course's actual recommendation?
 - Was the THETA demo position isolated or cross? Its liquidation distance (8.4%) does not match isolated 25×.
-- What does SSWB stand for? The "Enhancement of Risks Management" slides sit where the title slide put it, but never use the acronym.
+- ~~What does SSWB stand for?~~ Start Small Win Big.
+- Is the $150 per trade a fixed starting stake, or 1% to 10% of some assumed wallet? The 1% rule slide and the $150 slide are not reconciled.
+- What exactly is the "IceBerg Tip" on the MACD, and is the crash-bottom entry in the RAVE example a taught setup or a one-off?
 - Does Module 4's New TP or Wick Tracker replace the Module 1 "EMA cross-back, exit, no questions" rule? The ZETA case says hold through a cross-back; Module 1 says exit on it.
 - Is hedging (section 4) a replacement for the stop loss or a tool used alongside it? This is the question that decides whether the Discharge rule survives contact with Module 5.
 - What are the Golden Rules, and do they resolve the "no SL, cross margin" contradiction in the Module 3 seahorse slide?

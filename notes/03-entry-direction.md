@@ -342,7 +342,7 @@ Slide definition: a visual tool, particularly in futures, showing price areas wh
 
 Closing text: anticipate where liquidations might create volatility, and use that to plan entries and exits or to avoid high-risk areas.
 
-No source or setting is given. Liquidation heatmaps are not a TradingView indicator; the usual sources are Coinglass or Hyblock, and the slide does not name either. The slide text also contains literal markdown bold markers (`**Liquidation Heatmap**`), so it was pasted from an AI-generated answer.
+No source or setting is given on this slide. The RAVE example in Module 5 shows the **Coinglass** Liquidation Heatmap (1-week view, liquidity threshold 0.26), so that is the source. The slide text also contains literal markdown bold markers (`**Liquidation Heatmap**`), so it was pasted from an AI-generated answer.
 
 How it fits: a liquidation cluster is a **liquidity target**, the same thing SMC calls an equal high or equal low. Price is drawn toward it and often reverses after sweeping it. Two uses that follow from that:
 
@@ -359,7 +359,7 @@ How it fits: a liquidation cluster is a **liquidity target**, the same thing SMC
 | Bybit | Volume | VOLMA 5, 10 | Confirmation, 2× spike = exhaustion |
 | TradingView | Market Structure (Leviathan) | BOS on close, CHoCH on | Structure: continuation vs shift |
 | TradingView | Donchian Trend Ribbon | 20 | Multi-horizon trend alignment |
-| External | Liquidation heatmap | none given | Liquidity targets for stops and TP |
+| Coinglass | Liquidation heatmap | 1w view, threshold 0.26 | Liquidity targets for stops and TP |
 
 Seven tools on a 1-minute chart. The course has not said how they are prioritised when they disagree. The only ordering stated so far is EMA 155 first (direction), then the others. Treat the rest as confirmations, and treat any two in conflict as a Skip until a slide says otherwise.
 
@@ -441,7 +441,7 @@ Reading:
 - ~~Which are the 3 Main Indicators and the MACD setting?~~ Answered: EMA (9/25/55/155/255), MACD (8/13/9), Volume (default).
 - What volume multiple counts as a spike on the 1-minute chart, and is the baseline VOLMA 5 or VOLMA 10?
 - ~~Which SMC indicator and platform?~~ Answered: TradingView, Market Structure by Leviathan.
-- Which site supplies the liquidation heatmap (Coinglass, Hyblock, other)?
+- ~~Which site supplies the liquidation heatmap?~~ Coinglass, per the RAVE example screenshot in Module 5.
 - When two of the seven chart tools disagree, which wins? Only EMA 155 has stated priority.
 - Was the trend line / tunnel drawing demonstrated live? There is no content slide for it.
 - In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?
