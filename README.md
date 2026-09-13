@@ -22,6 +22,7 @@ All modules are captured. Remaining gaps are listed in file 99. until those modu
 
 | File | What it does |
 |------|-------------|
+| [tools/trade-journal.html](tools/trade-journal.html) | Trade journal. One entry per closed trade with the Diagnose, Dose and Discharge fields and the rule broken, if any. Computes win rate, expectancy in USDT and R, profit factor, drawdown, an equity curve, and a breakdown by setup and by clean versus rule-broken. Published as an artifact with a database so entries persist and can be read back from a Claude session; opened as a file it keeps entries in the browser only. |
 | [tools/pretrade-checklist.html](tools/pretrade-checklist.html) | Pre-trade check. Walks Diagnose, Dose, Discharge; computes stop, TP net of fees, reward-to-risk, runner and Hunting SL; refuses plans that break rules the course itself states; emits the written plan. Open the file in a browser. |
 
 ## Conventions

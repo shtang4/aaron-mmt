@@ -1,0 +1,492 @@
+<title>MMT Trade Journal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #f3f2ee; --surface: #fbfaf7; --surface-2: #ecebe5; --line: #d8d5cc; --line-strong: #b9b5a8;
+    --ink: #1f2229; --ink-2: #4c5160; --ink-3: #7d8290;
+    --accent: #b8741f; --accent-ink: #ffffff; --accent-soft: #f4e6d0;
+    --long: #1f8a5b; --long-soft: #dcefe5; --short: #c23f3f; --short-soft: #f6dcdc;
+    --warn: #a8641a; --warn-soft: #f7e8d3; --crit: #b02a2a; --crit-soft: #f6d9d9; --ok: #1f8a5b; --ok-soft: #dcefe5;
+    --focus: #b8741f; --grid: #e4e1d8;
+    --shadow: 0 1px 2px rgba(31,34,41,.06), 0 8px 24px rgba(31,34,41,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171c; --surface: #1c1f26; --surface-2: #232730; --line: #2f343f; --line-strong: #444a58;
+      --ink: #e8e6df; --ink-2: #b4b2a9; --ink-3: #7f8290;
+      --accent: #d99a3f; --accent-ink: #15171c; --accent-soft: #3a2c16;
+      --long: #3fb97f; --long-soft: #16342a; --short: #e0605f; --short-soft: #3d1f1f;
+      --warn: #d99a3f; --warn-soft: #3a2c16; --crit: #e0605f; --crit-soft: #3d1f1f; --ok: #3fb97f; --ok-soft: #16342a;
+      --focus: #d99a3f; --grid: #262a33;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171c; --surface: #1c1f26; --surface-2: #232730; --line: #2f343f; --line-strong: #444a58;
+    --ink: #e8e6df; --ink-2: #b4b2a9; --ink-3: #7f8290;
+    --accent: #d99a3f; --accent-ink: #15171c; --accent-soft: #3a2c16;
+    --long: #3fb97f; --long-soft: #16342a; --short: #e0605f; --short-soft: #3d1f1f;
+    --warn: #d99a3f; --warn-soft: #3a2c16; --crit: #e0605f; --crit-soft: #3d1f1f; --ok: #3fb97f; --ok-soft: #16342a;
+    --focus: #d99a3f; --grid: #262a33;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { background: var(--bg); color: var(--ink); font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; font-size: 14px; line-height: 1.5; padding-inline: 16px; padding-block: 0 48px; }
+  h1, h2, h3 { font-family: "IBM Plex Sans Condensed", "Arial Narrow", "IBM Plex Sans", sans-serif; font-weight: 600; line-height: 1.15; margin: 0; text-wrap: balance; }
+  .mono, input, select, textarea, .num, td.n, th.n { font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  header.top { padding-block: 22px 14px; display: flex; flex-direction: column; gap: 8px; }
+  header.top h1 { font-size: 26px; letter-spacing: -.01em; }
+  .eyebrow { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+  .sub { color: var(--ink-2); max-width: 70ch; margin: 0; }
+  .status { font-size: 12px; color: var(--ink-3); display: flex; gap: 8px; align-items: center; }
+  .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ink-3); }
+  .status[data-s="live"]::before { background: var(--ok); }
+  .status[data-s="local"]::before { background: var(--warn); }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+  @media (max-width: 900px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 520px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .tile { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+  .tile .lbl { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+  .tile .val { font-size: 20px; font-weight: 500; line-height: 1.2; }
+  .tile .val.pos { color: var(--long); } .tile .val.neg { color: var(--short); }
+  .tile .sub2 { font-size: 11.5px; color: var(--ink-3); }
+  .sample { font-size: 12.5px; padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--warn); background: var(--warn-soft); margin-bottom: 14px; }
+  .sample[data-ok="1"] { border-color: var(--ok); background: var(--ok-soft); }
+
+  /* Chart + breakdown */
+  .two { display: grid; grid-template-columns: 3fr 2fr; gap: 14px; margin-bottom: 14px; }
+  @media (max-width: 900px) { .two { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .card h2 { font-size: 17px; margin-bottom: 8px; }
+  .chart { position: relative; width: 100%; }
+  .chart svg { width: 100%; height: auto; display: block; }
+  .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 12px; padding: 4px 8px; border-radius: 4px; white-space: nowrap; transform: translate(-50%, -130%); display: none; }
+  table.bd { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.bd th, table.bd td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--line); }
+  table.bd th { font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; }
+  table.bd td.n, table.bd th.n { text-align: right; }
+
+  /* Form */
+  details.entry { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 14px; }
+  details.entry summary { cursor: pointer; padding: 12px 16px; font-family: "IBM Plex Sans Condensed", sans-serif; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  details.entry summary::-webkit-details-marker { display: none; }
+  details.entry summary .hint { font-family: "IBM Plex Sans", sans-serif; font-weight: 400; font-size: 12.5px; color: var(--ink-3); }
+  .form { padding: 0 16px 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 16px; }
+  @media (max-width: 900px) { .form { grid-template-columns: 1fr; } }
+  fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  legend { font-family: "IBM Plex Sans Condensed", sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 4px; padding: 0; }
+  legend .q { font-family: "IBM Plex Sans", sans-serif; font-weight: 400; font-size: 12px; color: var(--ink-3); margin-left: 6px; }
+  .field { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .field label { font-size: 12px; font-weight: 500; color: var(--ink-2); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  input[type="number"], input[type="text"], input[type="datetime-local"], select, textarea { width: 100%; padding: 6px 8px; background: var(--bg); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 6px; font-size: 13px; }
+  textarea { min-height: 56px; resize: vertical; font-family: "IBM Plex Sans", sans-serif; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
+  .check { display: flex; align-items: flex-start; gap: 6px; font-size: 12.5px; }
+  .check input { margin-top: 3px; accent-color: var(--accent); }
+  .breaks { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; background: var(--surface-2); }
+  .breaks .lbl { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+  .actions { grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .btn { font: inherit; font-weight: 500; padding: 7px 14px; border-radius: 6px; cursor: pointer; background: var(--accent); color: var(--accent-ink); border: 0; }
+  .btn.ghost { background: transparent; color: var(--ink-2); border: 1px solid var(--line-strong); }
+  .btn.danger { background: transparent; color: var(--crit); border: 1px solid var(--crit); }
+  .btn:disabled { opacity: .45; cursor: not-allowed; }
+  .derived { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; color: var(--ink-2); }
+  .derived b { color: var(--ink); font-weight: 500; }
+  .msg { font-size: 12.5px; color: var(--crit); }
+
+  /* Log table */
+  .log { overflow-x: auto; }
+  table.log { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 900px; }
+  table.log th, table.log td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+  table.log th { font-weight: 500; color: var(--ink-3); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; position: sticky; top: 0; background: var(--surface); }
+  table.log td.n, table.log th.n { text-align: right; }
+  table.log td.pos { color: var(--long); } table.log td.neg { color: var(--short); }
+  .pill { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: 11px; font-weight: 500; }
+  .pill.long { background: var(--long-soft); color: var(--long); } .pill.short { background: var(--short-soft); color: var(--short); }
+  .pill.brk { background: var(--crit-soft); color: var(--crit); } .pill.clean { background: var(--ok-soft); color: var(--ok); }
+  table.log button { font: inherit; font-size: 12px; padding: 2px 8px; border-radius: 4px; border: 1px solid var(--line-strong); background: transparent; color: var(--ink-2); cursor: pointer; }
+  .empty { color: var(--ink-3); font-size: 13px; padding: 12px 0; }
+  .foot { color: var(--ink-3); font-size: 12px; margin-top: 18px; max-width: 80ch; }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Momentum Mastery Trading · 3D method · every trade, with the D that was skipped</div>
+      <h1>MMT Trade Journal</h1>
+    </div>
+    <p class="sub">The course never asks you to measure your own win rate. This does. Log each trade with what you diagnosed, how you dosed it, how you discharged it, and which rule you broke, and the expectancy is computed for you. Thirty trades is the minimum before any of these numbers means anything.</p>
+    <div class="status" id="status" data-s="">Connecting to the journal store…</div>
+  </header>
+
+  <div class="stats" id="stats">
+    <div class="tile"><div class="lbl">Trades</div><div class="val" id="sN">0</div><div class="sub2" id="sClean">—</div></div>
+    <div class="tile"><div class="lbl">Win rate</div><div class="val" id="sWr">—</div><div class="sub2" id="sBe">—</div></div>
+    <div class="tile"><div class="lbl">Expectancy / trade</div><div class="val" id="sExp">—</div><div class="sub2" id="sExpR">—</div></div>
+    <div class="tile"><div class="lbl">Avg win / avg loss</div><div class="val" id="sWL">—</div><div class="sub2" id="sPf">—</div></div>
+    <div class="tile"><div class="lbl">Net P&amp;L</div><div class="val" id="sNet">—</div><div class="sub2" id="sDd">—</div></div>
+    <div class="tile"><div class="lbl">Avg hold</div><div class="val" id="sHold">—</div><div class="sub2" id="sHoldNote">course: minutes, not days</div></div>
+  </div>
+  <div class="sample" id="sample" data-ok="0">No trades yet. The statistics above stay blank until there is something to count.</div>
+
+  <div class="two">
+    <div class="card">
+      <h2>Equity curve, cumulative net P&amp;L in USDT</h2>
+      <div class="chart" id="chart"><svg viewBox="0 0 640 220" role="img" aria-label="Cumulative net profit and loss by trade"></svg><div class="tip" id="tip"></div></div>
+    </div>
+    <div class="card">
+      <h2>Where the edge is, and is not</h2>
+      <table class="bd" id="bd"><thead><tr><th>Slice</th><th class="n">n</th><th class="n">Win %</th><th class="n">Exp. USDT</th><th class="n">Exp. R</th></tr></thead><tbody></tbody></table>
+    </div>
+  </div>
+
+  <details class="entry" id="entry" open>
+    <summary><span id="formTitle">Log a trade</span><span class="hint">Fill after the position is closed. Prices as traded, P&amp;L net of fees from Bybit's closed P&amp;L.</span></summary>
+    <form class="form" id="form" autocomplete="off">
+      <fieldset>
+        <legend>Diagnose<span class="q">what did the chart say</span></legend>
+        <div class="row">
+          <div class="field"><label for="f_ts">Opened</label><input type="datetime-local" id="f_ts" required></div>
+          <div class="field"><label for="f_coin">Coin</label><input type="text" id="f_coin" placeholder="SEIUSDT" required spellcheck="false"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f_side">Side</label><select id="f_side"><option value="long">Long</option><option value="short">Short</option></select></div>
+          <div class="field"><label for="f_setup">Setup</label>
+            <select id="f_setup">
+              <option value="spe">SPE pullback to EMA</option>
+              <option value="hockey">Hockey stick, EMA 155 confirmed</option>
+              <option value="heel">Heel / crash-bottom (RAVE style)</option>
+              <option value="pump">Uncorrelated pump in BTC dump</option>
+              <option value="call">Trade call from chat</option>
+              <option value="other">Other</option>
+            </select></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f_regime">Heatmap</label><select id="f_regime"><option value="bullish">Mostly green</option><option value="bearish">Mostly red</option><option value="ranging">Mixed</option></select></div>
+          <div class="field"><label for="f_screener">Screener passes</label><select id="f_screener"><option>4</option><option>3</option><option>2</option><option>1</option><option>0</option></select></div>
+        </div>
+        <label class="check"><input type="checkbox" id="f_ema155" checked><span>EMA 155 three-candle rule confirmed before entry</span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Dose<span class="q">what was at risk</span></legend>
+        <div class="row">
+          <div class="field"><label for="f_entry">Entry</label><input type="number" id="f_entry" step="any" inputmode="decimal" required></div>
+          <div class="field"><label for="f_stop">Stop price (planned)</label><input type="number" id="f_stop" step="any" inputmode="decimal"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f_stake">Margin USDT</label><input type="number" id="f_stake" step="any" inputmode="decimal" required></div>
+          <div class="field"><label for="f_lev">Leverage ×</label><input type="number" id="f_lev" step="1" min="1" inputmode="numeric" required></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f_mode">Margin mode</label><select id="f_mode"><option value="isolated">Isolated</option><option value="cross">Cross</option></select></div>
+          <div class="field"><label for="f_tp">TP price (planned)</label><input type="number" id="f_tp" step="any" inputmode="decimal"></div>
+        </div>
+        <div class="breaks">
+          <div class="lbl">Rules broken on this trade</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" class="brk" value="no-stop"><span>No stop set</span></label>
+            <label class="check"><input type="checkbox" class="brk" value="cross"><span>Cross margin</span></label>
+            <label class="check"><input type="checkbox" class="brk" value="chased"><span>Chased, no pullback</span></label>
+            <label class="check"><input type="checkbox" class="brk" value="oversized"><span>Over 10% of wallet</span></label>
+            <label class="check"><input type="checkbox" class="brk" value="held"><span>Held past plan</span></label>
+            <label class="check"><input type="checkbox" class="brk" value="hedged"><span>Hedged instead of stop</span></label>
+            <label class="check"><input type="checkbox" class="brk" value="moved-stop"><span>Moved stop away</span></label>
+            <label class="check"><input type="checkbox" class="brk" value="no-plan"><span>No written plan</span></label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Discharge<span class="q">how it ended</span></legend>
+        <div class="row">
+          <div class="field"><label for="f_exitReason">Exit by</label>
+            <select id="f_exitReason">
+              <option value="tp">Wick Tracker / TP hit</option>
+              <option value="climax">Climax: volume + MACD, partial</option>
+              <option value="hunt">Hunting SL (in profit)</option>
+              <option value="be">Stop at entry (breakeven)</option>
+              <option value="stop">Stop loss hit</option>
+              <option value="cross">EMA cross-back</option>
+              <option value="manual">Manual close</option>
+              <option value="liq">Liquidated</option>
+            </select></div>
+          <div class="field"><label for="f_exit">Exit price (avg)</label><input type="number" id="f_exit" step="any" inputmode="decimal"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f_pnl">Net P&amp;L USDT</label><input type="number" id="f_pnl" step="any" inputmode="decimal" required></div>
+          <div class="field"><label for="f_hold">Hold, minutes</label><input type="number" id="f_hold" step="1" min="0" inputmode="numeric"></div>
+        </div>
+        <div class="field"><label for="f_notes">What you would do differently</label><textarea id="f_notes" placeholder="One sentence. Which D would have changed the outcome?"></textarea></div>
+      </fieldset>
+
+      <div class="derived" id="derived"></div>
+      <div class="actions">
+        <button type="submit" class="btn" id="saveBtn">Save trade</button>
+        <button type="button" class="btn ghost" id="clearBtn">Clear</button>
+        <button type="button" class="btn danger" id="deleteBtn" hidden>Delete this trade</button>
+        <span class="msg" id="msg"></span>
+      </div>
+    </form>
+  </details>
+
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+      <h2 style="margin:0">Trade log</h2>
+      <div style="display:flex;gap:8px"><button type="button" class="btn ghost" id="csvBtn">Export CSV</button></div>
+    </div>
+    <div class="log">
+      <table class="log" id="log">
+        <thead><tr><th>Opened</th><th>Coin</th><th>Side</th><th>Setup</th><th class="n">Entry</th><th class="n">Exit</th><th class="n">Lev</th><th class="n">Margin</th><th class="n">P&amp;L</th><th class="n">R</th><th>Exit by</th><th class="n">Hold</th><th>Rules</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty" id="empty">Nothing logged yet.</div>
+    </div>
+  </div>
+
+  <p class="foot">R is net P&amp;L divided by planned risk (margin × |entry − stop| ÷ entry × leverage). Expectancy is the mean net P&amp;L per trade. Profit factor is gross wins ÷ gross losses. Breakeven win rate is 1 ÷ (1 + avg win ÷ avg loss). Drawdown is the largest peak-to-trough fall of the equity curve. A "clean" trade has no rule broken. When the journal store is unavailable the page keeps trades in this browser only. Not financial advice.</p>
+</div>
+
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const SETUP = { spe: 'SPE pullback', hockey: 'Hockey stick', heel: 'Heel / crash-bottom', pump: 'Uncorrelated pump', call: 'Trade call', other: 'Other' };
+  const EXIT = { tp: 'TP hit', climax: 'Climax partial', hunt: 'Hunting SL', be: 'Breakeven stop', stop: 'Stop hit', cross: 'EMA cross-back', manual: 'Manual', liq: 'Liquidated' };
+  const BRK = { 'no-stop': 'no stop', cross: 'cross', chased: 'chased', oversized: 'oversized', held: 'held', hedged: 'hedged', 'moved-stop': 'moved stop', 'no-plan': 'no plan' };
+
+  let db = null, trades = [], editingId = null, unsub = null;
+  const store = {
+    async list() { try { return JSON.parse(localStorage.getItem('mmt-journal') || '[]'); } catch (e) { return []; } },
+    async save(list) { try { localStorage.setItem('mmt-journal', JSON.stringify(list)); } catch (e) {} }
+  };
+
+  // ---- helpers
+  const fnum = (v) => { const n = parseFloat(v); return Number.isFinite(n) ? n : null; };
+  const fmt = (x, d = 2) => x == null || !Number.isFinite(x) ? '—' : x.toFixed(d);
+  const fmtP = (x) => { if (x == null || !Number.isFinite(x)) return '—'; const d = x >= 1000 ? 1 : x >= 100 ? 2 : x >= 1 ? 4 : x >= 0.01 ? 5 : 7; return x.toFixed(d); };
+  const sgn = (x, d = 2) => x == null ? '—' : (x > 0 ? '+' : '') + x.toFixed(d);
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const riskOf = (t) => (t.stop != null && t.entry) ? t.stake * Math.abs(t.entry - t.stop) / t.entry * t.lev : null;
+  const rOf = (t) => { const r = riskOf(t); return r ? t.pnl / r : null; };
+  const localIso = (d) => { const p = (n) => String(n).padStart(2, '0'); return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`; };
+
+  // ---- form
+  function readForm() {
+    const t = {
+      ts: $('f_ts').value, coin: $('f_coin').value.trim().toUpperCase(), side: $('f_side').value, setup: $('f_setup').value,
+      regime: $('f_regime').value, screener: parseInt($('f_screener').value, 10), ema155: $('f_ema155').checked,
+      entry: fnum($('f_entry').value), stop: fnum($('f_stop').value), tp: fnum($('f_tp').value),
+      stake: fnum($('f_stake').value), lev: fnum($('f_lev').value), mode: $('f_mode').value,
+      exitReason: $('f_exitReason').value, exit: fnum($('f_exit').value), pnl: fnum($('f_pnl').value), hold: fnum($('f_hold').value),
+      breaks: [...document.querySelectorAll('.brk:checked')].map(b => b.value), notes: $('f_notes').value.trim()
+    };
+    if (t.mode === 'cross' && !t.breaks.includes('cross')) t.breaks.push('cross');
+    if (t.stop == null && !t.breaks.includes('no-stop')) t.breaks.push('no-stop');
+    return t;
+  }
+  function fillForm(t) {
+    $('f_ts').value = t.ts || ''; $('f_coin').value = t.coin || ''; $('f_side').value = t.side || 'long'; $('f_setup').value = t.setup || 'spe';
+    $('f_regime').value = t.regime || 'bullish'; $('f_screener').value = String(t.screener ?? 4); $('f_ema155').checked = t.ema155 !== false;
+    $('f_entry').value = t.entry ?? ''; $('f_stop').value = t.stop ?? ''; $('f_tp').value = t.tp ?? '';
+    $('f_stake').value = t.stake ?? ''; $('f_lev').value = t.lev ?? ''; $('f_mode').value = t.mode || 'isolated';
+    $('f_exitReason').value = t.exitReason || 'tp'; $('f_exit').value = t.exit ?? ''; $('f_pnl').value = t.pnl ?? ''; $('f_hold').value = t.hold ?? '';
+    document.querySelectorAll('.brk').forEach(b => { b.checked = (t.breaks || []).includes(b.value); });
+    $('f_notes').value = t.notes || '';
+    derive();
+  }
+  function clearForm() {
+    editingId = null; $('formTitle').textContent = 'Log a trade'; $('deleteBtn').hidden = true; $('msg').textContent = '';
+    fillForm({ ts: localIso(new Date()), lev: 10, stake: 20 });
+    try { const d = JSON.parse(localStorage.getItem('mmt-journal-defaults') || 'null'); if (d) { $('f_lev').value = d.lev; $('f_stake').value = d.stake; } } catch (e) {}
+    derive();
+  }
+  function derive() {
+    const t = readForm(); const parts = [];
+    if (t.entry && t.stake && t.lev) parts.push(`Notional <b>${fmt(t.stake * t.lev)}</b> USDT`);
+    const risk = riskOf(t);
+    if (risk != null) parts.push(`Planned risk <b>${fmt(risk)}</b> USDT (${fmt(risk / t.stake * 100, 0)}% ROI)`);
+    if (t.entry && t.stop && t.tp) { const rr = Math.abs(t.tp - t.entry) / Math.abs(t.entry - t.stop); parts.push(`Planned R:R <b>1 : ${fmt(rr)}</b>`); }
+    if (t.pnl != null && risk) parts.push(`Result <b>${sgn(t.pnl / risk)} R</b>`);
+    if (t.pnl != null && t.stake) parts.push(`ROI <b>${sgn(t.pnl / t.stake * 100, 1)}%</b>`);
+    $('derived').innerHTML = parts.join(' · ');
+  }
+  $('form').addEventListener('input', derive);
+  $('clearBtn').addEventListener('click', clearForm);
+
+  $('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const t = readForm();
+    if (!t.ts || !t.coin || t.entry == null || t.stake == null || t.lev == null || t.pnl == null) { $('msg').textContent = 'Opened, coin, entry, margin, leverage and net P&L are required.'; return; }
+    t.savedAt = new Date().toISOString();
+    $('saveBtn').disabled = true; $('msg').textContent = '';
+    try {
+      if (db) {
+        const col = db.collection('trades');
+        if (editingId) await col.doc(editingId).set(t); else await col.add(t);
+      } else {
+        const list = await store.list();
+        if (editingId) { const i = list.findIndex(x => x.id === editingId); if (i >= 0) list[i] = { ...t, id: editingId }; }
+        else list.push({ ...t, id: 'l' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6) });
+        await store.save(list); trades = list; render();
+      }
+      try { localStorage.setItem('mmt-journal-defaults', JSON.stringify({ lev: t.lev, stake: t.stake })); } catch (e2) {}
+      clearForm();
+    } catch (err) {
+      $('msg').textContent = err && err.code === 'quota_exceeded' ? 'The journal store is full. Export the CSV and delete old trades.' : 'Could not save. Try again in a moment.';
+    } finally { $('saveBtn').disabled = false; }
+  });
+  $('deleteBtn').addEventListener('click', async () => {
+    if (!editingId) return;
+    if (!confirm('Delete this trade from the journal?')) return;
+    try {
+      if (db) await db.collection('trades').doc(editingId).delete();
+      else { const list = (await store.list()).filter(x => x.id !== editingId); await store.save(list); trades = list; render(); }
+      clearForm();
+    } catch (err) { $('msg').textContent = 'Could not delete. Try again.'; }
+  });
+
+  // ---- stats
+  function stats(list) {
+    const n = list.length; if (!n) return null;
+    const pnls = list.map(t => t.pnl);
+    const wins = pnls.filter(p => p > 0), losses = pnls.filter(p => p <= 0);
+    const gw = wins.reduce((a, b) => a + b, 0), gl = -losses.reduce((a, b) => a + b, 0);
+    const avgW = wins.length ? gw / wins.length : null, avgL = losses.length ? gl / losses.length : null;
+    const net = gw - gl, exp = net / n;
+    const rs = list.map(rOf).filter(r => r != null);
+    const expR = rs.length ? rs.reduce((a, b) => a + b, 0) / rs.length : null;
+    let peak = 0, cum = 0, dd = 0; for (const p of pnls) { cum += p; if (cum > peak) peak = cum; if (peak - cum > dd) dd = peak - cum; }
+    const holds = list.map(t => t.hold).filter(h => h != null);
+    const hold = holds.length ? holds.reduce((a, b) => a + b, 0) / holds.length : null;
+    const clean = list.filter(t => !(t.breaks || []).length).length;
+    return { n, wr: wins.length / n, avgW, avgL, pf: gl ? gw / gl : (gw ? Infinity : null), net, exp, expR, dd, hold, clean, rCount: rs.length,
+      be: (avgW && avgL) ? 1 / (1 + avgW / avgL) : null };
+  }
+  function slice(label, list) { const s = stats(list); return s ? { label, n: s.n, wr: s.wr, exp: s.exp, expR: s.expR } : { label, n: 0 }; }
+
+  function render() {
+    const list = [...trades].sort((a, b) => (a.ts || '').localeCompare(b.ts || ''));
+    const s = stats(list);
+    const cls = (v) => v == null ? '' : v > 0 ? 'pos' : v < 0 ? 'neg' : '';
+    $('sN').textContent = s ? s.n : 0;
+    $('sClean').textContent = s ? `${s.clean} clean · ${s.n - s.clean} with a rule broken` : '—';
+    $('sWr').textContent = s ? fmt(s.wr * 100, 0) + '%' : '—';
+    $('sBe').textContent = s && s.be != null ? `breakeven needs ${fmt(s.be * 100, 0)}% at this win/loss size` : '—';
+    $('sExp').textContent = s ? sgn(s.exp) + ' USDT' : '—'; $('sExp').className = 'val ' + (s ? cls(s.exp) : '');
+    $('sExpR').textContent = s && s.expR != null ? `${sgn(s.expR)} R over ${s.rCount} trades with a stop` : 'R needs a planned stop';
+    $('sWL').textContent = s ? `${fmt(s.avgW)} / ${fmt(s.avgL)}` : '—';
+    $('sPf').textContent = s && s.pf != null ? `profit factor ${s.pf === Infinity ? '∞' : fmt(s.pf)}` : '—';
+    $('sNet').textContent = s ? sgn(s.net) + ' USDT' : '—'; $('sNet').className = 'val ' + (s ? cls(s.net) : '');
+    $('sDd').textContent = s ? `max drawdown ${fmt(s.dd)} USDT` : '—';
+    $('sHold').textContent = s && s.hold != null ? (s.hold >= 120 ? fmt(s.hold / 60, 1) + ' h' : fmt(s.hold, 0) + ' min') : '—';
+    const smp = $('sample');
+    if (!s) { smp.dataset.ok = '0'; smp.textContent = 'No trades yet. The statistics above stay blank until there is something to count.'; }
+    else if (s.n < 30) { smp.dataset.ok = '0'; smp.textContent = `${s.n} of 30 trades. Below thirty, the win rate and expectancy are noise; keep logging before drawing a conclusion.`; }
+    else { smp.dataset.ok = '1'; smp.textContent = `${s.n} trades. Expectancy ${sgn(s.exp)} USDT per trade${s.expR != null ? ` (${sgn(s.expR)} R)` : ''}. ${s.exp > 0 ? 'Positive on this sample; check the clean-versus-broken split below before trusting it.' : 'Not positive on this sample. Read the breakdown to see which slice is losing.'}`; }
+
+    // breakdown
+    const rows = [
+      slice('Clean, no rule broken', list.filter(t => !(t.breaks || []).length)),
+      slice('Any rule broken', list.filter(t => (t.breaks || []).length)),
+      ...Object.keys(SETUP).map(k => slice(SETUP[k], list.filter(t => t.setup === k))).filter(r => r.n),
+      slice('Long', list.filter(t => t.side === 'long')), slice('Short', list.filter(t => t.side === 'short')),
+      slice('Screener 4 / 4', list.filter(t => t.screener === 4)), slice('Screener below 4', list.filter(t => t.screener < 4)),
+      slice('Isolated', list.filter(t => t.mode !== 'cross')), slice('Cross', list.filter(t => t.mode === 'cross')),
+      slice('Held over 60 min', list.filter(t => t.hold != null && t.hold > 60)),
+    ].filter(r => r.n);
+    $('bd').querySelector('tbody').innerHTML = rows.length ? rows.map(r => `<tr><td>${esc(r.label)}</td><td class="n">${r.n}</td><td class="n">${fmt(r.wr * 100, 0)}%</td><td class="n ${cls(r.exp)}">${sgn(r.exp)}</td><td class="n">${r.expR == null ? '—' : sgn(r.expR)}</td></tr>`).join('')
+      : '<tr><td colspan="5" class="empty">No slices yet.</td></tr>';
+
+    // log
+    const tb = $('log').querySelector('tbody');
+    tb.innerHTML = [...list].reverse().map(t => {
+      const r = rOf(t); const b = t.breaks || [];
+      return `<tr>
+        <td>${esc((t.ts || '').replace('T', ' '))}</td><td>${esc(t.coin)}</td>
+        <td><span class="pill ${t.side}">${t.side}</span></td><td>${esc(SETUP[t.setup] || t.setup)}</td>
+        <td class="n">${fmtP(t.entry)}</td><td class="n">${fmtP(t.exit)}</td><td class="n">${fmt(t.lev, 0)}×</td><td class="n">${fmt(t.stake, 0)}</td>
+        <td class="n ${cls(t.pnl)}">${sgn(t.pnl)}</td><td class="n">${r == null ? '—' : sgn(r, 1)}</td>
+        <td>${esc(EXIT[t.exitReason] || t.exitReason || '')}</td><td class="n">${t.hold == null ? '—' : fmt(t.hold, 0) + 'm'}</td>
+        <td>${b.length ? b.map(x => `<span class="pill brk">${esc(BRK[x] || x)}</span>`).join(' ') : '<span class="pill clean">clean</span>'}</td>
+        <td><button type="button" data-edit="${esc(t.id)}">Edit</button></td></tr>`;
+    }).join('');
+    $('empty').hidden = list.length > 0;
+    drawChart(list);
+  }
+  $('log').addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-edit]'); if (!b) return;
+    const t = trades.find(x => x.id === b.dataset.edit); if (!t) return;
+    editingId = t.id; fillForm(t); $('formTitle').textContent = `Editing ${t.coin} ${(t.ts || '').replace('T', ' ')}`; $('deleteBtn').hidden = false;
+    $('entry').open = true; $('entry').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // ---- chart
+  function drawChart(list) {
+    const svg = $('chart').querySelector('svg'); const W = 640, H = 220, L = 44, R = 16, T = 14, B = 26;
+    const cum = []; let c = 0; for (const t of list) { c += t.pnl; cum.push(c); }
+    const pts = [0, ...cum];
+    if (pts.length < 2) { svg.innerHTML = `<text x="${W / 2}" y="${H / 2}" text-anchor="middle" fill="var(--ink-3)" font-size="13" font-family="IBM Plex Sans, sans-serif">Equity curve appears after the first trade.</text>`; return; }
+    let lo = Math.min(0, ...pts), hi = Math.max(0, ...pts); if (hi === lo) { hi += 1; lo -= 1; }
+    const pad = (hi - lo) * 0.08; lo -= pad; hi += pad;
+    const x = (i) => L + (W - L - R) * i / (pts.length - 1), y = (v) => T + (H - T - B) * (1 - (v - lo) / (hi - lo));
+    const ticks = 4; let g = '';
+    for (let k = 0; k <= ticks; k++) { const v = lo + (hi - lo) * k / ticks; g += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)" stroke-width="1"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end" font-size="10" fill="var(--ink-3)" font-family="IBM Plex Mono, monospace">${v.toFixed(0)}</text>`; }
+    g += `<line x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}" stroke="var(--line-strong)" stroke-width="1" stroke-dasharray="3 3"/>`;
+    const d = pts.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+    const area = d + ` L${x(pts.length - 1).toFixed(1)},${y(0).toFixed(1)} L${x(0).toFixed(1)},${y(0).toFixed(1)} Z`;
+    const last = pts[pts.length - 1];
+    g += `<path d="${area}" fill="var(--accent)" fill-opacity="0.10"/>`;
+    g += `<path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    g += `<circle cx="${x(pts.length - 1)}" cy="${y(last)}" r="4" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>`;
+    g += `<text x="${x(pts.length - 1) - 6}" y="${y(last) - 8}" text-anchor="end" font-size="11" fill="var(--ink)" font-family="IBM Plex Mono, monospace">${sgn(last)}</text>`;
+    const step = Math.max(1, Math.ceil((pts.length - 1) / 8));
+    for (let i = 0; i < pts.length; i += step) g += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="IBM Plex Mono, monospace">${i}</text>`;
+    g += `<text x="${W - R}" y="${H - 8}" text-anchor="end" font-size="10" fill="var(--ink-3)" font-family="IBM Plex Sans, sans-serif">trade #</text>`;
+    g += `<line id="xh" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="var(--ink-3)" stroke-width="1" style="display:none"/><circle id="xd" r="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="2" style="display:none"/>`;
+    g += `<rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent" id="hit"/>`;
+    svg.innerHTML = g;
+    const tip = $('tip'), hit = svg.querySelector('#hit'), xh = svg.querySelector('#xh'), xd = svg.querySelector('#xd');
+    hit.addEventListener('mousemove', (e) => {
+      const r = svg.getBoundingClientRect(); const px = (e.clientX - r.left) * W / r.width;
+      const i = Math.max(0, Math.min(pts.length - 1, Math.round((px - L) / (W - L - R) * (pts.length - 1))));
+      xh.setAttribute('x1', x(i)); xh.setAttribute('x2', x(i)); xh.style.display = ''; xd.setAttribute('cx', x(i)); xd.setAttribute('cy', y(pts[i])); xd.style.display = '';
+      const t = i ? list[i - 1] : null;
+      tip.textContent = i ? `#${i} ${t.coin} ${sgn(t.pnl)} → ${sgn(pts[i])}` : 'start 0';
+      tip.style.left = (x(i) * r.width / W) + 'px'; tip.style.top = (y(pts[i]) * r.height / H) + 'px'; tip.style.display = 'block';
+    });
+    hit.addEventListener('mouseleave', () => { tip.style.display = 'none'; xh.style.display = 'none'; xd.style.display = 'none'; });
+  }
+
+  // ---- CSV
+  $('csvBtn').addEventListener('click', async () => {
+    const cols = ['ts', 'coin', 'side', 'setup', 'regime', 'screener', 'ema155', 'entry', 'stop', 'tp', 'stake', 'lev', 'mode', 'exitReason', 'exit', 'pnl', 'hold', 'breaks', 'notes'];
+    const q = (v) => { const s = Array.isArray(v) ? v.join('|') : v == null ? '' : String(v); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+    const csv = [cols.join(','), ...[...trades].sort((a, b) => (a.ts || '').localeCompare(b.ts || '')).map(t => cols.map(c => q(t[c])).join(','))].join('\n');
+    const dl = window.claude && window.claude.use ? await window.claude.use('downloads') : null;
+    if (dl) { try { await dl.save({ filename: 'mmt-trades.csv', data: csv }); } catch (e) {} }
+    else { try { await navigator.clipboard.writeText(csv); $('csvBtn').textContent = 'Copied CSV'; setTimeout(() => $('csvBtn').textContent = 'Export CSV', 1500); } catch (e) {} }
+  });
+
+  // ---- boot
+  clearForm(); render();
+  (async () => {
+    const st = $('status');
+    db = window.claude && window.claude.use ? await window.claude.use('db') : null;
+    if (db) {
+      st.dataset.s = 'live'; st.textContent = 'Journal store connected. Trades are kept on the artifact and readable from your Claude session.';
+      unsub = db.collection('trades').onSnapshot((snap) => {
+        trades = snap.docs.map(d => ({ id: d.id, ...d.data() })); render();
+      }, (e) => { st.dataset.s = 'local'; st.textContent = 'Journal store disconnected (' + (e && e.code || 'error') + '). Reload the page.'; });
+    } else {
+      trades = await store.list(); render();
+      st.dataset.s = 'local'; st.textContent = 'No journal store on this view. Trades are kept in this browser only; export the CSV to keep them.';
+    }
+  })();
+})();
+</script>
