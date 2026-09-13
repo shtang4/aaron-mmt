@@ -12,10 +12,10 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 | 2 | [notes/02-coin-selection.md](notes/02-coin-selection.md) | Coin selection, Trend is King, Potential Coin Finder, Coin Trend Screener, hockey stick pattern |
 | 3 | [notes/03-entry-direction.md](notes/03-entry-direction.md) | Heikin-Ashi, 3 main indicators, SMC, new indicators, trend lines / S&R / tunnel, seahorse pattern |
 | 4 | notes/04-sniper-entry-exit.md | MMT New TP, Sniper Price Entry (SPE), Wick Tracker |
-| 5 | notes/05-risk-and-hedging.md | Risk management, MMT Hedging, MMT Golden Rules |
+| 5 | [notes/05-risk-and-hedging.md](notes/05-risk-and-hedging.md) | Risk management, MMT Hedging, MMT Golden Rules |
 | 6 | notes/06-case-studies.md | Case studies, Q&A |
 
-Files 4–6 are placeholders until those modules are captured.
+Files 4 and 6 are placeholders until those modules are captured.
 
 ## Conventions
 
