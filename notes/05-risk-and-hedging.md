@@ -307,6 +307,72 @@ Several are **unrealised** P&L, which is an open position, not a result. Several
 - **RR in this course is computed after the exit.** For planning, use the Module 1 rule (TP at nearest resistance, set first) to fix the reward before entry, and compute RR from that.
 - The one sentence on these slides that is a rule rather than a result: "Always use a stop loss." It is consistent with section 3.2 and inconsistent with the Module 3 seahorse slide, and the risk module wins.
 
+
+### 3.12 The SSWB procedure (the actual SOP)
+
+Eight steps, transcribed with light cleanup:
+
+1. **Initiate** the capital: start with **$20** per trade.
+2. **Choose the coin** by active volatility and volume percentage, usually from the Gainers list.
+3. Use the **MMT Coin and Trend Screener** as the SOP to decide the trend.
+4. **Enter using MMT SPE** and set the **MMT Wick Tracker to 50% = $10** (buffer to 55% to 60% to cover the closing fee). Sometimes set it lower than the previous high wick spike, and you may gain more than 50%.
+5. It may take **30 minutes to 1 hour**, or more depending on volatility and volume, especially with wick candles.
+6. Once the TP closes the position, **immediately transfer the profit from the Derivatives account to the Funding account** to keep it secure.
+7. Repeat from step 1 for up to **10 trades** in a short scalping period. You may reach the **$100** target before 10 trades. Then **stop trading and rest**.
+8. **Don't hold** for a longer time.
+
+This is the first end-to-end procedure in the course, and it fixes the meaning of two Module 4 terms before Module 4 arrives: **SPE** is the entry, and the **Wick Tracker** is a take-profit set as an ROI percentage on the margin (50% ROI on $20 margin = $10), optionally placed at a prior wick high.
+
+**The fee buffer is roughly right.** Bybit taker fees are about 0.055% per side. At 20× that is 2.2% ROI round trip; at 50× it is 5.5%. A TP at 55% to 60% ROI nets about 50% after fees at those leverages.
+
+**What 50% ROI means in price terms:**
+
+| Leverage | Price move needed for +50% ROI |
+|----------|-------------------------------|
+| 12.5× | 4.0% |
+| 20× | 2.5% |
+| 50× | 1.0% |
+
+**The "compounding" table** ("$100 USDT profit in 30 mins?"): ten trades at $20, each +50%, each +$10, total +$100 a day, "30 days = 100 × 30 = 3,000 USDT (~RM 12,000+) per month".
+
+- It does not compound. The stake is fixed at $20 and the profits are swept out (step 6). It is linear: 10 × $10.
+- It assumes ten wins out of ten, every day, thirty days a month. No losing trade appears in the table and no stop loss appears in the eight steps.
+- With a stop, the expectancy is easy to state. At the beginner tier (20% ROI stop = $4 loss) against a $10 win, breakeven is a 29% win rate. At a 50% ROI stop ($10 loss), breakeven is 50%. The course does not say which stop the SOP uses, and step 4 names only the TP. On cross margin without a stop, the loss is whatever the wallet allows.
+- The "30 mins" in the title and the "30 minutes to 1 hour or more" in step 5 do not fit ten trades into 30 minutes. Ten trades at 30 to 60 minutes each is a five to ten hour session.
+
+**The "Execute 10 trades" screenshot contradicts the SOP.** Two Bybit position screens, same account, moments apart:
+
+| Position | Mode | Unrealised P&L | ROI | Implied margin |
+|----------|------|---------------|-----|----------------|
+| LUNA2USDT long | Cross 20× | +20.79 | 105% | $19.8 |
+| YFIUSDT short | Cross 20× | +70.99 | 718% | $9.9 |
+| 1000BONKUSDT long | Cross 20× | +40.16 | 203% | $19.8 |
+| SEIUSDT long | Cross 50× | +64.68 | 332% | $19.5 |
+| GODSUSDT long | Cross 20× | +11.71 | 395% | $3.0 |
+| 1000000VINUUSDT long | Cross 12.5× | +2.93 | 15% | $20.0 |
+
+The implied margins confirm the $20 stake (step 1 is real). But:
+
+- Six positions are open **simultaneously**, all on **cross margin**, at 12.5× to 50×. Section 3.2 of this module says cross margin liquidation takes the whole wallet. The liquidation prices shown (LUNA2 at 0.3286 against an entry of 0.7476, 56% away) confirm the wallet is backing all six.
+- Five of the six are at 105% to 718% ROI. A Wick Tracker set at 50% would have closed them long before. Either it was not set, or it was set far above the SOP's number. YFI at 718% ROI on 20× is a 36% price move, which is not a 30-minute scalp. Step 8, "don't hold", is not being followed on the slide that illustrates step 7.
+
+So the screenshot demonstrates the stake size and nothing else about the SOP. The positions shown were run as held, cross-margined, uncapped trades.
+
+**Order by Value.** Bybit order placement preferences: Order by Qty (in coin), Order by Cost (margin plus fees, in USDT), Order by Value (notional, in USDT). The slide switches from Cost to **Value** under the heading "Practice with lower risk". With Order by Value you type the notional and the margin is notional ÷ leverage, so $20 of value at 20× is $1 of margin. That is how a beginner practises the SOP with a dollar at risk per trade. The demo account shows 4.69 USDT available.
+
+**Closing slide.** "What will you have when implementing Dose: knowing how much money you are risking; can grow from small capital to big profits."
+
+### 3.13 The three stake sizes the module has now given
+
+| Slide | Stake per trade |
+|-------|----------------|
+| SSWB SOP and compounding table | $20 |
+| "Real example: Start Small Win Big" | $150 |
+| CARV short (implied by P&L and ROI) | about $2,500 |
+| 1% rule slide | $1,000 (implying a $100,000 wallet) |
+
+None of these are reconciled. The defensible reading is that $20 is the practice stake, $150 is the "graduated" stake, and the larger positions are the author's own. Whatever the stake, the rule that survives all the slides is the same: isolated margin, a stop, and sweep profits out.
+
 ## 4. Advance tool: MMT Hedging (Discharge)
 
 _Not yet captured._
@@ -321,7 +387,9 @@ _Not yet captured._
 - The demo account trades at 25× while the slide prescribes 5× to 10×. Which is the course's actual recommendation?
 - Was the THETA demo position isolated or cross? Its liquidation distance (8.4%) does not match isolated 25×.
 - ~~What does SSWB stand for?~~ Start Small Win Big.
-- Is the $150 per trade a fixed starting stake, or 1% to 10% of some assumed wallet? The 1% rule slide, the $150 slide and the 2,500 USDT CARV margin are not reconciled.
+- Which stake is the taught one: $20 (SOP), $150 (real example), or a percentage of wallet (1% rule)? See section 3.13.
+- Does the SSWB SOP use a stop loss, and at what ROI? Step 4 names only the Wick Tracker take-profit.
+- Why does the "Execute 10 trades" screenshot show six simultaneous cross-margin positions at 100% to 700% ROI when the SOP says 50% TP, one at a time, don't hold?
 - Over what period did the 1,993 to 18,288 USDT growth happen, and how many losing trades were in it?
 - What exactly is the "IceBerg Tip" on the MACD, and is the crash-bottom entry in the RAVE example a taught setup or a one-off?
 - Does Module 4's New TP or Wick Tracker replace the Module 1 "EMA cross-back, exit, no questions" rule? The ZETA case says hold through a cross-back; Module 1 says exit on it.
