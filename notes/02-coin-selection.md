@@ -107,11 +107,58 @@ That is the useful content. The specific names are less useful, for reasons belo
 
 ## 3. Trend is King (趋势为王)
 
-_Not yet captured._
+### 3.1 Four market phases
 
-## 4. Basic tool: Potential Coin Finder
+The slide reuses a public diagram ("Four Market Phases Every Trader Must Know", credited to tradingwithrayner.com). Phases in order:
 
-_Not yet captured._
+| # | Phase | What it looks like | 200 MA |
+|---|-------|-------------------|--------|
+| 1 | **Accumulation** | Range after a 6-month decline. Long consolidation. | Flattening |
+| 2 | **Advancing** | Breakout from the accumulation range. Forms an uptrend. | Price above 200 MA |
+| 3 | **Distribution** | Range after a 6-month advance. Long consolidation. | Flattening |
+| 4 | **Declining** | Breakdown from distribution. "Where traders become long-term investors." | Price below 200 MA |
+
+The right half of the slide shows a plain uptrend and downtrend candlestick example.
+
+Reading: only phases 2 and 4 are tradeable with a trend method. Phases 1 and 3 are ranges, and the Diagnose step (Module 1) will produce whipsaw EMA crosses inside them. "Trend is King" therefore means **do not trade the coin at all** unless it is in phase 2 or 4. This is the Skip decision from the course's outcome 3.
+
+Phase 4's caption, "where traders become long-term investors", is a warning about refusing to take the stop and holding a losing position. It connects back to the Discharge rule: stop below EMA 50, structural, not emotional.
+
+### 3.2 Trend structure
+
+Second slide, two parts:
+
+- A chart showing the sequence uptrend, downtrend, sideways, uptrend, downtrend, with trend lines drawn under the uptrends and over the downtrends, and a horizontal box around the sideways range.
+- A schematic definition:
+
+| Structure | Definition |
+|-----------|------------|
+| **Uptrend** | Higher highs and higher lows |
+| **Sideways / trading range** | Highs and lows at roughly the same level |
+| **Downtrend** | Lower highs and lower lows |
+
+This is the swing-structure definition of trend, independent of any indicator. Together with the EMA cross from Module 1, the course now has two trend tests: structure (HH/HL or LH/LL) and momentum (EMA cross). A valid direction should pass both.
+
+### 3.3 Two maxims
+
+**"We can go against the Market, but not against Money."** (我们可以跟市场做对，但不能跟金钱做对。)
+
+The slide gives no gloss. Most consistent reading with the surrounding slides: "the market" is the crowd's opinion or sentiment, "money" is where volume is actually flowing. You may take a view the crowd disagrees with, but never trade against the direction volume is pushing. That ties the maxim to criterion 2 (high volume) and to the trend phases above. Treat this interpretation as an inference, not the slide's words.
+
+**"Regardless of whether it is a black cat or a white cat, a cat that catches mice is a good Maneki cat."** (不管黑猫白猫，能捉到老鼠就是好的招财猫)
+
+Deng Xiaoping's pragmatism line with a Maneki-neko (lucky cat) substituted. Applied here: it does not matter whether the coin is strong or shit, or whether the trade is long or short. A coin that produces a clean trend move is a good coin. The colouring on the slide (black cat green, white cat red) maps to long and short.
+
+## 4. Basic tool: Potential Coins Finder (潜在币种寻找器)
+
+Not a tool in the software sense. It is a navigation path in the Bybit app:
+
+1. Bottom menu: **Markets**
+2. Top menu: **Opportunities**
+
+The Opportunities screen is where the Hot, Gainers, New and Leaderboard tabs from section 1.2 live. So the "basic tool" is: open Bybit's own ranked lists and pick from the coins already moving on USDT perpetuals.
+
+This confirms the exchange (Bybit) and the product (USDT perpetuals) for the whole course.
 
 ## 5. Advance tool: MMT Coin Trend Screener
 
@@ -121,9 +168,14 @@ _Not yet captured._
 
 _Not yet captured._
 
+## Timeframe tension in this module
+
+The four-phase diagram is built on a **200-period moving average** and describes ranges lasting **six months**. That is a daily or weekly chart. The scalping definition in Module 1 says holding periods of seconds to minutes. The two only reconcile if the course uses the higher timeframe to pick the coin and its direction (this module) and a lower timeframe to time the entry (Modules 3 and 4). The slides do not say this explicitly. Confirm when the indicator modules arrive.
+
 ## Open questions
 
 - What is the course's definition of a strong coin versus a shit coin, so that a coin on neither list can be classified?
-- Does the Coin Trend Screener replace the manual Gainers-tab scan, or sit on top of it?
+- Does the Coin Trend Screener replace the manual Bybit Opportunities scan, or sit on top of it?
 - Is there a volume threshold, or is "high volume" satisfied by appearing on the Gainers or Hot tab?
-- How are "new coins" handled, given the extra listing risk and thin history for any volatility or EMA calculation?
+- How are "new coins" handled, given the thin history for any 200 MA or EMA calculation?
+- Which timeframe is the trend phase judged on, and which timeframe is the entry taken on?
