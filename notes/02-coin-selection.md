@@ -296,6 +296,7 @@ The four-phase diagram in section 3.1 is daily. The scalping definition in Modul
 
 - What is the course's definition of a strong coin versus a shit coin, so that a coin on neither list can be classified?
 - What is the minimum confluence on the screener: 4/4, 3/4, or judgement?
+- Module 6 section 1 has a worked example of check 1 (RAD, four timeframes, price above all five EMAs on each).
 - In the depth check, which side of the order book is "the lower volume" compared against?
 - Are the 15m Gainers / 15m Losers tabs used anywhere in the course, or only the 24h list?
 - Where does the "wait for retrace, breakout, or confirmation" instruction get made precise: Module 3 (direction) or Module 4 (SPE)?

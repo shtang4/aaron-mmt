@@ -13,9 +13,9 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 | 3 | [notes/03-entry-direction.md](notes/03-entry-direction.md) | Heikin-Ashi, 3 main indicators, SMC, new indicators, trend lines / S&R / tunnel, seahorse pattern |
 | 4 | [notes/04-sniper-entry-exit.md](notes/04-sniper-entry-exit.md) | MMT New TP, Sniper Price Entry (SPE), Wick Tracker |
 | 5 | [notes/05-risk-and-hedging.md](notes/05-risk-and-hedging.md) | Risk management, MMT Hedging, MMT Golden Rules |
-| 6 | notes/06-case-studies.md | Case studies, Q&A |
+| 6 | [notes/06-case-studies.md](notes/06-case-studies.md) | Case studies, Q&A |
 
-Modules 0 to 5 are complete. File 6 is a placeholder. until those modules are captured.
+Modules 0 to 5 are complete. Module 6 is in progress. until those modules are captured.
 
 ## Conventions
 
