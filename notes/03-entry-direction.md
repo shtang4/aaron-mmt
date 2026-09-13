@@ -124,7 +124,7 @@ The three, in the order taught, with the course's Bybit settings:
 |---|-----------|-----------|-------------|------|
 | 1 | **EMA** | Indicators → Main Indicator → Moving Average Exponential | 9, 25, 55, 155, 255 | Direction (EMA 155) and pullback levels (the faster lines) |
 | 2 | **MACD** | Indicators → Secondary Indicator → MACD | Fast 8, Slow 13, Signal 9 | Momentum confirmation on the pullback |
-| 3 | **Volume** | Indicators → Secondary Indicator → Volume | Default | Confirmation, and spike-based exhaustion at turns |
+| 3 | **Volume** | Indicators → Secondary Indicator → Volume | VOLMA 5 and 10 (default) | Confirmation, and spike-based exhaustion at turns |
 
 ### 2.1 EMA concept
 
@@ -249,7 +249,7 @@ Closing text: volume assesses activity and liquidity; interpretation varies by m
 
 The rule these examples encode: **a volume bar around twice the recent average marks exhaustion of the side that was in control, and price turns.** The same spike means "bottom" after a fall and "top" after a rise. It is a turning-point signal, not a continuation signal, despite the table's first row.
 
-How it fits: volume is the third check on an SPE pullback entry. A pullback on **falling** volume into an EMA is healthy (sellers are thin), and a long there is confirmed. A pullback on a **2× spike** is exhaustion, meaning either the trend is over or the spike marks the low of the pullback; either way, wait for the next candle rather than buying into the spike. No settings are given for the volume indicator, and the Bybit default (volume bars with MA5 and MA10, visible on the ZETA screenshots) is what the course uses.
+How it fits: volume is the third check on an SPE pullback entry. A pullback on **falling** volume into an EMA is healthy (sellers are thin), and a long there is confirmed. A pullback on a **2× spike** is exhaustion, meaning either the trend is over or the spike marks the low of the pullback; either way, wait for the next candle rather than buying into the spike. **MMT Volume setting** (from the "Volume setting" screenshot): Indicators → Secondary Indicator → Volume → tick **VOLMA 5** (yellow) and **VOLMA 10** (blue), leave the other nine rows unticked at 0, Confirm. This is the Bybit default, so the two volume moving averages on the ZETA screenshots are the course setup.
 
 Note that the S&P and eBay examples are daily charts of stocks and index futures, not 1-minute crypto. The exhaustion pattern is general, but "2× average" on a 1-minute chart is hit constantly by single large orders. A stricter multiple, or the Bybit MA10 line as the baseline, will be needed to make it usable at that timeframe.
 
@@ -261,9 +261,50 @@ What you will have when implementing Diagnose: why the call was made, when to en
 
 "Every time" and "entirely" are marketing. The course's own examples show the EMA cross firing after half a move, and the 5-EMA pullback entries clustering in the last leg. What the EMA set does give you is a **written reason** for every entry, which is the Module 1 checklist requirement. That is the defensible claim.
 
-## 3. Add-on SMC indicator
+## 3. Add-on SMC indicator (添加SMC指标)
 
-_Not yet captured._
+### 3.1 Concept
+
+Slide text (given in English and Chinese): in futures trading, the Smart Money Concept means tracking the actions of large, well-informed institutional investors who drive significant market movements. It assumes these players have better information and analysis, so their trades are more predictive. Traders using it look for institutional buying and selling patterns, such as price accumulations, manipulations and liquidity grabs, to align with the smart money's direction.
+
+### 3.2 Glossary, as given on the slide
+
+| Term | Slide definition |
+|------|-----------------|
+| Supply zone | Area where selling pressure exceeds buying pressure, often leading to a price decrease. |
+| Demand zone | Area where buying pressure exceeds selling pressure, often leading to a price increase. |
+| Fair Value Gap (FVG) or imbalance | "Represents the initial significant move in a new trend, indicating a potential entry point for Smart Money traders." |
+| Weak high | A peak with limited buying interest, often signalling potential resistance. |
+| Weak low | A trough with limited selling interest, often signalling potential support. |
+| Strong high | A peak with significant buying interest, suggesting strong upward trend continuation. |
+| Strong low | A trough with significant selling interest, suggesting strong downward trend continuation. |
+| CHoCH (Change of Character) | A shift in market sentiment or trend direction, often indicating a potential reversal. |
+| BOS ("Breakout or Breakdown") | Price breaches a significant support or resistance level, potentially indicating a shift in trend direction. |
+| Equal high / equal low | Multiple price peaks (troughs) at the same level, indicating potential resistance (support). Cut off at the bottom of the slide. |
+
+The table contains literal `<br>` tags, so it was pasted from a web or AI-generated source without editing.
+
+### 3.3 Where the slide's definitions differ from standard SMC usage
+
+Several of these are loose or inverted relative to how SMC is normally taught. If you use an SMC indicator on TradingView or Bybit, it will label things by the standard definitions, not the slide's, so the differences matter:
+
+| Term | Standard SMC meaning | Difference from slide |
+|------|---------------------|----------------------|
+| **FVG** | A three-candle imbalance: the gap between candle 1's high and candle 3's low (bullish) that candle 2 skipped over. Price tends to return to fill it, and that return is the entry. | The slide describes it as "the initial move in a new trend", which is the displacement that *creates* the FVG, not the gap itself. The entry is on the retrace into the gap, not on the move. |
+| **BOS** | **Break of Structure**: price takes out the previous swing high in an uptrend (or swing low in a downtrend). It confirms trend *continuation*. | The slide expands it as "Breakout or Breakdown" and says it indicates a *shift* in trend. In standard usage a shift is CHoCH; BOS is continuation. |
+| **Strong high / strong low** | A strong low is the low that produced a BOS to the upside, so it is protected and unlikely to be revisited. A strong high is the mirror. | The slide's "significant buying interest at a peak suggests upward continuation" is muddled: a peak with heavy buying that fails is a weak high, not a strong one. |
+| **Weak high / weak low** | A high that did not produce a BOS, so it is likely to be taken out (liquidity sits above it). | The slide treats a weak high as resistance. In standard usage it is a target, not a barrier. |
+| Supply / demand zone, CHoCH, equal highs and lows | Match the slide closely enough. | |
+
+Net: the slide gets supply and demand, CHoCH and equal highs right, and gets FVG, BOS, and strong versus weak highs wrong or backwards. Use the standard definitions.
+
+### 3.4 How SMC fits the MMT stack
+
+- **Demand zones and FVGs are pullback targets**, the same role the faster EMAs play in the 5-line set. A pullback that lands on an EMA *and* a demand zone or FVG is a stronger SPE entry than either alone.
+- **Equal highs and lows are where the stop must not be.** Liquidity rests just beyond them and gets swept. A stop placed just below an equal low is the stop most likely to be run before the move. The Module 1 rule of a structural stop below EMA 55 (or 155) generally sits further away than an equal low, which is the safer side of this.
+- **CHoCH on the 1-minute chart is the early exit warning**, ahead of the EMA cross-back. It fires when price breaks the last higher low in an uptrend, which usually happens before EMA 9 crosses EMA 25.
+- No SMC indicator settings are given, and the Bybit app does not have a native SMC indicator in the list shown. This add-on is presumably a TradingView indicator; confirm which one.
+
 
 ## 4. Advance tool: New Indicators
 
@@ -282,7 +323,8 @@ _Not yet captured._
 - ~~Which timeframe is the Heikin-Ashi read on for entries?~~ Answered: the Bybit setup screenshots use the 1-minute chart.
 - Is the EMA in Module 1 computed on Heikin-Ashi candles or real candles? The two give different crosses.
 - ~~Which are the 3 Main Indicators and the MACD setting?~~ Answered: EMA (9/25/55/155/255), MACD (8/13/9), Volume (default).
-- What volume multiple counts as a spike on the 1-minute chart, and is the baseline the Bybit MA5 or MA10 line?
+- What volume multiple counts as a spike on the 1-minute chart, and is the baseline VOLMA 5 or VOLMA 10?
+- Which SMC indicator does the course use, and on which platform, given Bybit has none in its list?
 - In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?
 - Which two of the five EMAs (9, 25, 55, 155, 255) are the "basic" pair, and does the Module 1 stop rule's "EMA 50" mean EMA 55?
 - What counts as a "full body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles?
