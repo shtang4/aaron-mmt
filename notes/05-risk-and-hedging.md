@@ -603,8 +603,8 @@ Twelve rules across two slides, transcribed with light cleanup:
 - Does the SSWB SOP use a stop loss, and at what ROI? Step 4 names only the Wick Tracker take-profit.
 - Why does the "Execute 10 trades" screenshot show six simultaneous cross-margin positions at 100% to 700% ROI when the SOP says 50% TP, one at a time, don't hold?
 - Over what period did the 1,993 to 18,288 USDT growth happen, and how many losing trades were in it?
-- What exactly is the "IceBerg Tip" on the MACD, and is the crash-bottom entry in the RAVE example a taught setup or a one-off?
-- Does Module 4's New TP or Wick Tracker replace the Module 1 "EMA cross-back, exit, no questions" rule? The ZETA case says hold through a cross-back; Module 1 says exit on it; Golden Rule 6 says do not hold at all.
+- The "IceBerg Tip" on the MACD is most likely the histogram extreme, the same signal Module 4 uses in reverse for take-profit ("mid histogram"). Is the crash-bottom entry in the RAVE example a taught setup or a one-off?
+- ~~Does Module 4 replace the Module 1 exit rule?~~ Yes. Module 4 takes 75% at the volume/MACD climax and protects a 25% runner. That is a coherent answer to the ZETA "too early" slide without holding everything.
 - What does "hedging when suitable" mean? "Suitable" is never defined.
 - ~~Is hedging a replacement for the stop loss?~~ Answered: yes. The hedging section is framed as salvaging a position already deep in loss, and never says to take the stop. See section 4.4 for why the formula is worse than the stop in both branches.
 - Does the course tell students to enable Bybit hedge mode? Without it the hedge as drawn cannot exist. The GMX case study never opened a short, so the question may be moot in practice.
