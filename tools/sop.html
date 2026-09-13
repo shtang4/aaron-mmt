@@ -1,0 +1,182 @@
+<title>MMT One-Page SOP</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #f3f2ee; --surface: #fbfaf7; --surface-2: #ecebe5; --line: #d8d5cc; --line-strong: #b9b5a8;
+    --ink: #1f2229; --ink-2: #4c5160; --ink-3: #7d8290;
+    --accent: #b8741f; --accent-ink: #ffffff; --accent-soft: #f4e6d0;
+    --long: #1f8a5b; --short: #c23f3f; --crit: #b02a2a; --crit-soft: #f6d9d9; --ok-soft: #dcefe5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171c; --surface: #1c1f26; --surface-2: #232730; --line: #2f343f; --line-strong: #444a58;
+      --ink: #e8e6df; --ink-2: #b4b2a9; --ink-3: #7f8290;
+      --accent: #d99a3f; --accent-ink: #15171c; --accent-soft: #3a2c16;
+      --long: #3fb97f; --short: #e0605f; --crit: #e0605f; --crit-soft: #3d1f1f; --ok-soft: #16342a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171c; --surface: #1c1f26; --surface-2: #232730; --line: #2f343f; --line-strong: #444a58;
+    --ink: #e8e6df; --ink-2: #b4b2a9; --ink-3: #7f8290;
+    --accent: #d99a3f; --accent-ink: #15171c; --accent-soft: #3a2c16;
+    --long: #3fb97f; --short: #e0605f; --crit: #e0605f; --crit-soft: #3d1f1f; --ok-soft: #16342a;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; font-size: 12.5px; line-height: 1.4; padding-inline: 16px; padding-block: 0 32px; }
+  .sheet { max-width: 1060px; margin: 18px auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px 26px; }
+  h1, h2, h3 { font-family: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif; font-weight: 600; line-height: 1.1; margin: 0; text-wrap: balance; }
+  .mono, code { font-family: "IBM Plex Mono", Consolas, monospace; font-variant-numeric: tabular-nums; }
+  code { background: var(--surface-2); padding: 0 4px; border-radius: 3px; font-size: 11.5px; }
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 14px; }
+  .head h1 { font-size: 26px; }
+  .head .eyebrow { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px; }
+  .head .right { text-align: right; color: var(--ink-2); font-size: 11.5px; max-width: 46ch; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .head .right { text-align: left; } }
+  section h2 { font-size: 15px; display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; padding-bottom: 3px; border-bottom: 1px solid var(--line-strong); }
+  section h2 .n { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--accent); font-weight: 500; }
+  section h2 .d { font-family: "IBM Plex Sans", sans-serif; font-weight: 400; font-size: 11px; color: var(--ink-3); margin-left: auto; letter-spacing: .05em; text-transform: uppercase; }
+  ol, ul { margin: 0; padding-left: 18px; }
+  li { margin-bottom: 3px; }
+  li b { font-weight: 600; }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; font-size: 12px; }
+  .kv dt { color: var(--ink-2); font-weight: 500; } .kv dd { margin: 0; }
+  .never { grid-column: 1 / -1; background: var(--crit-soft); border-left: 4px solid var(--crit); border-radius: 6px; padding: 8px 12px; }
+  .never h2 { border: 0; margin-bottom: 4px; color: var(--crit); }
+  .never ul { columns: 2; column-gap: 24px; }
+  @media (max-width: 760px) { .never ul { columns: 1; } }
+  .formulas { grid-column: 1 / -1; background: var(--surface-2); border-radius: 6px; padding: 8px 12px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px 18px; font-size: 11.5px; }
+  @media (max-width: 760px) { .formulas { grid-template-columns: 1fr; } }
+  .formulas div b { display: block; color: var(--ink-2); font-weight: 500; }
+  .long { color: var(--long); font-weight: 600; } .short { color: var(--short); font-weight: 600; }
+  .foot { color: var(--ink-3); font-size: 10.5px; margin-top: 12px; border-top: 1px solid var(--line); padding-top: 6px; }
+  @media print {
+    body { background: #fff; color: #000; padding: 0; font-size: 10.5px; }
+    .sheet { border: 0; margin: 0; padding: 0; max-width: none; border-radius: 0; background: #fff; }
+    @page { size: A4; margin: 12mm; }
+    .never { background: #fff; border-left-color: #000; } .never h2 { color: #000; }
+    .formulas, code { background: #f2f2f2; }
+    section h2 .n { color: #000; }
+  }
+</style>
+
+<div class="sheet">
+  <div class="head">
+    <div>
+      <div class="eyebrow">Momentum Mastery Trading · 3D method · distilled from the course notes</div>
+      <h1>MMT One-Page SOP</h1>
+    </div>
+    <div class="right">Only what the course itself states, minus what it contradicts elsewhere. Bybit USDT perpetuals, 1-minute entry chart, direction from the higher timeframes. Every step is a rule you can check; if you cannot tick it, you skip.</div>
+  </div>
+
+  <div class="grid">
+    <section>
+      <h2><span class="n">0</span> Setup, once <span class="d">Tools</span></h2>
+      <dl class="kv">
+        <dt>Bybit chart</dt><dd>Heikin-Ashi on · EMA <code>9 · 25 · 55 · 155 · 255</code> · MACD <code>8 / 13 / 9</code> · Volume <code>VOLMA 5, 10</code></dd>
+        <dt>TradingView</dt><dd>Market Structure (Leviathan): BOS on close, CHoCH on · Donchian Trend Ribbon <code>20</code></dd>
+        <dt>Coinglass</dt><dd>Liquidation heatmap, 1-week view</dd>
+        <dt>Account</dt><dd>Isolated margin · one-way mode · TP triggers on <b>Last</b>, SL on <b>Mark</b> · Order by Value</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2><span class="n">1</span> Scan the market <span class="d">Diagnose</span></h2>
+      <ol>
+        <li><b>Heatmap.</b> Mostly green → long bias. Mostly red → short bias. Mixed → <b>no trades today</b>.</li>
+        <li><b>Hot sectors</b> → the leading coin in each. Then <b>Top Movers</b> (24h, and the 15m tabs) for candidates. A gainer is a candidate, never a trade.</li>
+        <li><b>Screener</b>, per candidate: EMA direction agrees 1D → 4h → 1h → 15m → 5m → 1m · OI rising with price · funding on your side · book thinner ahead. Take 4/4; treat 3/4 as thin.</li>
+        <li>Sentiment gauge is a clue, not a signal. Greed ≠ buy.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span> Set direction <span class="d">Diagnose</span></h2>
+      <ol>
+        <li><b>EMA 155 rule:</b> three consecutive full-body candles <span class="long">above</span> → long only; <span class="short">below</span> → short only. Nothing else sets direction.</li>
+        <li>Heikin-Ashi run with no trend-side wicks confirms. Dojis or small-body clusters → wait.</li>
+        <li>Donchian ribbon solid in the same colour confirms. Mixed → skip.</li>
+        <li><b>Seahorse</b> (vertical move done, flat beak, EMAs converging) → stay out.</li>
+        <li><b>Hockey stick</b> (slow decline, sharp V, vertical blade): enter only on the golden cross <i>with</i> the EMA 155 three-candle rule. Never buy the blade.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span> Sniper entry <span class="d">Diagnose · SPE</span></h2>
+      <ol>
+        <li>TradingView: nearest <b>demand zone</b> below (long) or <b>supply zone</b> above (short), and any FVG. Take the near edge: top of demand, bottom of supply.</li>
+        <li>Bybit: the <b>5-line EMA closest to that edge</b>. That is the price.</li>
+        <li>Rest a <b>limit order</b> there. Re-place it if the EMA moves. Never market-buy the candle that is running. Wait at the lounge.</li>
+        <li>Correlated alts making the same move at the same minute are <b>one trade</b>. Size the total, not each ticket.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span> Size and stop <span class="d">Dose</span></h2>
+      <ol>
+        <li><b>Isolated</b> margin. Leverage <b>5× to 10×</b>.</li>
+        <li>Margin per trade: <b>$20</b> to learn; then 1% of wallet; never above 10%. Bigger wallet, smaller trade.</li>
+        <li>Stop as ROI on margin, by tier: beginner <b>5–20%</b>, intermediate 20–50%, advanced 50%+. Convert to price; it must sit <b>beyond the structural level</b> (far edge of the zone, or the heel low). If it does not, lower the leverage. Never move the level.</li>
+        <li>Write the money at risk in USDT before entry. If the number makes you flinch, the dose is wrong.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span> Exit plan, both ways <span class="d">Discharge</span></h2>
+      <ol>
+        <li><b>TP first.</b> Wick Tracker at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on Last, or a resting limit.</li>
+        <li><b>SL</b> from step 4, trigger on Mark. Both resting before you look away.</li>
+        <li><b>Climax exit:</b> volume bar far above VOLMA + MACD histogram at its tallest, next bar shorter → close <b>75%</b>. Move SL on the runner to entry.</li>
+        <li><b>Runner:</b> Hunting SL locks a rising ROI, <code>entry ± entry × ROI ÷ leverage</code>. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.</li>
+        <li>Stop hit = the plan worked. Take it. Nothing replaces it.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span> After the close <span class="d">Follow up</span></h2>
+      <ol>
+        <li><b>Sweep</b> realised profit from Derivatives to Funding.</li>
+        <li><b>Close and go.</b> Next coin. Never re-enter the same beak.</li>
+        <li>Stop at the daily target or ten trades, whichever first. Rest.</li>
+        <li><b>Log it</b> in the journal: which D, which rule, what you would change. Thirty trades before you believe any number.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="n">7</span> When it goes wrong <span class="d">Discharge</span></h2>
+      <ol>
+        <li>The stop is the answer. It was written before entry; honour it.</li>
+        <li>If you skipped the stop and are underwater: <b>close it</b>. The loss is the loss.</li>
+        <li>If you want the opposite direction: close the loser first, open the new trade as its own sized position with its own stop. Never both legs at once.</li>
+        <li>News, FOMC, black-swan candles: no method is 100%. Smaller dose, or flat.</li>
+      </ol>
+    </section>
+
+    <div class="formulas">
+      <div><b>Stop / TP distance</b><code>entry × ROI% ÷ leverage</code> (Bybit ROI = P&amp;L ÷ margin)</div>
+      <div><b>Round-trip fees, as ROI</b><code>2 × 0.055% × leverage</code> (taker; 20× ≈ 2.2%)</div>
+      <div><b>Reward : risk</b><code>|TP − entry| ÷ |entry − stop|</code> · breakeven win rate <code>1 ÷ (1 + R)</code></div>
+      <div><b>Money at risk</b><code>margin × stop ROI%</code> (+ fees) · keep it under 0.5% of wallet</div>
+      <div><b>Max leverage for a structural stop</b><code>entry × ROI% ÷ |entry − level|</code></div>
+      <div><b>Hunting SL trigger</b><code>entry ± entry × locked ROI% ÷ leverage</code></div>
+    </div>
+
+    <div class="never">
+      <h2>Never, because the course's own risk module says so</h2>
+      <ul>
+        <li>Cross margin. Liquidation takes the whole wallet.</li>
+        <li>A position without a resting stop.</li>
+        <li>Hedging instead of taking the stop. It is a second, larger, faster-losing trade.</li>
+        <li>Holding a loser to breakeven. Upside zero, downside the account.</li>
+        <li>Trading a mixed heatmap or a seahorse.</li>
+        <li>Entering on a chat call without the chart check. Late trade = losing trade.</li>
+        <li>Holding for days. This is not swing trading.</li>
+        <li>New listings beyond a few days; no EMA 155 to lean on.</li>
+        <li>Adding size after a loss. Too much kills.</li>
+        <li>Blaming mindset before checking which D you skipped.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="foot">Sources: course notes in this repository, Modules 0 to 6. Stop tiers, ROI conversion and Hunting SL from Module 5 §3; SPE and the climax exit from Module 4; EMA 155 rule and settings from Module 3; the scan and screener from Module 2; the hockey-stick entry as confirmed in the session. Where the deck states two incompatible things, the version consistent with the Module 1 Discharge rule and the Module 5 risk slide is kept. Not financial advice.</p>
+</div>
