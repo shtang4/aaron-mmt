@@ -88,9 +88,116 @@ Slide caption: "You exited early, then watched the price pump without you." Foll
 
 The safe reading: size so you *could* hold, then let the written Discharge plan decide whether you *do*. Do not convert "I sized correctly" into "therefore I never take profit on a retrace".
 
-## 3. SSWB (Advance Dose)
+## 3. Enhancement of Risks Management (Advance Dose; possibly the SSWB item)
 
-_Not yet captured. Acronym not expanded on the title slide._
+Five slides titled "Enhancement of Risks Management" plus a "1% Risk Rule" slide. The title slide listed "SSWB (Advance Dose)" in this position; the acronym does not appear on any of these slides, so the mapping is an inference.
+
+### 3.1 Basic trading concepts
+
+Transcribed:
+
+| Concept | Slide explanation |
+|---------|------------------|
+| Isolate mode | Allocate a specific amount of funds to each trade individually. Protects your other trades from affecting each other. |
+| Cross mode | Uses your entire account balance as margin for all trades. Flexible sizing, higher liquidation risk. |
+| Leverage × | How much your position size is amplified compared to your margin. 10× means trading with ten times your margin. |
+| Liquidation | Account balance falls below a level and trades are closed automatically. Manage risk and set stop-loss orders to avoid it. |
+| Derivative account | Used for futures contracts; speculate on price without owning the asset. |
+| Funding account | Stores funds; deposit and withdraw here to fund trades. |
+
+### 3.2 Isolated versus cross, leverage, and stop-loss tiers
+
+Slide text:
+
+- Take care of the trade by adjusting: isolated with leverage and SL, or cross with leverage and SL.
+- **Isolate**: if liquidated, you only lose the capital you put in. The derivative wallet USDT is preserved.
+- **Cross**: if liquidated, you lose not only the capital you put in; the total amount in the derivative wallet is liquidated ("Burst!!").
+- **Isolate with 5× to 10× leverage**, as it can be adjusted. The smaller your leverage, the further away the liquidation price.
+- **SL (stop loss) by risk level:**
+
+| Level | SL |
+|-------|----|
+| Beginner (low risk taker) | 5% to 20% |
+| Intermediate (moderate risk taker) | 20% to 50% |
+| Advance (high risk taker) | above 50%, "on the amount that comfortable" |
+
+**These percentages are ROI on margin, not price.** The Bybit TP/SL screen sets the stop as "Trigger by ROI (%)", and the screenshots in section 3.4 confirm it. Converting to price distance:
+
+```
+price distance = entry × (ROI% ÷ leverage)
+```
+
+So a beginner's 20% stop at 10× leverage is a 2% price move; at 25× it is 0.8%. An "advanced" 50% stop at 25× is still only a 2% price move. On a 1-minute crypto chart, 0.8% is inside normal noise, which is why the next slide is about giving the stop room.
+
+This also resolves the "cross margin, no SL" bullet from the Module 3 seahorse slide: the course's own risk module says cross margin liquidation takes the whole wallet, and prescribes isolated at 5× to 10× with a stop. Treat the seahorse bullet as superseded.
+
+### 3.3 Partial take-profit, breakeven stop, and the "Hunting SL"
+
+Slide text:
+
+- **SL to entry once partial TP (PTP)**: after taking part of the profit, move the stop to the entry price. The remainder can no longer lose.
+- **Moving SL / Hunting SL**: a trailing stop that locks in a chosen fraction of the open profit. Set a percentage "in order for it to have more space for the wick to hit without triggering your SL easily."
+
+**Formula, worked on the slide** (a short on THETAUSDT, entry 2.814, 25× leverage):
+
+| Lock in | Calculation | SL trigger price |
+|---------|-------------|-----------------|
+| 20% ROI ("left 80% for the wick") | 2.814 × 20% = 0.5628; ÷ 25 = 0.022512; 2.814 − 0.022512 | **2.791488** |
+| 60% ROI ("left 40% for the wick") | 2.814 × 60% = 1.6884; ÷ 25 = 0.067536; 2.814 − 0.067536 | **2.746464** |
+
+The arithmetic is correct. In general form:
+
+```
+SL price (short) = entry − entry × (locked ROI ÷ leverage)
+SL price (long)  = entry + entry × (locked ROI ÷ leverage)
+```
+
+The slide labels each line "Entry Price", which is a labelling slip; the first line computes the price distance and the second the trigger price.
+
+"Left 80% for the wick" is loose. Locking 20% ROI does not leave 80% of anything; it leaves whatever open ROI exists above 20% exposed to a wick. In the screenshot the open ROI was about 55%, so the 20% lock left about 35 ROI points of room, and the 60% lock would have been *above* the current open profit and unsettable without price moving further first.
+
+### 3.4 The Bybit screenshots, checked
+
+THETAUSDT 1-minute, a short. Position: qty 43.2, entry 2.814, mark 2.7515, liquidation 3.0493. TP set at 2.4765 (ROI 299.84%). Two SL screens, both labelled "Hunting SL":
+
+| SL trigger (Mark) | ROI shown | Expected profit shown |
+|-------------------|-----------|----------------------|
+| 2.7914 | 20.07% | 0.9763 USDT |
+| 2.7464 | 60.05% | 2.9203 USDT |
+
+Cross-checks:
+
+- Notional = 43.2 × 2.814 = 121.6 USDT; at 25× the margin is 4.86 USDT.
+- Profit at 2.7914 = (2.814 − 2.7914) × 43.2 = 0.976 USDT. Matches. ROI 0.976 ÷ 4.86 = 20.1%. Matches.
+- Profit at TP 2.4765 = 0.3375 × 43.2 = 14.58 USDT. Matches the 14.5799 shown. ROI 300%. Matches.
+
+So the formula, the screenshots and the Bybit ROI display all agree. One observation: the liquidation price 3.0493 is 8.4% above entry. Pure isolated 25× would liquidate at roughly 3.5% to 4%. Either extra margin was added to the isolated position or the account is on cross. The slide does not say. Given section 3.2's own advice, check which mode the demo account was in.
+
+Also on the chart: the EMA header reads EMA 9, 25, 55, 155, 255 and the MACD reads (8, 13, 9). The demo chart is running the exact Module 3 settings.
+
+### 3.5 The 1% risk rule
+
+Slide, verbatim: Total Wallet = Risk Amount ÷ Risk Percentage. Given risk amount 1,000 USDT and risk percentage 1%, total wallet = 1,000 ÷ 0.01 = **100,000 USDT**. "If 1% risk equals 1,000 USDT, the wallet should be 100,000 USDT."
+
+The arithmetic is trivial and correct. The framing is backwards from normal practice: a risk rule is applied *from* the wallet (risk = wallet × 1%), not used to derive the wallet you would need. Read as written, the slide says: if you are putting 1,000 USDT into a trade, you should have 100,000 USDT behind it. The ZETA case study bought 1,000 units, which at 0.857 was about 857 USDT of notional, in that ballpark.
+
+**What "risk amount" means here is still not pinned down.** Two readings:
+
+1. Risk = maximum loss at the stop. Then 1,000 USDT risk with a 20% ROI stop means 5,000 USDT of margin per trade.
+2. Risk = margin posted on an isolated position, on the logic of section 3.2 that "if liquidated you only lose the capital you put in". Then 1,000 USDT is the margin, and at 25× the notional is 25,000 USDT.
+
+The course's isolated-margin framing points to reading 2. If so, "1%" is 1% of the wallet as **margin**, and the loss at a 20% ROI stop is 0.2% of the wallet, which is conservative. Without a stop, the loss on liquidation is the full 1%. This is consistent with the "1% to 10% amount" tip from Module 3, and it makes the tip a margin rule, not a risk rule.
+
+### 3.6 The Dose procedure, assembled
+
+Putting sections 3.2 to 3.5 together into the order you would do it:
+
+1. Isolated margin. Leverage 5× to 10× for a beginner; the demo uses 25×.
+2. Margin per trade = 1% to 10% of wallet, by appetite. Start at 1%.
+3. Initial stop by ROI tier: 5% to 20% for a beginner. Convert to price with entry × ROI ÷ leverage and check it sits beyond the structural level (EMA 55 or 155, an equal low). If it does not, either widen the ROI or reduce leverage until it does; do not move the structural level.
+4. Take profit set first, at the nearest resistance or a liquidation cluster.
+5. On a partial take-profit, move the stop to entry.
+6. Thereafter, trail with the Hunting SL formula, locking a rising fraction of the open ROI.
 
 ## 4. Advance tool: MMT Hedging (Discharge)
 
@@ -102,9 +209,10 @@ _Not yet captured._
 
 ## Open questions
 
-- Is the "1% to 10% amount" margin per trade or risk per trade?
-- Does the course prescribe a maximum leverage for the conservative style beyond "1× to 10×", and a number for the aggressive style beyond "maximise"?
-- What does SSWB stand for, and what does it add to the 1% to 10% amount rule?
+- Is the "1% to 10% amount" margin per trade or maximum loss per trade? The isolated-margin framing in section 3 points to margin. Confirm.
+- The demo account trades at 25× while the slide prescribes 5× to 10×. Which is the course's actual recommendation?
+- Was the THETA demo position isolated or cross? Its liquidation distance (8.4%) does not match isolated 25×.
+- What does SSWB stand for? The "Enhancement of Risks Management" slides sit where the title slide put it, but never use the acronym.
 - Does Module 4's New TP or Wick Tracker replace the Module 1 "EMA cross-back, exit, no questions" rule? The ZETA case says hold through a cross-back; Module 1 says exit on it.
 - Is hedging (section 4) a replacement for the stop loss or a tool used alongside it? This is the question that decides whether the Discharge rule survives contact with Module 5.
 - What are the Golden Rules, and do they resolve the "no SL, cross margin" contradiction in the Module 3 seahorse slide?
