@@ -1,6 +1,6 @@
 # 07 — Course handouts (three PDFs)
 
-Three PDF handouts supplied alongside the slides, all copyright Dr. Aaron MMT 2026. They are image-based, designed pages; one carries a NotebookLM watermark and the "Trade Anatomy" page shows a mock exchange UI with garbled text, so they were generated from the course material rather than written from scratch. That matters for one reason: they are more internally consistent and more textbook-standard than the slides, and in several places they quietly correct the slides.
+Three PDF handouts supplied alongside the slides, all copyright Dr. Aaron MMT 2026. They are image-based, designed pages; one carries a NotebookLM watermark and the "Trade Anatomy" page shows a mock exchange UI with garbled text, so they were generated from the course material rather than written from scratch. Confirmed from the session: the handouts are **supplementary**; where they and the slides differ, the slides are the taught method. They are still worth reading because they are more internally consistent and more textbook-standard than the slides, and in several places they quietly correct them.
 
 | Handout | Pages | What it is |
 |---------|-------|-----------|
@@ -91,14 +91,14 @@ Two consequences:
 | Module 3 slides, current method | EMA 9, 25, 55, 155, 255 (Bybit) |
 | **Handouts** | **One EMA, length 20**, on TradingView ("Indicators → EMA → Length: 20") |
 
-The handouts' direction rule is "price above or below the EMA 20 on Daily, 4H and 1H". The slides' direction rule is three full-body candles on one side of EMA 155 on the entry chart. These are different tests on different charts with different lines. They will agree in a clean trend and disagree at every turn. The slides' rule is the one taught in the session and the one the SOP keeps; the handouts' EMA 20 on three higher timeframes is a reasonable higher-timeframe filter to run *before* it, and that is how the SOP now uses it.
+The handouts' direction rule is "price above or below the EMA 20 on Daily, 4H and 1H". The slides' direction rule is three full-body candles on one side of EMA 155 on the entry chart. These are different tests on different charts with different lines. They will agree in a clean trend and disagree at every turn. Confirmed from the session: the slides' EMA 155 rule is the taught one. The handouts' EMA 20 on three higher timeframes is an optional filter to run before it, and that is how the SOP uses it.
 
 ### 2.2 Is the 1-minute chart the entry chart or a danger zone?
 
 - Screener cheat sheet, step 1: Day → 4H/1H → 15m/5m/5m → **1 Min, "micro-trend execution"**. And: "Scalping counter-trend on the 1-minute chart is permissible, but you must always refer back to the Daily."
 - Risk checklist, same step: 1D highest priority, 4H high, 1H medium, 15M "precision timing", **"5M & 1M: Extreme noise. Danger!"**
 
-The two handouts disagree with each other, and the second disagrees with the whole course, whose entry chart is the 1-minute (Module 3 section 1.5, every SPE example, the SSWB SOP). The resolution consistent with everything else: direction from 1D/4H/1H, timing on 15m, **execution** on 1m with the higher timeframes already decided. A 1-minute chart read on its own is the danger the risk checklist means.
+The two handouts disagree with each other, and the second disagrees with the whole course, whose entry chart is the 1-minute (Module 3 section 1.5, every SPE example, the SSWB SOP). Confirmed from the session: **the 1-minute chart is the execution chart.** Direction from 1D/4H/1H, timing on 15m, execution on 1m. The risk checklist's "danger" line means a 1-minute chart read on its own.
 
 ### 2.3 Counter-trend is permitted, with reduced size
 

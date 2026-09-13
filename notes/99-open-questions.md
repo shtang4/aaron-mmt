@@ -16,8 +16,8 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | A8 | Does the uncorrelated-pump trade during a BTC crash have rules (scan, stop, exit) or is it one observation? | 6 §4 | AERGO on 7 April 2025 is the only evidence. |
 | A9 | Is a strong coin versus a shit coin defined, so a coin on neither list can be classified? | 2 §2 | The lists are a 2023 snapshot. |
 
-| A10 | Which EMA sets direction: EMA 20 on 1D/4H/1H (handouts) or three candles past EMA 155 on the entry chart (slides)? They are different tests. The SOP runs the first as a filter and the second as the trigger; confirm that is the intent. | 7 §2.1 | Different lines, different charts, disagree at every turn. |
-| A11 | Is the 1-minute chart the execution chart (cheat sheet, all slides) or "extreme noise, danger" (risk checklist)? | 7 §2.2 | The two handouts disagree with each other. |
+| ~~A10~~ | ~~Which EMA rule wins?~~ Session: the handouts are supplementary. The slides' EMA 155 three-candle rule sets direction; EMA 20 on 1D/4H/1H is an optional higher-timeframe filter. | 7 §2.1 | |
+| ~~A11~~ | ~~Is 1-minute the execution chart?~~ Session: yes. The risk checklist's "danger" line refers to reading 1m without the higher timeframes. | 7 §2.2 | |
 
 ## B. Questions that change the entry price
 
