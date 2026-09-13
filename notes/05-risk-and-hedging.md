@@ -494,9 +494,9 @@ Lesson 3 also says to limit new positions while a loser is open, which is sound,
 
 Lesson 5, read closely, says be ready to close at the desired price. Combined with lesson 3, the "desired price" for a losing trade is the entry price. That is the whole method: breakeven as the target for losers.
 
-### 4.10 What the hedging section amounts to
+### 4.10 What the hedging section amounts to (before the PEOPLE example)
 
-Two things were taught under the heading "MMT Hedging":
+Two things were taught under the heading "MMT Hedging" up to this point:
 
 | | Formula (section 4.3) | Case study (section 4.8) |
 |-|----------------------|-------------------------|
@@ -506,11 +506,92 @@ Two things were taught under the heading "MMT Hedging":
 | Upside | Small net gain if the adverse move continues | Zero (close at entry) |
 | Evidence | None shown | One trade that recovered |
 
-Neither is a hedge in the sense the definition slide gives. Both are ways of not taking the stop. The Module 1 Discharge rule, "stop loss below the EMA, structural, not emotional, written before entry", is the better rule and the course's own risk section agrees with it. Use that, and treat this section as a description of what the author did in 2023, not as a procedure.
+Neither is a hedge in the sense the definition slide gives. Both are ways of not taking the stop. The PEOPLE example in section 4.11 is the one actual hedge in the module, and it is analysed there.
+
+
+### 4.11 The PEOPLE example: the one real hedge, and how it ends
+
+Framing slide first: "When the market moves against me there is nothing I can do except watch it bleed. What if the trade goes wrong?" Answer: "There is always something you can do. You just have to know it before you enter. **Discharge is not just your exit (TP/SL). It is your safety plan for every scenario, written before any of them happen.**"
+
+Then "Real example: Hedging Losing Trade. Manage your loss with strategy to stay profitable."
+
+| Leg | Side | Size | Entry | Mark | P&L | Mode |
+|-----|------|------|-------|------|-----|------|
+| Losing trade | Long | 9,600 PEOPLE | 0.04450 | 0.03106 | −128.92 (−374.87%) | Cross 12.5×, liquidation "--" |
+| Hedging entry | Short | 19,205 PEOPLE | 0.03850 | 0.03106 | +142.69 (+135.42%) | Cross 12.5×, liquidation 0.08863 |
+| After "Close losing trade, let the runner win" | Short only | 19,205 | 0.03850 | 0.02751 | +209.71 (+351.93%) | Liquidation now 0.06118 |
+
+Checks: (0.03106 − 0.04450) × 9,600 = −129.0. (0.03850 − 0.03106) × 19,205 = +142.9. (0.03850 − 0.02751) × 19,205 = +211.1. All match the cards.
+
+What the numbers say:
+
+- **The hedge was opened late.** Entry 0.0445, hedge at 0.0385: the long was already down 13.5% on price, which at 12.5× is −169% ROI. The position had lost 1.7 times its margin before anything was done. That is only survivable on cross, where the wallet absorbs it; the "--" liquidation price confirms the wallet was large relative to the position.
+- **The hedge was 2:1, not 1:1.** 19,205 short against 9,600 long. That is the formula's "> 50% loss, extra 100% of capital" case in action: a net short of 9,605 PEOPLE, with the losing long still open underneath.
+- **The resolution was to close the loser.** "Close losing trade, let the runner win." The long was closed at about 0.0311 for −129. The short ran on to +210. Net about **+81 USDT** across both legs. Note the short's liquidation price moved from 0.0886 to 0.0612 once the long was gone: the long had been propping it up as offsetting exposure. After closing the loser, the short is a plain 12.5× position with 122% headroom.
+
+**The comparison the slide does not make.** Suppose the long had a stop at −20% ROI, the beginner tier from section 3.2. It closes at about 0.0438 for a loss of roughly −7 USDT. The short is then opened at 0.0385 as a fresh trade, same size, and runs to 0.0275 for +210. Net about **+203 USDT**. The hedge path made +81 because the long bled from −7 to −129 while waiting for the hedge, and then the hedge's first 13 points of profit only paid for that bleeding.
+
+| Path | Long result | Short result | Net |
+|------|-------------|--------------|-----|
+| MMT hedge as shown | −129 | +210 | +81 |
+| Stop at −20% ROI, then the same short | about −7 | +210 | about +203 |
+| Stop at −20% ROI, no short | about −7 | 0 | about −7 |
+
+And if PEOPLE had bounced after the hedge instead of falling: the 2:1 short loses twice as fast as the long recovers, on cross margin, with both legs paying funding.
+
+So the example is honest in one respect that the formula slide was not: it ends with the loser closed. The "hedge" functioned as a delayed stop plus a new short. The same outcome is available with a stop and a short, for 122 USDT more, with no period where both legs are open on cross margin.
+
+### 4.12 "What will you have when implementing Discharge"
+
+Four bullets: partial TP / breakeven plan; hedging when suitable; exit discipline; how to protect your trade when the market moves fast.
+
+"Hedging when suitable" is the only qualifier the module puts on hedging, and "suitable" is never defined. On the arithmetic in 4.4 and 4.11, the answer is: when you would have been better off taking the stop earlier, which is always.
 
 ## 5. MMT Golden Rules (Follow up)
 
-_Not yet captured._
+Twelve rules across two slides, transcribed with light cleanup:
+
+| # | Rule | Reading |
+|---|------|---------|
+| 1 | If the market is too volatile with a sideways trend but high volume, do not trade this kind of coin or hold too long. | The seahorse and heatmap "ranging" Skip condition, restated. |
+| 2 | How to earn from a trade is not just ROI%. Consider the funding rate (FR); expected profit and actual profit at close differ slightly. | Correct. Funding is charged every 8 hours on Bybit and shows up as the gap between the TP/SL screen's "expected profit" and the realised figure. It only matters if you hold across a funding time, which rule 6 says not to do. |
+| 3 | "Close and Go", then "Open and Wait" for the next potential coin. | Take the profit, leave the coin, scan again. This is the SSWB loop. |
+| 4 | New-born coins: trade for a few days only, avoid keeping them long. | New listings pump then fade; there is no EMA 155 history to lean on. |
+| 5 | Frequent long and short scalping earns faster, for those who can monitor. | Both directions, high frequency, screen time required. |
+| 6 | **Do not hold the coin too long. We are not doing swing trades.** Observe the volume percentage. | The rule the showcase trades break: ZETA (two weeks), BMT (five days), GMX (overnight on a loser). |
+| 7 | **Bigger wallet → smaller trade → lasts longer. Smaller wallet → bigger trade → will not last.** | The one sizing principle in the course stated as a rule. It is correct and it is the argument against cross margin, which makes every trade wallet-sized. |
+| 8 | PTP (partial take profit) and SL to entry, versus awaiting TP; Hunting SL. | Section 3.3. Take some, move the stop to breakeven, trail the rest. |
+| 9 | Know the trend of a new-born coin. | Pairs with rule 4. Not elaborated. |
+| 10 | We can make money with small capital and flipping our own wallet. | SSWB restated. |
+| 11 | Let's become a "Wick Player". How to be a "Wick Catcher" without a Master? | A teaser for the Module 4 Wick Tracker. |
+| 12 | **10% is the strategy, 90% is the mindset.** | See below. |
+
+### 5.1 What the Golden Rules do and do not say
+
+- **No rule says "always set a stop loss."** Rule 8 mentions moving a stop to entry after a partial take-profit, which presumes one exists, and the GMX lessons slide said "please set SL". But the twelve rules that the course labels golden do not include it. Given that the hedging section is entirely about what to do instead of a stop, that omission is consistent with how the course actually trades, and it is the first thing to add to your own copy of the list.
+- **Rules 6 and 7 are the two that matter most, and the course's own examples break both.** Do not hold, and size small relative to the wallet. Every showcase trade in this module held for days on cross margin.
+- **Rule 12 is the escape hatch.** "90% is the mindset" means that when the method fails, the diagnosis is the student's psychology, not the method. It is unfalsifiable. A method that is 10% strategy should be easy to state in full, and this module has shown that the strategy part (isolated, 5× to 10×, ROI-tiered stop, TP first, sweep profits) is sound and short, while the parts labelled "advanced" (cross margin, hedging, holding to breakeven) are where the risk lives.
+
+## 6. Module 5 summary: what to keep and what to discard
+
+**Keep** (all stated somewhere in this module by the course itself):
+
+1. Isolated margin, 5× to 10×.
+2. Small fixed stake: $20 to practise, scale by percentage of wallet later.
+3. Stop set before entry, by ROI tier converted to price, at or beyond the structural level.
+4. TP set first. Partial TP, then stop to entry, then Hunting SL.
+5. Sweep realised profit to the Funding account.
+6. Close and go. Do not hold. Stop at the day's target and rest.
+7. Bigger wallet, smaller trade.
+
+**Discard** (also stated in this module, and contradicted by the list above):
+
+1. Cross margin as a working mode.
+2. The hedging formula (over-sized counter trade at maximum leverage).
+3. Holding a losing position to breakeven (GMX).
+4. Opening a hedge instead of taking the stop (PEOPLE), when the same short as a fresh trade after the stop nets more.
+5. The "90% mindset" framing as an explanation for losses.
+
 
 ## Open questions
 
@@ -523,8 +604,9 @@ _Not yet captured._
 - Why does the "Execute 10 trades" screenshot show six simultaneous cross-margin positions at 100% to 700% ROI when the SOP says 50% TP, one at a time, don't hold?
 - Over what period did the 1,993 to 18,288 USDT growth happen, and how many losing trades were in it?
 - What exactly is the "IceBerg Tip" on the MACD, and is the crash-bottom entry in the RAVE example a taught setup or a one-off?
-- Does Module 4's New TP or Wick Tracker replace the Module 1 "EMA cross-back, exit, no questions" rule? The ZETA case says hold through a cross-back; Module 1 says exit on it.
+- Does Module 4's New TP or Wick Tracker replace the Module 1 "EMA cross-back, exit, no questions" rule? The ZETA case says hold through a cross-back; Module 1 says exit on it; Golden Rule 6 says do not hold at all.
+- What does "hedging when suitable" mean? "Suitable" is never defined.
 - ~~Is hedging a replacement for the stop loss?~~ Answered: yes. The hedging section is framed as salvaging a position already deep in loss, and never says to take the stop. See section 4.4 for why the formula is worse than the stop in both branches.
 - Does the course tell students to enable Bybit hedge mode? Without it the hedge as drawn cannot exist. The GMX case study never opened a short, so the question may be moot in practice.
 - How many losing positions has the author held to breakeven that did not recover? The GMX case is one that did.
-- What are the Golden Rules, and do they resolve the "no SL, cross margin" contradiction in the Module 3 seahorse slide?
+- ~~What are the Golden Rules?~~ Captured in section 5. They do not contain a stop-loss rule.

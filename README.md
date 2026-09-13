@@ -15,7 +15,7 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 | 5 | [notes/05-risk-and-hedging.md](notes/05-risk-and-hedging.md) | Risk management, MMT Hedging, MMT Golden Rules |
 | 6 | notes/06-case-studies.md | Case studies, Q&A |
 
-File 6 is a placeholder; file 4 has only what other modules imply until those modules are captured.
+File 6 is a placeholder; file 4 has only what other modules imply. Module 5 is complete. until those modules are captured.
 
 ## Conventions
 
