@@ -120,5 +120,5 @@ If any cell is blank, the framework says the trade is not valid.
 - ~~Which EMA periods are used?~~ Partly answered in Module 3: the MMT set is EMA 9, 25, 55, 155, 255, with EMA 155 as the trend pivot. Which two form the "basic" pair is still unstated. There is no EMA 50 in the current set. Module 3's seahorse chart shows an older setup of EMA 10 / 25 / 50, which is where the stop rule's "EMA 50" comes from; on the 5-line set the equivalent is EMA 55.
 - Largely answered in Module 5: 1% to 10% of wallet per trade (most likely as isolated margin), stop set by ROI tier (beginner 5% to 20%), converted to price by entry × ROI ÷ leverage.
 - Is there a minimum reward-to-risk ratio, or is any nearest-resistance TP acceptable?
-- In Discharge, is hedging (Module 5) a replacement for the EMA 50 stop or a tool used alongside it?
+- ~~In Discharge, is hedging a replacement for the stop?~~ Answered in Module 5: it is presented as the alternative to taking the stop on a losing position. The arithmetic there shows it underperforms the stop in both directions.
 - ~~Which chart timeframe does the course scalp on in practice?~~ Answered in Module 2: EMA direction is checked on every timeframe from daily to 1 minute; entries are timed on the 1m to 15m charts.

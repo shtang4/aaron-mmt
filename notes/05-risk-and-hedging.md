@@ -375,7 +375,84 @@ None of these are reconciled. The defensible reading is that $20 is the practice
 
 ## 4. Advance tool: MMT Hedging (Discharge)
 
-_Not yet captured._
+Title slide: **"How to salvage your trade with horrible position?"** That framing matters. Hedging is introduced as what you do *instead of* taking the stop, once a position is already badly underwater.
+
+### 4.1 Hedging, as defined on the slide
+
+Generic definition, condensed: hedging reduces or offsets risk by taking opposite positions; investors can hold long and short simultaneously to protect against price fluctuations; common forms are futures, options and derivative hedging (a stock investor buying index futures against a downturn); hedging does not eliminate risk but reduces portfolio volatility and potential losses.
+
+### 4.2 "When the trade goes wrong, you still have a plan"
+
+Diagram, two panels:
+
+1. You are **long** (you want price up). Price goes down. Your long is in loss.
+2. You keep the long **and open a short** to hedge it.
+
+Bottom line: **Loss (long) + Profit (short) = Break Even (0)**, drawn as a balanced scale.
+
+### 4.3 The MMT hedging formula
+
+Slide text, verbatim:
+
+- When setting a trade with a Cross position, don't maximise the leverage. Set lower or moderate leverage first.
+- **If you lose the trade < 50%**, hedge by opening a counter trade with **extra 50% of your initial capital amount**.
+- **If you lose the trade > 50%**, hedge by opening a counter trade with **extra 100% of your initial capital amount**.
+- "Remember that both of above condition followed by **increasing the leverage X level to maximal level** to counter hedging higher to compensate your loss."
+
+"Lose the trade < 50%" is ROI on margin, consistent with the rest of the module. The "initial capital amount" is the margin on the original position.
+
+### 4.4 What the formula actually does: the arithmetic
+
+Take the SOP numbers. Original position: long, margin **$20**, leverage **20×**, notional **$400**. Price falls 2%: ROI −40% (loss $8). That is the "< 50%" case.
+
+**Prescribed hedge:** extra 50% of capital = **$10** of margin, at maximum leverage. Bybit maximum on most alts is 50× to 100×. Take 50×.
+
+| | Long (original) | Short (hedge) |
+|-|-----------------|---------------|
+| Margin | $20 | $10 |
+| Leverage | 20× | 50× |
+| Notional | $400 | **$500** |
+
+The short is **larger than the long**. The combined book is net short $100 of notional. That is not a hedge. It is a reversal into a net short, with the losing long still open underneath it.
+
+**A true hedge** would match notional: $400 short. At 50× that needs $8 of margin, not $10; at 100× it needs $4. The formula's "extra 50%" plus "maximal leverage" over-hedges at every realistic leverage. The "> 50%" case is worse: extra 100% of capital ($20) at 50× is a $1,000 short against a $400 long, a net short of $600, six times the size of the position being "protected".
+
+**What happens next, for the matched case (the slide's diagram):** the book is flat. Every further move in price adds to one leg what it takes from the other. The $8 loss is now **frozen**, and you are paying two sets of fees and two funding rates to keep it frozen. "Break even (0)" on the diagram means *no further change*, not recovery. A frozen loss is exactly what a stop loss gives you, minus the extra fees and the open exposure to a liquidation on either leg.
+
+**What happens next, for the over-hedged case (the slide's formula):** you now have a directional short bet. If price keeps falling, the short earns more than the long loses and you "compensate your loss", which is the slide's intent. If price bounces 1%, the 50× short loses 50% of its margin, and at 2% it is liquidated. On cross margin that liquidation comes out of the wallet, with the original losing long still open. The formula's instruction to add max leverage is the instruction to turn a losing trade into a second, larger, faster-losing trade in the opposite direction.
+
+**Summary table for the $20 example, price then moves ±2% after the hedge:**
+
+| Scenario | No hedge, stop taken at −40% | Matched hedge ($8 at 50×) | MMT formula ($10 at 50×) |
+|----------|-----------------------------|--------------------------|-------------------------|
+| Price falls a further 2% | −$8 (already closed) | −$8 frozen, plus fees | Long −$16 total, short +$10: net −$6, plus fees |
+| Price rises 2% | −$8 (already closed) | −$8 frozen, plus fees | Long −$0 total, short −$10 (liquidated): net −$10, plus fees |
+
+The MMT formula only beats the plain stop if price continues in the direction that was already hurting you, and even then by a small margin after double fees. If it reverses, it loses more than the stop would have. Across both branches it is worse than the stop.
+
+### 4.5 Three further problems
+
+- **Bybit position mode.** On a one-way (default) account, opening a short on the same contract does not create a second position; it reduces or flips the long. Hedging as drawn requires **hedge mode** to be enabled in Bybit's position settings, and the slides do not mention it. A student following the slide on a default account would close their long at the low, which is the stop they were trying to avoid, at a worse price.
+- **Cross margin is required and endorsed.** The formula opens with "when setting a trade with Cross position". Section 3.2 of this same module said cross liquidation takes the whole wallet and prescribed isolated. The hedging tool is only usable on the margin mode the risk tool prohibits.
+- **It answers the Module 1 question the wrong way.** Module 1 asked whether hedging replaces the stop. The title slide ("salvage your trade with horrible position") and the formula ("compensate your loss") say yes: the course's plan for a trade that has gone against you is to add exposure, not to take the structural stop from the Discharge rule. Nothing in this section says "take the stop first".
+
+### 4.6 The car-safety analogy
+
+"Trading is like a car safety system. Poor protection will destroy you."
+
+| Go-kart crash without backup protection | Military tank with full protection |
+|----------------------------------------|-----------------------------------|
+| Seatbelt without roof. One crash ends like liquidation. | Bulletproof, multi-layer protection. Survives multiple crashes. |
+
+The analogy casts hedging as the tank. On the arithmetic above, a matched hedge is a seatbelt that costs double fees, and the MMT over-hedge at maximum leverage on cross margin is the go-kart.
+
+### 4.7 What to do instead
+
+The tools already in this module cover the "horrible position" case without adding exposure:
+
+1. The structural stop from Module 1, at the ROI tier from section 3.2, placed before entry. A horrible position is one where this was skipped.
+2. If the stop was skipped and the position is underwater: close it. The loss is the loss. This is the "Discharge plan written before entry" from Module 1.
+3. If you want the directional short the formula is really describing, close the long first and open the short as a new, sized trade with its own stop. That is the same net exposure with one set of fees and no wallet-backed liquidation risk on a stale leg.
 
 ## 5. MMT Golden Rules (Follow up)
 
@@ -393,5 +470,6 @@ _Not yet captured._
 - Over what period did the 1,993 to 18,288 USDT growth happen, and how many losing trades were in it?
 - What exactly is the "IceBerg Tip" on the MACD, and is the crash-bottom entry in the RAVE example a taught setup or a one-off?
 - Does Module 4's New TP or Wick Tracker replace the Module 1 "EMA cross-back, exit, no questions" rule? The ZETA case says hold through a cross-back; Module 1 says exit on it.
-- Is hedging (section 4) a replacement for the stop loss or a tool used alongside it? This is the question that decides whether the Discharge rule survives contact with Module 5.
+- ~~Is hedging a replacement for the stop loss?~~ Answered: yes. The hedging section is framed as salvaging a position already deep in loss, and never says to take the stop. See section 4.4 for why the formula is worse than the stop in both branches.
+- Does the course tell students to enable Bybit hedge mode? Without it the hedge as drawn cannot exist.
 - What are the Golden Rules, and do they resolve the "no SL, cross margin" contradiction in the Module 3 seahorse slide?
