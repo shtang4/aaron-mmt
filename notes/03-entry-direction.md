@@ -118,7 +118,13 @@ The point is aimed at students who copy signals (the "GPS") without being able t
 
 ## 2. 3 Main Indicators (三大主要指标)
 
-The slides delivered so far teach **EMA** (the MMT 5-line set) and **MACD**, and the course's own 1-minute chart examples show both on screen at once. The third is not yet named. The Bybit Indicator Settings screen groups indicators as Main (Moving Average, Moving Average Exponential, Bollinger Bands) and Secondary (Volume, MACD, KDJ, RSI, WR); MACD being taught rules out the reading that "3 Main" simply means Bybit's Main group.
+The three, in the order taught, with the course's Bybit settings:
+
+| # | Indicator | Bybit path | MMT setting | Role |
+|---|-----------|-----------|-------------|------|
+| 1 | **EMA** | Indicators → Main Indicator → Moving Average Exponential | 9, 25, 55, 155, 255 | Direction (EMA 155) and pullback levels (the faster lines) |
+| 2 | **MACD** | Indicators → Secondary Indicator → MACD | Fast 8, Slow 13, Signal 9 | Momentum confirmation on the pullback |
+| 3 | **Volume** | Indicators → Secondary Indicator → Volume | Default | Confirmation, and spike-based exhaustion at turns |
 
 ### 2.1 EMA concept
 
@@ -215,11 +221,39 @@ Slide text, condensed. MACD (Moving Average Convergence Divergence) has two line
 
 Closing caution on the slide: MACD "should not be used in isolation".
 
-No MACD settings are given despite the slide title "Concept & Setting". Assume Bybit's default (12, 26, 9) unless a later slide changes it. The ZETA screenshots show MACD with the default look.
+**MMT MACD setting** (from the "MACD setting" screenshot): Fast Length **8**, Slow Length **13**, Signal Length **9**. This is not the default 12 / 26 / 9. The shorter fast and slow lengths make the MACD line react faster and cross more often, which suits a 1-minute chart and matches the 5-EMA philosophy of more, earlier signals. The cost is the same: more crosses means more false ones.
+
+**Example chart** (a daily chart of PDD, Pinduoduo, August 2019 to May 2020, from ProRealTime, shown twice): every MACD cross is marked as a buy or sell signal. On the left panel, five buying signals over nine months, each at a histogram flip from red to green. On the right, the same period with both buying and selling signals marked. Of the buy signals shown, the first four preceded moves that mostly went sideways or down before the fifth caught the real advance. That is the honest picture of MACD crosses on their own, and it is why the course pairs MACD with EMA 155 for direction rather than trading the cross alone.
 
 How it fits: EMA 155 gives direction, the faster EMAs give the pullback level, and MACD is the momentum check on the pullback. A long on an EMA touch is stronger when the histogram is contracting toward zero and turning up, and weaker when MACD has already crossed down hard. Reading 3, divergence, is the one that argues against an entry: a pullback after bearish divergence is more likely a reversal than a continuation. The slides do not say any of this; it is how the two tools are normally combined.
 
-### 2.7 What the course claims Diagnose gives you
+
+### 2.7 Volume concept
+
+Slide table, transcribed:
+
+| Volume indicator | Explanation |
+|------------------|-------------|
+| Confirmation of price movements | Increased trading volume confirms the price trend. Higher volume during an uptrend indicates increased buying interest; higher volume during a downtrend suggests increased selling pressure. |
+| Volume breakouts | Volume surpassing a threshold or exceeding average volume can indicate the initiation or continuation of significant price moves. |
+| Volume divergence | Price makes new highs or lows but volume fails to follow. Indicates weakening of the prevailing trend and potential reversal. |
+| Volume patterns | Volume spikes or clusters can help identify potential turning points or areas of support and resistance. |
+
+Closing text: volume assesses activity and liquidity; interpretation varies by market and strategy; use with other indicators.
+
+**Example charts** (three, all reused from public sources):
+
+- S&P 500 E-mini daily (TradingView): three volume spikes highlighted, each at a sharp low (October 2014, December 2014, August 2015) followed by a reversal up.
+- eBay daily (commodity.com): two spikes labelled **"2X Avg Volume"**, one at a low labelled **buying exhaustion** (the sellers finished, then price rose) and one at a high also labelled buying exhaustion (the buyers finished, then price fell).
+- A 1-hour crypto-style chart with one volume bar roughly three times its neighbours at the start of a strong up move.
+
+The rule these examples encode: **a volume bar around twice the recent average marks exhaustion of the side that was in control, and price turns.** The same spike means "bottom" after a fall and "top" after a rise. It is a turning-point signal, not a continuation signal, despite the table's first row.
+
+How it fits: volume is the third check on an SPE pullback entry. A pullback on **falling** volume into an EMA is healthy (sellers are thin), and a long there is confirmed. A pullback on a **2× spike** is exhaustion, meaning either the trend is over or the spike marks the low of the pullback; either way, wait for the next candle rather than buying into the spike. No settings are given for the volume indicator, and the Bybit default (volume bars with MA5 and MA10, visible on the ZETA screenshots) is what the course uses.
+
+Note that the S&P and eBay examples are daily charts of stocks and index futures, not 1-minute crypto. The exhaustion pattern is general, but "2× average" on a 1-minute chart is hit constantly by single large orders. A stricter multiple, or the Bybit MA10 line as the baseline, will be needed to make it usable at that timeframe.
+
+### 2.8 What the course claims Diagnose gives you
 
 Two framing slides. The pain points quoted: "I never know exactly when to enter a trade." "I always feel like I'm too early or too late." "I have followed the same signals before and lost." Answer: "The EMA tells you. Every time. Diagnose removes the guesswork entirely."
 
@@ -247,8 +281,8 @@ _Not yet captured._
 
 - ~~Which timeframe is the Heikin-Ashi read on for entries?~~ Answered: the Bybit setup screenshots use the 1-minute chart.
 - Is the EMA in Module 1 computed on Heikin-Ashi candles or real candles? The two give different crosses.
-- The "3 Main Indicators" are EMA, MACD and one more. Which is the third: Volume, RSI, KDJ, or Bollinger Bands?
-- What MACD settings does the course use, if not the Bybit default 12 / 26 / 9?
+- ~~Which are the 3 Main Indicators and the MACD setting?~~ Answered: EMA (9/25/55/155/255), MACD (8/13/9), Volume (default).
+- What volume multiple counts as a spike on the 1-minute chart, and is the baseline the Bybit MA5 or MA10 line?
 - In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?
 - Which two of the five EMAs (9, 25, 55, 155, 255) are the "basic" pair, and does the Module 1 stop rule's "EMA 50" mean EMA 55?
 - What counts as a "full body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles?
