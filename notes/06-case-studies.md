@@ -74,11 +74,54 @@ The chart: uptrend, entry, "profit window" at the top with "TP (never set)" as a
 
 The 3D review slides are the right lens. Applied to the deck's own case studies, they mark most of the "advanced" material in Module 5 as a skipped D.
 
-## 4. Q&A
+## 4. Market uncertainty: "Trade scam coin, no BTC correlation"
+
+### 4.1 The strategy slide
+
+"Market Uncertainty. What's the strategy?" Answer on the slide: **"Trade Scam Coin"** with a starburst reading **"No BTC Correlation"**. The backdrop is a Coin Bureau video ("99.99% of crypto will go to zero, what to do now"), Chinese overlay "99.99% 多数是 Shit Coin!", over a CoinMarketCap page showing Fear and Greed at 24 (extreme fear).
+
+The claim: when BTC is falling and the market is fearful, the trade is not BTC or the majors. It is the small coins that move on their own drivers, chiefly exchange-driven pumps, and therefore do not fall with BTC. The course calls them scam coins or shit coins without irony. This is the "shit coin" list from Module 2 section 1.3 in use, with the direction flipped to long.
+
+### 4.2 Case study: "Kpnd", AERGO on Black Monday
+
+"Kpnd" is not expanded on the slide. AERGO is a Korean project, and the shape of the trade is a Korean-exchange pump, so the reading is **K**orean **p**ump **a**nd **d**ump.
+
+Two TradingView charts, 15-minute Heikin-Ashi, Bybit perpetuals, 6 to 8 April 2025:
+
+| | BTCUSDT | AERGOUSDT |
+|-|---------|-----------|
+| Move | 83,774 → 74,456 low on 7 April ("7/4 Black Monday", the tariff sell-off), then a bounce to about 80,000 | 0.0665 low → 0.1353 high, roughly doubling over the same two days |
+| Trade | none | Long, entry 0.07797, shown on two Bybit cards: **+76.82%** at 0.08402 and **+657.25%** at 0.12940 |
+| Chat caption | | "Scalping > 30 mins + MMT #SSWB and PUMP!!" and "There is where we find opportunity when BTC dump!!" |
+
+Checks: 0.07797 → 0.08402 is +7.8% on price, ×10 = 78%, card says 76.82%; 0.07797 → 0.12940 is +66%, ×10 = 660%, card says 657.25%. Both cards are the same 10× position at two moments. The green box on the chart runs from the entry to about 0.1294; a red box beneath it runs from the entry down to about 0.0746, which reads as the stop zone, 4.4% below entry (−44% ROI at 10×). Realised reward-to-risk on those levels: (0.1294 − 0.0780) ÷ (0.0780 − 0.0746) ≈ 15.
+
+What the timestamps say: the first card is from about 09:49 on 7 April and the second from 10:22 on 8 April. The position was held for **over 24 hours**. The chat caption's "> 30 mins" is the course conceding that this was not a scalp. Golden Rule 6, do not hold, was not followed, and the deck labels the trade a success.
+
+### 4.3 What is right and what is dangerous in this idea
+
+**Right:** correlation to BTC is the main risk in an altcoin book during a crash, and coins moving on an idiosyncratic driver (a listing, a regional pump) can decouple for hours or days. The Module 2 sector and heatmap scan is exactly how you find them: when the heatmap is mostly red, the few strong green tiles are the candidates. AERGO was one on 7 April.
+
+**Dangerous:**
+
+- **You are trading someone else's manipulation.** The Module 2 screener slide listed "risk management for manipulation (pump and dump)" as a caveat. This section makes the pump the target. The exit on a pumped coin is a wick, the retrace is violent, and the depth check (screener check 4) is thin by construction. The Wick Tracker (Module 4) exists for exactly this, and it must be resting before you look away.
+- **"No BTC correlation" is an observation after the fact.** AERGO decoupled on 7 April. Whether it would decouple on the next BTC leg down was unknown at entry. The course's evidence is one coin on one day.
+- **Fear and Greed at 24 is the reverse of the Module 2 rule.** Module 2 said greed is a bias toward long but not a signal. Extreme fear is a bias toward short, or toward staying out. The slide uses extreme fear as the setup for a long, on the logic that the long is in a coin that ignores the index. That is coherent only if the coin really is uncorrelated, which is the point above.
+- **The "scam coin" framing has a cost the slides never state.** Delistings, liquidity vanishing overnight, and exchanges halting trading are all outcomes on coins the course itself calls scams. A stop does not protect against a halt.
+
+## 5. Closing slide: "Synchronization"
+
+"Resonance at the SAME frequency, attraction of the SAME nature" (同频共振，同质相吸). A mindset close, matching the "90% mindset" Golden Rule and the Know / Enlighten / Do pyramid from Module 0. No trading content.
+
+## 6. Q&A
 
 _Not yet received._
 
+
 ## Open questions
+
+- What does "Kpnd" stand for? Korean pump and dump is the reading that fits; confirm.
+- Is trading uncorrelated pumps during a BTC crash a taught setup with rules (which scan, which stop, which exit), or a single observation from 7 April 2025?
 
 - Are there further Module 6 case studies showing a complete trade with all three Ds executed, rather than one skipped?
 - Does the Q&A address any of the open questions in Modules 1 to 5?
