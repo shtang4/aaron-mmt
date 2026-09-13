@@ -84,7 +84,7 @@ The claim: when BTC is falling and the market is fearful, the trade is not BTC o
 
 ### 4.2 Case study: "Kpnd", AERGO on Black Monday
 
-"Kpnd" is not expanded on the slide. AERGO is a Korean project, and the shape of the trade is a Korean-exchange pump, so the reading is **K**orean **p**ump **a**nd **d**ump.
+"Kpnd" is **Korean pump and dump** (confirmed from the session). AERGO is a Korean project and the shape of the trade is a Korean-exchange pump.
 
 Two TradingView charts, 15-minute Heikin-Ashi, Bybit perpetuals, 6 to 8 April 2025:
 
@@ -120,7 +120,6 @@ _Not yet received._
 
 ## Open questions
 
-- What does "Kpnd" stand for? Korean pump and dump is the reading that fits; confirm.
 - Is trading uncorrelated pumps during a BTC crash a taught setup with rules (which scan, which stop, which exit), or a single observation from 7 April 2025?
 
 - Are there further Module 6 case studies showing a complete trade with all three Ds executed, rather than one skipped?

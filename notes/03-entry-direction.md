@@ -365,9 +365,9 @@ Seven tools on a 1-minute chart. The course has not said how they are prioritise
 
 ## 5. Trend line, Support & Resistance, Tunnel trend line
 
-Title slide only: "How to draw: trend line, support and resistant line, tunnel trend line" (如何画出：趋势线、支撑线和阻力线、通道趋势线). The drawing was presumably done live on a chart in the session, with no content slide. Capture from the recording if one exists.
+Title slide only: "How to draw: trend line, support and resistant line, tunnel trend line" (如何画出：趋势线、支撑线和阻力线、通道趋势线). Confirmed from the session: the course teaches the **standard market construction** with no MMT-specific variation. Nothing to reconcile with other modules.
 
-Standard construction, for reference until the course's own version is available:
+Standard construction, for reference:
 
 - **Trend line**: in an uptrend, a line under at least two higher lows; in a downtrend, over at least two lower highs. A third touch validates it.
 - **Support and resistance**: horizontal lines at prior swing lows (support) and swing highs (resistance). The Module 1 take-profit rule, "nearest resistance", is read off these.
@@ -443,7 +443,6 @@ Reading:
 - ~~Which SMC indicator and platform?~~ Answered: TradingView, Market Structure by Leviathan.
 - ~~Which site supplies the liquidation heatmap?~~ Coinglass, per the RAVE example screenshot in Module 5.
 - When two of the seven chart tools disagree, which wins? Only EMA 155 has stated priority.
-- Was the trend line / tunnel drawing demonstrated live? There is no content slide for it.
 - In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?
 - Which two of the five EMAs (9, 25, 55, 155, 255) are the "basic" pair, and does the Module 1 stop rule's "EMA 50" mean EMA 55?
 - What counts as a "full body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles?
