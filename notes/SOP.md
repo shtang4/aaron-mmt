@@ -11,7 +11,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 ## 1. Scan the market (Diagnose)
 1. Heatmap: mostly green → long bias; mostly red → short bias; mixed → no trades today.
 2. Hot sectors → leading coin in each → Top Movers (24h, and the 15m tabs). A gainer is a candidate, never a trade.
-3. Screener per candidate: EMA direction agrees 1D → 4h → 1h → 15m → 5m → 1m · OI rising with price · funding on your side · book thinner ahead. Take 4/4; treat 3/4 as thin.
+3. Screener per candidate, scored out of 4: EMA 20 above/below on 1D + 4H + 1H · OI rising with price · funding on your side (≤ −0.01% for a long, ≥ +0.05% for a short; positive is accepted on longs in a bull market) · book lighter on the side you are trading. **4/4 → full size. 3/4 → 50–75% size, tighter stop. Below 3 in one direction → no trade.** Mixed timeframes → reduce size; all disagree → skip the coin.
 4. Sentiment gauge is a clue, not a signal.
 
 ## 2. Set direction (Diagnose)
@@ -29,13 +29,13 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 
 ## 4. Size and stop (Dose)
 1. Isolated margin. Leverage 5× to 10×.
-2. Margin per trade: $20 to learn; then 1% of wallet; never above 10%. Bigger wallet, smaller trade.
+2. Margin per trade: $20 to learn; then 1% of wallet; never above 10%. Bigger wallet, smaller trade. **Loss at the stop never above 1–2% of account equity**, whatever the confluence score.
 3. Stop as ROI on margin by tier: beginner 5–20%, intermediate 20–50%, advanced 50%+. Convert to price; it must sit beyond the structural level (far edge of the zone, or the heel low). If it does not, lower the leverage. Never move the level.
 4. Write the money at risk in USDT before entry.
 
 ## 5. Exit plan, both ways (Discharge)
 1. TP first. Wick Tracker at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on Last, or a resting limit.
-2. SL from step 4, trigger on Mark. Both resting before you look away.
+2. SL from step 4, trigger on Mark, **resting before the entry fills**. Both orders in before you look away.
 3. Climax exit: volume bar far above VOLMA + MACD histogram at its tallest, next bar shorter → close 75%. Move the runner's SL to entry.
 4. Runner: Hunting SL locks a rising ROI. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.
 5. Stop hit = the plan worked. Take it.
@@ -58,13 +58,13 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 | Stop / TP distance | `entry × ROI% ÷ leverage` (Bybit ROI = P&L ÷ margin) |
 | Round-trip fees as ROI | `2 × 0.055% × leverage` (taker; 20× ≈ 2.2%) |
 | Reward : risk | `|TP − entry| ÷ |entry − stop|` · breakeven win rate `1 ÷ (1 + R)` |
-| Money at risk | `margin × stop ROI%` (+ fees); keep under 0.5% of wallet |
+| Money at risk | `margin × stop ROI%` (+ fees); handouts: never above 1–2% of equity |
 | Max leverage for a structural stop | `entry × ROI% ÷ |entry − level|` |
 | Hunting SL trigger | `entry ± entry × locked ROI% ÷ leverage` |
 
 ## Never, because the course's own risk module says so
 - Cross margin. Liquidation takes the whole wallet.
-- A position without a resting stop.
+- A position without a resting stop. Handouts: "set it before the entry order fills."
 - Hedging instead of taking the stop.
 - Holding a loser to breakeven.
 - Trading a mixed heatmap or a seahorse.

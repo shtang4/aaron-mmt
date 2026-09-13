@@ -14,6 +14,7 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 | 4 | [notes/04-sniper-entry-exit.md](notes/04-sniper-entry-exit.md) | MMT New TP, Sniper Price Entry (SPE), Wick Tracker |
 | 5 | [notes/05-risk-and-hedging.md](notes/05-risk-and-hedging.md) | Risk management, MMT Hedging, MMT Golden Rules |
 | 6 | [notes/06-case-studies.md](notes/06-case-studies.md) | Case studies (no Q&A slides exist) |
+| 7 | [notes/07-handouts.md](notes/07-handouts.md) | The three PDF handouts: screener cheat sheet, risk checklist, trade call guide. Scorecard, funding thresholds, stop and 1–2% rules; where they contradict the slides. |
 | 99 | [notes/99-open-questions.md](notes/99-open-questions.md) | Every question the deck leaves open, grouped by what it would change |
 
 All modules are captured. Remaining gaps are listed in file 99. until those modules are captured.

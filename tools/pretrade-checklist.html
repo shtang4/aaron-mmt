@@ -312,7 +312,7 @@
           <label class="check"><input type="checkbox" class="scr" id="scrFr"><span>Funding on your side</span></label>
           <label class="check"><input type="checkbox" class="scr" id="scrDepth" checked><span>Book thinner ahead</span></label>
         </div>
-        <div class="hint">The course never states a minimum. Below 3 of 4 is flagged, not refused.</div>
+        <div class="hint">Handouts: 4/4 full size · 3/4 at 50–75% size, tighter stop · below 3, do not trade.</div>
       </div>
 
       <div class="row">
@@ -481,7 +481,7 @@
     <pre id="planText" aria-live="polite"></pre>
   </div>
 
-  <p class="foot">Rules and numbers come from the course notes in this repository: stop tiers and the ROI-to-price conversion (Module 5 §3.2–3.3), the Hunting SL formula (§3.3), the isolated-margin and 5–10× guidance (§3.2), the SPE entry (Module 4 §1), the climax take-profit with 75% partial (Module 4 §2), and the Wick Tracker trigger types (Module 4 §3.2). Fields prefilled with an example from the SEI hockey-stick screenshot; replace them. Liquidation is an estimate using a 0.5% maintenance margin. Not financial advice.</p>
+  <p class="foot">Rules and numbers come from the course notes in this repository: stop tiers and the ROI-to-price conversion (Module 5 §3.2–3.3), the Hunting SL formula (§3.3), the isolated-margin and 5–10× guidance (§3.2), the SPE entry (Module 4 §1), the climax take-profit with 75% partial (Module 4 §2), the Wick Tracker trigger types (Module 4 §3.2), and from the handouts (notes/07): the screener scorecard, the stop-before-fill rule and the 1–2% of equity ceiling. Fields prefilled with an example from the SEI hockey-stick screenshot; replace them. Liquidation is an estimate using a 0.5% maintenance margin. Not financial advice.</p>
 </div>
 
 <script>
@@ -558,8 +558,9 @@
     if (!$('ema155').checked) fails.push('EMA 155 three-candle rule not confirmed. Direction is not set.');
     if ($('seahorse').checked) fails.push('Seahorse shape on the chart. Stay out.');
     const scr = ['scrEma', 'scrOi', 'scrFr', 'scrDepth'].filter(id => $(id).checked).length;
-    if (scr < 3) warns.push(`Screener confluence ${scr}/4. The course never states a minimum; below 3 is thin.`);
-    if (!$('scrFr').checked) warns.push('Funding is against you. You pay every 8 hours you hold; close-and-go matters more.');
+    if (scr < 3) fails.push(`Screener confluence ${scr}/4. Handouts: below 3 in one direction, do not trade.`);
+    else if (scr === 3) warns.push('Screener 3/4. Handouts: enter at 50% to 75% of planned size with a tighter stop.');
+    if (!$('scrFr').checked) warns.push('Funding is against you. You pay every 8 hours you hold. Accepted on a long in a bull market; otherwise it costs the score a point.');
     if (Number.isFinite(entry) && Number.isFinite(zoneNear) && Number.isFinite(emaP)) {
       const zoneOk = side === 'long' ? entry <= Math.max(zoneNear, emaP) + 1e-12 : entry >= Math.min(zoneNear, emaP) - 1e-12;
       if (!zoneOk) warns.push('Entry is beyond both the zone edge and the EMA. That is chasing, not a sniper entry.');
@@ -574,6 +575,11 @@
     const notional = stake * lev;
     const stakePct = wallet > 0 ? stake / wallet * 100 : NaN;
     if (Number.isFinite(stakePct) && stakePct > 10) fails.push(`Margin is ${stakePct.toFixed(1)}% of the wallet. Course ceiling is 10%.`);
+    {
+      const lossPctPre = wallet > 0 && Number.isFinite(stake) && Number.isFinite(stopRoi) ? stake * (stopRoi / 100 + 2 * fee * lev / 100) / wallet * 100 : NaN;
+      if (Number.isFinite(lossPctPre) && lossPctPre > 2) fails.push(`Loss at the stop is ${lossPctPre.toFixed(2)}% of equity. Handouts: never above 1% to 2% on one trade.`);
+      else if (Number.isFinite(lossPctPre) && lossPctPre > 1) warns.push(`Loss at the stop is ${lossPctPre.toFixed(2)}% of equity, inside the 1% to 2% ceiling but at the top of it.`);
+    }
     else if (Number.isFinite(stakePct) && stakePct > 1 && $('tier').value === '10') warns.push(`Margin is ${stakePct.toFixed(1)}% of the wallet on the beginner tier. Start at 1%.`);
     if (Number.isFinite(lev) && lev > 10) warns.push(`Leverage ${lev}× is above the prescribed 5× to 10×. Every ROI% is a smaller price move.`);
     if (Number.isFinite(stopRoi) && stopRoi >= 100 - MMR * lev * 100) fails.push('Stop ROI is at or past liquidation. It will never trigger.');
@@ -639,8 +645,8 @@
     setV('huntPrice', Number.isFinite(huntPrice) ? `${fmtP(huntPrice, entry)} (locks +${pct(lockRoi, 0)})` : '—');
 
     // ---- Chips and verdict
-    const d1 = fails.some(f => /Skip|ranging|EMA 155|Seahorse/.test(f)) ? 'fail' : warns.some(w => /confluence|Funding|chasing|heatmap/.test(w)) ? 'warn' : 'ok';
-    const d2 = fails.some(f => /stop loss|Cross|wallet|liquidation|structural|Structural/.test(f)) ? 'fail' : warns.some(w => /Leverage|beginner tier/.test(w)) ? 'warn' : 'ok';
+    const d1 = fails.some(f => /Skip|ranging|EMA 155|Seahorse|confluence/.test(f)) ? 'fail' : warns.some(w => /confluence|Funding|chasing|heatmap/.test(w)) ? 'warn' : 'ok';
+    const d2 = fails.some(f => /stop loss|Cross|wallet|liquidation|structural|Structural|equity/.test(f)) ? 'fail' : warns.some(w => /Leverage|beginner tier|equity|50% to 75%/.test(w)) ? 'warn' : 'ok';
     const d3 = fails.some(f => /Take-profit/.test(f)) ? 'fail' : warns.some(w => /trigger|Reward/.test(w)) ? 'warn' : 'ok';
     const rrS = !Number.isFinite(rr) ? '' : rr < 1 ? 'warn' : 'ok';
     $('chipD1').dataset.s = d1; $('chipD2').dataset.s = d2; $('chipD3').dataset.s = d3;

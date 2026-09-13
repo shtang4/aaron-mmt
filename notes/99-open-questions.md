@@ -6,15 +6,18 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 
 | # | Question | Module | Why it matters |
 |---|----------|--------|----------------|
-| A1 | Minimum screener confluence: 4/4, 3/4, or judgement? | 2 §5 | Decides whether a coin with one failing check (e.g. positive funding on SOL in the hockey stick example) is tradeable. |
-| A2 | Depth check: which side of the order book is "the lower volume"? | 2 §5.1 | The fourth screener check is undefined. |
-| A3 | Does the hockey stick override the funding check? | 2 §6.3 | SOL was longed into positive funding. |
+| ~~A1~~ | ~~Minimum screener confluence?~~ Answered by the handouts: 4/4 full size; 3/4 at 50–75% size with a tighter stop; below 3 in one direction, no trade. | 7 §1.1 | |
+| ~~A2~~ | ~~Depth check definition?~~ Answered: lighter ask → long, lighter bid → short, equal → skip; beware a single hidden wall. | 7 §1.2 | |
+| ~~A3~~ | ~~Does the hockey stick override funding?~~ Answered: funding is a scored layer with a bull-market override; the SOL long was a 3/4 and should have been at reduced size. | 7 §1.3 | |
 | A4 | When two of the seven chart tools disagree, which wins? | 3 §4.3 | Only EMA 155 has stated priority. Disagreement is the normal case. |
 | A5 | What counts as a "full-body" candle for the three-candle EMA 155 rule, and is it read on Heikin-Ashi or regular candles? | 3 §2.2 | The only mechanical direction rule in the course depends on it. |
 | A6 | In the hockey stick rule, is "the EMA" the 155 or a faster line? | 2 §6.4 | Moves the entry by minutes and percent. |
 | A7 | Is the RAVE crash-bottom (heel) entry a taught setup or a one-off? | 5 §3.9 | It contradicts the confirmed hockey stick rule. |
 | A8 | Does the uncorrelated-pump trade during a BTC crash have rules (scan, stop, exit) or is it one observation? | 6 §4 | AERGO on 7 April 2025 is the only evidence. |
 | A9 | Is a strong coin versus a shit coin defined, so a coin on neither list can be classified? | 2 §2 | The lists are a 2023 snapshot. |
+
+| A10 | Which EMA sets direction: EMA 20 on 1D/4H/1H (handouts) or three candles past EMA 155 on the entry chart (slides)? They are different tests. The SOP runs the first as a filter and the second as the trigger; confirm that is the intent. | 7 §2.1 | Different lines, different charts, disagree at every turn. |
+| A11 | Is the 1-minute chart the execution chart (cheat sheet, all slides) or "extreme noise, danger" (risk checklist)? | 7 §2.2 | The two handouts disagree with each other. |
 
 ## B. Questions that change the entry price
 
@@ -30,7 +33,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 |---|----------|--------|----------------|
 | C1 | Where does the SPE stop go when "beyond the zone" and the ROI tier disagree? | 4 §1.2 | SPE names no stop at all. |
 | C2 | Does the SSWB SOP use a stop, and at what ROI? | 5 §3.12 | The eight steps name only the take-profit. Breakeven win rate is 29% with a 20% stop and 50% with a 50% stop. |
-| C3 | Did Dr. Aaron ever say to take the stop on a losing position? | 5 §4 | The hedging section, GMX and PEOPLE all describe alternatives to it. The Golden Rules omit it. |
+| ~~C3~~ | ~~Is the stop ever stated as the rule?~~ Yes, in both handouts: "Always set your stop loss before the entry order fills." The hedging section stands contradicted by the course's own handouts. | 7 §1.5 | |
 | C4 | What does "hedging when suitable" mean? | 5 §4.12 | "Suitable" is undefined. |
 | C5 | Was Bybit hedge mode mentioned? | 5 §4.5 | Without it a short against a long on one contract closes the long. |
 
@@ -39,7 +42,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | # | Question | Module | Why it matters |
 |---|----------|--------|----------------|
 | D1 | Which stake is the taught one: $20 (SOP), $150 (real example), 1% to 10% of wallet, or the $1,000 on the 1% slide? | 5 §3.13 | Four unreconciled numbers. |
-| D2 | Is the 1% to 10% margin per trade or maximum loss per trade? | 5 §3.5 | Differs by the leverage factor. |
+| ~~D2~~ | ~~Margin or loss?~~ Answered: "never risk more than 1% to 2% of total account equity on any single trade" is a maximum-loss rule. The $20 stake with a 20% stop is 0.2% of a $2,000 wallet. | 7 §1.5 | |
 | D3 | Is 25× (demo) or 5× to 10× (slide) the recommendation? | 5 §3.4 | The demo and the rule disagree. |
 | D4 | Was the THETA demo isolated or cross? | 5 §3.4 | Its liquidation distance does not match isolated 25×. |
 | D5 | How were the six simultaneous cross-margin positions on the "execute 10 trades" slide explained? | 5 §3.12 | They contradict the SOP's TP, hold time and margin mode. |

@@ -115,7 +115,7 @@
       <h2><span class="n">4</span> Size and stop <span class="d">Dose</span></h2>
       <ol>
         <li><b>Isolated</b> margin. Leverage <b>5× to 10×</b>.</li>
-        <li>Margin per trade: <b>$20</b> to learn; then 1% of wallet; never above 10%. Bigger wallet, smaller trade.</li>
+        <li>Margin per trade: <b>$20</b> to learn; then 1% of wallet; never above 10%. <b>Loss at the stop never above 1–2% of equity</b>, whatever the score.</li>
         <li>Stop as ROI on margin, by tier: beginner <b>5–20%</b>, intermediate 20–50%, advanced 50%+. Convert to price; it must sit <b>beyond the structural level</b> (far edge of the zone, or the heel low). If it does not, lower the leverage. Never move the level.</li>
         <li>Write the money at risk in USDT before entry. If the number makes you flinch, the dose is wrong.</li>
       </ol>
@@ -125,7 +125,7 @@
       <h2><span class="n">5</span> Exit plan, both ways <span class="d">Discharge</span></h2>
       <ol>
         <li><b>TP first.</b> Wick Tracker at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on Last, or a resting limit.</li>
-        <li><b>SL</b> from step 4, trigger on Mark. Both resting before you look away.</li>
+        <li><b>SL</b> from step 4, trigger on Mark, <b>resting before the entry fills</b>. Both in before you look away.</li>
         <li><b>Climax exit:</b> volume bar far above VOLMA + MACD histogram at its tallest, next bar shorter → close <b>75%</b>. Move SL on the runner to entry.</li>
         <li><b>Runner:</b> Hunting SL locks a rising ROI, <code>entry ± entry × ROI ÷ leverage</code>. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.</li>
         <li>Stop hit = the plan worked. Take it. Nothing replaces it.</li>
@@ -156,7 +156,7 @@
       <div><b>Stop / TP distance</b><code>entry × ROI% ÷ leverage</code> (Bybit ROI = P&amp;L ÷ margin)</div>
       <div><b>Round-trip fees, as ROI</b><code>2 × 0.055% × leverage</code> (taker; 20× ≈ 2.2%)</div>
       <div><b>Reward : risk</b><code>|TP − entry| ÷ |entry − stop|</code> · breakeven win rate <code>1 ÷ (1 + R)</code></div>
-      <div><b>Money at risk</b><code>margin × stop ROI%</code> (+ fees) · keep it under 0.5% of wallet</div>
+      <div><b>Money at risk</b><code>margin × stop ROI%</code> (+ fees) · never above 1–2% of equity</div>
       <div><b>Max leverage for a structural stop</b><code>entry × ROI% ÷ |entry − level|</code></div>
       <div><b>Hunting SL trigger</b><code>entry ± entry × locked ROI% ÷ leverage</code></div>
     </div>
@@ -165,7 +165,7 @@
       <h2>Never, because the course's own risk module says so</h2>
       <ul>
         <li>Cross margin. Liquidation takes the whole wallet.</li>
-        <li>A position without a resting stop.</li>
+        <li>A position without a resting stop. "Set it before the entry order fills."</li>
         <li>Hedging instead of taking the stop. It is a second, larger, faster-losing trade.</li>
         <li>Holding a loser to breakeven. Upside zero, downside the account.</li>
         <li>Trading a mixed heatmap or a seahorse.</li>
@@ -178,5 +178,5 @@
     </div>
   </div>
 
-  <p class="foot">Sources: course notes in this repository, Modules 0 to 6. Stop tiers, ROI conversion and Hunting SL from Module 5 §3; SPE and the climax exit from Module 4; EMA 155 rule and settings from Module 3; the scan and screener from Module 2; the hockey-stick entry as confirmed in the session. Where the deck states two incompatible things, the version consistent with the Module 1 Discharge rule and the Module 5 risk slide is kept. Not financial advice.</p>
+  <p class="foot">Sources: course notes in this repository, Modules 0 to 6 and the three handouts (notes/07-handouts.md), which supply the screener scorecard, funding thresholds, the stop-before-fill rule and the 1–2% of equity rule. Stop tiers, ROI conversion and Hunting SL from Module 5 §3; SPE and the climax exit from Module 4; EMA 155 rule and settings from Module 3; the scan and screener from Module 2; the hockey-stick entry as confirmed in the session. Where the deck states two incompatible things, the version consistent with the Module 1 Discharge rule and the Module 5 risk slide is kept. Not financial advice.</p>
 </div>

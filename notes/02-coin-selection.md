@@ -352,12 +352,12 @@ The four-phase diagram in section 3.1 is daily. The scalping definition in Modul
 ## Open questions
 
 - What is the course's definition of a strong coin versus a shit coin, so that a coin on neither list can be classified?
-- What is the minimum confluence on the screener: 4/4, 3/4, or judgement?
+- ~~What is the minimum confluence on the screener?~~ Answered by the handouts (notes/07-handouts.md §1.1): 3 of 4 minimum, at reduced size; 4 of 4 for full size.
 - Module 6 section 1 has a worked example of check 1 (RAD, four timeframes, price above all five EMAs on each).
-- In the depth check, which side of the order book is "the lower volume" compared against?
+- ~~Which side in the depth check?~~ Answered by the handouts (§1.2): ask versus bid; the lighter side is the direction.
 - Are the 15m Gainers / 15m Losers tabs used anywhere in the course, or only the 24h list?
 - Where does the "wait for retrace, breakout, or confirmation" instruction get made precise: Module 3 (direction) or Module 4 (SPE)?
 - ~~Does the hockey stick pattern appear?~~ Yes, in a late batch, as eight screenshots with no text. See section 6.
 - ~~Where is the hockey stick entry?~~ Confirmed: golden cross plus three candlesticks above the EMA.
 - In the hockey stick rule, is "the EMA" the 155 (as in Module 3) or a faster line? The answer moves the entry by several minutes and several percent.
-- Does the hockey stick override the screener's funding-rate check? The SOL example longs into positive funding.
+- ~~Does the hockey stick override funding?~~ Handouts §1.3: funding is scored with a bull-market override; a 3/4 trades at 50–75% size.
