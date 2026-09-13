@@ -284,9 +284,59 @@ The slide lists the order as Day → 1H → 4H → 15m → 5m → 1m. The 1H and
 - It **does not** replace the Bybit Opportunities scan. The scan produces candidates; the screener grades them. The scan is broad and free, the screener is per coin and manual.
 - The manipulation warning is the course acknowledging that all four checks can be gamed on a thin coin. That points back to the volume criterion in section 1: run the screener on liquid coins only.
 
-## 6. Hockey stick pattern
+## 6. MMT Hockey Stick Recognition (MMT 曲棍球棒模式识别)
 
-_Listed in the course outline under this module. Not on the section title slide and not yet seen. May be covered elsewhere or dropped._
+A title slide and two slides of four Bybit screenshots each. **No definition, no rules, no annotations.** The pattern is taught by showing it eight times. What follows is the definition read off the examples.
+
+### 6.1 The eight examples
+
+All on Bybit USDT perpetuals with the MMT indicator set (EMA 9/25/55/155/255, MACD 8/13/9, Volume MA5/MA10). Seven are 1-minute charts; one is daily.
+
+| Coin | TF | Screenshot time | Shape on the chart |
+|------|----|-----------------|--------------------|
+| SEIUSDT | 1m | 16:06 | Decline 0.3676 → 0.3478, then a sharp rise to 0.3525 (+1.4% in a few candles) |
+| DATAUSDT | 1m | 16:06 | Decline 0.0635 → 0.0590, then a sharp rise to 0.0614 (+4%) |
+| JASMYUSDT | **1D** | 06:55 | Multi-month: 0.00273 → 0.00837 → long decline → rising again to 0.0064 (+11.6% on the day) |
+| SOLUSDT | 1m | 16:04 | Decline 99.47 → 92.40, then a sharp rise to 94.11 (+1.8%) |
+| SEIUSDT | 1m | 16:08 | Same as above, two minutes later |
+| FUNUSDT | 1m | 16:07 | Decline to 0.007175, then a near-vertical rise to 0.00746 (+4%) |
+| SOLUSDT | 1m | 16:11 | Same as above, seven minutes later |
+| FUNUSDT | 1m | 16:06 | Same as above, one minute earlier |
+
+The **Contract** tab is selected on every screenshot, so the funding rate is being read at the same time (SOL: +0.0671% per 8 hours).
+
+### 6.2 The shape, defined from the examples
+
+A hockey stick lying on its side: a long **shaft** sloping down, then a short **blade** turning sharply up.
+
+| Part | On the chart | Indicator state |
+|------|-------------|-----------------|
+| **Shaft** | A steady decline, price below EMA 9 and 25, often below all five, small red candles with the EMAs fanned bearish above | MACD histogram negative, volume ordinary |
+| **Heel** (the turn) | A final low, usually a single candle with a long lower wick or an unusually tall red candle | **Volume spike**, MACD histogram at its deepest bar (the "IceBerg Tip" from Module 5's RAVE example) |
+| **Blade** | Three to six large green candles, near vertical, crossing back above EMA 9 and 25 in quick succession | MACD histogram flips positive, volume stays elevated |
+
+So the hockey stick is a **V-bottom reversal caught on the 1-minute chart**: the four-phase diagram's accumulation-to-advancing transition (section 3.1) compressed into minutes. It is the mirror of the seahorse (Module 3 section 6), which is a vertical rise followed by a flat head; here it is a slow decline followed by a vertical rise.
+
+### 6.3 What the screenshots reveal that the slide does not say
+
+- **All seven 1-minute examples are from the same four minutes of the same day** (16:04 to 16:11). SEI, DATA, SOL and FUN all made the blade at the same moment. That is a market-wide bounce, almost certainly BTC turning, not four independent patterns. Hockey sticks on alts cluster because alts are correlated; recognising one on SOL tells you to look at the others, and taking four longs at 16:06 is one trade with four tickets.
+- **The daily-move context is extreme.** SEI was −10.8% on the day, DATA −15.8%, SOL +8.5%, FUN +11.8%. The pattern was captured on coins already moving hard, which is the Module 2 Gainers and Losers list at work.
+- **The funding check fails on SOL.** Funding was +0.0671% per 8 hours, meaning longs pay. The screener (section 5) says negative funding for a long. The example longs anyway. Either the screener's funding rule is a tiebreaker rather than a filter, or the hockey stick overrides it. The slide does not say.
+- **JASMY on the daily is a different thing.** A months-long decline turning up is the four-phase diagram itself, not a scalp. Its inclusion says the shape is meant to be timeframe-independent. The trade off a daily hockey stick is a swing trade, which Golden Rule 6 says the course does not do.
+
+### 6.4 How to trade it, assembled from the rest of the course
+
+The slide gives no entry rule. Everything else in the course points to the same one:
+
+1. **Do not buy the blade.** The blade is the airport "last call" (Module 3 section 2.5). By the time three green candles are visible the move is 2% to 4% in, and on a 1-minute chart that is most of it.
+2. **Wait for the first pullback** after the blade, to EMA 9 or 25, and enter there with SPE (Module 4 section 1). Direction is confirmed once price holds above EMA 25 on the pullback; the EMA 155 three-candle rule (Module 3 section 2.2) will lag this by several minutes and is the stricter confirmation.
+3. **Stop** below the heel's low. That is the structural level, and it is usually 1% to 3% below the pullback entry on these examples, which at 10× is a 10% to 30% ROI stop, inside the beginner tier (Module 5 section 3.2).
+4. **Take profit** at the prior swing high on the shaft (the first resistance), or on the volume-maximal-plus-MACD-peak rule (Module 4 section 2), whichever comes first. Wick Tracker resting at that level.
+5. **Treat the correlated cluster as one position.** If four coins are making the blade together, size the total across them as one trade.
+
+### 6.5 Hockey stick versus the RAVE "IceBerg Tip" entry
+
+The RAVE example in Module 5 section 3.9 bought the heel itself, at 0.507, on the deepest MACD bar and the volume spike, before any blade existed. That is the aggressive version: earlier, better price, no confirmation, and a stop that is only a few ticks away or does not exist. The hockey stick as shown here is the confirmed version: the blade is already visible. The pullback entry in 6.4 is the compromise between them. The course shows all three and names none of them as the rule.
 
 ## Timeframe: resolved by the screener
 
@@ -300,4 +350,6 @@ The four-phase diagram in section 3.1 is daily. The scalping definition in Modul
 - In the depth check, which side of the order book is "the lower volume" compared against?
 - Are the 15m Gainers / 15m Losers tabs used anywhere in the course, or only the 24h list?
 - Where does the "wait for retrace, breakout, or confirmation" instruction get made precise: Module 3 (direction) or Module 4 (SPE)?
-- Does the hockey stick pattern appear anywhere in the delivered slides?
+- ~~Does the hockey stick pattern appear?~~ Yes, in a late batch, as eight screenshots with no text. See section 6.
+- Is the hockey stick entry on the blade, on the pullback after it, or on the heel (as in RAVE)? The slides show the shape, not the entry.
+- Does the hockey stick override the screener's funding-rate check? The SOL example longs into positive funding.

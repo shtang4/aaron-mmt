@@ -391,7 +391,7 @@ The shape, read off the ETH chart:
 
 **Rule: when the vertical move has ended and the "beak" is forming, do not enter. Watch.** It is the Module 2 "ranging" condition and the Heikin-Ashi doji-cluster condition, described by shape instead of by indicator. The trap it names is chasing: buying the small green candles in the beak because the big move is still fresh in memory, then selling the small red ones.
 
-This is the clearest Skip rule in the course, and the only one described as a pattern to avoid rather than one to trade.
+This is the clearest Skip rule in the course, and the only one described as a pattern to avoid rather than one to trade. Its mirror image, a slow decline ending in a vertical rise, is the hockey stick in Module 2 section 6.
 
 ### 6.2 The chart's indicator set is not the MMT set
 
