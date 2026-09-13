@@ -374,11 +374,67 @@ Standard construction, for reference until the course's own version is available
 - **Tunnel (channel) trend line**: the trend line plus a parallel line through the opposite swing points. Price oscillates between the two; the far line is the take-profit target and the near line is the pullback entry.
 
 
-## 6. Seahorse pattern
+## 6. Seahorse pattern (海马图案)
 
-_Not yet captured._
+### 6.1 What it is
+
+Three slides. The first is four photographs of seahorses. The second and third carry the actual content, with an ETHUSDT 15-minute Bybit chart as the example.
+
+Slide text, verbatim: "I noticed whenever this kind of 'Animal Head with long beak' is definitely sideway trend with fluctuating trend, so just stay and observe, don't go in, otherwise you may end up chasing the ups and downs later on. Please BEWARE of this, to avoid PAINFUL LOSS!!!"
+
+The shape, read off the ETH chart:
+
+| Seahorse part | Chart feature |
+|---------------|---------------|
+| Tail and body (vertical) | A sharp, near-vertical rise: ETH from 1,571 to 1,698 in about 90 minutes |
+| Head with long beak (horizontal) | The flat chop that follows: price oscillates in a narrow band around 1,660 to 1,680 for six or more hours, with the EMAs converging and flattening underneath |
+
+**Rule: when the vertical move has ended and the "beak" is forming, do not enter. Watch.** It is the Module 2 "ranging" condition and the Heikin-Ashi doji-cluster condition, described by shape instead of by indicator. The trap it names is chasing: buying the small green candles in the beak because the big move is still fresh in memory, then selling the small red ones.
+
+This is the clearest Skip rule in the course, and the only one described as a pattern to avoid rather than one to trade.
+
+### 6.2 The chart's indicator set is not the MMT set
+
+The ETH chart shows **EMA 10, EMA 25, EMA 50**, plus WR (14, 20) and RSI (6, 12, 24) panels. That is a different, older setup from the 5-line 9/25/55/155/255 set taught earlier in this module. It answers the Module 1 puzzle: the stop rule "below EMA 50" comes from this older three-line setup, not from the current five. On the current set the nearest equivalent is EMA 55.
+
+### 6.3 The third slide: a lifted personal post, and a contradiction of the course's own rules
+
+The third seahorse slide is not course material in the same sense as the rest. It reads as a personal chat or Telegram post pasted onto a slide ("Both such above indicators cause me a profit gain for today market...", "HP mobile App" meaning handphone). Its four bullets, verbatim:
+
+1. "Both such above indicators cause me a profit gain for today market."
+2. "Sometimes, you should look out from the box (I mean the view of the market trend)."
+3. "This method only suitable to those no enough time to stare at the PC screen (only using HP mobile app) and **no need TA at all** to trade, to look at the market and predict the trend."
+4. "I created my own way of observation towards current market flow in order to help others especially the newbies to join as new traders and dare to gain more experience in trading too. **I do not set any SL, but increase all my leverage with cross margin.**"
+
+Bullet 4 contradicts the Discharge rule from Module 1 ("stop loss: below EMA 50, structural, not emotional", "a doctor never admits a patient without a discharge plan"), the Dose rule ("your Dose is your position size and stop loss"), and the screener's own warning about manipulation, pump and dump and black swans. No stop, maximum leverage, cross margin means the entire account is collateral for every position, and one adverse move of a few percent liquidates all of it. It also contradicts the "aggressive" row of the very next slide, which says to set a stop loss.
+
+Bullet 3, "no need TA at all", contradicts the whole of Modules 1 to 3.
+
+Treat this slide as a historical artefact of how the author traded before the 3D method was formalised, not as a rule. If it was presented in the session as current advice, that is the single most important thing to raise with Dr. Aaron.
+
+## 7. "My tips of scalping strategy"
+
+Delivered at the end of Module 3 but it is Dose and Discharge content; it will be cross-referenced from Module 5. Four rows, verbatim:
+
+| Tip | Text |
+|-----|------|
+| Amount | Set the amount 1% to 10% (appetite dependent) |
+| Conservative | Isolated margin, less leverage, 1× to 10×, set TP and SL |
+| Aggressive / risk taker | Cross margin, maximise leverage, **no TP / set SL** |
+| Entry | Setting entry price with prediction |
+
+Reading:
+
+- **"Amount 1% to 10%"** is the first number the course gives for Dose. It is ambiguous whether this is *margin* per trade as a share of account, or *risk* per trade (the amount lost if the stop hits). The two differ by the leverage factor. At 10% margin and 50× leverage, the notional is 5× the account and a 2% adverse move wipes the margin. Ask which one is meant. If it is margin, then at high leverage the real risk per trade is far above the usual 1% to 2% of account that scalping textbooks use.
+- **Conservative row** is the Module 1 Discharge rule applied: isolated margin caps the loss at the margin posted, TP is set first, SL is structural.
+- **Aggressive row**, "no TP, set SL": lets winners run past the nearest resistance, with the stop as the only exit. Combined with cross margin and maximum leverage, the stop is doing all the work, and slippage on a fast 1-minute move can make the fill materially worse than the stop level. This row at least keeps a stop; the seahorse slide above drops it.
+- **"Setting entry price with prediction"** means placing a limit order at the level you expect the pullback to reach (an EMA, a demand zone), rather than a market order. That is the Sniper Price Entry mechanic, and Module 4 should make it precise.
+
 
 ## Open questions
+
+- Is the "1% to 10% amount" margin per trade or risk per trade? The answer changes real risk by the leverage factor.
+- Was the "no SL, max leverage, cross margin" bullet presented as current advice or as a past habit?
 
 - ~~Which timeframe is the Heikin-Ashi read on for entries?~~ Answered: the Bybit setup screenshots use the 1-minute chart.
 - Is the EMA in Module 1 computed on Heikin-Ashi candles or real candles? The two give different crosses.
