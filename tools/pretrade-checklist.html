@@ -192,6 +192,17 @@
   .grid4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 10px; }
   .grid4 .check { font-size: 12.5px; }
 
+  /* Bybit fetch panel */
+  .fetch { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; display: grid; grid-template-columns: auto auto 1fr; gap: 8px 14px; align-items: center; }
+  @media (max-width: 900px) { .fetch { grid-template-columns: 1fr; } }
+  .fetch .fmsg { font-size: 12.5px; color: var(--ink-3); }
+  .fetch .fmsg.bad { color: var(--crit); }
+  .readout { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 6px 14px; font-size: 12.5px; }
+  .readout div { background: var(--surface-2); border-radius: 6px; padding: 6px 9px; }
+  .readout .k { display: block; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+  .readout .v { font-weight: 500; }
+  .readout .v.long { color: var(--long); } .readout .v.short { color: var(--short); } .readout .v.warn { color: var(--warn); }
+
   /* Computed panel */
   .calc {
     background: var(--surface-2); border-radius: 8px; padding: 10px 12px;
@@ -263,6 +274,13 @@
       <div class="lbl">Money at risk if stopped</div>
       <div class="val" id="riskVal">— <small>USDT</small></div>
     </div>
+  </div>
+
+  <div class="fetch" id="fetchPanel">
+    <button type="button" class="btn" id="fetchBtn">Fetch from Bybit</button>
+    <label class="check" style="margin:0"><input type="checkbox" id="fetchFill" checked><span>Fill the form from it</span></label>
+    <div class="fmsg" id="fmsg">Public market data only, no key. Works when this file is opened from your own computer; the hosted page cannot reach Bybit.</div>
+    <div class="readout" id="readout" hidden></div>
   </div>
 
   <div class="cols">
@@ -699,6 +717,120 @@
   }
 
   function escapeHtml(s) { return s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+
+  // ---- Bybit public data
+  const BYBIT = 'https://api.bybit.com';
+  async function bget(path) {
+    const r = await fetch(BYBIT + path, { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    if (j.retCode !== 0) throw new Error(j.retMsg || 'retCode ' + j.retCode);
+    return j.result;
+  }
+  function ema(values, n) {
+    if (values.length < n) return NaN;
+    let e = values.slice(0, n).reduce((a, b) => a + b, 0) / n; const k = 2 / (n + 1);
+    for (let i = n; i < values.length; i++) e = values[i] * k + e * (1 - k);
+    return e;
+  }
+  function emaSeries(values, n) {
+    const out = new Array(values.length).fill(NaN);
+    if (values.length < n) return out;
+    let e = values.slice(0, n).reduce((a, b) => a + b, 0) / n; const k = 2 / (n + 1); out[n - 1] = e;
+    for (let i = n; i < values.length; i++) { e = values[i] * k + e * (1 - k); out[i] = e; }
+    return out;
+  }
+  function heikinAshi(k) { // k: oldest-first [{o,h,l,c}]
+    const ha = []; let po, pc;
+    for (const c of k) {
+      const hc = (c.o + c.h + c.l + c.c) / 4;
+      const ho = ha.length ? (po + pc) / 2 : (c.o + c.c) / 2;
+      ha.push({ o: ho, h: Math.max(c.h, ho, hc), l: Math.min(c.l, ho, hc), c: hc }); po = ho; pc = hc;
+    }
+    return ha;
+  }
+  const decs = (p) => p >= 1000 ? 1 : p >= 100 ? 2 : p >= 1 ? 4 : p >= 0.01 ? 5 : 7;
+  function ro(k, v, cls) { return `<div><span class="k">${k}</span><span class="v ${cls || ''}">${v}</span></div>`; }
+
+  $('fetchBtn').addEventListener('click', async () => {
+    const sym = $('coin').value.trim().toUpperCase(); if (!sym) { $('fmsg').textContent = 'Type the coin first, e.g. SEIUSDT.'; return; }
+    const btn = $('fetchBtn'); btn.disabled = true; $('fmsg').className = 'fmsg'; $('fmsg').textContent = 'Fetching ' + sym + '…';
+    try {
+      const [tick, kl, oi, ob] = await Promise.all([
+        bget(`/v5/market/tickers?category=linear&symbol=${sym}`),
+        bget(`/v5/market/kline?category=linear&symbol=${sym}&interval=1&limit=1000`),
+        bget(`/v5/market/open-interest?category=linear&symbol=${sym}&intervalTime=5min&limit=13`),
+        bget(`/v5/market/orderbook?category=linear&symbol=${sym}&limit=50`)
+      ]);
+      const t = tick.list && tick.list[0]; if (!t) throw new Error('no ticker for ' + sym);
+      const last = parseFloat(t.lastPrice), fr = parseFloat(t.fundingRate) * 100;
+      // klines come newest-first; closed candles only (drop the live one)
+      const rows = kl.list.map(r => ({ o: +r[1], h: +r[2], l: +r[3], c: +r[4], v: +r[5] })).reverse();
+      const closed = rows.slice(0, -1);
+      const ha = heikinAshi(closed);
+      const haC = ha.map(x => x.c);
+      const E = {}; for (const n of [9, 25, 55, 155, 255]) E[n] = ema(haC, n);
+      const e155s = emaSeries(haC, 155);
+      // EMA 155 three-candle rule on Heikin-Ashi: body on one side, no wick on the other side (tolerance 5% of body)
+      const last3 = ha.slice(-3).map((c, i) => ({ c, e: e155s[e155s.length - 3 + i] }));
+      const above = last3.every(({ c, e }) => Math.min(c.o, c.c) > e && (c.c >= c.o) && (Math.min(c.o, c.c) - c.l) <= 0.05 * Math.abs(c.c - c.o));
+      const below = last3.every(({ c, e }) => Math.max(c.o, c.c) < e && (c.c <= c.o) && (c.h - Math.max(c.o, c.c)) <= 0.05 * Math.abs(c.c - c.o));
+      // OI over the last hour versus price
+      const oiL = oi.list.map(r => ({ oi: +r.openInterest, ts: +r.timestamp })).sort((a, b) => a.ts - b.ts);
+      const oiChg = oiL.length > 1 ? (oiL[oiL.length - 1].oi - oiL[0].oi) / oiL[0].oi * 100 : NaN;
+      const pxChg = closed.length > 60 ? (closed[closed.length - 1].c - closed[closed.length - 61].c) / closed[closed.length - 61].c * 100 : NaN;
+      let oiRead = 'flat', oiCls = '';
+      if (Number.isFinite(oiChg) && Number.isFinite(pxChg)) {
+        if (pxChg > 0 && oiChg > 0) { oiRead = 'price up + OI up: real buying'; oiCls = 'long'; }
+        else if (pxChg < 0 && oiChg > 0) { oiRead = 'price down + OI up: real selling'; oiCls = 'short'; }
+        else if (pxChg > 0 && oiChg < 0) { oiRead = 'price up + OI down: short squeeze, caution'; oiCls = 'warn'; }
+        else if (pxChg < 0 && oiChg < 0) { oiRead = 'price down + OI down: long covering, weak'; oiCls = 'warn'; }
+      }
+      // depth: total size within 50 levels each side
+      const bidSz = ob.b.reduce((a, r) => a + parseFloat(r[1]), 0), askSz = ob.a.reduce((a, r) => a + parseFloat(r[1]), 0);
+      const depthRatio = askSz / bidSz; // <1 means ask lighter -> long
+      const depthRead = depthRatio < 0.8 ? 'ask lighter: room to rise' : depthRatio > 1.25 ? 'bid lighter: room to fall' : 'balanced: no edge';
+      const depthCls = depthRatio < 0.8 ? 'long' : depthRatio > 1.25 ? 'short' : 'warn';
+      // funding read (handouts thresholds, 8h rate)
+      const frRead = fr >= 0.10 ? 'extreme heat: strong short bias' : fr >= 0.05 ? 'long squeeze risk: short bias' : fr <= -0.01 ? 'short squeeze: long bias' : 'balanced: follow the EMA';
+      const frCls = fr >= 0.05 ? 'short' : fr <= -0.01 ? 'long' : '';
+
+      const d = decs(last);
+      $('readout').hidden = false;
+      $('readout').innerHTML = [
+        ro('Last (real)', last.toFixed(d)),
+        ro('EMA 9 (HA)', E[9].toFixed(d)), ro('EMA 25', E[25].toFixed(d)), ro('EMA 55', E[55].toFixed(d)), ro('EMA 155', E[155].toFixed(d)), ro('EMA 255', E[255].toFixed(d)),
+        ro('EMA 155 rule (HA, 3 candles)', above ? 'LONG set' : below ? 'SHORT set' : 'not set', above ? 'long' : below ? 'short' : 'warn'),
+        ro('Funding, 8h', fr.toFixed(4) + '% · ' + frRead, frCls),
+        ro('OI, last hour', (Number.isFinite(oiChg) ? (oiChg >= 0 ? '+' : '') + oiChg.toFixed(2) + '%' : '—') + ' · ' + oiRead, oiCls),
+        ro('Depth, ask ÷ bid (50 levels)', depthRatio.toFixed(2) + ' · ' + depthRead, depthCls),
+      ].join('');
+      $('fmsg').textContent = `Bybit ${sym}, ${closed.length} closed 1m candles, ${new Date().toLocaleTimeString()}. EMAs on Heikin-Ashi closes to match the Bybit chart. Zone edge and structural level still come from your chart.`;
+
+      if ($('fetchFill').checked) {
+        const side = segs.side === 'skip' ? (above ? 'long' : below ? 'short' : 'skip') : segs.side;
+        if (side !== segs.side) setSeg('side', side);
+        const dir = side === 'short' ? -1 : 1;
+        $('emaPrice').value = E[9].toFixed(d);
+        if (!entryTouched) $('entry').value = E[9].toFixed(d);
+        $('ema155').checked = side === 'long' ? above : side === 'short' ? below : false;
+        // screener ticks for the chosen side
+        const emaAligned = side === 'long' ? (E[9] > E[25] && E[25] > E[55] && last > E[155]) : side === 'short' ? (E[9] < E[25] && E[25] < E[55] && last < E[155]) : false;
+        $('scrEma').checked = emaAligned;
+        $('scrOi').checked = side === 'long' ? (pxChg > 0 && oiChg > 0) : side === 'short' ? (pxChg < 0 && oiChg > 0) : false;
+        $('scrFr').checked = side === 'long' ? fr <= -0.01 : side === 'short' ? fr >= 0.05 : false;
+        $('scrDepth').checked = side === 'long' ? depthRatio < 0.8 : side === 'short' ? depthRatio > 1.25 : false;
+        update();
+      }
+    } catch (err) {
+      $('fmsg').className = 'fmsg bad';
+      const blocked = /Failed to fetch|NetworkError|Load failed|CORS/i.test(String(err && err.message));
+      $('fmsg').textContent = blocked
+        ? 'Could not reach api.bybit.com from this page. The hosted artifact blocks outside requests; save this file and open it from your computer. If it still fails there, Bybit is refusing browser calls and the fetch needs a CSV export instead.'
+        : 'Bybit answered with an error: ' + (err && err.message);
+    } finally { btn.disabled = false; }
+  });
 
   $('copyBtn').addEventListener('click', async () => {
     try { await navigator.clipboard.writeText($('planText').textContent); $('copyBtn').textContent = 'Copied'; }
