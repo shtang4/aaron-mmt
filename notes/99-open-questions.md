@@ -31,7 +31,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 
 | # | Question | Module | Why it matters |
 |---|----------|--------|----------------|
-| C1 | Where does the SPE stop go when "beyond the zone" and the ROI tier disagree? | 4 §1.2 | SPE names no stop at all. |
+| ~~C1~~ | ~~Where does the SPE stop go when the zone is wider than the ROI tier allows?~~ Session: **lower the leverage** until the tier stop sits beyond the zone's far edge. The tier and the money at risk stay; the leverage gives. | 4 §1.2 | |
 | ~~C2~~ | ~~Does the SSWB SOP use a stop?~~ Session: yes, with isolated margin. The ROI tier is the Module 5 §3.2 table. | 5 §3.12 | |
 | ~~C3~~ | ~~Is the stop ever stated as the rule?~~ Yes, in both handouts: "Always set your stop loss before the entry order fills." The hedging section stands contradicted by the course's own handouts. | 7 §1.5 | |
 | ~~C4~~ | ~~What does "hedging when suitable" mean?~~ Session: hedge only for a trade accidentally opened in cross mode. Never as a substitute for the stop on an isolated position. | 5 §4.12 | |

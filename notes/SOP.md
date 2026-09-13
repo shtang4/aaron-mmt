@@ -30,7 +30,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 ## 4. Size and stop (Dose)
 1. Isolated margin. Leverage 5× to 10×.
 2. Margin per trade: $20 to learn; then 1% of wallet; never above 10%. Bigger wallet, smaller trade. **Loss at the stop never above 1–2% of account equity**, whatever the confluence score.
-3. Stop as ROI on margin by tier: beginner 5–20%, intermediate 20–50%, advanced 50%+. Convert to price; it must sit beyond the structural level (far edge of the zone, or the heel low). If it does not, lower the leverage. Never move the level.
+3. Stop as ROI on margin by tier: beginner 5–20%, intermediate 20–50%, advanced 50%+. Convert to price; it must sit beyond the structural level (far edge of the zone, or the heel low). If it does not, **lower the leverage** until it does (session-confirmed). Never move the level, never widen the tier.
 4. Write the money at risk in USDT before entry.
 
 ## 5. Exit plan, both ways (Discharge)
