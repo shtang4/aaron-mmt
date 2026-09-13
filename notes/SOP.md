@@ -23,7 +23,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 
 ## 3. Sniper entry (Diagnose, SPE)
 1. TradingView: nearest demand zone below (long) or supply zone above (short), and any FVG. Take the near edge.
-2. Bybit: the 5-line EMA closest to that edge. That is the price.
+2. Bybit: **EMA 9** is the first target; if the zone edge sits deeper, the EMA closest to the edge. That is the price.
 3. Rest a limit order there. Re-place it if the EMA moves. Never market-buy the running candle.
 4. Correlated alts making the same move at the same minute are one trade. Size the total.
 
@@ -34,9 +34,9 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 4. Write the money at risk in USDT before entry.
 
 ## 5. Exit plan, both ways (Discharge)
-1. TP first. Wick Tracker at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on Last, or a resting limit.
+1. TP first. Wick Tracker is a Bybit TP trigger at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on **Last**; set it slightly inside the expected wick so it fills.
 2. SL from step 4, trigger on Mark, **resting before the entry fills**. Both orders in before you look away.
-3. Climax exit: volume bar far above VOLMA + MACD histogram at its tallest, next bar shorter → close 75%. Move the runner's SL to entry.
+3. Climax exit: volume bar far above VOLMA + MACD histogram at its **tallest bar**, confirmed when the next bar prints shorter → close 75%. Move the runner's SL to entry.
 4. Runner: Hunting SL locks a rising ROI. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.
 5. Stop hit = the plan worked. Take it.
 

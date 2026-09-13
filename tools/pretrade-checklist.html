@@ -324,7 +324,7 @@
         <div class="field">
           <label for="emaPrice">Nearest 5-line EMA</label>
           <input type="number" id="emaPrice" step="any" value="0.3496" inputmode="decimal">
-          <div class="hint">On Bybit. This is the SPE limit price.</div>
+          <div class="hint">On Bybit. EMA 9 first; deeper if the zone edge is deeper. This is the SPE limit price.</div>
         </div>
       </div>
 
@@ -419,7 +419,7 @@
         <div class="field" id="tpPriceField">
           <label for="tpPrice">Wick Tracker price</label>
           <input type="number" id="tpPrice" step="any" value="0.3576" inputmode="decimal">
-          <div class="hint">Prior wick high, supply-zone bottom, or a liquidation cluster.</div>
+          <div class="hint">Bybit TP trigger by Last. Prior wick high, supply-zone bottom, or a liquidation cluster, set slightly inside the wick.</div>
         </div>
         <div class="field" id="tpRoiField" hidden>
           <label for="tpRoi">Net ROI wanted %</label>

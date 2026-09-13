@@ -37,7 +37,7 @@ So the SMC zone tells you *where* the pullback should end, and the EMA gives the
 ### 1.2 What the slide leaves out
 
 - **The stop.** SPE places the entry and says nothing about the stop. The natural structural stop for a zone entry is just beyond the far edge of the zone: below the bottom of the demand zone for a long, above the top of the supply zone for a short. That sits close to the "below EMA 55 or 155" rule from Modules 1 and 3 in most cases, and it should be set by the ROI tier in Module 5 section 3.2 converted to price. If the zone's far edge is further than the ROI tier allows, the leverage is too high for that trade.
-- **Which EMA first.** "Nearest" means the first EMA the retrace reaches, which in a strong trend is EMA 9 or 25. Those give the shallowest pullback and the most frequent fills, and they are also the ones price slices through first when the trend ends. The ZETA example in Module 3 (entry 0.8570) did not say which line was hit. A deeper line (55) with a zone behind it is the more conservative version of the same entry.
+- **Which EMA first.** Confirmed from the session: **EMA 9.** That is the shallowest pullback and the most frequent fill, and it is also the line price slices through first when the trend ends. The consequences: the stop does the filtering (it must sit beyond the zone, not just under EMA 9), the EMA 155 three-candle rule must already be true, and on a 1-minute chart the EMA 9 moves every candle, so the limit order has to be re-placed as it moves. A deeper line with a zone behind it is a more conservative variant, not the taught one.
 - **Direction is assumed.** SPE only tells you where to enter once the direction is set. The direction comes from EMA 155 (three full-body candles on one side, Module 3 section 2.2) and the screener (Module 2 section 5).
 - **Time-in-force.** A resting limit at an EMA goes stale as the EMA moves. On a 1-minute chart EMA 9 moves every candle. Either re-place the order each candle or aim at the slower line.
 
@@ -66,7 +66,7 @@ Five-step flow, verbatim:
 
 **Step 1, volume maximal.** The exhaustion spike from Module 3 section 2.7: a volume bar far above the VOLMA 5 and 10 lines, at the climax of the move. In a long, that bar is the buyers' last push. The take-profit process starts on that candle, not after it.
 
-**Steps 2 and 3, MACD mid histogram.** With the MMT setting (8, 13, 9) the histogram reacts fast. "Mid histogram" is not defined on the slide. The reading that fits the surrounding steps: the histogram is at or near its **tallest bar** for the swing, the middle of the momentum burst, and the next bar is shorter. Momentum has peaked even though price may still be rising. That is the same signal the RAVE example in Module 5 annotated "IceBerg Tip" at the bottom of a crash, used in reverse at a top. An alternative reading, that "mid" means the histogram has fallen to half its peak height, would exit later and give back more; the "sip slowly" framing and step 5 argue for the earlier reading.
+**Steps 2 and 3, MACD mid histogram.** With the MMT setting (8, 13, 9) the histogram reacts fast. Confirmed from the session: "mid histogram" is **the tallest bar** of the swing. The partial fires when the next bar prints shorter than it: momentum has peaked even though price may still be rising. That is the same signal the RAVE example in Module 5 annotated "IceBerg Tip" at the bottom of a crash, used in reverse at a top. In practice the tallest bar is only known once the next bar is shorter, so the exit is one candle after the peak, on the 1-minute chart.
 
 **Step 4, TP or PTP 75%.** Either close the whole position, or close **75%** and keep 25% as the runner. On the runner, move the stop to entry (it can no longer lose) or apply the Hunting SL from Module 5 section 3.3 (lock a rising fraction of ROI). Note the number: 75% off is a much larger partial than the Module 5 example's "take 20% profit, leave 80% for the wick", which was about locking ROI with a stop, not about position size. Here most of the position is closed at the climax.
 
@@ -111,7 +111,7 @@ The SSWB SOP in Module 5 used the Wick Tracker differently: as a **50% ROI** tar
 ### 3.2 The mechanics that make or break it on Bybit
 
 - **Trigger price type.** Bybit TP/SL orders trigger on Last, Mark or Index price. A wick is a Last-price event; the Mark price is smoothed and often does not reach the wick. The THETA screenshots in Module 5 section 3.4 had **TP triggered by Last** and **SL triggered by Mark**. That is the correct pairing: TP catches the wick, SL ignores it. Set it that way every time.
-- **Trigger-then-market versus resting limit.** A TP set on the TP/SL screen is a trigger that sends a market order when touched. On a wick, the market order fills *after* the touch, at whatever price is there once the wick retraces, which can be well below the wick. A **resting limit sell** at the wick level fills only if price trades through it, and at that price or better. For a wick tracker the resting limit is the better instrument; the TP trigger is the fallback when a limit is not possible (for example, reduce-only on a partial).
+- **It is a TP trigger.** Confirmed from the session: the Wick Tracker is set on Bybit's TP/SL screen, and when price reaches it the position closes automatically. That is a trigger that sends a market order on the touch, so on a wick the fill lands a few ticks after the touch, once the wick starts retracing. Two consequences: trigger on **Last** (Mark rarely reaches a wick), and set the level a little inside the wick you expect rather than at its extreme, so the trigger fires with room to fill. A resting limit at the level would fill at the price or not at all; it is the more precise instrument, but it is not what the course teaches.
 - **"No need monitoring"** is true only if the stop is also in place. A TP order alone with no stop is a position that can be liquidated while you are not watching. The Wick Tracker is a Discharge tool for the winning side; the Module 5 ROI-tier stop is the losing side, and both must be resting before you leave the screen.
 
 ### 3.3 Golden Rule 11, "Wick Player / Wick Catcher"
@@ -134,8 +134,5 @@ Module 5's rule 11 teased "how to be a Wick Catcher without a Master". This slid
 
 ## Open questions
 
-- What exactly is "mid histogram": the tallest bar of the swing, or the bar at half the peak height?
-- Which EMA does SPE target first in practice: the nearest (9 or 25) or a deeper one with a zone behind it?
 - Where does the SPE stop go: below the zone, or at the ROI tier, when the two disagree?
-- Is the Wick Tracker placed as a resting limit or as a TP trigger? The slides show only the TP/SL screen.
 - Does the course have a worked example of the full sequence on one trade, with entry, stop, PTP and runner all shown?

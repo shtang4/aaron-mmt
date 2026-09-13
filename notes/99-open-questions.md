@@ -23,7 +23,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 
 | # | Question | Module | Why it matters |
 |---|----------|--------|----------------|
-| B1 | Which EMA does SPE target first on a pullback: 9, 25, or 55? | 4 §1.2 | Nearest gives most fills and most failures. |
+| ~~B1~~ | ~~Which EMA does SPE target first?~~ Session: **EMA 9**. The shallowest pullback and the most frequent fills; the stop and the EMA 155 direction rule carry the filtering. | 4 §1.2 | |
 | B2 | Which EMA did the ZETA pullback touch at 0.8570? | 3 §2.3 | The course's showcase SPE entry, unlabelled. |
 | B3 | Are the 15m Gainers/Losers tabs used, or only 24h? | 2 §4.4 | The 15m tabs match the holding period; the course uses 24h. |
 
@@ -52,9 +52,9 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 
 | # | Question | Module | Why it matters |
 |---|----------|--------|----------------|
-| E1 | What is "mid histogram": the tallest bar, or half the peak height? | 4 §2.1 | Decides how early the 75% partial fires. |
+| ~~E1~~ | ~~What is "mid histogram"?~~ Session: **the tallest bar** of the swing. The 75% partial fires when the next bar is shorter. | 4 §2.1 | |
 | E2 | What volume multiple counts as a spike on the 1-minute chart, and is the baseline VOLMA 5 or 10? | 3 §2.7 | "2× average" is hit constantly on 1m. |
-| E3 | Is the Wick Tracker a resting limit or a TP trigger? | 4 §3.2 | A trigger fills after the wick retraces; a limit fills at the wick or not at all. |
+| ~~E3~~ | ~~Wick Tracker: limit or trigger?~~ Session: a **TP trigger**; when price reaches it the position closes automatically. Set it to trigger on Last so a wick reaches it; expect the fill a few ticks after the touch. | 4 §3.2 | |
 | E4 | Which timeframe is the EMA cross-back exit read on? | 1 §3.3 | On 1m it is late; on 15m it is a different trade. |
 | E5 | Is there a minimum reward-to-risk ratio? | 1 §3.3 | Never stated in six modules. |
 
