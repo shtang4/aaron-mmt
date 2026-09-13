@@ -454,6 +454,60 @@ The tools already in this module cover the "horrible position" case without addi
 2. If the stop was skipped and the position is underwater: close it. The loss is the loss. This is the "Discharge plan written before entry" from Module 1.
 3. If you want the directional short the formula is really describing, close the long first and open the short as a new, sized trade with its own stop. That is the same net exposure with one set of fees and no wallet-backed liquidation risk on a stale leg.
 
+
+### 4.8 The GMX case study, labelled "Hedging"
+
+Four slides of the author's own trade, in the first person. Slide text, condensed: bought GMXUSDT long on 16/3/23; paper loss up to −180 USDT; "did not close it as I want to recoup my loss"; held through the volatility until the next morning; waited for the morning pump; "saved my loss and managed to close it without paying any single loss."
+
+The screenshots:
+
+| Time (17/3/23) | Mark price | Position P&L | Notes |
+|----------------|-----------|--------------|-------|
+| about 08:00 | 75.665 | −87.83 (−30.61%) | Entry 78.015, size 37.78 GMX, **Cross 15×**, liquidation 51.47. 24h low 74.55. |
+| about 09:30 | 77.280 | −27.95 (−12.37%) | Two other positions open: NEO long cross 10× (+4.25), ARPA long cross 12.5× (+12.20). |
+| 09:30 candle | 77.585, high 78.370 | closed near 0 | "The hair / wick touched back my entry price, then I totally saved my loss!! Phew..." |
+
+Arithmetic: 37.78 GMX × 78.015 is about 2,950 USDT of notional. The −180 USDT maximum loss is 4.76 per GMX, so price reached about 73.25 at the worst point, 6.1% below entry. Liquidation at 51.47 is 34% below entry, which on 15× means the wallet was backing the position. The chart runs the 2023 indicator set (EMA 10, 25, 50; MACD 12, 26, 9), same as the seahorse slide.
+
+**There is no hedge in this case study.** No short was opened at any point. The "hedging method" as actually practised in the example is: hold the losing long on cross margin, do not take the stop, and wait for a wick to touch the entry price. The trade lasted about a day.
+
+**Why the outcome is not evidence for the method:**
+
+- Closing at entry caps the upside of the wait at zero. The downside was uncapped down to a liquidation at −34% with the wallet behind it. That is a bet with a maximum payoff of "no loss" and a maximum cost of the account.
+- The exit was on a **wick** to 78.37 on one 15-minute candle. The candle closed at 77.585, below entry. Had the order been a few cents higher, or placed a candle later, the trade would still have been open and underwater.
+- GMX in March 2023 recovered. The same hold on a coin that did not recover is the seahorse slide's "painful loss", and the course's own risk section says cross margin ends in "Burst!!". One recovered trade out of an unknown number of holds is a survivor, not a rule.
+- The behaviour has a name in the trading literature, the disposition effect: holding losers to avoid realising the loss and selling winners early to lock the gain. The ZETA slide in section 2.3 criticised the second half of that pattern. This slide endorses the first half.
+
+### 4.9 "Lesson of my sharing"
+
+Five lessons, verbatim:
+
+1. "Please set SL (Stop Loss) even though the market is happy in your way of position."
+2. "Never give up to retrieve your loss → gain. So, don't let your frustration close the position so early just to save your headache."
+3. "Limit or do now new position of the day and look for the potential 'market call' to standby and retrieve your loss by closing it when reaching back your initial entry price."
+4. "Hold your breath and manage your EQ and be patient to the next market come."
+5. "At last, DON'T BE TOO GREEDY!! You may be a little bit greedy if you are ready in front of your screen to close up the position any time it reaches your desired closing price/profit."
+
+Lesson 1 says set a stop. Lessons 2, 3 and 4 describe what to do after not honouring one: hold, wait for the entry price, manage the discomfort. A trade with a stop set never reaches the situation lessons 2 to 4 are for. The slide is telling students to set a stop and then not to let it work.
+
+Lesson 3 also says to limit new positions while a loser is open, which is sound, and the screenshot shows two other cross-margin longs open at the same time as the GMX loser.
+
+Lesson 5, read closely, says be ready to close at the desired price. Combined with lesson 3, the "desired price" for a losing trade is the entry price. That is the whole method: breakeven as the target for losers.
+
+### 4.10 What the hedging section amounts to
+
+Two things were taught under the heading "MMT Hedging":
+
+| | Formula (section 4.3) | Case study (section 4.8) |
+|-|----------------------|-------------------------|
+| What it is | Open an over-sized counter position at maximum leverage on cross margin | Hold the loser on cross margin until price returns to entry |
+| Stop loss | Not taken | Not taken |
+| Downside | Liquidation of either leg from the wallet | Liquidation of the position from the wallet |
+| Upside | Small net gain if the adverse move continues | Zero (close at entry) |
+| Evidence | None shown | One trade that recovered |
+
+Neither is a hedge in the sense the definition slide gives. Both are ways of not taking the stop. The Module 1 Discharge rule, "stop loss below the EMA, structural, not emotional, written before entry", is the better rule and the course's own risk section agrees with it. Use that, and treat this section as a description of what the author did in 2023, not as a procedure.
+
 ## 5. MMT Golden Rules (Follow up)
 
 _Not yet captured._
@@ -471,5 +525,6 @@ _Not yet captured._
 - What exactly is the "IceBerg Tip" on the MACD, and is the crash-bottom entry in the RAVE example a taught setup or a one-off?
 - Does Module 4's New TP or Wick Tracker replace the Module 1 "EMA cross-back, exit, no questions" rule? The ZETA case says hold through a cross-back; Module 1 says exit on it.
 - ~~Is hedging a replacement for the stop loss?~~ Answered: yes. The hedging section is framed as salvaging a position already deep in loss, and never says to take the stop. See section 4.4 for why the formula is worse than the stop in both branches.
-- Does the course tell students to enable Bybit hedge mode? Without it the hedge as drawn cannot exist.
+- Does the course tell students to enable Bybit hedge mode? Without it the hedge as drawn cannot exist. The GMX case study never opened a short, so the question may be moot in practice.
+- How many losing positions has the author held to breakeven that did not recover? The GMX case is one that did.
 - What are the Golden Rules, and do they resolve the "no SL, cross margin" contradiction in the Module 3 seahorse slide?
