@@ -29,12 +29,42 @@ Reading the table as a set of constraints rather than a description:
 - **Risk management and discipline are named twice** (Risk Management row and Skill Set row). The course flags this as the failure point before teaching any entry technique. Module 5 is where it is operationalised.
 - **"Suitable for experienced traders"** is a stated prerequisite. The course does not claim scalping is beginner-friendly.
 
-## 3. MMT 3D framework
+## 3. MMT 3D framework: "The System that makes the difference"
 
-_Not yet captured. Fill in when the slide arrives._
+Three questions, asked in order, on every trade.
+
+| D | Question | Covers |
+|---|----------|--------|
+| **Diagnose** | Is the entry valid? | Coin selection, direction, entry timing |
+| **Dose** | How much to risk? | Position size, risk level, trading style |
+| **Discharge** | When do I get out? (Take Profit / Stop Loss) | Exit rules, TP, SL, hedging |
+
+The vocabulary is medical (diagnose the patient, dose the medicine, discharge from care), which fits the "Dr. Aaron" branding. Strip the metaphor and it is the standard three-part trade plan: **entry, size, exit**.
+
+### How the modules map onto the 3 Ds
+
+| D | Modules that implement it |
+|---|---------------------------|
+| Diagnose | 2 (coin selection), 3 (direction), 4 (SPE, Wick Tracker) |
+| Dose | 5 (risk management strategy, trading style, risk level) |
+| Discharge | 4 (MMT New TP), 5 (MMT Hedging, Golden Rules) |
+
+Observations:
+
+- **Diagnose gets most of the course.** Three of six modules are about whether to enter. Dose gets a single sub-bullet in Module 5. The weighting says the course sees entry quality as the edge and sizing as a fixed rule.
+- **Discharge is split across two modules.** Take profit is taught in Module 4 as an entry-and-exit technique. Stop loss and hedging are taught in Module 5 as risk management. So "when do I get out" has two answers depending on whether the trade is winning or losing. Expect the hedging module to substitute for, or delay, the stop loss; that is the thing to scrutinise most.
+- **The order is the discipline.** Dose comes before Discharge, so the size must be set before the exit is planned, and the exit must be planned before entry. If a trade is entered without all three answered, the framework says it is not a valid trade.
+
+### Checklist form
+
+Before entry, write down:
+
+1. Diagnose: why is this entry valid? (coin, direction, trigger)
+2. Dose: how much am I risking, in account percentage?
+3. Discharge: exact take-profit level and exact stop-loss level.
 
 ## Open questions
 
-- What are the three dimensions of the MMT 3D framework?
+- Does the course define Dose as a fixed percentage of account per trade, or does it vary by "risk level"?
+- In Discharge, is hedging (Module 5) a replacement for the stop loss or a tool used alongside it?
 - Which chart timeframe does the course scalp on in practice (1m, 5m, 15m)?
-- Does the course quantify "small profit" as a percentage or in R multiples?

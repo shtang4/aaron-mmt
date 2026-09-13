@@ -82,7 +82,7 @@ Each of Modules 2, 3 and 5 pairs a **Basic tool** with an **Advance tool**. The 
 
 ## Open questions to resolve in later modules
 
-- What are the three dimensions of the "MMT 3D framework"?
+- ~~What are the three dimensions of the "MMT 3D framework"?~~ Answered in Module 1: Diagnose, Dose, Discharge.
 - Which three indicators are the "3 Main Indicators"?
 - What defines the hockey stick and seahorse patterns in MMT's usage?
 - What is "New TP" relative to the standard take-profit approach?
