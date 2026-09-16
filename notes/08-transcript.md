@@ -256,3 +256,15 @@ Three of these fold straight into the direction step: **fan width is confirmatio
 ### Driving analogy
 
 As on the slide. "A trade call given, you play blind, car crash. You follow GPS blindly, autopilot without knowing how to drive, your Tesla will also lead you to sea crash." The GPS is a useful guide; the driving is yours.
+
+## Part 7: MAVIA trade-call case study
+
+Full write-up: [06 §5](06-case-studies.md). The rules worth lifting out of it:
+
+- **"If you don't know the setup, don't take the shot."** A call is not a setup; the setup is the chart read you do yourself.
+- **The structure he traded was range, then breakout**, twice. He drew it before entering.
+- **Never short a running pump.** "You can short, but prematurely you will always get liquidated or get stop loss. No one can tell where the pump will get." The reason he gives is the same one behind the seahorse rule: on a manipulated coin you cannot tell a retracement from a turn while it is happening.
+- **"Timing and the reason matter. Without them, it's not trading, it's just wild guessing."** The slide's own demonstration is the same call at 17/3 13:22 and at 18/3 23:13, thirty-four hours apart.
+- **Chasing is for people who can already read the chart.** "Late trade is a loss trade sometimes. Don't chase, but it's really for beginners. Unless you are intermediate or advanced."
+- A member's take-profit rule, endorsed on the slide: on a manipulative coin **set the target at or above the previous high** rather than modestly. That is the Wick Tracker level arriving from the community.
+- Both directions are tradeable on the same chop: four legs long, short, long, short on a 15-minute Heikin-Ashi chart. "Even the ranging one, by doing scalping, you can earn a very nice amount."

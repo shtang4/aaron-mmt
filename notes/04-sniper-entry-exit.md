@@ -101,7 +101,7 @@ The "possible wick hit level" is not defined on the slide. Everything earlier in
 
 | Level | Source |
 |-------|--------|
-| A prior swing high's wick | Price action, this slide |
+| A prior swing high's wick | Price action, this slide. A member rule endorsed on the MAVIA slide ([06 §5.2](06-case-studies.md)): on a manipulative coin, "set higher price, refer to previous high or set even higher" |
 | Bottom of the next supply zone | SMC, Module 3 section 3 |
 | The next FVG's near edge | SMC, Module 3 section 3 |
 | A liquidation cluster above price | Coinglass heatmap, Module 3 section 4.2 |

@@ -71,7 +71,8 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 - Hedging instead of taking the stop. The only hedge is on an accidental cross-mode position, and it ends with closing it.
 - Holding a loser to breakeven.
 - Trading a mixed heatmap or a seahorse.
-- Entering on a chat call without the chart check.
+- Entering on a chat call without the chart check. "If you don't know the setup, don't take the shot."
+- Shorting a pump that is still running. "No one can tell where the pump will get."
 - Holding for days. This is not swing trading.
 - New listings beyond a few days.
 - Adding to a losing position to push liquidation away. Session: "against the money" means exactly this; a 100 loss becomes 500.

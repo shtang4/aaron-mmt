@@ -11,6 +11,7 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 | **SOMI** | Module 2, the Bybit scan | How to pick the candidate: top of the heatmap, top of the 24h gainers | None. Candidate only | §2 below |
 | **BTCUSDT** | Module 2, the screener | The four checks walked end to end; majority-vote timeframes | None. Screen reading only | §3 below |
 | **10000LADYSUSDT** | Module 2, the screener | A complete 4/4 long, with the depth rule stated aloud | None. Setup only | §4 below |
+| **MAVIAUSDT** | Trade-call case study | The same call taken 34 hours apart; both directions traded on the chop | Cards from +74% to +2,814% ROI | §5 below |
 | **RADUSDT** | Module 6 slides | Multi-timeframe EMA alignment, all five lines, four frames | None. Screen reading only | §5 below |
 | ZETAUSDT | Modules 3 and 5 | SPE entry at an EMA; then "took profit too early" | Entry 0.8570, exit 2.8530, about +233% | [03 §2.3](03-entry-direction.md), [05 §2.3](05-risk-and-hedging.md) |
 | RAVEUSDT | Module 5 | Heel / crash-bottom entry on a liquidation cluster | +277% ROI on a $150-style stake | [05 §3.9](05-risk-and-hedging.md) |
@@ -18,8 +19,8 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 | GMXUSDT | Module 5 | Held a loser to breakeven, taught as "hedging" | Closed at entry on a wick, zero | [05 §4.8](05-risk-and-hedging.md) |
 | PEOPLEUSDT | Module 5 | An actual hedge, resolved by closing the loser | Net about +81 USDT | [05 §4.11](05-risk-and-hedging.md) |
 | CARVUSDT, RARE, REEF and others | Module 5 SSWB | Result cards, no method shown | Various, wins only | [05 §3.10](05-risk-and-hedging.md) |
-| AERGOUSDT ("Kpnd") | Module 6 | Uncorrelated pump during a BTC crash | Entry 0.078, +657% ROI at 10× | §8 below |
-| Skipped-D triptych | Module 6 | Schematic failures, one per D | Schematic | §6 below |
+| AERGOUSDT ("Kpnd") | Module 6 | Uncorrelated pump during a BTC crash | Entry 0.078, +657% ROI at 10× | §9 below |
+| Skipped-D triptych | Module 6 | Schematic failures, one per D | Schematic | §7 below |
 
 **What every one of them has in common:** not one shows a stop loss placed before entry, a partial take-profit, or a losing trade. The three live screener walks (SOMI, BTC, 10000LADYS) stop at "setup", and the result cards start at "outcome". The middle, which is execution and the part he says decides everything, is never shown end to end. That gap is what the trade journal is for.
 
@@ -81,7 +82,72 @@ Three things worth carrying away:
 - **A 4/4 long can coexist with a falling 1-minute chart.** That is not a contradiction; it is the exact situation SPE exists for. You rest a limit at EMA 9 and let the short-term dip come to you. Market-buying a 4/4 means buying into the dip the screener just told you to ignore.
 - **Its Contract tab reads initial margin 4.0%, maintenance margin 2.0%**, against Bitcoin's 1.0% and 0.5%. Maintenance margin sets the liquidation price, so liquidation on this coin sits much closer to entry than on BTC at the same leverage, and the 4% initial margin caps leverage at 25×. The course never mentions this, and the pre-trade checklist had it hard-coded at 0.5% until this case exposed it.
 
-## 5. RAD: the multi-timeframe check, done on the Bybit app
+## 5. MAVIA: the same call, 34 hours apart
+
+Three slides, titled "Trade Call - Case Study", with three subheadings that are the lesson: **"If you don't know the setup, don't take the shot"**, **"Timing and reason matter, without them it's not trading, it's guessing"**, and **"Late trade is a lost trade, don't chase if you don't understand."**
+
+### 5.1 The timeline
+
+| When | What |
+|------|------|
+| **17/03/2025 13:22** | Aaron posts the MAVIA chart in `#mmt-announcement`. Price around 0.28 to 0.30. |
+| 17/03 15:00 | A member posts a MEXC card, long 20×, **+1,033.15%**, entry 0.2865 |
+| 18/03 13:30 | Second post: "I told u $MAVIA will PUMP!!" Price 0.5709 |
+| 18/03 19:34 | A member: "short crazy pump" |
+| **18/03/2025 23:13** | The contrast the slide draws. By now price has run to the 0.6 area. |
+
+The slide puts the two timestamps side by side: **17/3 13:22 versus 18/3 23:13.** Same coin, same call, thirty-four hours apart, and the slide's point is that they are not the same trade at all.
+
+### 5.2 The member who got caught
+
+> **Joyce Ng, 18/03 23:12:** "Omg mavia very hard to handle. It was going down nicely but suddenly gap up to 0.6xxx level."
+>
+> **Yuki, 18/03 23:13, replying:** "Yes it's super manipulative so I always set higher price. Can refer to previous high or set even higher."
+
+Yuki's reply is a **take-profit placement rule from a member, endorsed by being put on a slide**: on a manipulative coin, set the target at or above the previous high rather than at a modest level. That is the Wick Tracker idea arriving from the community side, and it is the same level the Module 4 notes list first ("a prior swing high's wick"). Read it with care, though: "set even higher" is also how a target stops being reached at all, and nothing here caps how far above.
+
+A third member, Nica9, adds "I think Dr recently no lost streak, correct me if I'm wrong." Unverified social proof, and worth naming as such.
+
+### 5.3 What he says about it
+
+- He drew the structure first: **"Actually ranging, then break out. And then ranging, ranging, ranging, and break out."** The setup was a range break, twice.
+- **On shorting the pump:** "You can short, but prematurely you will always get liquidated or get stop loss. **No one can tell where the pump will get.**"
+- **On why:** "You can't really differentiate nicely whether it's a retracement or pivotal change. Very super duper manipulative."
+- **On timing:** "You enter from here, sniper price entry, pump, start earning, came down, pump. Some of our elites started here, because she managed to interpret a decent retracement and pump, so earn higher and better. **Timing and the reason matter. Without them, it's not trading, it's just wild guessing.**"
+- **On chasing:** "Late trade is a loss trade sometimes. Don't chase, but it's really for beginners. Unless you are intermediate or advanced, don't chase if you don't understand."
+
+### 5.4 The four-leg sequence
+
+The last slide is a **15-minute Heikin-Ashi** chart with four numbered legs, all traded by one member he calls Jane:
+
+| Leg | Direction | Card shown |
+|-----|-----------|-----------|
+| 1 | Long | +414.89% at 25×, entry 0.4050 → 0.4720 |
+| 2 | Short | +325.27% at 25×, entry 0.4107 → 0.3569 |
+| 3 | Long | +74.19% at 25×, entry 0.4323 → 0.4448 |
+| 4 | Short | +193.94% at 25×, entry 0.4181 → 0.3855 |
+
+His comment: "Earning both sides. Up, down, up, down. **Even the ranging one, by doing scalping, you can earn very nice amount. The matter is just you know the trick.**"
+
+Other cards on these slides: +2,814.38% (entry 0.2978 → 0.6374, 25×), Wendy at +698.68% (0.2963 → 0.3998, a realised exit), +300.26% (0.5379 → 0.6208).
+
+### 5.5 What to take, and what to discount
+
+**Take:**
+
+- This is the clearest demonstration in the course of the opening claim that the difference is execution, not the signal. One call, two entry times, opposite experiences, and the slide shows both.
+- **Do not short a running pump.** "No one can tell where the pump will get" is the correct instinct and it is the same reason the seahorse rule exists.
+- **The range-then-breakout read** is the structure he actually traded, and it is more concrete than anything in the trend-line section.
+- Yuki's target rule, with a cap of your own: prior high as the Wick Tracker level on a manipulative coin.
+
+**Discount:**
+
+- Every card is a win, including all four of Jane's legs. A member who traded four legs across a chop and won all four is either very good or is showing you four of more than four. The deck has now shown well over twenty result cards and not one loss.
+- The four legs are read on a **15-minute** chart, not the 1-minute execution chart, and each leg spans hours. That is inside the "minutes to hours, under 24 hours" rule, but it is not the 1-minute scalp the method describes.
+- 25× on MAVIA, and the MEXC card at 20× on a third exchange. The risk module prescribes 5× to 10× isolated.
+- The chart's full arc: MAVIA ran from about 0.11 to 0.75 and then fell all the way back to 0.21 over the following week. Everyone whose card is on these slides was trading the left half. Nothing shows what the right half did to anyone.
+
+## 6. RAD: the multi-timeframe check, done on the Bybit app
 
 Four Bybit screenshots of RADUSDT side by side (+22% on the day, last price about 2.10, 24h range 1.705 to 2.115), one per timeframe, each with the five EMAs, MACD (8, 13, 9) and Volume (MA5, MA10) visible. Two of the four have the **OI Data** tab selected and one the **Contract** (funding) tab. This is Module 2's Coin Trend Screener, check 1 (EMA on every timeframe) with checks 2 and 3 (open interest, funding) being read on the same screen.
 
@@ -101,11 +167,11 @@ What the same screenshots also show:
 - The 15-minute chart has a near-vertical spike from about 1.49 to 2.115 in a few candles, at roughly 11:30, and the screenshot is taken at 04:43 the next day with price flat at 2.11. The alignment is perfect *because* the spike just happened. A long taken here is a long after a +40% move, into what the seahorse slide (Module 3 section 6) calls the beak. The screener says the trend is up; the seahorse rule says wait for the pullback. Both are right, and SPE (Module 4) is how they are reconciled: the entry is a limit order at an EMA below current price, not a market buy at 2.11.
 - The four screenshots have different timestamps (20:20, 04:43, 19:55, 19:49). They were assembled, not taken at one moment.
 
-## 6. "What happens if you skipped one D?"
+## 7. "What happens if you skipped one D?"
 
 Three slides, one per D. Each has a schematic chart with **EMA 50 and EMA 5** (the generic pair from the shared deck, not the MMT five) and a medical one-liner.
 
-### 6.1 Skip Diagnose: "What the chart was saying"
+### 7.1 Skip Diagnose: "What the chart was saying"
 
 "The signal came in. You entered. No chart check."
 
@@ -117,7 +183,7 @@ Three slides, one per D. Each has a schematic chart with **EMA 50 and EMA 5** (t
 
 The chart: a downtrend, death cross marked, entry marked several candles *after* the cross, price continuing down. The failure is entering long on a "signal" (a trade call, a chat message) without reading direction from the chart. The fix is Module 3: EMA 155 three-candle rule, Heikin-Ashi run, Donchian alignment, all before any entry.
 
-### 6.2 Skip Dose: "Right trade. Wrong size. Could not hold."
+### 7.2 Skip Dose: "Right trade. Wrong size. Could not hold."
 
 "EMA confirmed. Entry valid. But you went in too heavy."
 
@@ -128,7 +194,7 @@ The chart: a downtrend, death cross marked, entry marked several candles *after*
 
 The chart: uptrend above EMA 50, valid entry, a three-candle red dip, "panic cut" at the dip low, then the run resumes. This is the ZETA slide from Module 5 section 2.3 in schematic form. The fix is Module 5 section 3.6: stake small enough that a 3% pullback at your leverage is a tolerable ROI swing. At 20× a 3% dip is −60% ROI; at 5× it is −15%. The "felt like a disaster" is a leverage choice, not a personality flaw.
 
-### 6.3 Skip Discharge: "Won the trade. No exit plan. Gave it all back."
+### 7.3 Skip Discharge: "Won the trade. No exit plan. Gave it all back."
 
 "Perfect entry. Correct dose. No exit plan."
 
@@ -143,7 +209,7 @@ The chart: uptrend, entry, "profit window" at the top with "TP (never set)" as a
 - The slide names the **EMA exit signal** as the discharge condition that fired and was ignored. So the Module 1 cross-back rule is still part of the plan in this deck, as the backstop. Module 4's climax exit (volume maximal, MACD peak, PTP 75%) would have fired earlier, at the "profit window", and is the primary.
 - "Held and hoped" is the exact behaviour the GMX hedging case study in Module 5 section 4.8 presented as the method. This slide calls it skipping Discharge.
 
-## 7. The three failures, mapped to the course's own examples
+## 8. The three failures, mapped to the course's own examples
 
 | Skipped D | Failure slide | Course example that did the same thing | Where |
 |-----------|--------------|----------------------------------------|-------|
@@ -153,15 +219,15 @@ The chart: uptrend, entry, "profit window" at the top with "TP (never set)" as a
 
 The 3D review slides are the right lens. Applied to the deck's own case studies, they mark most of the "advanced" material in Module 5 as a skipped D.
 
-## 8. Market uncertainty: "Trade scam coin, no BTC correlation"
+## 9. Market uncertainty: "Trade scam coin, no BTC correlation"
 
-### 8.1 The strategy slide
+### 9.1 The strategy slide
 
 "Market Uncertainty. What's the strategy?" Answer on the slide: **"Trade Scam Coin"** with a starburst reading **"No BTC Correlation"**. The backdrop is a Coin Bureau video ("99.99% of crypto will go to zero, what to do now"), Chinese overlay "99.99% 多数是 Shit Coin!", over a CoinMarketCap page showing Fear and Greed at 24 (extreme fear).
 
 The claim: when BTC is falling and the market is fearful, the trade is not BTC or the majors. It is the small coins that move on their own drivers, chiefly exchange-driven pumps, and therefore do not fall with BTC. The course calls them scam coins or shit coins without irony. This is the "shit coin" list from Module 2 section 1.3 in use, with the direction flipped to long.
 
-### 8.2 Case study: "Kpnd", AERGO on Black Monday
+### 9.2 Case study: "Kpnd", AERGO on Black Monday
 
 "Kpnd" is **Korean pump and dump** (confirmed from the session). AERGO is a Korean project and the shape of the trade is a Korean-exchange pump.
 
@@ -177,7 +243,7 @@ Checks: 0.07797 → 0.08402 is +7.8% on price, ×10 = 78%, card says 76.82%; 0.0
 
 What the timestamps say: the first card is from about 09:49 on 7 April and the second from 10:22 on 8 April. The position was held for **over 24 hours**. The chat caption's "> 30 mins" is the course conceding that this was not a scalp. Golden Rule 6, do not hold, was not followed, and the deck labels the trade a success.
 
-### 8.3 What is right and what is dangerous in this idea
+### 9.3 What is right and what is dangerous in this idea
 
 **Right:** correlation to BTC is the main risk in an altcoin book during a crash, and coins moving on an idiosyncratic driver (a listing, a regional pump) can decouple for hours or days. The Module 2 sector and heatmap scan is exactly how you find them: when the heatmap is mostly red, the few strong green tiles are the candidates. AERGO was one on 7 April.
 
@@ -188,11 +254,11 @@ What the timestamps say: the first card is from about 09:49 on 7 April and the s
 - **Fear and Greed at 24 is the reverse of the Module 2 rule.** Module 2 said greed is a bias toward long but not a signal. Extreme fear is a bias toward short, or toward staying out. The slide uses extreme fear as the setup for a long, on the logic that the long is in a coin that ignores the index. That is coherent only if the coin really is uncorrelated, which is the point above.
 - **The "scam coin" framing has a cost the slides never state.** Delistings, liquidity vanishing overnight, and exchanges halting trading are all outcomes on coins the course itself calls scams. A stop does not protect against a halt.
 
-## 9. Q&A
+## 10. Q&A
 
 The deck has no dedicated Q&A section; questions were answered as they came up, and one was promoted onto a slide.
 
-### 9.1 "With 4/4 confirmed short, do we still need MACD before entering?"
+### 10.1 "With 4/4 confirmed short, do we still need MACD before entering?"
 
 Asked by a member (Joe) in the community chat, with a follow-up: which timeframe should we observe before entering? The slide shows the answer from another member, **Jasper Sia**, dated 21 April 2024, and the course endorses it by putting it on a slide:
 
@@ -212,11 +278,11 @@ That is the same structure as the full method (screener → direction → SPE �
 
 The member's question about timeframe was not answered on the slide. From the rest of the course the answer is: direction on the higher frames, entry on the 1-minute.
 
-### 9.2 Everything else
+### 10.2 Everything else
 
 No other questions were captured on slides. Anything else was answered verbally and is only in the transcript ([08](08-transcript.md)).
 
-## 10. Closing slide: "Synchronization"
+## 11. Closing slide: "Synchronization"
 
 "Resonance at the SAME frequency, attraction of the SAME nature" (同频共振，同质相吸). A mindset close, matching the "90% mindset" Golden Rule and the Know / Enlighten / Do pyramid from Module 0. No trading content.
 
