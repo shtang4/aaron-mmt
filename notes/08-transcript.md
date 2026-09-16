@@ -61,3 +61,48 @@ So the maxim is: you may take a view against the trend, but you may never fight 
 ### On his own shared calls
 
 - "Sometimes you can't enter, even some seniors." When he shares a coin, the student must read "A to Z": is it retracing or a real trend? "Don't simply blindly enter it." That is the Module 6 "Skip Diagnose" slide in his own words, and it confirms that a shared call is a candidate, not an entry.
+
+## Part 3: Module 2, the Bybit scan and the Coin Trend Screener as spoken
+
+### Maneki cat and Bybit
+
+- The black cat / white cat line is delivered as the Maneki-neko joke; no new rule.
+- Bybit is preferred "because Bybit gives me excellent tools that I can't get elsewhere, not even Binance." He has met Bybit's CEO. Path confirmed: Markets (bottom menu) → Opportunities (top menu).
+
+### The scan, and the rule for picking the coin
+
+- Sequence as spoken: sentiment → hot sectors → heatmap → Top Movers → View all → 24h gainers. Matches Module 2 section 4.
+- **The candidate rule, stated plainly: "Choose the highest one. If you have no idea, choose the highest one; if not, then the second, the third accordingly."** SOMI at +46.56% was the pick because it was the top of the list. So the scan does not shortlist; it ranks, and you take the top of the ranking. Everything that protects you from buying the top of a +46% day is downstream: the EMA 155 rule, SPE waiting for the pullback, the stop.
+- Sentiment: the Saturday reading was 71 (greed) against 49 earlier. "Greed does not mean automatically long. Confirm first." Three reasons as on the slide: extended, trapped, possible reversal.
+- Confirm before entry: FA (background, news, "especially from X"), TA (pattern, trend), then wait for the retrace, breakout or confirmation.
+
+### The Coin Trend Screener, as spoken
+
+"This is your cheat sheet. If you are well versed with this, perhaps you can earn a manager's salary."
+
+1. **EMA, all timeframes, highest to lowest.** As on the slide.
+2. **OI:** "if open interest is up, the buying will is high, it is going to pump." That is the simplified form; the handout's 2×2 (OI with price direction) is the precise one and is not contradicted.
+3. **Funding ("contract"):** charged **three times a day, Malaysian time 8 AM, 4 PM and 12 midnight** (00:00, 08:00, 16:00 UTC). "Look for the opposite counter": long when funding is negative so shorts pay you, short when positive so longs pay you. "Double income: PnL plus funding, better than a CEO's salary." His examples, −2% and +3.5%, are far outside normal 8-hour funding (a few hundredths of a percent); treat them as illustrative.
+4. **Depth: "Choose the lower volume."** His words: "The left hand side is green, the right hand side is red. **If you want to long the coin, make sure the green one is lower than the red one.** The lower the depth is, you have more capacity for it to pump. If you short, the red depth should be lower than the green."
+
+### The depth rule is reversed against the handout
+
+| Source | Long when | Short when |
+|--------|-----------|------------|
+| Handouts (notes/07, section 1.2) | **Ask** side lighter: thin sellers above, room to rise | **Bid** side lighter |
+| **Spoken session** | **Bid** (green) side lighter than ask (red) | **Ask** (red) side lighter than bid (green) |
+
+These are opposites. The handout's version is the one consistent with how an order book works: thin asks above price means less selling to absorb on the way up. The spoken version would have you long when the buy side is thin, which is the side that is supposed to catch a dip. Two possible explanations: he misspoke while pointing at the Bybit depth chart, or he means something by "lower" other than size. **This is the single most important thing to clarify with him**, because the checklist's Fetch-from-Bybit panel ticks the depth box using the handout's logic, and if his rule is what he meant, the box is ticked the wrong way round.
+
+### Confluence by experience level (spoken, and looser than the handouts)
+
+| Score | Spoken | Handouts |
+|-------|--------|----------|
+| 4 / 4 | "Classic." Go. | Full size |
+| 3 / 4 | Intermediate or experienced: go ahead. Beginners: "okay" but hedged ("unless you are experienced"). | 50–75% size, tighter stop |
+| 2 / 4 | "Half half." Intermediate or advanced can try. **Not for beginners.** | Tiny pilot or nothing |
+| 1 / 4 | **Advanced only**, "because you know what you are doing." Beginners and intermediates: "please do not touch." | Do not trade, anyone |
+
+So the spoken minimum is a function of the trader's self-declared level: beginner 4/4 (3/4 with caution), intermediate 2/4, advanced no floor. The handouts' flat "below 3, do not trade" is the beginner row. The checklist now applies the spoken table by the tier you select. Since almost every student on day one is a beginner by his own framing ("if you still consider yourself a newbie regardless of background"), the practical rule for you is still 4/4, or 3/4 at reduced size.
+
+- Closing caveats as on the slide: use complementary indicators; some trades will not fulfil all four; manage manipulation, pump-and-dump, news and black-swan risk; "vice versa for short."

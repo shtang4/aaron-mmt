@@ -206,7 +206,7 @@ This is the intraday version of the four-phase diagram in section 3.1. "Ranging"
 
 Top Movers panel (tabs: All, 15m Gainers, 15m Losers, 24h Gainers, Breakout). The case study walks Heatmap → Opportunities → Top Movers and lands on **SOMI**, showing +46.56% on the heatmap tile and +47.39% as a 24h gainer, top of the list by a wide margin (next best CORN +16.29%, DRIFT +20.76%).
 
-Stated conclusion: a 24H top gainer is a **potential coin to further analyse**. Not a trade.
+Stated conclusion: a 24H top gainer is a **potential coin to further analyse**. Not a trade. **Spoken in the session:** "Choose the highest one. If you have no idea, choose the highest; if not, the second, the third accordingly." The scan ranks; you take the top of the ranking, and the protection against buying the top of a +46% day is entirely downstream (EMA 155 rule, SPE pullback, stop).
 
 The slide also shows a BTCC share card: SOMIUSDT, "Open Long Perp 50x", +554.50%, average open 0.9901, latest 1.0999, with an invitation code. Two things to notice:
 
@@ -273,9 +273,9 @@ The slide lists the order as Day → 1H → 4H → 15m → 5m → 1m. The 1H and
 
 **2. Open interest.** Rising OI with rising price means new money is entering longs, which confirms the uptrend. "Vice versa for short" is loose here: for a short, the confirming pattern is OI rising while price falls (new shorts entering), not OI falling. Falling OI in either direction means positions are closing, which is a weakening trend, not a signal.
 
-**3. Funding rate, counter or opposite.** The flow slide says "counter/opposite" and the table says negative funding = long. Read together: trade against the funding rate. Negative funding means the crowd is net short and shorts pay longs. Going long means you are paid to hold, and you are positioned against a crowded side that can be squeezed. For a short, look for positive funding.
+**3. Funding rate, counter or opposite.** The flow slide says "counter/opposite" and the table says negative funding = long. Read together: trade against the funding rate. Spoken: funding settles **three times a day, 8 AM, 4 PM and midnight Malaysian time** (00:00, 08:00, 16:00 UTC); hold across one and you pay or receive it. Negative funding means the crowd is net short and shorts pay longs. Going long means you are paid to hold, and you are positioned against a crowded side that can be squeezed. For a short, look for positive funding.
 
-**4. Depth, "choose the lower volume".** The least explained check. Depth is the order book. The reading most consistent with the other three checks: compare the bid-side and ask-side depth, and trade in the direction where the book is thinner, because price meets less resistance moving that way. For a long, a thin ask side (low sell-wall volume) is the confirming condition. This is an inference; the slide does not define which side's volume is being compared.
+**4. Depth, "choose the lower volume".** The handouts define it as: lighter **ask** side → long, lighter **bid** side → short (notes/07 §1.2), which is how an order book works. **The spoken session says the reverse:** "if you want to long, make sure the green (bid) one is lower than the red (ask)." See notes/08 part 3. Until clarified, the notes and tools use the handout logic, because it is mechanically coherent; the spoken version is flagged as the top question for Dr. Aaron.
 
 ### 5.2 What the screener does and does not do
 

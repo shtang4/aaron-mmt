@@ -19,6 +19,8 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | ~~A10~~ | ~~Which EMA rule wins?~~ Session: the handouts are supplementary. The slides' EMA 155 three-candle rule sets direction; EMA 20 on 1D/4H/1H is an optional higher-timeframe filter. | 7 §2.1 | |
 | ~~A11~~ | ~~Is 1-minute the execution chart?~~ Session: yes. The risk checklist's "danger" line refers to reading 1m without the higher timeframes. | 7 §2.2 | |
 
+| **A12** | **Depth check direction.** Handouts: long when the ask side is lighter. Spoken session: long when the bid (green) side is lighter. These are opposites. Which did he mean? | 8 part 3 | The Fetch-from-Bybit panel ticks the depth box by the handout logic. If the spoken rule is intended, it ticks the wrong way. **Ask this one first.** |
+
 ## B. Questions that change the entry price
 
 | # | Question | Module | Why it matters |

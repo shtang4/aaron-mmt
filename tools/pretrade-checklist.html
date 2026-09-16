@@ -328,9 +328,9 @@
           <label class="check"><input type="checkbox" class="scr" id="scrEma" checked><span>EMA aligned 1D → 1m</span></label>
           <label class="check"><input type="checkbox" class="scr" id="scrOi" checked><span>Open interest rising</span></label>
           <label class="check"><input type="checkbox" class="scr" id="scrFr"><span>Funding on your side</span></label>
-          <label class="check"><input type="checkbox" class="scr" id="scrDepth" checked><span>Book thinner ahead</span></label>
+          <label class="check"><input type="checkbox" class="scr" id="scrDepth" checked><span>Book thinner ahead (asks for a long)</span></label>
         </div>
-        <div class="hint">Handouts: 4/4 full size · 3/4 at 50–75% size, tighter stop · below 3, do not trade.</div>
+        <div class="hint">4/4 full size · 3/4 at 50–75% size, tighter stop. Minimum follows your stop tier: beginner 3, intermediate 2, advanced 1 (session rule). Depth direction is disputed between handouts and session; the fetch uses the handout logic.</div>
       </div>
 
       <div class="row">
@@ -576,8 +576,10 @@
     if (!$('ema155').checked) fails.push('EMA 155 three-candle rule not confirmed. Direction is not set.');
     if ($('seahorse').checked) fails.push('Seahorse shape on the chart. Stay out.');
     const scr = ['scrEma', 'scrOi', 'scrFr', 'scrDepth'].filter(id => $(id).checked).length;
-    if (scr < 3) fails.push(`Screener confluence ${scr}/4. Handouts: below 3 in one direction, do not trade.`);
-    else if (scr === 3) warns.push('Screener 3/4. Handouts: enter at 50% to 75% of planned size with a tighter stop.');
+    const tierName = $('tier').value === '10' ? 'beginner' : $('tier').value === '35' ? 'intermediate' : $('tier').value === '60' ? 'advanced' : 'beginner';
+    const minScr = tierName === 'beginner' ? 3 : tierName === 'intermediate' ? 2 : 1;
+    if (scr < minScr) fails.push(`Screener confluence ${scr}/4. Session rule for a ${tierName}: below ${minScr} in one direction, do not trade.`);
+    else if (scr < 4) warns.push(`Screener ${scr}/4 as a ${tierName}. Handouts: 3/4 enters at 50% to 75% of planned size with a tighter stop; anything lower is the session's "at your own risk" tier.`);
     if (!$('scrFr').checked) warns.push('Funding is against you. You pay every 8 hours you hold. Accepted on a long in a bull market; otherwise it costs the score a point.');
     if (Number.isFinite(entry) && Number.isFinite(zoneNear) && Number.isFinite(emaP)) {
       const zoneOk = side === 'long' ? entry <= Math.max(zoneNear, emaP) + 1e-12 : entry >= Math.min(zoneNear, emaP) - 1e-12;

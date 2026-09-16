@@ -23,7 +23,7 @@ Risk checklist, "Confluence Action Scorecard", and the Trade Call guide's "Decis
 | 2 / 4 | Tiny pilot position, or do nothing. Waiting is advised. | |
 | 1 / 4 or conflict | **Do not trade.** "You have zero edge here. Patience itself is profit." | |
 
-Trade Call guide, under the pre-flight checklist: "If your score is not 3 or higher in ONE direction, do not trade." Take that as the rule: **minimum 3 of 4, and 3 means smaller**. Note "in one direction": a coin scoring 2 long and 2 short is a conflict, not a 2.
+Trade Call guide, under the pre-flight checklist: "If your score is not 3 or higher in ONE direction, do not trade." Note "in one direction": a coin scoring 2 long and 2 short is a conflict, not a 2. **The spoken session is looser and grades by experience** (notes/08 part 3): beginners 4/4 or a cautious 3/4, intermediates down to 2/4, advanced traders even 1/4. The handouts' flat rule is the beginner row, which is the row that applies to a new student.
 
 This is the first time the course scales position size by evidence. It is also a Dose rule the slides never had.
 
@@ -37,7 +37,7 @@ Screener cheat sheet step 4 and risk checklist step 4: compare the **ask-side** 
 | Lighter bid (thin buy side) | **Short**: less resistance moving down |
 | Equal sides | Neutral. Skip; no immediate edge |
 
-Plus a "hidden sell wall" warning: total depth can look light while one large block sits at a single price. Do not enter into it; wait for it to be digested or pulled. Source: Bybit or Binance → Perpetual → Order Book / Depth Chart. This confirms the inference in Module 2 section 5.1.
+Plus a "hidden sell wall" warning: total depth can look light while one large block sits at a single price. Do not enter into it; wait for it to be digested or pulled. Source: Bybit or Binance → Perpetual → Order Book / Depth Chart. This confirms the inference in Module 2 section 5.1. **But the spoken session states the opposite pairing** (long when the bid side is lighter); see notes/08 part 3. Unresolved.
 
 ### 1.3 Funding rate, with numbers and a bull-market override (closes A3)
 
