@@ -106,3 +106,64 @@ These are opposites. The handout's version is the one consistent with how an ord
 So the spoken minimum is a function of the trader's self-declared level: beginner 4/4 (3/4 with caution), intermediate 2/4, advanced no floor. The handouts' flat "below 3, do not trade" is the beginner row. The checklist now applies the spoken table by the tier you select. Since almost every student on day one is a beginner by his own framing ("if you still consider yourself a newbie regardless of background"), the practical rule for you is still 4/4, or 3/4 at reduced size.
 
 - Closing caveats as on the slide: use complementary indicators; some trades will not fulfil all four; manage manipulation, pump-and-dump, news and black-swan risk; "vice versa for short."
+
+## Part 4: the BTC worked example, and the depth rule confirmed
+
+### The depth rule is NOT a misspeak. His own screenshot proves it.
+
+The Bybit depth chart he shows (BTCUSDT, 08:54, price 26,325):
+
+| Side | Colour | Cumulative size at the edge of the visible range |
+|------|--------|--------------------------------------------------|
+| Bids, 26,305.40 → 26,325.00 | green | **323,220** |
+| Asks, 26,325.00 → 26,347.20 | red | **364,732** |
+
+Green is lower than red, and his verdict on that screen is **"this is depth. Up."** That is a long. So the spoken rule stands exactly as he said it: **lighter bid side → long; lighter ask side → short.** It is the reverse of the handouts, and the handouts are the ones that are out of step with the taught method.
+
+**The two theories, and why his is not nonsense.**
+
+- **Handouts, "path of least resistance":** price rises by consuming asks, so thin asks mean an easy path up. Standard order-book reasoning.
+- **Session, "price goes to the liquidity":** resting orders are a magnet, not a wall. A heavy ask stack above price is fuel and a target; price is drawn up into it and takes it out. A heavy bid stack below is where price will be pulled down instead.
+
+The second is the same logic the course already uses for the **Coinglass liquidation heatmap**, where a cluster is a target to trade toward, not a barrier to avoid (Module 3 section 4.2, Module 5's RAVE entry). So the session's depth rule is internally consistent with the rest of MMT; the handout's is consistent with textbook microstructure. They are two different models of the same screen.
+
+**Decision for the notes and tools:** the session is authoritative, so the taught rule is his. The Fetch-from-Bybit panel now defaults to the session rule and carries a switch to the handout rule, with both readings shown. Neither is asserted as the correct model of markets.
+
+### The multi-timeframe EMA check does NOT require unanimity
+
+His BTCUSDT walk, timeframe by timeframe: **Day up, 4H down, 1H up, 15m up, 5m up, 1m up.** Five of six. His verdict for check 1 was **Up**.
+
+So the EMA check is a **prominence** read, not an all-agree gate. That matches the handout cheat sheet's own wording, "the most obvious, prominent trend across these frames dictates your baseline bias", which I had been reading too strictly. His aside: "when the timeframe becomes smaller there are a lot of noises, so you can always zoom up and down."
+
+The notes and SOP previously said the EMA line scores only when every timeframe agrees. Corrected: **the dominant direction across 1D, 4H, 1H, 15m, 5m, 1m scores the point; one disagreeing frame does not kill it.** A genuine split (roughly half each way) is the "all timeframes disagree → no signal" case from the handouts.
+
+### Funding: sign only, not the handout thresholds
+
+The contract screen he reads shows **−0.0021% in 8 hours**, and he counts it as negative, therefore counter, therefore long. That is far inside the handouts' "−0.01% and below" band, which would call it balanced.
+
+So in practice the funding check is **the sign, not the magnitude**: negative funding scores the point for a long, positive for a short. The handouts' thresholds (+0.10 extreme, +0.05, ~0, −0.01) remain useful for judging how crowded a side is and what the hold will cost, but they are not the scoring rule. His earlier spoken examples of −2% and +3.5% are confirmed as illustrative; the real screen shows two-thousandths of a percent.
+
+### Open interest, as read on the screen
+
+"Look at the timeframe you choose and look at the last one; if the last one is tilting up, open interest is people's interest to buy. Up." So the OI check is the **direction of the right-hand end of the OI line** on the chosen interval (his screen: 5m OI, 06:15 to 08:50). Simple and visual; the handouts' price-versus-OI 2×2 is the more precise version and does not contradict it.
+
+### The student's simplified workflow (case study slide)
+
+A member (Joe) asks: with 4/4 confirmed short, do we still need MACD before entering, and on which timeframe? Another member, Jasper Sia, answers, and the slide endorses it:
+
+1. 4/4 on the screener
+2. Is volume active
+3. MACD, "better combined with a golden or death cross"
+
+"I only use these, I don't look at the rest. I'm still MMT 1.0."
+
+So the answer to "is 4/4 enough" is **no**: the screener qualifies the coin, and MACD plus volume time the entry. That is the same division of labour as the full method (screener → direction → SPE → climax exit), with the SMC and Donchian layers dropped. It is a legitimate reduced version of the stack for someone who wants fewer tools.
+
+### "MMT + FT News Trading" cross-sell slide
+
+Screenshots from **MEXC**, not Bybit, dated October 2023: BTC long at **100×** showing +668.73%, BTC shorts at **80×** showing +404.58%, +219.17%, +150.02%, +28.20%. Alongside a Future Trends marketing email for a three-day trading challenge (Desmond and Jonathan). Every card carries a referral code.
+
+Two things to hold on to:
+
+- The teaching point is real and small: news moves BTC both ways, and the method can be traded long or short. "Trade both ways, up and down trend."
+- The leverage shown, **80× and 100×**, is eight to twenty times the 5× to 10× the risk module prescribes, on a third exchange, in a promotional slide for a different product. It is not an MMT example and nothing in the SOP should move because of it.

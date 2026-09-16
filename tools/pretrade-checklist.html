@@ -279,6 +279,11 @@
   <div class="fetch" id="fetchPanel">
     <button type="button" class="btn" id="fetchBtn">Fetch from Bybit</button>
     <label class="check" style="margin:0"><input type="checkbox" id="fetchFill" checked><span>Fill the form from it</span></label>
+    <label class="check" style="margin:0;grid-column:1/-1"><span style="font-size:12px">Depth rule &nbsp;
+      <select id="depthRule" style="width:auto;display:inline-block;padding:3px 6px;font-size:12px">
+        <option value="session" selected>Session: lighter bid → long</option>
+        <option value="handout">Handout: lighter ask → long</option>
+      </select></span></label>
     <div class="fmsg" id="fmsg">Public market data only, no key. Works when this file is opened from your own computer; the hosted page cannot reach Bybit.</div>
     <div class="readout" id="readout" hidden></div>
   </div>
@@ -325,12 +330,12 @@
       <div class="field">
         <label>Coin Trend Screener (tick what passes for this direction)</label>
         <div class="grid4">
-          <label class="check"><input type="checkbox" class="scr" id="scrEma" checked><span>EMA aligned 1D → 1m</span></label>
+          <label class="check"><input type="checkbox" class="scr" id="scrEma" checked><span>EMA dominant 1D → 1m</span></label>
           <label class="check"><input type="checkbox" class="scr" id="scrOi" checked><span>Open interest rising</span></label>
-          <label class="check"><input type="checkbox" class="scr" id="scrFr"><span>Funding on your side</span></label>
-          <label class="check"><input type="checkbox" class="scr" id="scrDepth" checked><span>Book thinner ahead (asks for a long)</span></label>
+          <label class="check"><input type="checkbox" class="scr" id="scrFr"><span>Funding sign counter to you</span></label>
+          <label class="check"><input type="checkbox" class="scr" id="scrDepth" checked><span>Depth lighter on your own side (bid thinner for a long)</span></label>
         </div>
-        <div class="hint">4/4 full size · 3/4 at 50–75% size, tighter stop. Minimum follows your stop tier: beginner 3, intermediate 2, advanced 1 (session rule). Depth direction is disputed between handouts and session; the fetch uses the handout logic.</div>
+        <div class="hint">4/4 full size · 3/4 at 50–75% size, tighter stop. Minimum follows your stop tier: beginner 3, intermediate 2, advanced 1 (session rule). EMA scores on the dominant direction, not unanimity; funding scores on the sign.</div>
       </div>
 
       <div class="row">
@@ -580,7 +585,7 @@
     const minScr = tierName === 'beginner' ? 3 : tierName === 'intermediate' ? 2 : 1;
     if (scr < minScr) fails.push(`Screener confluence ${scr}/4. Session rule for a ${tierName}: below ${minScr} in one direction, do not trade.`);
     else if (scr < 4) warns.push(`Screener ${scr}/4 as a ${tierName}. Handouts: 3/4 enters at 50% to 75% of planned size with a tighter stop; anything lower is the session's "at your own risk" tier.`);
-    if (!$('scrFr').checked) warns.push('Funding is against you. You pay every 8 hours you hold. Accepted on a long in a bull market; otherwise it costs the score a point.');
+    if (!$('scrFr').checked) warns.push('Funding is against you. Settles 8 AM, 4 PM and midnight MYT; you pay at each one you hold across. Accepted on a long in a bull market, but it costs the score a point.');
     if (Number.isFinite(entry) && Number.isFinite(zoneNear) && Number.isFinite(emaP)) {
       const zoneOk = side === 'long' ? entry <= Math.max(zoneNear, emaP) + 1e-12 : entry >= Math.min(zoneNear, emaP) - 1e-12;
       if (!zoneOk) warns.push('Entry is beyond both the zone edge and the EMA. That is chasing, not a sniper entry.');
@@ -755,6 +760,7 @@
   const decs = (p) => p >= 1000 ? 1 : p >= 100 ? 2 : p >= 1 ? 4 : p >= 0.01 ? 5 : 7;
   function ro(k, v, cls) { return `<div><span class="k">${k}</span><span class="v ${cls || ''}">${v}</span></div>`; }
 
+  $('depthRule').addEventListener('change', () => { const m = $('fmsg'); if (!$('readout').hidden) m.textContent = 'Depth rule changed. Fetch again to re-read the book under the new rule.'; });
   $('fetchBtn').addEventListener('click', async () => {
     const sym = $('coin').value.trim().toUpperCase(); if (!sym) { $('fmsg').textContent = 'Type the coin first, e.g. SEIUSDT.'; return; }
     const btn = $('fetchBtn'); btn.disabled = true; $('fmsg').className = 'fmsg'; $('fmsg').textContent = 'Fetching ' + sym + '…';
@@ -791,9 +797,15 @@
       }
       // depth: total size within 50 levels each side
       const bidSz = ob.b.reduce((a, r) => a + parseFloat(r[1]), 0), askSz = ob.a.reduce((a, r) => a + parseFloat(r[1]), 0);
-      const depthRatio = askSz / bidSz; // <1 means ask lighter -> long
-      const depthRead = depthRatio < 0.8 ? 'ask lighter: room to rise' : depthRatio > 1.25 ? 'bid lighter: room to fall' : 'balanced: no edge';
-      const depthCls = depthRatio < 0.8 ? 'long' : depthRatio > 1.25 ? 'short' : 'warn';
+      const depthRatio = askSz / bidSz; // >1.25 means bid lighter; <0.8 means ask lighter
+      const sessionRule = $('depthRule').value !== 'handout';
+      const bidLighter = depthRatio > 1.25, askLighter = depthRatio < 0.8;
+      const depthLong = sessionRule ? bidLighter : askLighter;
+      const depthShort = sessionRule ? askLighter : bidLighter;
+      const depthRead = depthLong ? (sessionRule ? 'bid lighter: long (session rule)' : 'ask lighter: long (handout rule)')
+        : depthShort ? (sessionRule ? 'ask lighter: short (session rule)' : 'bid lighter: short (handout rule)')
+        : 'balanced: no edge';
+      const depthCls = depthLong ? 'long' : depthShort ? 'short' : 'warn';
       // funding read (handouts thresholds, 8h rate)
       const frRead = fr >= 0.10 ? 'extreme heat: strong short bias' : fr >= 0.05 ? 'long squeeze risk: short bias' : fr <= -0.01 ? 'short squeeze: long bias' : 'balanced: follow the EMA';
       const frCls = fr >= 0.05 ? 'short' : fr <= -0.01 ? 'long' : '';
@@ -807,6 +819,7 @@
         ro('Funding, 8h', fr.toFixed(4) + '% · ' + frRead, frCls),
         ro('OI, last hour', (Number.isFinite(oiChg) ? (oiChg >= 0 ? '+' : '') + oiChg.toFixed(2) + '%' : '—') + ' · ' + oiRead, oiCls),
         ro('Depth, ask ÷ bid (50 levels)', depthRatio.toFixed(2) + ' · ' + depthRead, depthCls),
+        ro('Depth sizes', 'bid ' + Math.round(bidSz).toLocaleString() + ' · ask ' + Math.round(askSz).toLocaleString()),
       ].join('');
       $('fmsg').textContent = `Bybit ${sym}, ${closed.length} closed 1m candles, ${new Date().toLocaleTimeString()}. EMAs on Heikin-Ashi closes to match the Bybit chart. Zone edge and structural level still come from your chart.`;
 
@@ -818,11 +831,13 @@
         if (!entryTouched) $('entry').value = E[9].toFixed(d);
         $('ema155').checked = side === 'long' ? above : side === 'short' ? below : false;
         // screener ticks for the chosen side
-        const emaAligned = side === 'long' ? (E[9] > E[25] && E[25] > E[55] && last > E[155]) : side === 'short' ? (E[9] < E[25] && E[25] < E[55] && last < E[155]) : false;
+        // dominant direction, not unanimity: count the four faster lines against the slow ones plus price vs EMA 155
+        const votes = (cmp) => [E[9] > E[25], E[25] > E[55], E[55] > E[155], last > E[155]].filter(v => v === cmp).length;
+        const emaAligned = side === 'long' ? votes(true) >= 3 : side === 'short' ? votes(false) >= 3 : false;
         $('scrEma').checked = emaAligned;
         $('scrOi').checked = side === 'long' ? (pxChg > 0 && oiChg > 0) : side === 'short' ? (pxChg < 0 && oiChg > 0) : false;
-        $('scrFr').checked = side === 'long' ? fr <= -0.01 : side === 'short' ? fr >= 0.05 : false;
-        $('scrDepth').checked = side === 'long' ? depthRatio < 0.8 : side === 'short' ? depthRatio > 1.25 : false;
+        $('scrFr').checked = side === 'long' ? fr < 0 : side === 'short' ? fr > 0 : false; // session scores the sign, not the magnitude
+        $('scrDepth').checked = side === 'long' ? depthLong : side === 'short' ? depthShort : false;
         update();
       }
     } catch (err) {

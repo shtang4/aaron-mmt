@@ -37,7 +37,7 @@ Screener cheat sheet step 4 and risk checklist step 4: compare the **ask-side** 
 | Lighter bid (thin buy side) | **Short**: less resistance moving down |
 | Equal sides | Neutral. Skip; no immediate edge |
 
-Plus a "hidden sell wall" warning: total depth can look light while one large block sits at a single price. Do not enter into it; wait for it to be digested or pulled. Source: Bybit or Binance → Perpetual → Order Book / Depth Chart. This confirms the inference in Module 2 section 5.1. **But the spoken session states the opposite pairing** (long when the bid side is lighter); see notes/08 part 3. Unresolved.
+Plus a "hidden sell wall" warning: total depth can look light while one large block sits at a single price. Do not enter into it; wait for it to be digested or pulled. Source: Bybit or Binance → Perpetual → Order Book / Depth Chart. This is the textbook reading. **The session teaches the opposite pairing** and his own depth screenshot confirms it (notes/08 part 4): lighter bid → long. The session is authoritative, so the handout's depth row is the one to set aside.
 
 ### 1.3 Funding rate, with numbers and a bull-market override (closes A3)
 
