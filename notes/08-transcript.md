@@ -109,6 +109,8 @@ So the spoken minimum is a function of the trader's self-declared level: beginne
 
 ## Part 4: the BTC worked example, and the depth rule confirmed
 
+_Trade-level write-up: [06 §3](06-case-studies.md). The Jasper Sia Q&A on this batch of slides: [06 §9.1](06-case-studies.md)._
+
 ### The depth rule is NOT a misspeak. His own screenshot proves it.
 
 The Bybit depth chart he shows (BTCUSDT, 08:54, price 26,325):
@@ -169,6 +171,8 @@ Two things to hold on to:
 - The leverage shown, **80× and 100×**, is eight to twenty times the 5× to 10× the risk module prescribes, on a third exchange, in a promotional slide for a different product. It is not an MMT example and nothing in the SOP should move because of it.
 
 ## Part 5: second worked example, 10000LADYSUSDT
+
+_Trade-level write-up: [06 §4](06-case-studies.md)._
 
 The screener run end to end on a meme coin, +25.86% on the day, 228M USDT of 24-hour turnover. That profile is the "volatility and volume are the must" rule in practice.
 

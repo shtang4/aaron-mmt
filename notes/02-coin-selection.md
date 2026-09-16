@@ -204,6 +204,8 @@ This is the intraday version of the four-phase diagram in section 3.1. "Ranging"
 
 ### 4.4 Step: Top Movers, and the SOMI case study
 
+_Trade-level write-up of this case: [06 §2](06-case-studies.md)._
+
 Top Movers panel (tabs: All, 15m Gainers, 15m Losers, 24h Gainers, Breakout). The case study walks Heatmap → Opportunities → Top Movers and lands on **SOMI**, showing +46.56% on the heatmap tile and +47.39% as a 24h gainer, top of the list by a wide margin (next best CORN +16.29%, DRIFT +20.76%).
 
 Stated conclusion: a 24H top gainer is a **potential coin to further analyse**. Not a trade. **Spoken in the session:** "Choose the highest one. If you have no idea, choose the highest; if not, the second, the third accordingly." The scan ranks; you take the top of the ranking, and the protection against buying the top of a +46% day is entirely downstream (EMA 155 rule, SPE pullback, stop).
@@ -258,7 +260,7 @@ The worked example on the second slide, for a long:
 | 4 | Depth volume | Low | Long |
 | | **Overall confluence** | **4/4** | **Long** |
 
-A second worked example, 10000LADYSUSDT (notes/08 part 5), runs the same four checks to 4/4 long: majority of timeframes up, OI climbing, funding −0.0214%, bid depth lower than ask depth.
+Two live worked examples run the same four checks end to end: **BTCUSDT** ([06 §3](06-case-studies.md)) and **10000LADYSUSDT** ([06 §4](06-case-studies.md), a 4/4 long).
 
 Slide notes, verbatim:
 
