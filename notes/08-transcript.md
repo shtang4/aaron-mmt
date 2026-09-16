@@ -167,3 +167,47 @@ Two things to hold on to:
 
 - The teaching point is real and small: news moves BTC both ways, and the method can be traded long or short. "Trade both ways, up and down trend."
 - The leverage shown, **80× and 100×**, is eight to twenty times the 5× to 10× the risk module prescribes, on a third exchange, in a promotional slide for a different product. It is not an MMT example and nothing in the SOP should move because of it.
+
+## Part 5: second worked example, 10000LADYSUSDT
+
+The screener run end to end on a meme coin, +25.86% on the day, 228M USDT of 24-hour turnover. That profile is the "volatility and volume are the must" rule in practice.
+
+### The majority rule, stated outright
+
+| Timeframe | Direction |
+|-----------|-----------|
+| 1D | Up |
+| 4H | Up |
+| 1H | Up |
+| 15m | Up |
+| **5m** | **Down** |
+| **1m** | **Down** |
+
+His verdict: **"But majority timeframe showing you up."** Four up, two down, and check 1 scores as **Up**.
+
+This is the second and clearer confirmation of part 4. The EMA check is a **majority vote across the six timeframes**, not unanimity, and it tolerates the two fastest frames disagreeing. That makes sense with his own aside about noise on small timeframes: the 5m and 1m are the noisiest and the least trusted, and here they are exactly the two that dissented.
+
+Note what this means for the entry: the coin scores a long while the 1-minute chart is pointing down. That is precisely the situation SPE is for. You do not market-buy; you rest a limit at EMA 9 and let the short-term dip come to you.
+
+### The other three checks
+
+| Check | Screen | Reading |
+|-------|--------|---------|
+| OI | 5m Open Interest chart, line climbing hard at the right end | "Wow. This one pointing up." → long |
+| Funding | Contract tab, **−0.0214%** in 8 hours (−0.0257% a minute later) | negative → counter to a long → long |
+| Depth | Depth chart, green (bid) area lower than red (ask) area | **"Depth, green lower than red."** → long |
+
+**Verdict: "4 out of 4. Long setup."**
+
+Two things this pins down:
+
+- **The depth rule is confirmed a second time**, and this time he says it in words while pointing at the chart: green lower than red is the long condition. Combined with the BTC screenshot in part 4, there is no remaining doubt. The handout's opposite pairing is set aside for good.
+- **Funding here is −0.0214%**, which is beyond the handouts' −0.01% threshold, so this example is consistent with both the sign rule and the threshold rule. The BTC example at −0.0021% is the one that separates them, and it went with the sign. Sign-only stands.
+
+### A real number the checklist was getting wrong
+
+The Contract tab for 10000LADYSUSDT shows **Initial Margin 4.0%, Maintenance Margin 2.0%**. Bitcoin's on the earlier screen was **1.0% and 0.5%**.
+
+Maintenance margin is what sets the liquidation price, and the pre-trade checklist had it hard-coded at 0.5%, which is the Bitcoin figure. On a small-cap alt at 2.0% the liquidation price is materially closer to entry than the tool was showing. Since the course's own coin-selection rule sends you to the top gainers, which are small caps, the tool was optimistic on exactly the coins you will actually trade.
+
+Fixed: maintenance margin is now an input on the checklist, defaulting to 0.5% with a hint to read the real figure off the Contract tab. The 4.0% initial margin also caps leverage on such a coin at 25×, which is worth knowing before you type 50×.

@@ -258,6 +258,8 @@ The worked example on the second slide, for a long:
 | 4 | Depth volume | Low | Long |
 | | **Overall confluence** | **4/4** | **Long** |
 
+A second worked example, 10000LADYSUSDT (notes/08 part 5), runs the same four checks to 4/4 long: majority of timeframes up, OI climbing, funding −0.0214%, bid depth lower than ask depth.
+
 Slide notes, verbatim:
 
 - Use additional complementary indicator to enhance accuracy and entry.
@@ -267,7 +269,7 @@ Slide notes, verbatim:
 
 ### 5.1 What each check means
 
-**1. EMA on all timeframes.** The EMA direction is read from the daily chart down to the 1-minute chart. **It does not require unanimity:** in his own BTCUSDT walk (notes/08 part 4) the 4-hour was down while the other five were up, and he scored the check as Up. The dominant direction across the six frames sets the bias; a roughly even split is the no-signal case. This is the multi-timeframe alignment the earlier slides implied but never stated. It also settles the scalping-versus-daily tension: direction is confirmed top-down, and the 1m and 5m charts are where the entry is timed.
+**1. EMA on all timeframes.** The EMA direction is read from the daily chart down to the 1-minute chart. **It is a majority vote, not unanimity.** In his BTCUSDT walk the 4-hour dissented and he scored Up; in the 10000LADYSUSDT walk the 5m and 1m both dissented and he said "but majority timeframe showing you up" and scored Up (notes/08 parts 4 and 5). The two fastest frames are the noisiest and carry the least weight. A roughly even split is the no-signal case. Note the consequence: a coin can score a long while the 1-minute is falling, which is exactly what SPE is for. This is the multi-timeframe alignment the earlier slides implied but never stated. It also settles the scalping-versus-daily tension: direction is confirmed top-down, and the 1m and 5m charts are where the entry is timed.
 
 The slide lists the order as Day → 1H → 4H → 15m → 5m → 1m. The 1H and 4H are out of sequence; the intended order is almost certainly Day → 4H → 1H → 15m → 5m → 1m.
 

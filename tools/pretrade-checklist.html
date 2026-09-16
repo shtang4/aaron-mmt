@@ -396,6 +396,12 @@
         </div>
       </div>
 
+      <div class="field">
+        <label for="mmr">Maintenance margin %</label>
+        <input type="number" id="mmr" step="any" value="0.5" inputmode="decimal">
+        <div class="hint">Read it off Bybit's Contract tab. BTC is 0.5%; small-cap alts run 1% to 2.5% (10000LADYS was 2.0%), which puts liquidation much closer than the default.</div>
+      </div>
+
       <div class="row">
         <div class="field">
           <label for="tier">Stop-loss tier</label>
@@ -511,7 +517,7 @@
 (function () {
   const $ = (id) => document.getElementById(id);
   const num = (id) => { const v = parseFloat($(id).value); return Number.isFinite(v) ? v : NaN; };
-  const MMR = 0.005;
+  const MMR_DEFAULT = 0.005;
 
   // Segmented controls
   const segs = { side: 'long', regime: 'bullish', mode: 'isolated' };
@@ -607,11 +613,12 @@
       else if (Number.isFinite(lossPctPre) && lossPctPre > 1) warns.push(`Loss at the stop is ${lossPctPre.toFixed(2)}% of equity, inside the 1% to 2% ceiling but at the top of it.`);
     }
     if (Number.isFinite(lev) && lev > 10) warns.push(`Leverage ${lev}× is above the prescribed 5× to 10×. Every ROI% is a smaller price move.`);
-    if (Number.isFinite(stopRoi) && stopRoi >= 100 - MMR * lev * 100) fails.push('Stop ROI is at or past liquidation. It will never trigger.');
+    const mmr = (num('mmr') || 0.5) / 100 || MMR_DEFAULT;
+    if (Number.isFinite(stopRoi) && stopRoi >= 100 - mmr * lev * 100) fails.push('Stop ROI is at or past liquidation. It will never trigger. Lower the leverage or tighten the stop.');
 
     const stopDist = entry * (stopRoi / 100) / lev;
     const stopPrice = entry - dir * stopDist;
-    const liq = entry * (1 - dir * (1 / lev - MMR));
+    const liq = entry * (1 - dir * (1 / lev - mmr));
     const feeRoi = 2 * fee * lev; // % of margin, round trip
     const lossAbs = stake * (stopRoi / 100) + stake * (feeRoi / 100);
     let levMax = NaN, structFail = false;
@@ -718,7 +725,7 @@
     try {
       localStorage.setItem('mmt-check', JSON.stringify({
         wallet: $('wallet').value, lev: $('lev').value, tier: $('tier').value, stopRoi: $('stopRoi').value,
-        fee: $('fee').value, ptp: $('ptp').value, lockRoi: $('lockRoi').value, stake: $('stake').value
+        fee: $('fee').value, ptp: $('ptp').value, lockRoi: $('lockRoi').value, stake: $('stake').value, mmr: $('mmr').value
       }));
     } catch (e) {}
   }
@@ -856,7 +863,7 @@
   });
 
   const example = { coin: 'SEIUSDT', zoneNear: '0.3490', emaPrice: '0.3496', entry: '0.3496', structural: '0.3478',
-    wallet: '2000', stake: '20', lev: '10', stopRoi: '10', tpPrice: '0.3576', tpRoi: '50', ptp: '75', lockRoi: '20', fee: '0.055' };
+    wallet: '2000', stake: '20', lev: '10', stopRoi: '10', tpPrice: '0.3576', tpRoi: '50', ptp: '75', lockRoi: '20', fee: '0.055', mmr: '0.5' };
   $('resetBtn').addEventListener('click', () => {
     for (const k in example) $(k).value = example[k];
     $('tier').value = '10'; $('tpMode').value = 'price'; $('tpPriceField').hidden = false; $('tpRoiField').hidden = true;
@@ -870,7 +877,7 @@
   try {
     const saved = JSON.parse(localStorage.getItem('mmt-check') || 'null');
     if (saved) {
-      for (const k of ['wallet', 'lev', 'stopRoi', 'fee', 'ptp', 'lockRoi', 'stake']) if (saved[k] != null) $(k).value = saved[k];
+      for (const k of ['wallet', 'lev', 'stopRoi', 'fee', 'ptp', 'lockRoi', 'stake', 'mmr']) if (saved[k] != null) $(k).value = saved[k];
       if (saved.tier) $('tier').value = saved.tier;
     }
   } catch (e) {}
