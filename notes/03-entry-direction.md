@@ -55,6 +55,8 @@ From the annotated chart (a daily WMT chart, 2013 to 2014, credited to tradingse
 
 The rule that falls out: a shadow on the *trend side* of a Heikin-Ashi candle is the first sign of weakening. A green candle growing a lower wick means buyers are no longer in full control; a doji means the trend is undecided.
 
+**How to tell reading 3 from reading 4, spoken in the session** (notes/08 part 6): look at the candles that come *after* the cluster. Same colour as before it means **congestion** and the trend continues; a colour change means a **pivotal turn**. And the timing: "Cannot say one candle is true. You have to take another one or two candle. Wait for the second, third candle, then only you execute." **A doji or a single small body is never actionable; wait two to three candles for the colour to resolve.**
+
 ### 1.3 How it fits the method
 
 - Heikin-Ashi is a **direction** tool. Green run with flat bottoms confirms the long bias from Module 2; red run with flat tops confirms the short bias.
@@ -103,7 +105,7 @@ Side-by-side of the same 1-minute chart (roughly 2:45 PM to 5:00 PM):
 What the slide shows, beyond what it says:
 
 - The Diagnose chart uses **regular candles, not Heikin-Ashi**. The EMA cross is the direction guide; Heikin-Ashi is a separate lens. They are not stacked on one chart in the course's own example.
-- **The death cross fires late.** The top was near 4:00 PM at about 0.01826. The cross prints around 4:15 PM near 0.01817, after roughly half the eventual move down had already happened. The golden cross is better timed but still after the low. This is the lag cost of the EMA method, visible in the course's own example. The exit-signal rule from Module 1 ("short EMA crosses back below long EMA, exit, no questions") would have given back a meaningful part of the long's gain here.
+- **The death cross fires late, and he says so.** "This is not the perfect indicator. There are some lagging ... the EMA needs to do calculation to average it out" (notes/08 part 6). On this chart the top was near 4:00 PM at about 0.01826 and the cross prints around 4:15 PM near 0.01817, after roughly half the eventual move down had already happened. The golden cross is better timed but still after the low. This is the lag cost of the EMA method, visible in the course's own example. The exit-signal rule from Module 1 ("short EMA crosses back below long EMA, exit, no questions") would have given back a meaningful part of the long's gain here.
 - The EMA periods are still not stated. Two lines, blue and red, is all the slide gives.
 
 ### 1.7 The driving analogy
@@ -161,6 +163,14 @@ Unticked rows in the screenshot (Bybit defaults, not used): 7, 14, 28, 0, a seco
 The five values agree with the earlier chart header (EMA9, EMA25, EMA155, EMA55, EMA255), so the set is now confirmed from two independent slides.
 
 Slide rules for the 5-line set, verbatim:
+
+**Three rules from the session that the slides never state** (notes/08 part 6):
+
+- **Fan width is trend strength.** "The wider the gap open, the better it is trend and more confirm the trend." A cross with the lines still bunched is a weak signal; a spread fan is a confirmed trend.
+- **Repeated crossing means ranging.** "If it keeps repeatedly changing up and down, crossing each other, that means it's ranging." Treat a chart where the lines keep swapping as a skip, not as a run of signals.
+- **Wait for the separation to hold before entering.** "Enter after opening wider and no more changing would be more promising."
+
+Slide rules for the 5-line set:
 
 - Each individual line can be the support line or resistance line for entry-point consideration.
 - Each line is a guidance line of SPE (Sniper Price Entry, Module 4).

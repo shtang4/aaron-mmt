@@ -215,3 +215,44 @@ The Contract tab for 10000LADYSUSDT shows **Initial Margin 4.0%, Maintenance Mar
 Maintenance margin is what sets the liquidation price, and the pre-trade checklist had it hard-coded at 0.5%, which is the Bitcoin figure. On a small-cap alt at 2.0% the liquidation price is materially closer to entry than the tool was showing. Since the course's own coin-selection rule sends you to the top gainers, which are small caps, the tool was optimistic on exactly the coins you will actually trade.
 
 Fixed: maintenance margin is now an input on the checklist, defaulting to 0.5% with a hint to read the real figure off the Contract tab. The 4.0% initial margin also caps leverage on such a coin at 25×, which is worth knowing before you type 50×.
+
+## Part 6: Module 3, Heikin-Ashi and the direction guide
+
+### Why Heikin-Ashi, in his words
+
+- The noise is "the heads, tails or wicks". Averaging removes them so the chart reads at one glance.
+- The scalper's argument: **"As a scalper, if we keep on the candlestick pattern, you really got no time to interpret. You need a very fast rapid trend, one look, will know either up or down."** Heikin-Ashi is chosen for reading speed, not for accuracy.
+- On manual charting: "Maybe you are a TA trader, but after using the indicators I don't think you will go back to drawing." The course prefers indicator reading over hand-drawn structure.
+
+### The six patterns, and the rule the slide does not state
+
+His readings match the slide (no lower shadow = strong up, no upper shadow = strong down, doji = fight between buyer and seller, "the down wick is seller"). What the slide leaves out and he supplies:
+
+**How to tell a turning point from congestion: look at the colour of the candles that follow.**
+
+| After the doji or small-body cluster | Meaning |
+|---|---|
+| Next candles are the **same colour** as before the cluster | **Congestion.** The trend continues; it was a pause. |
+| Next candles **change colour** | **Pivotal change.** The trend has turned. |
+
+And the timing rule that follows from it:
+
+> "Cannot obviously say one candle is true. You have to take another one or two candle. If you want to confirm it and secure the trade, at least wait for the second, third candle, then only you execute."
+
+So a doji or a single small body is never actionable. **Wait two to three candles and let the colour resolve.** This is the practical form of "small bodies mean wait" that my notes had been stating without a count. It is also consistent with the EMA 155 three-candle direction rule: three candles is the course's unit of confirmation throughout.
+
+### The EMA cross, with the lag admitted
+
+Concept slide again on EMA 25 versus EMA 50, blue short and red long. What is new is the commentary:
+
+- **He states the lag outright:** "This is not the perfect indicator. There are some lagging. By the time these candles are coming down, this candle plays out first before the real crossing. Because the EMA needs to do calculation to average it out." That matches the Module 3 observation in these notes that the death cross on the course's own chart fired after roughly half the move.
+- **"The wider the gap open, the better it is trend and more confirm the trend."** This is a **new rule the slides never state: EMA separation is trend strength.** A cross with the lines still tight is weak; a fanned set is a confirmed trend.
+- **Repeated crossing means ranging:** "If it keeps repeatedly changing up and down, crossing each other, that means it's ranging. Better to confirm." So a chart where the fast and slow lines keep swapping is a skip, not a series of signals.
+- **Entry timing that follows:** "Enter here around this level after opening wider and no more changing would be more promising." Wait for the gap to widen and the crossing to stop.
+- The counter-case he warns about: entering before the cross confirms. "What if this one is not changing trend, what if this is a retracement and up? You will hit stop loss."
+
+Three of these fold straight into the direction step: **fan width is confirmation, repeated crosses are a skip, and you wait for the separation to hold.**
+
+### Driving analogy
+
+As on the slide. "A trade call given, you play blind, car crash. You follow GPS blindly, autopilot without knowing how to drive, your Tesla will also lead you to sea crash." The GPS is a useful guide; the driving is yours.

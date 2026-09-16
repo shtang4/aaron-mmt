@@ -17,10 +17,11 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 
 ## 2. Set direction (Diagnose)
 1. **EMA 155 rule, read on the Heikin-Ashi chart:** three consecutive candles with the body on one side of EMA 155 and no wick on the other side. Above → long only; below → short only. Nothing else sets direction. Order prices still come from real candles.
-2. Heikin-Ashi run with no trend-side wicks confirms. Dojis or small-body clusters → wait.
-3. Donchian ribbon solid in the same colour confirms. Mixed → skip.
-4. Seahorse (vertical move done, flat beak, EMAs converging) → stay out.
-5. Hockey stick (slow decline, sharp V, vertical blade): enter only on the golden cross *with* the EMA 155 three-candle rule. Never buy the blade.
+2. Heikin-Ashi run with no trend-side wicks confirms. Dojis or small-body clusters → **wait two to three candles**; same colour after = congestion, trend continues; colour change = the turn.
+3. **EMA fan width is trend strength**: bunched lines are a weak signal, a spread fan is confirmed. Lines repeatedly crossing back and forth = ranging → skip.
+4. Donchian ribbon solid in the same colour confirms. Mixed → skip.
+5. Seahorse (vertical move done, flat beak, EMAs converging) → stay out.
+6. Hockey stick (slow decline, sharp V, vertical blade): enter only on the golden cross *with* the EMA 155 three-candle rule. Never buy the blade.
 
 ## 3. Sniper entry (Diagnose, SPE)
 1. TradingView: nearest demand zone below (long) or supply zone above (short), and any FVG. Take the near edge.
