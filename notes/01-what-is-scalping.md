@@ -24,7 +24,7 @@ Transcribed from the "What is scalping strategy?" slide.
 Reading the table as a set of constraints rather than a description:
 
 - **Many small wins, so costs dominate.** If the target per trade is a "small price differential", then fees, spread and slippage are a large fraction of each win. Coin selection (Module 2) has to filter for liquidity, not only for trend, or the edge is eaten by execution cost.
-- **Holding period of seconds to minutes** means the timeframe for every later module (Heikin-Ashi, indicators, SPE, Wick Tracker) is intraday. Check which chart timeframe the course actually uses when those modules arrive; "seconds to minutes" is the textbook definition and may not match the course's practice.
+- **Holding period.** The slide says seconds to minutes; that is the textbook definition. Spoken in the session (notes/08-transcript.md): "by minutes, hours, not more than days, less than 24 hours", and "I don't think you can trade secondly." The taught rule is **minutes to hours, never past 24 hours.**
 - **"Exploiting bid-ask spreads"** is a market-maker's edge, not a directional trader's. The rest of the outline (trend, direction, sniper entry) is directional. Treat this line as the generic definition, not as what MMT teaches.
 - **Risk management and discipline are named twice** (Risk Management row and Skill Set row). The course flags this as the failure point before teaching any entry technique. Module 5 is where it is operationalised.
 - **"Suitable for experienced traders"** is a stated prerequisite. The course does not claim scalping is beginner-friendly.
@@ -117,7 +117,7 @@ If any cell is blank, the framework says the trade is not valid.
 
 ## Open questions
 
-- ~~Which EMA periods are used?~~ Partly answered in Module 3: the MMT set is EMA 9, 25, 55, 155, 255, with EMA 155 as the trend pivot. Which two form the "basic" pair is still unstated. There is no EMA 50 in the current set. Module 3's seahorse chart shows an older setup of EMA 10 / 25 / 50, which is where the stop rule's "EMA 50" comes from; on the 5-line set the equivalent is EMA 55.
+- ~~Which EMA periods are used?~~ Closed by the transcript: the 25/50 pair on this module's slides was "for concept explanation, it doesn't matter, later I'm going to teach you the exact one." The exact set is Module 3's EMA 9, 25, 55, 155, 255, with the EMA 155 three-candle rule on Heikin-Ashi setting direction. "Below EMA 50" for the stop was likewise conceptual; the operative stop is the Module 5 ROI tier beyond the structural level.
 - Largely answered in Module 5: 1% to 10% of wallet per trade (most likely as isolated margin), stop set by ROI tier (beginner 5% to 20%), converted to price by entry × ROI ÷ leverage.
 - Is there a minimum reward-to-risk ratio, or is any nearest-resistance TP acceptable? Still unstated after all six modules.
 - ~~Does a later module replace the EMA cross-back exit?~~ Yes: Module 4 exits on volume maximal plus MACD histogram peak, with PTP 75%; the EMA cross-back becomes the backstop for the runner.

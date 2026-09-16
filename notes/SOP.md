@@ -42,7 +42,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 
 ## 6. After the close (Follow up)
 1. Sweep realised profit from Derivatives to Funding.
-2. Close and go. Next coin. Never re-enter the same beak.
+2. Close and go. Next coin. Never re-enter the same beak. **Nothing is held past 24 hours** (session: "minutes, hours, not more than days").
 3. Stop at the daily target or ten trades, whichever first. Rest.
 4. Log it in the journal: which D, which rule, what you would change. Thirty trades before you believe any number.
 
