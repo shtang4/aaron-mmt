@@ -14,7 +14,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | A6 | In the hockey stick rule, is "the EMA" the 155 or a faster line? | 2 §6.4 | Moves the entry by minutes and percent. |
 | A7 | Is the RAVE crash-bottom (heel) entry a taught setup or a one-off? | 5 §3.9 | It contradicts the confirmed hockey stick rule. |
 | A8 | Does the uncorrelated-pump trade during a BTC crash have rules (scan, stop, exit) or is it one observation? | 6 §4 | AERGO on 7 April 2025 is the only evidence. |
-| A9 | Is a strong coin versus a shit coin defined, so a coin on neither list can be classified? | 2 §2 | The lists are a 2023 snapshot. |
+| ~~A9~~ | ~~Strong versus shit coin defined?~~ Session: strong = good background and fundamentals; shit = unknown background, rug-pull or manipulation risk. Then: "all coins are manipulative until proven otherwise." Category is not a filter; volatility and volume are. | 2 §2 | |
 
 | ~~A10~~ | ~~Which EMA rule wins?~~ Session: the handouts are supplementary. The slides' EMA 155 three-candle rule sets direction; EMA 20 on 1D/4H/1H is an optional higher-timeframe filter. | 7 §2.1 | |
 | ~~A11~~ | ~~Is 1-minute the execution chart?~~ Session: yes. The risk checklist's "danger" line refers to reading 1m without the higher timeframes. | 7 §2.2 | |

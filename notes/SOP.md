@@ -10,7 +10,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 
 ## 1. Scan the market (Diagnose)
 1. Heatmap: mostly green → long bias; mostly red → short bias; mixed → no trades today.
-2. Hot sectors → leading coin in each → Top Movers (24h, and the 15m tabs). A gainer is a candidate, never a trade.
+2. Hot sectors → leading coin in each → Top Movers (24h, and the 15m tabs). Volatility and volume are the must; +4% in two hours is too slow. A gainer is a candidate, never a trade. **Weekends: volume dries up; widen the search or stay flat.**
 3. Screener per candidate, scored out of 4: EMA 20 above/below on 1D + 4H + 1H · OI rising with price · funding on your side (≤ −0.01% for a long, ≥ +0.05% for a short; positive is accepted on longs in a bull market) · book lighter on the side you are trading. **4/4 → full size. 3/4 → 50–75% size, tighter stop. Below 3 in one direction → no trade.** Mixed timeframes → reduce size; all disagree → skip the coin.
 4. Sentiment gauge is a clue, not a signal.
 
@@ -72,5 +72,5 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 - Entering on a chat call without the chart check.
 - Holding for days. This is not swing trading.
 - New listings beyond a few days.
-- Adding size after a loss.
+- Adding to a losing position to push liquidation away. Session: "against the money" means exactly this; a 100 loss becomes 500.
 - Blaming mindset before checking which D you skipped.

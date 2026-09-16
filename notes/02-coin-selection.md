@@ -23,7 +23,7 @@ The course outline also lists a **hockey stick pattern** under this module; it i
 
 Slide text, verbatim: "Evaluate the historical volatility of the coin. Higher volatility can provide trading opportunities but also carries higher risks. Consider your risk tolerance and trading strategy when assessing the coin's volatility."
 
-No measure is given (no ATR, no percentage range, no lookback). This is a principle, not a screen.
+No measure is given on the slide. Spoken in the session: a coin that moves from 0.50 to 0.52 in two hours (+4%) is "not the kind of coin you want to trade", and volatility is read as "how wicky" the historical candles are. So the floor is above +4% in two hours; the practical threshold is the Gainers list. Also spoken: **weekends have no volume, look for different coins.**
 
 ### 1.2 High volume trade
 
@@ -102,7 +102,7 @@ That is the useful content. The specific names are less useful, for reasons belo
 
 - **Stablecoins on the "strong coin" list.** USDT, USDC, DAI, BUSD and PAXG (gold-backed) do not trend. They cannot be scalped and "avoid shorting" is vacuous for them. Their presence says the list was assembled by market cap, not by tradability.
 - **The lists are dated.** BUSD was wound down in 2023 and 2024. MATIC migrated to POL. LUNA and LUNC are on the short list, which places the list after the May 2022 collapse. Several shit-coin names may no longer be listed on perpetuals. Treat both lists as a **2023 snapshot**, and regenerate them from the current market before use.
-- **No definition of "strong" or "shit".** Market cap, exchange tier, project fundamentals and age are all plausible criteria, and none is stated. Without a definition you cannot classify a coin that is on neither list, which is most coins.
+- **"Strong" and "shit" defined in the session:** strong = good background, good fundamentals; shit = background unknown, rug-pull or manipulation risk, no fundamental value. Then the override: "all coins are considered manipulative until proven otherwise", BTC, ETH and XRP included. So the lists are a fundamentals label, and for trading every coin is treated as manipulated. Category is not a filter; "volatility and volume are the must."
 - **The heading promises four categories** (strong, meme, shit, new) and the slide delivers two. Meme coins are scattered across both lists (PEPE, FLOKI, SHIB on strong; none on the short side), so "meme" is not itself a directional category here. "New coins" get no treatment at all on this slide; the Gainers screenshot's **New** tab is presumably where they come from.
 
 ## 3. Trend is King (趋势为王)
@@ -143,7 +143,7 @@ This is the swing-structure definition of trend, independent of any indicator. T
 
 **"We can go against the Market, but not against Money."** (我们可以跟市场做对，但不能跟金钱做对。)
 
-The slide gives no gloss. Most consistent reading with the surrounding slides: "the market" is the crowd's opinion or sentiment, "money" is where volume is actually flowing. You may take a view the crowd disagrees with, but never trade against the direction volume is pushing. That ties the maxim to criterion 2 (high volume) and to the trend phases above. Treat this interpretation as an inference, not the slide's words.
+The slide gives no gloss. **Explained in the session (notes/08-transcript.md, part 2):** "against the market" is counter-trend trading, allowed but dangerous because a retracement looks like a top; "against the money" is **adding to a losing position to push the liquidation price away**, turning a 100 loss into a 500 loss when one wick goes the wrong way. The maxim means: you may hold a view against the trend, you may never average into a loser. An earlier inference in these notes, that it meant sentiment versus volume flow, was wrong and is withdrawn.
 
 **"Regardless of whether it is a black cat or a white cat, a cat that catches mice is a good Maneki cat."** (不管黑猫白猫，能捉到老鼠就是好的招财猫)
 

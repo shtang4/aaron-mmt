@@ -28,3 +28,36 @@ Running log of what the spoken session adds to, or changes in, the slide notes. 
 ### What this part does not cover
 
 Coin selection, the screener, indicators, SPE, the Wick Tracker, hedging, SSWB. Those wait for later parts.
+
+## Part 2: end of Module 1, start of Module 2
+
+### The three questions (Module 1, section 3.5)
+
+- Framed for "a newbie regardless of your background and experience": before opening any trade, can you diagnose the setup (direction and entry identified), have you dosed your risk, and do you have a discharge plan **written**.
+- **"The time-frame doesn't matter."** The three questions apply on any chart. That is the one place the course explicitly detaches the 3D method from scalping.
+
+### Coin selection (Module 2, section 1)
+
+- **"Volatility and volume are the must."** Category (strong, meme, shit, new) is optional: "all applicable." The two filters are volatility and volume; the coin lists are not a filter.
+- **A volatility floor, by example:** a coin at 0.50 that is 0.52 two hours later is not worth trading. So +4% in two hours is *below* the bar for a scalp candidate. He did not state a number above it; the Gainers list, where top movers run +10% to +20% on the day, is the practical threshold.
+- "How wicky it is": volatility is read from wick length on the historical chart. Long wicks both ways is the desired profile. This is also what makes the Wick Tracker (Module 4) and the stop-beyond-the-zone rule matter more.
+- **Volume is the 24-hour turnover on USDT perpetuals, read as a percentage; the higher the better.** Without it "you are just waiting, like SUI coin, wait until next week." **Weekends: no volume, look for different coins.** That is a scheduling rule the slides never had.
+- **Strong coin versus shit coin, defined:** strong = "good background, good FA"; shit = background unknown, possibly a rug pull or manipulated, no FA value. That closes open question A9. And then the operative belief that overrides the definition: **"All coins are considered manipulative until proven otherwise"**, BTC, ETH and XRP included. So the strong-coin list is a fundamentals label, not a trading label, and for trading purposes every coin is treated as manipulated. This is the stated basis for trading pumps (Module 6 section 4) and for the "avoid shorting strong coins" list carrying little weight in practice.
+
+### Trend is King (Module 2, section 3)
+
+- Four phases with the **Coca-Cola van** analogy: accumulation is loading the van, advancing is driving up to Genting Highlands, distribution is unloading at the shops, declining is driving back down to KL. Ranging phases are the loading and unloading; trends are the drives.
+- Trend lines as spoken: uptrend is pump, retrace, pump, retrace, draw the line under the retraces; downtrend is the mirror; ranging is up-down-up-down inside a box. Higher high and higher low for up, lower low and lower high for down. Matches the slide.
+
+### "Against the market, not against the money" (Module 2, section 3.3), corrected
+
+The slide gave no gloss and the notes inferred "sentiment versus volume flow". **That inference was wrong.** His explanation:
+
+- "Against the market" is counter-trend trading. It is allowed but dangerous: a contrarian shorts what looks like a top, it is only a retracement, price touches the trend line and pumps, and the short is stopped or liquidated.
+- "Against the money" is **adding to the losing position** to push the liquidation price away. "Supposedly you are just losing 100 bucks, but you keep adding position to extend the liquidation ... eventually 500 bucks, then one long wick counters your direction. Instead of losing 100, he is losing 500."
+
+So the maxim is: you may take a view against the trend, but you may never fight your own capital by averaging into a loser. This is the spoken form of the stop rule from the other side: the alternative to a stop is not a hedge and not adding size; it is nothing. It also lands on the MMT hedging formula (Module 5 section 4.3), which adds exposure to a losing situation in the opposite direction; the spoken rule is against adding exposure to a loser at all.
+
+### On his own shared calls
+
+- "Sometimes you can't enter, even some seniors." When he shares a coin, the student must read "A to Z": is it retracing or a real trend? "Don't simply blindly enter it." That is the Module 6 "Skip Diagnose" slide in his own words, and it confirms that a shared call is a candidate, not an entry.
