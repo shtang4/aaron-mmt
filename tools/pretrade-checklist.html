@@ -284,7 +284,7 @@
         <option value="session" selected>Session: lighter bid → long</option>
         <option value="handout">Handout: lighter ask → long</option>
       </select></span></label>
-    <div class="fmsg" id="fmsg">Public market data only, no key. Works when this file is opened from your own computer; the hosted page cannot reach Bybit.</div>
+    <div class="fmsg" id="fmsg">Public market data only, no key. Works when this file is opened from your own computer; the hosted page cannot reach Bybit. In Malaysia, Bybit is blocked by MCMC, so the VPN has to be on.</div>
     <div class="readout" id="readout" hidden></div>
   </div>
 
@@ -851,7 +851,7 @@
       $('fmsg').className = 'fmsg bad';
       const blocked = /Failed to fetch|NetworkError|Load failed|CORS/i.test(String(err && err.message));
       $('fmsg').textContent = blocked
-        ? 'Could not reach api.bybit.com from this page. The hosted artifact blocks outside requests; save this file and open it from your computer. If it still fails there, Bybit is refusing browser calls and the fetch needs a CSV export instead.'
+        ? 'Could not reach api.bybit.com. Two usual causes: this is the hosted artifact, which blocks outside requests (save the file and open it from your computer), or your network blocks Bybit. In Malaysia it is blocked by MCMC, so turn the VPN on and try again.'
         : 'Bybit answered with an error: ' + (err && err.message);
     } finally { btn.disabled = false; }
   });

@@ -7,6 +7,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 - **TradingView:** Market Structure (Leviathan), BOS on close, CHoCH on · Donchian Trend Ribbon 20.
 - **Coinglass:** liquidation heatmap, 1-week view.
 - **Account:** isolated margin · one-way mode · TP triggers on Last, SL on Mark · Order by Value.
+- **Access:** Bybit is blocked by MCMC in Malaysia. VPN on before the session starts, and check it is still up before placing an order.
 
 ## 1. Scan the market (Diagnose)
 1. Heatmap: mostly green → long bias; mostly red → short bias; mixed → no trades today.
