@@ -504,3 +504,35 @@ The A8 version was about price against EMA 155. This one is about the **order of
 So the ladder is: fast lines tangling above EMA 155 = noise → three full bodies past EMA 155 = warning → **full fan inversion (255 > 155 > 55 > 25 > 9) = confirmation and last exit**.
 
 **And it contradicts a rule already in the SOP.** Module 1 says "EMA 9 crossing back through EMA 25 → exit, no questions". Here, the fast lines crossing each other is explicitly *not* a signal. Taken literally on a full position, the Module 1 rule stops you out of every ordinary pullback — the exact pullbacks the five-line set exists to let you buy. Reconciliation now carried in [03 §2.2](03-entry-direction.md) and the SOP: **the EMA 9 × 25 cross-back governs the runner only**, after the climax partial with the stop already at entry. The main position is governed by the pivot and the fan.
+
+## Part 15: the liquidation heatmap, spoken
+
+Eleven Coinglass mobile screenshots, Binance BTC/USDT, 9 November 2024, BTC around 76,400. Written up at [03 §4.2a–4.2b](03-entry-direction.md).
+
+### The colour scale, and it is not what the slide says
+
+> "Basically you just want to recognise what? Colour, cluster, support, resistance level ... **The hottest colour is yellow, the cooler colour is the darker blue, marine blue, or even nearly to black. Black is no liquidity.** The hotter the colour it is, the higher the liquidity is there ... Yellow are the heat, are the liquidity. Green relatively not that much, and the marine blue is even worse — not much money there."
+
+Yellow hot, blue-black empty. The slide's pasted text says "warmer colours (red, orange)" mark the high-liquidation areas, which is not the tool's palette at all. Go by the spoken version.
+
+### The timeframe, which corrects the SOP
+
+> "**Usually, I use 12 hours model. 24 hours is for longer period.**"
+
+These notes had "1-week view" in the setup, taken from the one RAVE screenshot in Module 5. His stated default is **12h**; 24h for a longer read; 1w is context, not a trade view. Corrected in the SOP.
+
+### Reading a band gives you a number
+
+Tap a band and the tooltip returns the timestamp, the price, and the **"Liquidation Leverage"** — the cluster's size in dollars. From these screenshots: 77,643.44 → **84.08M** · 75,949.64 → **66.77M** · 78,490.34 → **28.53M** · 74,989.82 → **26.79M**. Clusters can therefore be **ranked**, which is what makes one usable as a Wick Tracker target: "the nearest 80M band is at 77,643", not "it looks bright up there".
+
+The pair selector lists BTCUSDT Perpetual on Binance, OKX, Bybit, Bitget, HTX, BingX and Deribit separately. Read the **Bybit** row — that is the book the order lands in.
+
+### Model 1 versus Model 2, never explained
+
+He does not say what the toggle does or which he uses. On the same 12h window the two render differently: one gives sharp discrete bands scaled to 84.08M over 72,901–80,015, the other a smoothed field topping out at 29.73M over a wider 69,747–83,730. **The two models disagree about where the liquidity is and how much of it there is.** Worth settling before a take-profit is placed on one of them. Added to the open questions.
+
+### "Support and resistance" is the wrong word
+
+Both the slide and the spoken version call the clusters support and resistance. **A liquidation cluster is a magnet, not a barrier.** A band below price is where longs are force-closed: price is drawn down into it and the forced selling accelerates *through* it. A band above is where shorts are force-closed. The reversal, when it comes, is *after* the liquidity is consumed, not at the edge of the band.
+
+Buying a cluster below as "support" means buying exactly where the forced selling starts. Same error as the SMC glossary's "weak high = resistance": liquidity beyond a level is a target, not a wall. And as there, **his own practice is right** — the Wick Tracker aims at clusters and the RAVE entry buys after one is swept. Only the vocabulary is backwards. Full rules table: [03 §4.2b](03-entry-direction.md).

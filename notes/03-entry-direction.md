@@ -559,12 +559,60 @@ Slide definition: a visual tool, particularly in futures, showing price areas wh
 
 Closing text: anticipate where liquidations might create volatility, and use that to plan entries and exits or to avoid high-risk areas.
 
-No source or setting is given on this slide. The RAVE example in Module 5 shows the **Coinglass** Liquidation Heatmap (1-week view, liquidity threshold 0.26), so that is the source. The slide text also contains literal markdown bold markers (`**Liquidation Heatmap**`), so it was pasted from an AI-generated answer.
+No source or setting is given on this slide. The RAVE example in Module 5 shows the **Coinglass** Liquidation Heatmap (1-week view, liquidity threshold 0.26), so that is the source — but **the session gives his actual default as the 12-hour view** (4.2a), and the slide's "warm red and orange" colour description does not match the tool, which is yellow-hot on a blue-black field. The slide text also contains literal markdown bold markers (`**Liquidation Heatmap**`), so it was pasted from an AI-generated answer.
 
 How it fits: a liquidation cluster is a **liquidity target**, the same thing SMC calls an equal high or equal low. Price is drawn toward it and often reverses after sweeping it. Two uses that follow from that:
 
 - A cluster just beyond your stop is a reason to move the stop, because the sweep will take it before the move you want.
 - A cluster ahead of your entry in the trade direction is a natural take-profit level, and often a better one than "nearest resistance" from the Module 1 Discharge rules, because it is where the opposing side gets forced out.
+
+### 4.2a The heatmap in practice: the app, the timeframe, and reading a band
+
+Eleven screenshots of the **Coinglass mobile app** walking the whole tool, on Binance BTC/USDT dated 9 November 2024 with BTC around 76,400.
+
+**The colour scale, in his words:**
+
+> "Basically you just want to recognise what? Colour, cluster, support, resistance level. How you determine it? **The hottest colour is yellow, the cooler colour is the darker blue, marine blue, or even nearly to black. Black is no liquidity.** The hotter the colour it is, the higher the liquidity is there ... Yellow are the heat, are the liquidity. Green relatively not that much of liquidity, and the marine blue is even worse — not much money there."
+
+| Colour | Liquidity resting there |
+|--------|------------------------|
+| **Yellow** | Hottest. The cluster |
+| Green | Moderate |
+| Marine / dark blue | Little |
+| Black | **None** |
+
+Note this is Coinglass's **viridis** scale, not the "warm red / orange" the slide's pasted text describes. The slide is wrong about the colours of the tool it is describing; go by yellow-hot.
+
+**The timeframe, and it corrects the SOP.**
+
+> "**Usually, I use 12 hours model. 24 hours is for longer period.**"
+
+His default is **12h**, not the 1-week view the RAVE screenshot happened to use. Both are in the material; the spoken default wins, and 1 week is for context rather than for a trade. The dropdown offers 12h · 24h · 3 day · 1w · 1mo · 3 month · 6mo · 1y.
+
+**Where it is, on the app.** Coinglass → **Liquidation Map** tab → **Liquidation Heatmap** sub-tab → two toggles (**Pair | Symbol**, and **Model 1 | Model 2**) → the exchange-pair selector → the timeframe dropdown. The pair selector lists BTCUSDT Perpetual on Binance, OKX, Bybit, Bitget, HTX, BingX and Deribit separately, so you can read the book you are actually trading — **use the Bybit row**, since Bybit is where the order goes.
+
+**Reading a single band.** Tap a band and a tooltip gives the timestamp, the **price**, and the **"Liquidation Leverage"** — the size of the cluster in dollars. From the screenshots: 77,643.44 → **84.08M**; 75,949.64 → **66.77M**; 78,490.34 → **28.53M**; 74,989.82 → **26.79M**. So the tool gives you a number, not just a colour, and clusters can be ranked. That is what makes a heatmap level usable as a Wick Tracker target: you can say "the nearest 80M band above me is at 77,643" rather than "it looks bright up there".
+
+**Model 1 versus Model 2, unexplained.** He never says what the toggle does or which he uses. From the screenshots the two render differently on the same 12h window: one produces **sharp discrete bands** with a scale maximum of 84.08M over a 72,901–80,015 range; the other a **smoothed field** topping out at 29.73M over a wider 69,747–83,730 range. So the two models disagree about both where the liquidity is and how much of it there is, which is worth knowing before you place a target on one of them. Open question: what the two models assume, and which one the course uses.
+
+### 4.2b "Support and resistance" is the wrong word, and it matters
+
+Both the slide and the spoken version call the clusters support and resistance. A liquidation cluster is **not a barrier. It is a magnet.**
+
+A bright band below price is where **longs** get force-closed. Price is drawn down to it; when it is reached the forced selling accelerates the move *through* it. A band above price is where **shorts** get force-closed, and price is drawn up into it. In both cases the cluster is a **destination**, and the reversal — if it comes — happens *after* the liquidity has been consumed, not at the edge of the band.
+
+Treating a cluster as support means buying into the level where the forced selling starts. That is the single most expensive way to misread this tool.
+
+The consequences, which are the same two already in 4.2 and are worth restating as rules:
+
+| Cluster position | Correct use |
+|---|---|
+| Ahead of you, in your direction | **Take-profit target.** The wick that reaches it is the Wick Tracker's wick |
+| Just beyond your stop | **Move the stop**, or lower the leverage. The sweep will take you out before the move you want |
+| Below, after a crash has already hit it | **Entry**, once the sweep is done — the RAVE "heel" trade ([05 §3.9](05-risk-and-hedging.md)) |
+| Between you and your target | Expect a violent candle there, not a pause |
+
+This is the same error as the SMC glossary's "weak high = resistance" ([03 §3.3](03-entry-direction.md)): liquidity resting beyond a level is a target, not a wall. **His own practice is right in both places** — the Wick Tracker aims at clusters, and the RAVE entry buys after one is swept — it is only the vocabulary on the slides that is backwards.
 
 ### 4.3 The full chart stack, assembled
 

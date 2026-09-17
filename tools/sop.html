@@ -75,7 +75,7 @@
       <dl class="kv">
         <dt>Bybit chart</dt><dd>Heikin-Ashi on · EMA <code>9 · 25 · 55 · 155 · 255</code> · MACD <code>8 / 13 / 9</code> · Volume <code>VOLMA 5, 10</code></dd>
         <dt>TradingView</dt><dd>Market Structure (Leviathan): BOS on close, CHoCH on · Donchian Trend Ribbon <code>20</code></dd>
-        <dt>Coinglass</dt><dd>Liquidation heatmap, 1-week view</dd>
+        <dt>Coinglass</dt><dd>Liquidation heatmap — <b>12h</b> is the working view (session default), 24h for longer, 1w for context. Pick the <b>Bybit</b> pair. Yellow = cluster, blue-black = empty; tap a band for its size in dollars.</dd>
         <dt>Account</dt><dd>Isolated margin · one-way mode · TP triggers on <b>Last</b>, SL on <b>Mark</b> · Order by Value</dd>
         <dt>Access</dt><dd>Bybit is blocked by MCMC in Malaysia. <b>VPN on</b> before the session, and confirm it is still up before you place an order.</dd>
       </dl>
@@ -121,6 +121,7 @@
       <ol>
         <li><b>Isolated</b> margin. Leverage <b>5× to 10×</b>.</li>
         <li>Margin per trade: <b>$20</b> to learn; then 1% of wallet; never above 10%. <b>Loss at the stop never above 1–2% of equity</b>, whatever the score.</li>
+        <li><b>Check the heatmap before placing the stop.</b> A cluster just beyond it gets swept before the move you want — move the stop past it, or lower the leverage. A cluster is a <b>magnet, never support</b>: price is drawn in and the forced orders accelerate through it.</li>
         <li>Stop as ROI on margin, by tier: beginner <b>5–20%</b>, intermediate 20–50%, advanced 50%+. Convert to price; it must sit <b>beyond the structural level</b> (far edge of the zone, or the heel low). If it does not, <b>lower the leverage</b> until it does. Never move the level, never widen the tier.</li>
         <li>Write the money at risk in USDT before entry. If the number makes you flinch, the dose is wrong.</li>
       </ol>
@@ -129,7 +130,7 @@
     <section>
       <h2><span class="n">5</span> Exit plan, both ways <span class="d">Discharge</span></h2>
       <ol>
-        <li><b>TP first.</b> Wick Tracker is a Bybit TP trigger at a level a wick will reach: <b>slightly above</b> the prior wick high (a sweep aims at the stops resting beyond it), the supply-zone bottom, a liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on <b>Last</b>; inside the wick you expect, above the wick already made.</li>
+        <li><b>TP first.</b> Wick Tracker is a Bybit TP trigger at a level a wick will reach: <b>slightly above</b> the prior wick high (a sweep aims at the stops resting beyond it), the supply-zone bottom, <b>the nearest large liquidation cluster</b> (rank by the dollar figure, not the brightness), or 50% ROI raised to 55–60% for fees. Trigger on <b>Last</b>; inside the wick you expect, above the wick already made.</li>
         <li><b>Two regimes, decided by the fan.</b> Fan widening, no two lines crossing → <b>no fixed target needed</b>: ride it on the climax rule and the EMA cross, Wick Tracker resting only as the unattended backstop. Fan flat, bunched or crossing → set the target and take it.</li>
         <li><b>SL</b> from step 4, trigger on Mark, <b>resting before the entry fills</b>. Both in before you look away.</li>
         <li><b>Climax exit:</b> a volume bar <b>above both VOLMA lines</b> ("abnormal" — session-defined, no multiple) + the MACD histogram at its <b>mountain peak</b>, confirmed when the next bar prints shorter — <b>on Bybit that bar is drawn hollow</b> → close <b>75%</b>. Move SL on the runner to entry.<br>Abnormal volume with a <b>long wick</b> is a liquidity sweep, not a move; with a <b>full body</b> it is real. Red bar = selling, green = buying.</li>

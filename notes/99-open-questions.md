@@ -67,6 +67,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | F1 | Over what period did 1,993 → 18,288 USDT happen, and how many losing trades were in it? | 5 §3.10 | The only account-level result, undated and loss-free. |
 | F2 | How many held-to-breakeven positions did not recover? | 5 §4.8 | GMX is one that did. |
 | F3 | Does any complete trade exist with entry, stop, partial TP and runner all shown? | 6 | None in the deck. |
+| F4 | Coinglass heatmap **Model 1 vs Model 2**: what do they assume, and which does the course use? The two disagree about where the liquidity sits and how large it is on the same 12h window. | 3 §4.2a | Matters before a TP is placed on a band. |
 
 ## What the deck settles without the session
 
