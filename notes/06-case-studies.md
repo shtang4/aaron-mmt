@@ -15,7 +15,7 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 | **A8USDT** | Trade-call case study | A call with a clock on it; limit versus market; hold with no TP; then the reverse trade | +706%, +224%, and +343% short | §6 below |
 | **Jane (beginner)** | Case study: Beginner / Advance EMA | A student's progression, before and after structure | +1,132 USDT, +483%, +966%, +11,339% — all at 10× to 50×, two cross | §7 below |
 | **RADUSDT** | Module 6 slides | Multi-timeframe EMA alignment, all five lines, four frames | None. Screen reading only | §8 below |
-| ZETAUSDT | Modules 3 and 5, and the Jane case | SPE entry at an EMA; then "took profit too early". **Jane's trade, at 50×** | Entry 0.8570, exit 2.8530: +233% of price, **+11,339.67% ROI** | §7.2 below, [03 §2.3](03-entry-direction.md), [05 §2.3](05-risk-and-hedging.md) |
+| **ZETAUSDT** | Modules 3 and 5, and the Jane case | The other full arc: SPE entry, the retrace, the Wick Tracker exit, **and what the coin did after** | 0.8570 → 2.8530, **+11,339.67%** at 50×. Then **0.045**: "never exit will liquidate" | §7.2 and **§7.5** below, [03 §2.3](03-entry-direction.md), [05 §2.3](05-risk-and-hedging.md) |
 | RAVEUSDT | Module 5 | Heel / crash-bottom entry on a liquidation cluster | +277% ROI on a $150-style stake | [05 §3.9](05-risk-and-hedging.md) |
 | BMTUSDT | Module 5 | A chat trade call; "late trade is a losing trade" | +3,736% ROI at cross 15× | [05 §3.10](05-risk-and-hedging.md) |
 | GMXUSDT | Module 5 | Held a loser to breakeven, taught as "hedging" | Closed at entry on a wick, zero | [05 §4.8](05-risk-and-hedging.md) |
@@ -26,7 +26,9 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 
 **What almost all of them have in common:** the three live screener walks (SOMI scan, BTC, 10000LADYS) stop at "setup", and the result cards start at "outcome". The middle, which is execution and the part he says decides everything, is mostly missing. That gap is what the trade journal is for.
 
-**The one exception is the SOMI trade call (§2).** It is the only case in the entire course that shows a planned entry, a stop, a target, two members taking the same call, and **a real loss**: −52.49%, −103.42 USDT on a blind copy. It is by some distance the most instructive thing in the deck, and it is worth reading before any of the win cards.
+**Two exceptions carry the whole deck: the SOMI trade call (§2) and the ZETA arc (§7.2 and §7.5).** SOMI is the only case with a planned entry, stop, target, two members taking it and a real loss. ZETA is the only case followed to its end: entry, target, exit, and then the coin at 98% off the high with the caption "never exit will liquidate". Read both before any win card.
+
+SOMI's loss is the number to hold on to: **−52.49%, −103.42 USDT** on a blind copy that did take the stop. ZETA's is the chart: **2.8700 high, 0.04533 two years later**, on a position he says would have been liquidated had the target not been written down in advance.
 
 ## 2. SOMI: the full arc, from scan to call to one member's loss
 
@@ -367,6 +369,47 @@ The one number on these slides that does support the caption is that **SUI stop*
 - **Plan the entry before the move.** "Before the candle screams" is the same instruction as SPE and the limit-order default, in the words a beginner will remember.
 - **One-to-one coaching is what the slide is selling.** The case exists to answer "I am new, can I learn this?" with "yes, with structure and coaching". That is a marketing function, which does not make it false, but it means the cards were chosen and the losses were not shown.
 - **Discount the ROI percentages entirely.** +11,339.67% is a 233% price move at 50×. The multiplier is leverage, not skill. His own line — "if you learn well the EMA, seriously you can actually pump your profit up to 11,000 percent ROI, it just a matter of time only" — attributes to the EMA what the leverage did, and it is the single most misleading sentence in the material so far. Run the taught 5–10× isolated and the same read returns roughly 1,150% to 2,300% on that trade, which is still an exceptional outcome and does not require a position that a 2% wick can end.
+
+### 7.5 The end of the ZETA trade: "never exit will liquidate"
+
+Three more slides close the Advance EMA case, and the last one is the most useful slide in the deck.
+
+**Slide 1, the 1-minute entry, zoomed in.** 17:55 to 18:35 on the entry day. The "SPE Entry" box sits on the 0.8570 line, a green LONG arrow runs up from it, and the fan is open. His narration confirms the SPE definition from [04 §1.2](04-sniper-entry-exit.md) word for word:
+
+> "By using 1 minute, so many attempts, touch subsequently until last touch pump, **it never come back here to hunt your entry price — that is where you call sniper price entry.** This is the green line EMA. You miss one opportunity, but second, third, fourth, fifth, sixth, seventh, eight. **Up to eight you can enter. If you miss all of them, you need to consider other EMA** to see whether you can enter or not."
+
+Eight touches **on EMA 155 alone** in this window; eleven when he counted across lines on a six-hour view of the same chart. The count scales with the window and the line, which is the point already recorded in [03 §2.3](03-entry-direction.md). The escalation rule is new and sensible: exhaust the pivot line, then move to another EMA.
+
+> "See from here, it already changed to golden cross. So once golden cross, this one open, open, open widely — surely you can go long."
+
+**Slide 2, the Bybit OI Data tab.** 5-minute view, open interest climbing 8.24M → 8.45M through the session with volume bars beneath, green LONG arrow. "Open interest, I'm showing you, it always just going up, up, up and all the way up only." Then the rule that matters:
+
+> "You can use the EMA indicator, at the same time using the **OI data value, especially for a newborn coin**, that's good enough."
+
+The reduced screener for a coin with no history. Full note: [02 §5.3](02-coin-selection.md).
+
+**Slide 3, the weekly chart to April 2026, titled "Current Price (Never exit will liquidate)".** ZETAUSDT weekly, Feb 2024 to Apr 2026, drawn on TradingView on 20 June 2026:
+
+| Marker | Level |
+|--------|-------|
+| **SPE entry** | 0.8570 (yellow line) |
+| **Wick tracker exit** | 2.8530 (green line), against a chart high of **2.8700** |
+| A second chance back at the entry line | around **December 2024** |
+| **Current price** | **0.04533** low, red "Liquidate" box |
+
+From 2.87 to 0.045 is a **98.4% fall**; from the 0.8570 entry it is **94.7% below**. His narration:
+
+> "Enter from here as a sniper price entry. You set the wick tracker exit up here. Okay, and subsequently, it did not — see, this gives you a **second chance**, but you still don't want to exit, fine. **It come back to hunt your stop losses. If not, further down, bye-bye. The trade get liquidated.** The current price is never exit, get liquidated. How's that for you?"
+
+**This is the single strongest argument in the course for setting the take-profit before you walk away, and he makes it himself, on his own showcase trade.** The Wick Tracker level at 2.8530 was chosen in advance, one and a half cents under the eventual high, and it is the only thing standing between this trade and zero. At the 50× the card reports, liquidation sits roughly 2% below entry: every week of the decline after December 2024 ends the position, and most of the weeks before it do too.
+
+Three consequences for the rest of these notes:
+
+1. **It answers the open question in [05 §2.4](05-risk-and-hedging.md) point 2.** The Wick Tracker does replace the Module 1 EMA cross-back exit, and the ZETA hold was not luck: the exit level existed before the trade did, and it fired.
+2. **It completes the pair.** The Module 5 slide shows the cost of exiting *early* (you miss the pump); this one shows the cost of *never* exiting (you are liquidated). Neither slide alone is a rule. Together they are one: **take the written level — not sooner, not never.** That is a genuinely well-constructed teaching pair and it deserves saying, having criticised the first slide on its own.
+3. **It is the course's second real loss**, after the SOMI blind copy, and like that one it is shown deliberately rather than let slip. The two together are worth more than every win card in the deck.
+
+**What the slide does not resolve.** "It come back to hunt your stop losses" describes a stop that was never shown on any ZETA slide, at any timeframe, at any point in the course. The trade is displayed with an entry and a target and no stop. At 50× a stop would have had to sit within about 1.7% of entry to be a stop at all rather than a liquidation notice, which on a day-two listing's 1-minute chart is inside the noise. The honest reading: **this trade had no survivable stop, and the take-profit was doing the work of both.** That is not a model to copy; it is an argument for the leverage rule the SOP already carries.
 
 ## 8. RAD: the multi-timeframe check, done on the Bybit app
 

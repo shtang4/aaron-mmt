@@ -288,6 +288,18 @@ The slide lists the order as Day → 1H → 4H → 15m → 5m → 1m. The 1H and
 - It **does not** replace the Bybit Opportunities scan. The scan produces candidates; the screener grades them. The scan is broad and free, the screener is per coin and manual.
 - The manipulation warning is the course acknowledging that all four checks can be gamed on a thin coin. That points back to the volume criterion in section 1: run the screener on liquid coins only.
 
+### 5.3 The newborn-coin shortcut: EMA plus OI
+
+From the ZETA walkthrough ([06 §7.5](06-case-studies.md)), the one place he reduces the screener:
+
+> "You can use the EMA indicator, at the same time using the **OI data value, especially for a newborn coin**, that's good enough."
+
+On a day-one or day-two listing there is no higher-timeframe history: the daily chart has two candles and a 1-minute EMA 155 averages two and a half hours of a launch. His answer is not to skip the check but to **lean on the one signal that does not need history**. Open interest is a live count of contracts outstanding; it is meaningful from the first hour. Funding needs a settlement or two before it means anything, and depth on a new listing is thin by definition, so the two checks that degrade most on a newborn are the two he drops.
+
+Read on Bybit: **Order Book / Trades / OI Data / Contract tabs → OI Data**, which plots Open Interest as a line over Trading Volume bars, with a timeframe row (5 m, 15 m, 30 m, 1 H, 4 H, 1 D). The ZETA screenshot uses **5 m** and shows OI climbing 8.24M → 8.45M across the session while price rose: the "price up + OI up = real buying" cell of the 2×2 in [07 §1.4](07-handouts.md), read live rather than on Coinglass.
+
+So the screener has a documented reduced form: **EMA direction + OI direction, on the 5-minute OI view, for a coin with no history.** It is 2 of the 4 checks and he calls it "good enough", which sits against the handouts' "below 3 in one direction, do not trade". The handout rule is for a coin with history; this is the exception he states for one without. Note what it costs: a 2/4 screen is the *advanced* tier in his own grading ([08 part 3](08-transcript.md)), not the beginner one.
+
 ## 6. MMT Hockey Stick Recognition (MMT 曲棍球棒模式识别)
 
 A title slide and two slides of four Bybit screenshots each. **No definition, no rules, no annotations.** The pattern is taught by showing it eight times. What follows is the definition read off the examples.

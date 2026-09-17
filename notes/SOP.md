@@ -13,7 +13,8 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 1. Heatmap: mostly green → long bias; mostly red → short bias; mixed → no trades today.
 2. Hot sectors → leading coin in each → Top Movers (24h, and the 15m tabs). Volatility and volume are the must; +4% in two hours is too slow. A gainer is a candidate, never a trade. **Weekends: volume dries up; widen the search or stay flat.**
 3. Screener per candidate, scored out of 4: **EMA dominant direction** across 1D, 4H, 1H, 15m, 5m, 1m (one dissenting frame does not veto) · OI line tilting up at the right-hand end · funding **sign** counter to your side (negative for a long, positive for a short) · **depth lighter on your own side** (bid side thinner for a long, ask side thinner for a short). **4/4 → full size. 3/4 → 50–75% size, tighter stop. Below 3 in one direction → no trade** for a beginner; session: intermediates may take 2/4, advanced 1/4, at their own risk. Mixed timeframes → reduce size; all disagree → skip the coin. Funding settles 8 AM, 4 PM, midnight MYT; the sign is what scores, the size is what the hold costs.
-4. Sentiment gauge is a clue, not a signal.
+4. **Newborn coin (day 1–2, no higher-timeframe history):** run **EMA direction + OI direction only**, OI read on Bybit's OI Data tab at 5m. Session: "that's good enough." It is a 2/4 screen, which is the advanced tier — beginners should skip the coin instead.
+5. Sentiment gauge is a clue, not a signal.
 
 ## 2. Set direction (Diagnose)
 1. **EMA 155 rule, read on the Heikin-Ashi chart:** three consecutive candles with the body on one side of EMA 155 and no wick on the other side. Above → long only; below → short only. Nothing else sets direction. Order prices still come from real candles.
@@ -43,6 +44,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 3. Climax exit: volume bar that is the tallest since entry and at least 2× VOLMA 10 (working rule) + MACD histogram at its **tallest bar**, confirmed when the next bar prints shorter → close 75%. Move the runner's SL to entry.
 4. Runner: Hunting SL locks a rising ROI. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.
 5. Stop hit = the plan worked. Take it.
+6. **Take the written level — not sooner, not never.** ZETA is the course's own proof: the Wick Tracker at 2.8530 fired 1.5 cents under the high, and the coin was at 0.045 two years later. "Never exit will liquidate."
 
 ## 6. After the close (Follow up)
 1. Sweep realised profit from Derivatives to Funding.

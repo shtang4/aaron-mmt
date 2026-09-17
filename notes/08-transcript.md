@@ -396,3 +396,29 @@ The monthly chart has three candles. An EMA 155 on a 1-minute chart of a two-day
 > "**EMA 255 considered support. That is the last guard. EMA 155 is the most powerful EMA I would say in this world.**"
 
 Recorded as his claim. EMA 255 now has a stated role for the first time: the final support below the pivot.
+
+## Part 12: how the ZETA trade actually ended
+
+Three slides closing the Advance EMA case. Full write-up: [06 §7.5](06-case-studies.md).
+
+### SPE, confirmed on the chart
+
+> "By using 1 minute, so many attempts, touch subsequently until last touch pump, **it never come back here to hunt your entry price — that is where you call sniper price entry.** This is the green line EMA. You miss one opportunity, but second, third, fourth, fifth, sixth, seventh, eight. **Up to eight you can enter. If you miss all of them, you need to consider other EMA** to see whether you can enter or not. See from here, it already changed to golden cross. So once golden cross, this one open, open, open widely — surely you can go long."
+
+Eight touches on EMA 155 in a 40-minute window; eleven across lines on a six-hour view of the same chart. The count scales with the window and the line. New: the **escalation rule** — exhaust the pivot line, then try another EMA.
+
+### The newborn-coin screener
+
+> "But open interest, I'm showing you, it always just going up, up, up and all the way up only. **You can use the EMA indicator, at the same time using the OI data value, especially for a newborn coin, that's good enough.**"
+
+Bybit **OI Data** tab, 5-minute view: open interest 8.24M → 8.45M with volume bars underneath. On a coin with no history, EMA direction plus OI direction is the screen — 2 of the 4 checks, because funding needs settlements and depth is thin by definition on a new listing. Full note: [02 §5.3](02-coin-selection.md).
+
+### "Never exit will liquidate"
+
+> "Enter from here as a sniper price entry. You set the wick tracker exit up here. Okay, and subsequently, it did not — see, this gives you a **second chance**, but you still don't want to exit, fine. **It come back to hunt your stop losses. If not, further down, bye-bye. The trade get liquidated.** The current price is never exit, get liquidated. **How's that for you?**"
+
+The weekly chart runs to April 2026. Entry 0.8570, Wick Tracker exit 2.8530 against a high of 2.8700, a second chance back at the entry line around December 2024, and a current low of **0.04533** — 98% off the high. The slide is titled "Current Price (Never exit will liquidate)".
+
+**This is the course's strongest argument for its own exit rule, and he makes it against his own showcase trade.** It also completes a pair: the Module 5 slide prices exiting early (you miss the pump), this one prices never exiting (you are liquidated). Together they are one rule — take the written level, not sooner, not never. The correction that follows is recorded in [05 §2.4](05-risk-and-hedging.md).
+
+**What is still missing: a stop.** Across four timeframes and two modules, the ZETA trade is shown with an entry and a target and never a stop, while he refers to "your stop losses" being hunted. At 50× a stop would sit inside about 1.7% of entry. The trade had no survivable stop; the take-profit was doing the work of both.
