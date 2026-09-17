@@ -286,6 +286,8 @@ Price falling back through one, two, even three of the faster EMAs is a **retrac
 
 He pairs it with the ranging tell already in the notes: "when you see crossing red, death cross, golden cross, death cross, golden cross, death cross, it's all ranging around here."
 
+**The colour bar under those charts is the Donchian Trend Ribbon.** Identified from the SMC session ([03 §4.1](03-entry-direction.md)). On the A8 5-minute charts it runs **green from roughly 07:00 through the pump**, flips **red around midday**, and stays red for the rest of the day — which is when the trend actually ended, hours before the week-long decline. Read with the BOS-proxy rule (colour holds through a CHoCH-only pullback, flips when a BOS confirms), the ribbon marked the turn on the same chart the win cards were taken from. It is the cleanest exit signal visible anywhere in this case, and nobody in the case appears to have used it.
+
 ### 6.5 The second half: late trade, and the trade that flipped
 
 The second slide is headed **"Late Trade is a Lost Trade — scalping isn't a copy-paste game"**, over a 1-hour chart from 15 to 23 March: a green arrow up the 16 March pump, a red arrow down the week after.

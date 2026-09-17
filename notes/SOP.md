@@ -20,10 +20,11 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 1. **EMA 155 rule, read on the Heikin-Ashi chart:** three consecutive candles with the body on one side of EMA 155 and no wick on the other side. Above → long only; below → short only. Nothing else sets direction. Order prices still come from real candles.
 2. Heikin-Ashi run with no trend-side wicks confirms. Dojis or small-body clusters → **wait two to three candles**; same colour after = congestion, trend continues; colour change = the turn.
 3. **EMA fan width is trend strength**: bunched lines are a weak signal, a spread fan is confirmed. Lines repeatedly crossing back and forth = ranging → skip.
-   **Retracement test, once you are in**: losing one, two, even three of the fast EMAs is a dip. It is a trend change only when three full-body candles print on the far side of EMA 155. ("EMA 155" is the fan's pivot line; on a different EMA set, the equivalent line.)
-4. Donchian ribbon solid in the same colour confirms. Mixed → skip.
-5. Seahorse (vertical move done, flat beak, EMAs converging) → stay out.
-6. Hockey stick (slow decline, sharp V, vertical blade): enter only on the golden cross *with* the EMA 155 three-candle rule. Never buy the blade.
+   **Retracement test, once you are in**, in order of severity: EMA 9/25/55 tangling with each other while all three stay **above** EMA 155 is noise, hold · three full-body candles past EMA 155 is the **warning** that direction has gone · the fan **fully inverted** (255 > 155 > 55 > 25 > 9) is the confirmation — "cut loss or exit". ("EMA 155" is the fan's pivot; on another EMA set, the equivalent line.)
+4. Donchian ribbon (period 20) solid in the same colour confirms. Mixed → skip. **The ribbon colour is a BOS proxy**: a pullback that is only a CHoCH leaves the colour alone; a CHoCH followed by a BOS flips it. Colour holds = retracement, colour flips = the structure broke. Sensitive on 1m.
+5. **SMC sequence, the one entry trigger it gives:** equal lows at a strong low → CHoCH → BOS = long ("pump like crazy"). Equal highs → CHoCH → BOS = short ("dump very hard"). All three, in that order. The sweep itself is the abnormal-volume bar with the long wick.
+6. Seahorse (vertical move done, flat beak, EMAs converging) → stay out.
+7. Hockey stick (slow decline, sharp V, vertical blade): enter only on the golden cross *with* the EMA 155 three-candle rule. Never buy the blade.
 
 ## 3. Sniper entry (Diagnose, SPE)
 1. TradingView: nearest demand zone below (long) or supply zone above (short), and any FVG. Take the near edge.
@@ -44,7 +45,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 3. Climax exit: a volume bar **above both VOLMA lines** ("abnormal", session-defined — no multiple) + the MACD histogram at its **mountain peak**, confirmed when the next bar prints shorter — **on Bybit that next bar is drawn hollow** → close 75%. Move the runner's SL to entry.
    Abnormal volume with a **long wick** is a liquidity sweep, not a move; with a **full body** it is real. Colour gives the side: red selling, green buying.
 4. **MACD is two shapes.** Iceberg dip (deepest red bar) times the entry; mountain peak (tallest green) is the exit. Short reverses them. Miss the peak and you give back half at the zero line, all of it back at your entry, then it is a loss. If you cannot sit through a give-back, trade dip-to-peak and stop there.
-5. Runner: Hunting SL locks a rising ROI. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.
+5. Runner: Hunting SL locks a rising ROI. EMA 9 crossing back through EMA 25 is the backstop **for the runner only** — on a full position the fast lines crossing each other is noise while all three sit above EMA 155.
 6. Stop hit = the plan worked. Take it.
 7. **Take the written level — not sooner, not never.** ZETA is the course's own proof: the Wick Tracker at 2.8530 fired 1.5 cents under the high, and the coin was at 0.045 two years later. "Never exit will liquidate."
 

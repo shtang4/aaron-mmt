@@ -170,6 +170,16 @@ Slide rules for the 5-line set, verbatim:
 - **Repeated crossing means ranging.** "If it keeps repeatedly changing up and down, crossing each other, that means it's ranging." Treat a chart where the lines keep swapping as a skip, not as a run of signals.
 - **Wait for the separation to hold before entering.** "Enter after opening wider and no more changing would be more promising."
 - **The retracement test** (A8, [06 §6.4](06-case-studies.md)): "If let's say one line down, two line down, three line down, but not against going below EMA 155, **it is only a retracement only.** Retrace and then pump back." Price losing one, two or even three of the faster lines is a dip; the trend has changed only when three full-body candles print on the far side of EMA 155 — the same test that set the direction. This is the rule that makes the five-line set's extra entries usable: a touch of EMA 9, 25 or 55 is an entry while the pivot holds, and stops being one the moment it does not.
+- **The same test in its precise form, from the SMC session — it is about the EMAs' *order*, not price:**
+
+  > "Whatever the price remains 5 EMA lines, **3 shorter term EMA can always crossing each other**. **As long as the first three EMA lines are still above the EMA 155 line, you can consider as a retracement only.** Let's say this three lines cross below the green line, and the green line turn to be the fourth line, and subsequently the EMA 255 the last line — **all turn upside down, the 5 EMA lines all upside down, like this totally is a change of trend. You either cut loss or you exit.**"
+
+  | Fan state | Read |
+  |---|---|
+  | 9, 25, 55 tangled with each other, all still **above** 155 | **Retracement.** Hold. The fast lines crossing is normal noise |
+  | 9, 25, 55 cross **below** 155, so the order becomes 255 > 155 > 55 > 25 > 9 — **fully inverted** | **Change of trend.** Cut loss or exit |
+
+  This is stricter and later than the candle test above, and both are in the deck. Read them as a sequence: **three full bodies past EMA 155 is the warning that direction has gone; full fan inversion is the confirmation and the last exit.**
 
 Slide rules for the 5-line set:
 
@@ -178,6 +188,15 @@ Slide rules for the 5-line set:
 - **Green line EMA 155 always acts as the pivotal point of the trend.** Spoken, on the ZETA walkthrough: **"EMA 155 is the most powerful EMA I would say in this world."** His claim, recorded as his. EMA 255 below it is "the last guard": the final support before the structure is gone.
   - If 3 consecutive full-body candles form **above** this line → considered uptrend, can **LONG**.
   - If 3 consecutive full-body candles form **below** this line → considered downtrend, can **SHORT**.
+
+**A contradiction to settle before you trade it.** The Module 1 exit rule, which is in the SOP as the runner's backstop, is "EMA 9 crossing back through EMA 25 → exit, no questions". The SMC session says the opposite in plain words: "3 shorter term EMA can always crossing each other" and that is still only a retracement. Both cannot govern the same position. The reading these notes use:
+
+| Position | Rule |
+|---|---|
+| The **runner** (25% left after the climax partial, stop already at entry) | EMA 9 × EMA 25 cross-back closes it. You are protecting a gain, not managing a trade |
+| The **main position**, fan still ordered above EMA 155 | Fast-line crossing is noise. The exits are the climax rule, then the pivot, then fan inversion |
+
+If you take the Module 1 rule literally on a full position you will be stopped out of every ordinary pullback, which is exactly what the five-line set exists to let you buy.
 
 **"EMA 155" is a role, not a number.** On the A8 case-study chart ([06 §6.3](06-case-studies.md)) he states this same rule aloud over a fan of **EMA 20 / 89 / 144 / 233 / 377** — a chart with no EMA 155 on it. The line he points at is EMA 144. So the pivot is *the middle-to-slow line of the five-line fan*, and 155 is this course's choice of length for it. That makes five EMA configurations in the material (10/25/50 on the 2023 charts, 9/25/55/155/255 taught, a single EMA 20 in the handouts, 20/89/144/233/377 on A8). Run the taught set and read every rule on it; when you meet someone else's fan, map the rule to the equivalent line.
 
@@ -429,6 +448,42 @@ Slide text (given in English and Chinese): in futures trading, the Smart Money C
 
 The table contains literal `<br>` tags, so it was pasted from a web or AI-generated source without editing.
 
+### 3.2a The spoken glossary, which is plainer and mostly better than the slide
+
+He re-teaches the whole table verbally, in metaphors, and the spoken version is closer to standard SMC than the slide's pasted text.
+
+**The framing.** "Smart money — why they call it smart money? Because all the big institutions, all the market makers, they all depend on this smart money concept. **They swipe your liquidity** because based on this smart money concept." The premise is that the levels where retail stops rest are targets, and SMC is how you see them before they are taken.
+
+The sales claim attached to it is an overclaim and should be discounted: "basically you can achieve cut loss, you can be awake, be liquidated, you even can TP whatever you want." No structural read prevents liquidation; the stop and the leverage do.
+
+| Term | How he says it |
+|------|---------------|
+| **Supply zone** | The **pink** band on top. "The selling power. Selling pressure is there." |
+| **Demand zone** | The **light blue** band at the bottom. "That's the buying power." |
+| Both zones | "Those are the **liquidity areas** where they usually use to wick come down, or wick back whatever liquidity there." A zone is where a wick goes to collect, not where price politely turns. |
+| **FVG / imbalance** | "When it pumps too high, actually surges past the gap, **then the gap needs to be filled up**. Wherever, anything, they will come back to hunt back whatever volume over there." |
+| **Low** | "Imagine it is your support, which is your **floor**." |
+| **High** | "Let's say high is your **ceiling**." |
+| **Weak** | "**Breakable, fragile.** You can just break through the resistance." |
+| **Strong** | "Very strong floor" / "very strong resistance, can't break through." |
+| **CHoCH** | "Change of character ... sometimes it can be **retracement** ... **CHoCH usually is play like retracement, is change of character only but not confirmation**." |
+| **BOS** | "Break of structure. Break up or break down. Once the structure fully breaks, **it's totally change trend and break the previous entry trend**." |
+
+**The one line to keep:** *"CHoCH you imagine CHoCH equivalent to retracement. BOS means totally change of trend."*
+
+That is the whole of SMC as this course uses it: **CHoCH warns, BOS confirms.** And note that this spoken sequence is the *standard* one, which the slide's glossary is not — see 3.3.
+
+**The equal-high / equal-low sequence, which is the actionable part.** This is the only place in the course where SMC produces an ordered entry trigger rather than a vocabulary:
+
+> "Equal high, equal low. Let's say if equal high, **you have to look at CHoCH and then follow by BOS. If all these is fulfilled, this thing dump to go down very hard.** Equal low — go back, you see back the one I actually circle — let's say strong low, you see equal low, **follow by BOS. This thing will going to pump like crazy.**"
+
+| Sequence | Read | Trade |
+|----------|------|-------|
+| **Equal highs → CHoCH → BOS** | Liquidity above the equal highs was taken, character changed, structure broke down | **Short.** "Dump to go down very hard" |
+| **Equal lows (at a strong low) → CHoCH → BOS** | Liquidity below was taken, character changed, structure broke up | **Long.** "Pump like crazy" |
+
+Three conditions in order, and all three must be present. This is standard liquidity-sweep-then-reversal and it is correctly stated. It also dovetails with 2.7b: the sweep is the abnormal volume bar with the long wick; the CHoCH and BOS are what tell you the sweep was the turn rather than a pause.
+
 ### 3.3 Where the slide's definitions differ from standard SMC usage
 
 Several of these are loose or inverted relative to how SMC is normally taught. If you use an SMC indicator on TradingView or Bybit, it will label things by the standard definitions, not the slide's, so the differences matter:
@@ -436,12 +491,12 @@ Several of these are loose or inverted relative to how SMC is normally taught. I
 | Term | Standard SMC meaning | Difference from slide |
 |------|---------------------|----------------------|
 | **FVG** | A three-candle imbalance: the gap between candle 1's high and candle 3's low (bullish) that candle 2 skipped over. Price tends to return to fill it, and that return is the entry. | The slide describes it as "the initial move in a new trend", which is the displacement that *creates* the FVG, not the gap itself. The entry is on the retrace into the gap, not on the move. |
-| **BOS** | **Break of Structure**: price takes out the previous swing high in an uptrend (or swing low in a downtrend). It confirms trend *continuation*. | The slide expands it as "Breakout or Breakdown" and says it indicates a *shift* in trend. In standard usage a shift is CHoCH; BOS is continuation. |
+| **BOS** | **Break of Structure**: price takes out the previous swing high in an uptrend (or swing low in a downtrend). Within a trend it confirms *continuation*; after a CHoCH it confirms the *new* trend. | The slide expands it as "Breakout or Breakdown", which is not the name. But **his spoken usage is the standard one** (3.2a): CHoCH warns, then BOS in the new direction confirms. Read the slide as loose wording rather than a different method. |
 | **Strong high / strong low** | A strong low is the low that produced a BOS to the upside, so it is protected and unlikely to be revisited. A strong high is the mirror. | The slide's "significant buying interest at a peak suggests upward continuation" is muddled: a peak with heavy buying that fails is a weak high, not a strong one. |
 | **Weak high / weak low** | A high that did not produce a BOS, so it is likely to be taken out (liquidity sits above it). | The slide treats a weak high as resistance. In standard usage it is a target, not a barrier. |
 | Supply / demand zone, CHoCH, equal highs and lows | Match the slide closely enough. | |
 
-Net: the slide gets supply and demand, CHoCH and equal highs right, and gets FVG, BOS, and strong versus weak highs wrong or backwards. Use the standard definitions.
+Net: the slide gets supply and demand, CHoCH and equal highs right, and gets FVG, BOS, and strong versus weak highs wrong or backwards in writing. **The spoken version corrects BOS and FVG without saying so** — "the gap needs to be filled up, they will come back to hunt back whatever volume over there" is the retrace-into-the-gap entry, and CHoCH-then-BOS is the standard sequence. Strong versus weak highs is the one that stays muddled. Use the standard definitions, which is what the TradingView indicator labels anyway.
 
 ### 3.4 How SMC fits the MMT stack
 
@@ -474,6 +529,23 @@ Slide definition: a technical indicator that displays the trend of price movemen
 What it is, beyond the slide: the Donchian Channel is the highest high and lowest low of the last N candles. The ribbon version stacks several Donchian lookbacks and colours each strip green or red depending on whether the current close is nearer the upper or lower band of that lookback. A solid green ribbon means price is at or near its N-bar highs across all lookbacks; solid red is the mirror; a mixed ribbon means the trend is not aligned across horizons.
 
 How it fits: it is a second, indicator-based version of the "EMA on all timeframes" check from the Module 2 screener, but done on one chart with one glance. A solid ribbon in the direction EMA 155 gives is confirmation. A mixed ribbon is a Skip.
+
+**What the session adds, and it is the most useful thing said about this indicator: the ribbon colour is a proxy for BOS.**
+
+> "Usually **CHoCH is still remain green colour**, but down here there's a **BOS** here, so it change over here ... It's actually to show you **whether is a retracement or not. If let's say is a retracement, just only form the CHoCH, the colour still remains the same. But if let's say CHoCH form BOS, means changing trend even though a little bit, it will show change of colour, red.** ... But the moment form the BOS — see, this thing confirmatively this will change the colour to green and is uptrend."
+
+So the mapping is:
+
+| On the chart | Ribbon |
+|---|---|
+| Pullback, CHoCH only | **Colour holds.** It is a retracement; stay in |
+| CHoCH **followed by BOS** | **Colour flips.** The structure broke; the trend has changed |
+
+That makes the ribbon a **one-glance read of the SMC structure** on a chart where the BOS and CHoCH labels are small and constant. You do not have to find and judge the labels: the colour has already done it, and it only flips on the confirmation, not on the warning. Used this way it is not a duplicate of the EMA check at all; it is the SMC layer rendered as a colour bar.
+
+Two caveats he states himself. "Donchian Trend Ribbon is **quite sensitive**" — on a 1-minute chart it will flip on small breaks, so read it with the timeframe you are actually trading. And "sometimes it may turn red colour if let's say confirmative", i.e. the flip can lag or arrive on a marginal break; it is confirmation, not prediction.
+
+**Where it sits on the chart.** On the assembled CKBUSDT 1-minute chart it is the **solid colour bar along the bottom**, under the volume pane — not an overlay on price. The same bar is visible under the A8USDT 5-minute charts in the trade-call case ([06 §6](06-case-studies.md)), where it runs green through the pump and flips red around midday, which is when that trend actually ended.
 
 ### 4.2 Liquidation Heatmap (清算热力图)
 

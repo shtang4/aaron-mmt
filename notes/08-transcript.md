@@ -462,3 +462,45 @@ Jasper Sia's answer, repeated and extended by Aaron with a door analogy: a hollo
 **MACD cannot see volume.** It is `EMA(fast) − EMA(slow)`, a signal EMA of that, and the difference between them. Price only. What hollow actually encodes is that the bar is **smaller than the previous one** — the histogram shrinking back toward zero.
 
 Their observation is still a good one (a red bar starts shrinking exactly when buyers push back, and that usually does show as buying volume), but the arrow is reversed. And the correction pays: **the first hollow bar after a run of solid bars is the Module 4 climax-exit trigger, visible at a glance** instead of requiring a bar-height comparison. [03 §2.6b](03-entry-direction.md).
+
+## Part 14: SMC and the Donchian ribbon, spoken
+
+Two slides: the assembled **CKBUSDT 1-minute** chart with the whole stack on it (SMC labels HH/HL/BOS/CHoCH/EQL/FVG, pink supply and blue demand zones, the 5 EMAs, MACD, volume, and the Donchian Trend Ribbon as a colour bar along the bottom), and the A8USDT 5-minute Heikin-Ashi chart from the trade call with the same ribbon underneath. Written up at [03 §3.2a](03-entry-direction.md) and [03 §4.1](03-entry-direction.md).
+
+### SMC in metaphors
+
+Pink on top is supply, "the selling power". Light blue at the bottom is demand, "the buying power". Both are "the **liquidity areas** where they usually use to wick come down, or wick back whatever liquidity there". A low is "your **floor**", a high "your **ceiling**"; weak means "**breakable, fragile**", strong means it holds. An FVG is a gap price surged past that "**needs to be filled up** — they will come back to hunt back whatever volume over there".
+
+**The line to keep:**
+
+> "**CHoCH you imagine CHoCH equivalent to retracement. BOS means totally change of trend.**" And: "CHoCH usually is play like retracement, is change of character only **but not confirmation**."
+
+CHoCH warns, BOS confirms. That is the standard sequence, and it is more correct than the slide's own glossary, which these notes had flagged as wrong. The written table is loose; his practice is not.
+
+**The one ordered entry trigger SMC gives:**
+
+> "If equal high, you have to look at **CHoCH and then follow by BOS**. If all these is fulfilled, this thing dump to go down very hard. Equal low ... strong low, you see equal low, follow by BOS. **This thing will going to pump like crazy.**"
+
+Equal lows → CHoCH → BOS = long. Equal highs → CHoCH → BOS = short. All three, in order. It pairs with [03 §2.7b](03-entry-direction.md): the sweep of the equal level is the abnormal-volume bar with the long wick, and CHoCH-then-BOS is what says the sweep was the turn.
+
+**Discount the pitch**: "you can achieve cut loss, you can be awake, be liquidated, you even can TP whatever you want." No structural read prevents liquidation. The stop and the leverage do.
+
+### The Donchian ribbon is a BOS proxy
+
+The best thing said about any of the add-on tools:
+
+> "It's actually to show you **whether is a retracement or not. If let's say is a retracement, just only form the CHoCH, the colour still remains the same. But if let's say CHoCH form BOS, means changing trend even though a little bit, it will show change of colour, red** ... But the moment form the BOS — see, this thing confirmatively this will change the colour to green and is uptrend."
+
+Colour holds through a CHoCH-only pullback; colour flips when a BOS confirms. So the ribbon reads the SMC structure for you on a chart where the labels are small and constant — and it only flips on the confirmation, never on the warning. He warns it is "quite sensitive", so on a 1-minute chart expect flips on marginal breaks.
+
+On the A8 case-study charts ([06 §6](06-case-studies.md)) the same bar runs green through the pump and flips red around midday, which is when that trend actually ended.
+
+### The retracement test, in its exact form
+
+The A8 version was about price against EMA 155. This one is about the **order of the lines**:
+
+> "**3 shorter term EMA can always crossing each other. As long as the first three EMA lines are still above the EMA 155 line, you can consider as a retracement only.** Let's say this three lines cross below the green line, and the green line turn to be the fourth line, and subsequently the EMA 255 the last line — all turn upside down, **the 5 EMA lines all upside down, like this totally is a change of trend. You either cut loss or you exit.**"
+
+So the ladder is: fast lines tangling above EMA 155 = noise → three full bodies past EMA 155 = warning → **full fan inversion (255 > 155 > 55 > 25 > 9) = confirmation and last exit**.
+
+**And it contradicts a rule already in the SOP.** Module 1 says "EMA 9 crossing back through EMA 25 → exit, no questions". Here, the fast lines crossing each other is explicitly *not* a signal. Taken literally on a full position, the Module 1 rule stops you out of every ordinary pullback — the exact pullbacks the five-line set exists to let you buy. Reconciliation now carried in [03 §2.2](03-entry-direction.md) and the SOP: **the EMA 9 × 25 cross-back governs the runner only**, after the climax partial with the stop already at entry. The main position is governed by the pivot and the fan.
