@@ -109,7 +109,7 @@ So the spoken minimum is a function of the trader's self-declared level: beginne
 
 ## Part 4: the BTC worked example, and the depth rule confirmed
 
-_Trade-level write-up: [06 §3](06-case-studies.md). The Jasper Sia Q&A on this batch of slides: [06 §10.1](06-case-studies.md)._
+_Trade-level write-up: [06 §3](06-case-studies.md). The Jasper Sia Q&A on this batch of slides: [06 §11.1](06-case-studies.md)._
 
 ### The depth rule is NOT a misspeak. His own screenshot proves it.
 
@@ -330,3 +330,31 @@ The first rule in the course for **when a fall stops being a dip**: losing one, 
 > "**Late trade is a loss trade. So scalping isn't a copy-paste game.** Pump enter, here and some money still enter and this one manage to short it. She manage to short it from here all the way down. So this red color is the stop loss, this is the entry. So short all the way. Even though short come down here manage to gained that much more profit."
 
 The short is the only trade in the case shown **with its stop drawn**, and it is the one taken against the crowd: entry 0.22516, exit 0.14787, +343.27% at 10×, while the late longs were buying near the same price. Third appearance of the "late trade" line in the deck, and this one gives the qualifier: the hesitant member who entered late inside the trend made money; the late entries that lost were the ones taken after the trend had turned.
+
+## Part 10: the Jane case study
+
+Full write-up: [06 §7](06-case-studies.md). Spoken over the four "Case study: Beginner" and "Case study: Advance EMA" slides.
+
+### What he says
+
+> "This is our Jane here. She was a beginner before joining ... she joined the masterclass but she still felt that she was still very new. She wanted to learn more, seek more hands-on coaching. We ended up, that time it was **one-on-one coaching**. She is an **engineer working from 9AM to 5PM**. At that time she was a complete beginner. She learned trading from zero. She asked me, 'I'm new, can I learn this?'"
+
+> "Before the structure, she also did random follow or random signal call, constantly overthinking, exhausted from getting stopped out while at work. She got frustrated, not getting profit. Subsequently after learning the full structure, she even mastered better with the **5 EMA sniper entry strategy**, her plans entry **before the candle squeeze**, and less aggression, more precision."
+
+> "**She didn't succeed by increasing leverage, but she succeeded because her entries became precise.** She actually used the strategy that in MMT she learned well. See how much she gained the P&L, 1,000 buck from this LAB recently ... **She also uses this method for stocks. In stocks as well applicable.** Same for those so-called strong coins but lacking momentum — but doable, by using SUI coin. Also gaining very well profit."
+
+> "Whenever, if you learn well the EMA, the right correct EMA, seriously **you can actually pump your profit up to 11,000 percent ROI. It's just a matter of time only.** See how well you should enter at that time."
+
+### What is worth keeping
+
+- **The beginner's real problem is named precisely: "exhausted from getting stopped out while at work."** It is an attention problem, not a discipline problem, and it is the best argument in the deck for the resting stop, the resting TP and the level chosen in advance. A 9-to-5 trader cannot babysit a 1-minute chart.
+- **"Plans entries before the candle screams"** (slide) / "before the candle squeeze" (spoken) is SPE and the limit-order default restated in words a beginner will act on.
+- **One-to-one coaching is what closed the gap**, by his own account — not a new indicator. The masterclass alone left her feeling new.
+
+### What the slide's own evidence contradicts
+
+The headline says she did not succeed by increasing leverage. The cards on that same slide are **10×, 20×, 20×** with two of them on **cross margin**, and the next slide is **50×**. Margin sizes are 812 and 2,004 USDT, against an SSWB stake of $20 and a "never above 10% of wallet" rule. Cross margin is on the course's own "never" list.
+
+And **the ZETA card is the ZETA case study**: entry 0.8570, current 2.8530, the exact prices from Module 3 and Module 5, now with the leverage attached — **50×, +11,339.67%**. The "don't take profit too early" lesson was taught over a 50× position held about two weeks. See [05 §2.3](05-risk-and-hedging.md), now corrected with that fact.
+
+"Learn the EMA well and you can pump your profit up to 11,000 percent ROI" attributes to the EMA what the leverage did: 233% of price × 50 = the card. At the taught 5–10× the same read returns roughly 1,150% to 2,300%, which is still exceptional and does not need a position a 2% wick can end.

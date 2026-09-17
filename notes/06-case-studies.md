@@ -13,15 +13,16 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 | **10000LADYSUSDT** | Module 2, the screener | A complete 4/4 long, with the depth rule stated aloud | None. Setup only | §4 below |
 | **MAVIAUSDT** | Trade-call case study | The same call taken 34 hours apart; both directions traded on the chop | Cards from +74% to +2,814% ROI | §5 below |
 | **A8USDT** | Trade-call case study | A call with a clock on it; limit versus market; hold with no TP; then the reverse trade | +706%, +224%, and +343% short | §6 below |
-| **RADUSDT** | Module 6 slides | Multi-timeframe EMA alignment, all five lines, four frames | None. Screen reading only | §7 below |
-| ZETAUSDT | Modules 3 and 5 | SPE entry at an EMA; then "took profit too early" | Entry 0.8570, exit 2.8530, about +233% | [03 §2.3](03-entry-direction.md), [05 §2.3](05-risk-and-hedging.md) |
+| **Jane (beginner)** | Case study: Beginner / Advance EMA | A student's progression, before and after structure | +1,132 USDT, +483%, +966%, +11,339% — all at 10× to 50×, two cross | §7 below |
+| **RADUSDT** | Module 6 slides | Multi-timeframe EMA alignment, all five lines, four frames | None. Screen reading only | §8 below |
+| ZETAUSDT | Modules 3 and 5, and the Jane case | SPE entry at an EMA; then "took profit too early". **Jane's trade, at 50×** | Entry 0.8570, exit 2.8530: +233% of price, **+11,339.67% ROI** | §7.2 below, [03 §2.3](03-entry-direction.md), [05 §2.3](05-risk-and-hedging.md) |
 | RAVEUSDT | Module 5 | Heel / crash-bottom entry on a liquidation cluster | +277% ROI on a $150-style stake | [05 §3.9](05-risk-and-hedging.md) |
 | BMTUSDT | Module 5 | A chat trade call; "late trade is a losing trade" | +3,736% ROI at cross 15× | [05 §3.10](05-risk-and-hedging.md) |
 | GMXUSDT | Module 5 | Held a loser to breakeven, taught as "hedging" | Closed at entry on a wick, zero | [05 §4.8](05-risk-and-hedging.md) |
 | PEOPLEUSDT | Module 5 | An actual hedge, resolved by closing the loser | Net about +81 USDT | [05 §4.11](05-risk-and-hedging.md) |
 | CARVUSDT, RARE, REEF and others | Module 5 SSWB | Result cards, no method shown | Various, wins only | [05 §3.10](05-risk-and-hedging.md) |
-| AERGOUSDT ("Kpnd") | Module 6 | Uncorrelated pump during a BTC crash | Entry 0.078, +657% ROI at 10× | §10 below |
-| Skipped-D triptych | Module 6 | Schematic failures, one per D | Schematic | §8 below |
+| AERGOUSDT ("Kpnd") | Module 6 | Uncorrelated pump during a BTC crash | Entry 0.078, +657% ROI at 10× | §11 below |
+| Skipped-D triptych | Module 6 | Schematic failures, one per D | Schematic | §9 below |
 
 **What almost all of them have in common:** the three live screener walks (SOMI scan, BTC, 10000LADYS) stop at "setup", and the result cards start at "outcome". The middle, which is execution and the part he says decides everything, is mostly missing. That gap is what the trade journal is for.
 
@@ -303,7 +304,71 @@ This is the third time the phrase appears in the deck ("late trade is a losing t
 - +343.17% and +307.03% in a member's position list at 10:03 are unverified screenshots, as everywhere else in the deck.
 - "4X in < 30 mins ... you can even earn back the fee you paid for PropW X2" is promotion, not method. The referral codes on the cards (53G19B, AKX1BP) are affiliate links.
 
-## 7. RAD: the multi-timeframe check, done on the Bybit app
+## 7. Jane: the beginner case study, and the leverage the slide does not mention
+
+Four slides: **"Case study: Beginner — 'I am new, can I learn this?'"** (two), **"Jane didn't succeed by increasing leverage, she succeeded because her entries became precise"**, and **"Case study: Advance EMA"**. Jane Lim, an engineer working 9 AM to 5 PM, "complete beginner learn trading from zero", coached one-to-one after the masterclass. The first slide is a Zoom recording of the two of them.
+
+This is the course's **progression** case: not a trade, a student. It is also the slide where the taught risk rules and the evidence on screen disagree most sharply, so read the two halves separately.
+
+### 7.1 The claim: before and after
+
+| Before structure | After structure |
+|------------------|-----------------|
+| Following random signals | Mastered the **5-EMA Sniper strategy** |
+| Constantly overthinking | **Plans entries before the candle screams** |
+| **Exhausted from getting stopped out while at work** | Less aggression, more precision |
+
+Spoken: "She got frustrated or not getting profit, and subsequently after learning the full structure she even mastered better with the 5 EMA sniper entry strategy ... **she didn't succeed by increasing leverage, she succeeded because her entries became precise.**"
+
+Three things in that table are worth keeping, and they are the useful part of the slide:
+
+- **"Getting stopped out while at work" is the beginner's real problem**, and it is an execution problem, not a mindset one. A 9-to-5 trader cannot watch a 1-minute chart. Everything the course says about the stop resting before the fill and the Wick Tracker as an unattended backstop exists for exactly this person. It is also the strongest argument in the deck for the two-regime exit rule from A8 (§6.4): you can only "watch and improve the target" when you are actually at the screen.
+- **"Plans entries before the candle screams"** is SPE restated for a beginner: the level is chosen while nothing is happening, and the limit order is resting before the move starts. Same rule as "don't enter as a market order unless some critical condition".
+- **"Less aggression, more precision"** is the intended reading of the whole case. Whether the evidence supports it is section 7.3.
+
+### 7.2 The result cards
+
+| Coin | Platform | Side / leverage | Margin mode | Result | Prices |
+|------|----------|----------------|-------------|--------|--------|
+| **LABUSDT** perp | BTCC | Long **20×** | — | **+1,132.10 USDT** | avg open 18.28419, latest 24.58396 |
+| **SNDKUSDT** perp | (SanDisk, a tokenised stock) | Long **10×** | **Cross** | **+483.08%**, +3,924.998 USDT (ROE +482.82%) | entry 1,142.43, mark 2,208.98. Margin 812.46 USDT, size 3.678, MMR 1.19% |
+| **SUIUSDT** perp | Bitunix, 22 May 2026 01:21 | Long **20×** | **Cross** | **+77.83%**, 1,559.631 USDT | entry 1.0920, close 1.1345 |
+| **SUIUSDT** (open position view) | | Long 20× cross | | +1,522.93 USDT unrealised, **ROI +76.00%** | entry 1.0920, mark 1.1331, **est. liq. 0.6638**, margin 2,003.67 USDT, margin rate 2.39%, TP/SL **1.1350 / 1.0950**, realised PnL **−20.79** |
+| **ALLOUSDT** perp | Bitunix, 29 May 2026 15:21 | Long **20×** | | **+966.92%**, 1,435.97 USDT | entry 0.17879, close 0.26523 |
+| **ZETAUSDT** | Bybit, shared by DM | Long **50×** | | **+11,339.67%** | entry **0.8570**, current **2.8530** |
+
+Two of these are worth pulling out.
+
+**The ZETA card is the ZETA case study, and it is hers.** Entry 0.8570 and 2.8530 are the exact prices on the Module 3 SPE example and the Module 5 "took profit too early" slide ([05 §2.3](05-risk-and-hedging.md)). So the trade these notes had recorded as "about +233%, held roughly two weeks" was run at **50× leverage**. That changes how that slide reads: the lesson "don't take profit too early, hold through the retrace" was taught over a **50× position held for two weeks**, on which a 2% adverse move at any point is a liquidation. The retrace the slide praises her for sitting through (1.90 down to 1.20) was survivable only because she was already 120% of price in front; at any earlier point the same patience would have ended the account.
+
+**SNDK is a stock, and the card is not a stock trade.** He says: "She also use this method for stocks. In stock as well applicable." SNDK is SanDisk, and the card carries the SanDisk logo — but the instrument is **SNDKUSDT perp**, a crypto-exchange perpetual on a tokenised stock, 10× cross, with a maintenance margin and a liquidation price. The claim that the method transfers to equities is not evidenced by this card; what it evidences is that the same perp mechanics are available on a stock ticker. Whether EMA scalping works on a cash equity account, with no leverage and no 24/7 session, is an open question the deck does not answer.
+
+### 7.3 The contradiction on the face of the slide
+
+The headline is **"Jane didn't succeed by increasing leverage."** Every card on that same slide is 10× or 20×, two of them **cross margin**, and the follow-up slide is **50×**.
+
+Against the course's own taught rules:
+
+| Taught rule | Source | What the cards show |
+|-------------|--------|--------------------|
+| **Isolated margin, always.** "Cross margin: liquidation takes the whole wallet." | Module 5 risk, SOP "Never" list | SNDK **cross**, SUI **cross** |
+| Leverage **5× to 10×** | Module 5, SOP §4 | 20×, 20×, 20×, 50× |
+| Margin per trade $20 to learn, then 1% of wallet, never above 10% | Module 5 SSWB | **812 USDT** on SNDK, **2,004 USDT** on SUI |
+| Loss at the stop never above 1–2% of equity | Handouts, both of them | Only the SUI position shows a stop at all (SL 1.0950 against entry 1.0920) |
+| Nothing held past 24 hours, "we are not doing swing trades" | Golden Rule 6 | ZETA held about two weeks |
+
+So the honest reading of this case is the opposite of its caption: **the visible difference between before and after is not precision, it is size and leverage.** Precision may well be real — the stop on the SUI position sits 0.27% below entry, which at 20× is a 5.5% ROI stop and is genuinely tight, exactly what the beginner tier prescribes — but nothing on the slide isolates it from the leverage. A student who copies the cards rather than the caption will take 20× cross positions with four-figure margin, which is the exact trade the SOMI blind-copier lost on (§2.4).
+
+The one number on these slides that does support the caption is that **SUI stop**: entry 1.0920, SL 1.0950 on a long... which is *above* entry, i.e. a stop already moved to lock profit, with TP at 1.1350. That is the Module 4 runner rule executed correctly — take the climax, move the stop past entry, let the rest run. It is the only piece of visible execution in the whole case, and it is done by the book.
+
+### 7.4 What to take from it
+
+- **The beginner's binding constraint is attention, not knowledge.** "Exhausted from getting stopped out while at work" is the problem the method has to solve; a resting stop, a resting TP and a level planned in advance are the solution the course offers.
+- **Plan the entry before the move.** "Before the candle screams" is the same instruction as SPE and the limit-order default, in the words a beginner will remember.
+- **One-to-one coaching is what the slide is selling.** The case exists to answer "I am new, can I learn this?" with "yes, with structure and coaching". That is a marketing function, which does not make it false, but it means the cards were chosen and the losses were not shown.
+- **Discount the ROI percentages entirely.** +11,339.67% is a 233% price move at 50×. The multiplier is leverage, not skill. His own line — "if you learn well the EMA, seriously you can actually pump your profit up to 11,000 percent ROI, it just a matter of time only" — attributes to the EMA what the leverage did, and it is the single most misleading sentence in the material so far. Run the taught 5–10× isolated and the same read returns roughly 1,150% to 2,300% on that trade, which is still an exceptional outcome and does not require a position that a 2% wick can end.
+
+## 8. RAD: the multi-timeframe check, done on the Bybit app
 
 Four Bybit screenshots of RADUSDT side by side (+22% on the day, last price about 2.10, 24h range 1.705 to 2.115), one per timeframe, each with the five EMAs, MACD (8, 13, 9) and Volume (MA5, MA10) visible. Two of the four have the **OI Data** tab selected and one the **Contract** (funding) tab. This is Module 2's Coin Trend Screener, check 1 (EMA on every timeframe) with checks 2 and 3 (open interest, funding) being read on the same screen.
 
@@ -323,11 +388,11 @@ What the same screenshots also show:
 - The 15-minute chart has a near-vertical spike from about 1.49 to 2.115 in a few candles, at roughly 11:30, and the screenshot is taken at 04:43 the next day with price flat at 2.11. The alignment is perfect *because* the spike just happened. A long taken here is a long after a +40% move, into what the seahorse slide (Module 3 section 6) calls the beak. The screener says the trend is up; the seahorse rule says wait for the pullback. Both are right, and SPE (Module 4) is how they are reconciled: the entry is a limit order at an EMA below current price, not a market buy at 2.11.
 - The four screenshots have different timestamps (20:20, 04:43, 19:55, 19:49). They were assembled, not taken at one moment.
 
-## 8. "What happens if you skipped one D?"
+## 9. "What happens if you skipped one D?"
 
 Three slides, one per D. Each has a schematic chart with **EMA 50 and EMA 5** (the generic pair from the shared deck, not the MMT five) and a medical one-liner.
 
-### 8.1 Skip Diagnose: "What the chart was saying"
+### 9.1 Skip Diagnose: "What the chart was saying"
 
 "The signal came in. You entered. No chart check."
 
@@ -339,7 +404,7 @@ Three slides, one per D. Each has a schematic chart with **EMA 50 and EMA 5** (t
 
 The chart: a downtrend, death cross marked, entry marked several candles *after* the cross, price continuing down. The failure is entering long on a "signal" (a trade call, a chat message) without reading direction from the chart. The fix is Module 3: EMA 155 three-candle rule, Heikin-Ashi run, Donchian alignment, all before any entry.
 
-### 8.2 Skip Dose: "Right trade. Wrong size. Could not hold."
+### 9.2 Skip Dose: "Right trade. Wrong size. Could not hold."
 
 "EMA confirmed. Entry valid. But you went in too heavy."
 
@@ -350,7 +415,7 @@ The chart: a downtrend, death cross marked, entry marked several candles *after*
 
 The chart: uptrend above EMA 50, valid entry, a three-candle red dip, "panic cut" at the dip low, then the run resumes. This is the ZETA slide from Module 5 section 2.3 in schematic form. The fix is Module 5 section 3.6: stake small enough that a 3% pullback at your leverage is a tolerable ROI swing. At 20× a 3% dip is −60% ROI; at 5× it is −15%. The "felt like a disaster" is a leverage choice, not a personality flaw.
 
-### 8.3 Skip Discharge: "Won the trade. No exit plan. Gave it all back."
+### 9.3 Skip Discharge: "Won the trade. No exit plan. Gave it all back."
 
 "Perfect entry. Correct dose. No exit plan."
 
@@ -365,7 +430,7 @@ The chart: uptrend, entry, "profit window" at the top with "TP (never set)" as a
 - The slide names the **EMA exit signal** as the discharge condition that fired and was ignored. So the Module 1 cross-back rule is still part of the plan in this deck, as the backstop. Module 4's climax exit (volume maximal, MACD peak, PTP 75%) would have fired earlier, at the "profit window", and is the primary.
 - "Held and hoped" is the exact behaviour the GMX hedging case study in Module 5 section 4.8 presented as the method. This slide calls it skipping Discharge.
 
-## 9. The three failures, mapped to the course's own examples
+## 10. The three failures, mapped to the course's own examples
 
 | Skipped D | Failure slide | Course example that did the same thing | Where |
 |-----------|--------------|----------------------------------------|-------|
@@ -375,15 +440,15 @@ The chart: uptrend, entry, "profit window" at the top with "TP (never set)" as a
 
 The 3D review slides are the right lens. Applied to the deck's own case studies, they mark most of the "advanced" material in Module 5 as a skipped D.
 
-## 10. Market uncertainty: "Trade scam coin, no BTC correlation"
+## 11. Market uncertainty: "Trade scam coin, no BTC correlation"
 
-### 10.1 The strategy slide
+### 11.1 The strategy slide
 
 "Market Uncertainty. What's the strategy?" Answer on the slide: **"Trade Scam Coin"** with a starburst reading **"No BTC Correlation"**. The backdrop is a Coin Bureau video ("99.99% of crypto will go to zero, what to do now"), Chinese overlay "99.99% 多数是 Shit Coin!", over a CoinMarketCap page showing Fear and Greed at 24 (extreme fear).
 
 The claim: when BTC is falling and the market is fearful, the trade is not BTC or the majors. It is the small coins that move on their own drivers, chiefly exchange-driven pumps, and therefore do not fall with BTC. The course calls them scam coins or shit coins without irony. This is the "shit coin" list from Module 2 section 1.3 in use, with the direction flipped to long.
 
-### 10.2 Case study: "Kpnd", AERGO on Black Monday
+### 11.2 Case study: "Kpnd", AERGO on Black Monday
 
 "Kpnd" is **Korean pump and dump** (confirmed from the session). AERGO is a Korean project and the shape of the trade is a Korean-exchange pump.
 
@@ -399,7 +464,7 @@ Checks: 0.07797 → 0.08402 is +7.8% on price, ×10 = 78%, card says 76.82%; 0.0
 
 What the timestamps say: the first card is from about 09:49 on 7 April and the second from 10:22 on 8 April. The position was held for **over 24 hours**. The chat caption's "> 30 mins" is the course conceding that this was not a scalp. Golden Rule 6, do not hold, was not followed, and the deck labels the trade a success.
 
-### 10.3 What is right and what is dangerous in this idea
+### 11.3 What is right and what is dangerous in this idea
 
 **Right:** correlation to BTC is the main risk in an altcoin book during a crash, and coins moving on an idiosyncratic driver (a listing, a regional pump) can decouple for hours or days. The Module 2 sector and heatmap scan is exactly how you find them: when the heatmap is mostly red, the few strong green tiles are the candidates. AERGO was one on 7 April.
 
@@ -410,11 +475,11 @@ What the timestamps say: the first card is from about 09:49 on 7 April and the s
 - **Fear and Greed at 24 is the reverse of the Module 2 rule.** Module 2 said greed is a bias toward long but not a signal. Extreme fear is a bias toward short, or toward staying out. The slide uses extreme fear as the setup for a long, on the logic that the long is in a coin that ignores the index. That is coherent only if the coin really is uncorrelated, which is the point above.
 - **The "scam coin" framing has a cost the slides never state.** Delistings, liquidity vanishing overnight, and exchanges halting trading are all outcomes on coins the course itself calls scams. A stop does not protect against a halt.
 
-## 11. Q&A
+## 12. Q&A
 
 The deck has no dedicated Q&A section; questions were answered as they came up, and one was promoted onto a slide.
 
-### 11.1 "With 4/4 confirmed short, do we still need MACD before entering?"
+### 12.1 "With 4/4 confirmed short, do we still need MACD before entering?"
 
 Asked by a member (Joe) in the community chat, with a follow-up: which timeframe should we observe before entering? The slide shows the answer from another member, **Jasper Sia**, dated 21 April 2024, and the course endorses it by putting it on a slide:
 
@@ -434,11 +499,11 @@ That is the same structure as the full method (screener → direction → SPE �
 
 The member's question about timeframe was not answered on the slide. From the rest of the course the answer is: direction on the higher frames, entry on the 1-minute.
 
-### 11.2 Everything else
+### 12.2 Everything else
 
 No other questions were captured on slides. Anything else was answered verbally and is only in the transcript ([08](08-transcript.md)).
 
-## 12. Closing slide: "Synchronization"
+## 13. Closing slide: "Synchronization"
 
 "Resonance at the SAME frequency, attraction of the SAME nature" (同频共振，同质相吸). A mindset close, matching the "90% mindset" Golden Rule and the Know / Enlighten / Do pyramid from Module 0. No trading content.
 

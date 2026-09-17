@@ -13,7 +13,7 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 | 3 | [notes/03-entry-direction.md](notes/03-entry-direction.md) | Heikin-Ashi, 3 main indicators, SMC, new indicators, trend lines / S&R / tunnel, seahorse pattern |
 | 4 | [notes/04-sniper-entry-exit.md](notes/04-sniper-entry-exit.md) | MMT New TP, Sniper Price Entry (SPE), Wick Tracker |
 | 5 | [notes/05-risk-and-hedging.md](notes/05-risk-and-hedging.md) | Risk management, MMT Hedging, MMT Golden Rules |
-| 6 | [notes/06-case-studies.md](notes/06-case-studies.md) | Every case study in the course, indexed: SOMI, BTC, 10000LADYS, MAVIA, A8, RAD, ZETA, RAVE, BMT, GMX, PEOPLE, AERGO, the skipped-D triptych, and the Q&A |
+| 6 | [notes/06-case-studies.md](notes/06-case-studies.md) | Every case study in the course, indexed: SOMI, BTC, 10000LADYS, MAVIA, A8, Jane, RAD, ZETA, RAVE, BMT, GMX, PEOPLE, AERGO, the skipped-D triptych, and the Q&A |
 | 7 | [notes/07-handouts.md](notes/07-handouts.md) | The three PDF handouts: screener cheat sheet, risk checklist, trade call guide. Scorecard, funding thresholds, stop and 1–2% rules; where they contradict the slides. |
 | 8 | [notes/08-transcript.md](notes/08-transcript.md) | What the spoken session adds or changes, filed by module as transcript parts arrive. |
 | 99 | [notes/99-open-questions.md](notes/99-open-questions.md) | Every question the deck leaves open, grouped by what it would change |
