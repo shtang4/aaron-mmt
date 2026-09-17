@@ -44,6 +44,31 @@ What the slide is actually demonstrating: the coins to look at are the ones **al
 
 Practical inference: the course trades **USDT perpetual futures**, since that is the tab selected. That is where shorting and leverage are available, which the next slide assumes.
 
+#### "Who pump?" — the exchange-volume check that identifies a Kpnd
+
+From the ZETA trade call of 23 March 2025 ([06 §8.4](06-case-studies.md)), and it is the one place the course gives a method for spotting a **Korean pump and dump** rather than just naming one.
+
+Before taking a coin that is already moving, open its **exchange volume breakdown** (Coingecko or CoinMarketCap → the coin → Markets tab) and look at the share each venue holds. On ZETA that morning:
+
+| Exchange | Volume | Share |
+|---|---|---|
+| **Upbit** | $288,992,286 | **56.84%** |
+| Gate.io | $72,162,678 | 14.19% |
+| OKX | $30,300,856 | 5.96% |
+| MEXC | $20,348,836 | 4.00% |
+| KuCoin | $5,954,266 | 1.17% |
+| Bitget | $4,422,944 | 0.87% |
+| Crypto.com | $393,492 | 0.08% |
+
+**Upbit is Korean, and it holds more than half the volume.** That is the "Kpnd" of the AERGO case ([06 §12.2](06-case-studies.md)) made visible before the fact rather than labelled after it.
+
+Working rule: **one venue above roughly half the total volume means the move is that venue's retail flow.** Two things follow, and they point in opposite directions — which is why it is a read rather than a filter:
+
+- It is **real while that venue is awake**. There is genuine money behind it, and the pump can run further than a thin book would allow.
+- It **will not survive that venue going quiet**. The move has no support from the rest of the market, so it unwinds on the local session's schedule rather than on a chart signal.
+
+So a single-venue pump is tradeable in its own session and is not a swing. It also raises the value of the liquidity check in [03 §4.2c](03-entry-direction.md), because the destination is what ends the move, not a level.
+
 ### 1.3 Coin category: strong coins vs shit coins
 
 Two lists, transcribed verbatim from the slide.

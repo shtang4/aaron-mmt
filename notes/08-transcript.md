@@ -109,7 +109,7 @@ So the spoken minimum is a function of the trader's self-declared level: beginne
 
 ## Part 4: the BTC worked example, and the depth rule confirmed
 
-_Trade-level write-up: [06 §3](06-case-studies.md). The Jasper Sia Q&A on this batch of slides: [06 §11.1](06-case-studies.md)._
+_Trade-level write-up: [06 §3](06-case-studies.md). The Jasper Sia Q&A on this batch of slides: [06 §12.1](06-case-studies.md)._
 
 ### The depth rule is NOT a misspeak. His own screenshot proves it.
 
@@ -558,3 +558,35 @@ Price leaves Kuala Lumpur. The 84M band is Penang to the north — the destinati
 The consequence, and it is why the heatmap check sits in Dose rather than Diagnose: **a cluster between you and your stop will be swept before the move you are waiting for.** Either the stop goes beyond it or the leverage comes down until it does. And a sweep into a near cluster is not automatically a trend change — on this model it is the detour.
 
 His language throughout is "**grab this liquidity**", "**come and hunt this liquidity**" — the magnet model, stated properly. The "support and resistance" wording in [03 §4.2b](03-entry-direction.md) is loose vocabulary on the slides, not the model he actually teaches.
+
+## Part 16: the ZETA trade call of 23 March 2025 — the liquidity flip
+
+Full write-up: [06 §8](06-case-studies.md). **A different trade from the ZETA in §7.2** — that was February 2024 at 0.8570, this is March 2025 around 0.28 to 0.40, and it is a same-day scalp.
+
+### The rule, and it is the best one in the course
+
+> "Obviously, the liquidity here — **no more liquidity here. So they have to go down and hunt the liquidity** like previously I show. **If finish liquidity here already** ... then they have to come down to hunt this. So now only you enter to long, obviously you lose."
+
+> "You have to see the clear picture. **Heat map — they finish the liquidity here already. Now they are heading down, they're heading this liquidity, obviously will come down all the way hunt here.**"
+
+**A cluster is consumed when price reaches it, and the next destination is the cluster on the other side.** Direction flips with the destination, not with a chart pattern. It completes the KL-to-Penang model from part 15b: the car has arrived in Penang, so the next trip is south. It is checkable on the heatmap in seconds, and it is the first answer in the deck to "how do I know the move is over" that does not require reading a candle. Carried into [03 §4.2c](03-entry-direction.md) and the SOP.
+
+The same logic produced **a long at 9:32 and a short at 11:44 on one coin in one morning.**
+
+### What copying the call late costs
+
+> "You thought you enter long, you will enter here, stop loss here and TP here. **This one dump, you cut your stop loss.** Never mind, just say I'll follow Dr Aaron long — he put enter here, he put a TP here and stop loss here. **Stop loss here again. You enter and still losing.**"
+
+Not one missed trade — **two consecutive stop-outs**, because the entry, target and stop were all drawn for a destination that no longer exists. Three "LOSER" markers on the chart, all late longs. First time the deck shows the mechanism behind "late trade is a lost trade" rather than asserting it.
+
+### "Who pump?" — a real new tool
+
+The exchange-volume breakdown, and on ZETA that morning **Upbit held 56.84% of all volume**. Upbit is Korean: this is the "Kpnd" of the AERGO case, detected before the fact instead of labelled after it. One venue above roughly half the volume means the move is that venue's retail flow — real while it is awake, gone when it sleeps. Written up at [02 §1.2](02-coin-selection.md).
+
+The call itself read **"Look for LONG Retracement!!"**, not "buy now" — the limit-on-pullback default again.
+
+### The criticism, and one ordering problem
+
+The critics at 12:38 and 12:43 were commenting three hours after a window that had already paid, and on direction they were late. But "**FR has no indication it will pump. It's only a hope to catch it early**" is a fair objection at 9:32 — funding says nothing about a pump that has not started, and what actually carried the trade was the news and the heatmap. And the member who said "**I wait for the FR to reset, sometimes the coin drop then I short**" is describing the same insight as the flip rule by another route: after a pump, funding is heavily positive, longs pay, and the unwind coincides with the run at the lower cluster.
+
+**Note the timestamps on his own evidence.** The heatmap screenshots presented as the reason for the call are stamped **10:40 and 10:41** — after the 9:32 call and after the 10:32 long window closed. He may well have looked earlier; as presented, the evidence post-dates the trade it justifies. The rule in §8.2 stands on its own merits, but this slide *demonstrates* it rather than documenting the decision.

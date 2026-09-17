@@ -620,6 +620,26 @@ Price is a vehicle leaving Kuala Lumpur. The 84M cluster is **Penang, north — 
 
 **The trading consequence, which is the point of the whole tool:** if there is a cluster between you and your stop, expect it to be swept *before* the move you are waiting for. That is why the heatmap check belongs in Dose, before the stop is placed — either the stop sits beyond the nearer cluster, or the leverage comes down until it does. And a sweep down into a cluster below is not automatically a trend change; on this model it is the detour, and the destination is still the big band.
 
+**The flip: a consumed cluster reverses the destination.** The ZETA trade call of 23 March 2025 ([06 §8.2](06-case-studies.md)) completes the route model, and it is the most usable rule in the course:
+
+> "Obviously, the liquidity here — **no more liquidity here. So they have to go down and hunt the liquidity** ... **If finish liquidity here already** ... then they have to come down to hunt this. So now only you enter to long, obviously you lose."
+
+Once price reaches a cluster, that cluster is **consumed**: the positions resting there have been force-closed and the liquidity is gone. The next destination is therefore the cluster on the **other** side, and the tradeable direction flips with it. In the KL analogy: the car has arrived in Penang, so the next journey is south.
+
+| Heatmap state | Read |
+|---|---|
+| Large cluster above, not yet reached | Long is the trade. The destination is above |
+| That cluster has been reached and the band is gone | **The long is finished.** The remaining cluster below is now the destination |
+| Clusters both sides, neither touched | No directional edge from this tool. Use the other checks |
+
+Three working consequences:
+
+1. **Re-read the heatmap before every re-entry**, not once at the start of the session. The band you aimed at an hour ago may no longer exist.
+2. **A consumed cluster is not a level to retry.** It is an emptied destination, not resistance that might give way on the second attempt.
+3. It gives a **cause for the patterns**: a double top forms because the liquidity above was taken and there is nothing left to go for. The heatmap shows it before the second peak does.
+
+This is also why the check belongs at re-entry as well as at the stop. On ZETA the same reasoning produced a long at 9:32 and a short at 11:44 on one coin in one morning.
+
 Note also that his own language here is the magnet model, not the support model: **"grab this liquidity", "come and hunt this liquidity".** The vocabulary problem in 4.2b is confined to the word "support"; the mental model he actually teaches is correct.
 
 ### 4.2b "Support and resistance" is the wrong word, and it matters
