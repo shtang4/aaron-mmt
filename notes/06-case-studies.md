@@ -8,7 +8,7 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 
 | Coin | Taught in | What it demonstrates | Outcome shown | Full write-up |
 |------|-----------|---------------------|---------------|---------------|
-| **SOMI** | Module 2, the Bybit scan | How to pick the candidate: top of the heatmap, top of the 24h gainers | None. Candidate only | §2 below |
+| **SOMI** | Module 2 scan **and** the 1 Oct 2025 live trade call | The whole arc: scan → call → two members, opposite results | **+554% and −52%.** The only loss in the deck | §2 below |
 | **BTCUSDT** | Module 2, the screener | The four checks walked end to end; majority-vote timeframes | None. Screen reading only | §3 below |
 | **10000LADYSUSDT** | Module 2, the screener | A complete 4/4 long, with the depth rule stated aloud | None. Setup only | §4 below |
 | **MAVIAUSDT** | Trade-call case study | The same call taken 34 hours apart; both directions traded on the chop | Cards from +74% to +2,814% ROI | §5 below |
@@ -22,26 +22,94 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 | AERGOUSDT ("Kpnd") | Module 6 | Uncorrelated pump during a BTC crash | Entry 0.078, +657% ROI at 10× | §9 below |
 | Skipped-D triptych | Module 6 | Schematic failures, one per D | Schematic | §7 below |
 
-**What every one of them has in common:** not one shows a stop loss placed before entry, a partial take-profit, or a losing trade. The three live screener walks (SOMI, BTC, 10000LADYS) stop at "setup", and the result cards start at "outcome". The middle, which is execution and the part he says decides everything, is never shown end to end. That gap is what the trade journal is for.
+**What almost all of them have in common:** the three live screener walks (SOMI scan, BTC, 10000LADYS) stop at "setup", and the result cards start at "outcome". The middle, which is execution and the part he says decides everything, is mostly missing. That gap is what the trade journal is for.
 
-## 2. SOMI: how the candidate is chosen
+**The one exception is the SOMI trade call (§2).** It is the only case in the entire course that shows a planned entry, a stop, a target, two members taking the same call, and **a real loss**: −52.49%, −103.42 USDT on a blind copy. It is by some distance the most instructive thing in the deck, and it is worth reading before any of the win cards.
 
-Taught inside the Bybit scan (see [02 §4.4](02-coin-selection.md) for the screen-by-screen mechanics).
+## 2. SOMI: the full arc, from scan to call to one member's loss
+
+This is the same coin and the same event in two places: the Bybit scan in Module 2 found it, and the trade call on it was given in a live session on **1 October 2025**. The +554.50% BTCC card that appears on the Module 2 scan slide is from this trade. Taken together it is the only case in the course with a beginning, a middle and an end, including a loss.
+
+### 2.1 The scan: how the candidate was chosen
+
+Screen-by-screen mechanics in [02 §4.4](02-coin-selection.md).
 
 | Screen | What SOMI showed |
 |--------|-----------------|
 | Heatmap | **+46.56%**, the largest tile by a wide margin |
-| Top Movers → View all → 24h gainers | **+47.39%**, top of the list; next best were CORN +16.29% and DRIFT +20.76% |
+| Top Movers → View all → 24h gainers | **+47.39%**, top of the list; next best CORN +16.29%, DRIFT +20.76% |
 
-His rule, spoken: **"Choose the highest one. If you have no idea, choose the highest one; if not, then the second, the third accordingly."**
+His rule, spoken: **"Choose the highest one. If you have no idea, choose the highest one; if not, then the second, the third accordingly."** The scan is a ranking, not a shortlist. A top gainer is "a potential coin to further analyse", never a trade, and everything that protects you from buying a 47% day is downstream.
 
-What this case actually teaches:
+### 2.2 The trade call, 1 Oct 2025 9:14 PM
 
-- The scan is a **ranking**, not a shortlist. You take the top of the ranking and then qualify it.
-- A top gainer is "a potential coin to further analyse", never a trade. Nothing about the scan tells you direction, entry or size.
-- The danger it creates is obvious and unaddressed on the slide: you are being pointed at a coin that has already moved 47% today. Every protection against buying that top is downstream, in the EMA 155 rule, the SPE pullback and the stop.
+Given in a Future Trends live trading session, posted into the session chat:
 
-The slide then shows a BTCC share card for SOMI, Open Long Perp 50×, **+554.50%**, average open 0.9901, latest 1.0999. The price move is +11.1%; the rest is leverage. It is a different exchange's promotional card with a referral code on it, not a demonstration of the method.
+> **SOMI: 15m (scalp) long**
+> Ent: 1.0059 · SL: 0.9551 · TP1: 1.1863 · TP2: 1.1425
+
+On his TradingView position tool, SOMIUSDT perpetual 15-minute:
+
+| | Value |
+|-|-------|
+| Entry | 1.0059 |
+| Stop | 0.9551, **4.82% below entry** |
+| Target | 1.1804 to 1.1863, **+17.9%** |
+| **Risk / reward** | **3.72** |
+| Quantity on the tool | 412.371 |
+
+This is the only fully specified trade plan in the course: entry, stop, two targets and a reward-to-risk ratio, written before the event. Note the ordering oddity, TP1 above TP2; most likely TP2 is the partial and TP1 the runner's target, but the chat as shown lists them the other way round.
+
+### 2.3 What actually happened
+
+- Price rose from the call at about 1.00 to a high of roughly **1.1147**, which is **+10.8%**, about 60% of the way to TP1.
+- **TP1 at 1.1863 was never reached.**
+- Around midnight it turned and fell through the entry, through the stop, and kept going to about **0.77** by 4 AM.
+
+Annotations on his chart: "1 Oct 9:14PM Trade Call Analysis" at the entry, "1 Oct before 12AM Adjusted Take Profit" at the top, "2 Oct after 12AM Close Trade" on the way down. A yellow **LQ** line sits at 1.0713.
+
+### 2.4 Same call, two results
+
+The slide puts them side by side, labelled **"Blind Copy"** and **"3D Method (GPS)"**:
+
+| | Blind copy | 3D method |
+|-|-----------|-----------|
+| Exchange, leverage | Bitunix, long 10× | BTCC, long perp 50× |
+| Entry | 1.0032 | 0.9901 |
+| Exit | avg closing **0.9475** | 1.0999 |
+| Result | **−52.49%, −103.42 USDT** | **+554.50%** |
+| Card caption | "A series of unfortunate trades." | — |
+
+**Read the losing card carefully, because it is the most useful number in the course.** The blind copier entered at essentially the called price and closed at 0.9475, which is just below the called stop at 0.9551. In other words **they did take the stop, and the stop still cost them half their margin**, because a 5% price stop at 10× leverage is a 50% ROI loss. That is the ROI-versus-price conversion from Module 5 §3.2 landing on a real person.
+
+The winner did two things differently, and he names both on the slide:
+
+- **"Adapt Entry: 5 EMA and market price action."** She entered at 0.9901, below the called 1.0059, on a pullback to an EMA rather than at the call price.
+- **"Adapt Exit: liquidity and market price action."** She took profit near 1.0999, before midnight, at the liquidity level rather than waiting for TP1.
+
+### 2.5 What he says, and what it costs the rest of the course
+
+- **"The signal is only an alert. You need technical to win. Trade the market reaction, not just follow a signal."**
+- **"Most of the time, it never hits the TP. Every time you set the so-called TP, it never reaches, because a lot of components and reasons, like 12 AM already, some manipulation will happen."**
+- **"If you do not monitor, this will happen to you."**
+- **"For a scalper, the TP sometimes is an art. It is not a definite setting there. Enter, set stop loss, set the TP and walk away: that is swing trade. We are scalping."**
+
+Those four lines are a direct contradiction of two things taught earlier in the same course:
+
+| Taught earlier | Said here |
+|---|---|
+| Module 1 Discharge: "Take profit: nearest resistance. **Set it first.**" Written plan before entry, then honour it. | The TP is "an art, not a definite setting", and setting it and walking away is swing trading. |
+| Module 4 Wick Tracker: "when the wick hits, it automatically self-TPs and closes the trade. **No need monitoring.**" | "If you do not monitor, this will happen to you." |
+
+Both cannot be the rule. The honest reconciliation, and what these notes now carry: **the stop is fixed and mechanical; the target is a plan that you may improve on while watching.** The Wick Tracker still rests as the unattended backstop so a spike fills it while you are away, but the primary exit is the climax rule from Module 4 §2, and around known manipulation times (the three funding settlements, midnight MYT in particular) taking what is there beats waiting for a level that "most of the time never reaches".
+
+That reconciliation is also exactly what the winner did.
+
+### 2.6 What to discount
+
+- 50× on the winning card and 10× on the losing one, against the 5× to 10× the risk module prescribes. At 50× the winner's 11% move became 554%; at 10× the loser's 5.5% move became 52%. The leverage did the amplifying in both directions.
+- Three exchanges again: Bybit for the chart, BTCC for the winner's card, Bitunix for the loser's.
+- We are shown one winner and one loser out of an unknown number of people in that live session.
 
 ## 3. BTCUSDT: the screener walked end to end
 

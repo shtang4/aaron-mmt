@@ -268,3 +268,27 @@ Full write-up: [06 §5](06-case-studies.md). The rules worth lifting out of it:
 - **Chasing is for people who can already read the chart.** "Late trade is a loss trade sometimes. Don't chase, but it's really for beginners. Unless you are intermediate or advanced."
 - A member's take-profit rule, endorsed on the slide: on a manipulative coin **set the target at or above the previous high** rather than modestly. That is the Wick Tracker level arriving from the community.
 - Both directions are tradeable on the same chop: four legs long, short, long, short on a 15-minute Heikin-Ashi chart. "Even the ranging one, by doing scalping, you can earn a very nice amount."
+
+## Part 8: the 5-EMA argument, and the SOMI trade call
+
+Full case write-up: [06 §2](06-case-studies.md).
+
+### Why five EMAs instead of two, quantified
+
+- **"Usually it is two EMA. Actually they are 5 EMAs at once. I am the only one using that."** An originality claim; recorded as his, not verified.
+- The argument is entry count, and he counts it: with two lines "your entry possibility only got 1, 2 and 3 only ... but here you got multiple, 1 2 3 4 5 6 7 8. **You get 8 attempts of opportunity to enter if you miss it.**"
+- So the five-line set is justified as **more chances at the same trade**, not as a better signal. That matches the Module 3 note that the extra entries cluster in the last leg of a move: more attempts is not the same as better attempts, and the stop is what pays for the difference.
+- The five roles, as on the slide: each line can act as support or resistance to the others; all of them are guidance lines for SPE; EMA 155 is the pivot, three full-body candles above it for a long, below for a short.
+
+### The SOMI trade call, and the four lines that change the exit rule
+
+- **"The signal is only an alert. You need technical to win. Trade the market reaction, not just follow a signal."**
+- **"Most of the time, it never hits the TP."** The reasons he gives: "a lot of components and reasons, like 12 AM already, some manipulation will happen."
+- **"If you do not monitor, this will happen to you."**
+- **"For a scalper, the TP sometimes is an art. It is not a definite setting there. Enter, set stop loss, set the TP and walk away: that is swing trade. We are scalping."**
+
+The last two contradict the Wick Tracker slide ("no need monitoring") and the Module 1 Discharge rule ("set it first", then honour the written plan). The reconciliation now carried in these notes and the SOP: **the stop is mechanical and fixed; the target is a plan you may improve on while watching.** The Wick Tracker still rests as the unattended backstop; the primary exit is the climax rule, and near the funding settlements, midnight Malaysian time above all, taking what is there beats waiting for a level that usually is not reached.
+
+### Midnight as a named risk
+
+This is the first time a **clock time** is given as a trading hazard: around 12 AM Malaysian time, "some manipulation will happen". It coincides with one of the three funding settlements from part 3 (8 AM, 4 PM, midnight MYT). Treat the half hour around each settlement as a period to be flat or to have already taken profit, not a period to be waiting on a target.
