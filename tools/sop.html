@@ -97,6 +97,7 @@
         <li><b>EMA 155 rule, on the Heikin-Ashi chart:</b> three consecutive candles with the body <span class="long">above</span> and no lower wick → long only; body <span class="short">below</span> and no upper wick → short only. Nothing else sets direction. Order prices still from real candles.</li>
         <li>Heikin-Ashi run with no trend-side wicks confirms. Dojis or small-body clusters → <b>wait 2–3 candles</b>; same colour after = congestion, trend continues; colour change = the turn.</li>
         <li><b>EMA fan width is trend strength.</b> Bunched lines = weak; spread fan = confirmed. Lines repeatedly crossing back and forth = <b>ranging, skip</b>.</li>
+        <li><b>Retracement test, once you are in.</b> Losing one, two, even three of the fast EMAs is a <b>dip</b>. It is a trend change only when three full-body candles print on the far side of EMA 155. On someone else's EMA set, read the equivalent pivot line — 155 is a role, not a magic number.</li>
         <li>Donchian ribbon solid in the same colour confirms. Mixed → skip.</li>
         <li><b>Seahorse</b> (vertical move done, flat beak, EMAs converging) → stay out.</li>
         <li><b>Hockey stick</b> (slow decline, sharp V, vertical blade): enter only on the golden cross <i>with</i> the EMA 155 three-candle rule. Never buy the blade.</li>
@@ -108,7 +109,7 @@
       <ol>
         <li>TradingView: nearest <b>demand zone</b> below (long) or <b>supply zone</b> above (short), and any FVG. Take the near edge: top of demand, bottom of supply.</li>
         <li>Bybit: <b>EMA 9</b> is the first target; if the zone edge sits deeper, the EMA closest to the edge. That is the price.</li>
-        <li>Rest a <b>limit order</b> there. Re-place it if the EMA moves. Never market-buy the candle that is running. Wait at the lounge.</li>
+        <li>Rest a <b>limit order</b> there. Re-place it if the EMA moves. <b>Limit is the default; a market order needs a reason</b> — "don't enter as a market order unless some critical condition". Never market-buy the candle that is running. Wait at the lounge.</li>
         <li>Correlated alts making the same move at the same minute are <b>one trade</b>. Size the total, not each ticket.</li>
       </ol>
     </section>
@@ -127,6 +128,7 @@
       <h2><span class="n">5</span> Exit plan, both ways <span class="d">Discharge</span></h2>
       <ol>
         <li><b>TP first.</b> Wick Tracker is a Bybit TP trigger at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on <b>Last</b>; set it slightly inside the expected wick so it fills.</li>
+        <li><b>Two regimes, decided by the fan.</b> Fan widening, no two lines crossing → <b>no fixed target needed</b>: ride it on the climax rule and the EMA cross, Wick Tracker resting only as the unattended backstop. Fan flat, bunched or crossing → set the target and take it.</li>
         <li><b>SL</b> from step 4, trigger on Mark, <b>resting before the entry fills</b>. Both in before you look away.</li>
         <li><b>Climax exit:</b> volume bar tallest since entry and ≥ 2× VOLMA 10 (working rule) + MACD histogram at its <b>tallest bar</b>, confirmed when the next bar prints shorter → close <b>75%</b>. Move SL on the runner to entry.</li>
         <li><b>Runner:</b> Hunting SL locks a rising ROI, <code>entry ± entry × ROI ÷ leverage</code>. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.</li>

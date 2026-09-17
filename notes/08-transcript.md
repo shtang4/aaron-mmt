@@ -109,7 +109,7 @@ So the spoken minimum is a function of the trader's self-declared level: beginne
 
 ## Part 4: the BTC worked example, and the depth rule confirmed
 
-_Trade-level write-up: [06 §3](06-case-studies.md). The Jasper Sia Q&A on this batch of slides: [06 §9.1](06-case-studies.md)._
+_Trade-level write-up: [06 §3](06-case-studies.md). The Jasper Sia Q&A on this batch of slides: [06 §10.1](06-case-studies.md)._
 
 ### The depth rule is NOT a misspeak. His own screenshot proves it.
 
@@ -292,3 +292,41 @@ The last two contradict the Wick Tracker slide ("no need monitoring") and the Mo
 ### Midnight as a named risk
 
 This is the first time a **clock time** is given as a trading hazard: around 12 AM Malaysian time, "some manipulation will happen". It coincides with one of the three funding settlements from part 3 (8 AM, 4 PM, midnight MYT). Treat the half hour around each settlement as a period to be flat or to have already taken profit, not a period to be waiting on a target.
+
+## Part 9: the A8 trade call, 16 March 2025
+
+Full case write-up: [06 §6](06-case-studies.md). Spoken over the two "Trade Call — Case Study A8" slides.
+
+### The call, and the order type
+
+> "Case study, I propose at 8:30am for this. I went through some study and **5min triggered**. Then when your limit or buy, with knowledge, you already enter and buy. One of our elite, buy now or limit buy. **Buy now means you enter by market price, limit buy you enter by limit order.** After these 2 days, you definitely know how to set limit order. **Don't enter as a market order unless some critical condition.** So like this already break out, I draw it break out. But our elite hesitated, they never dare enter it then pumping. I think he enters somewhere around here. Usually, eventually earned."
+
+Three things in that paragraph the slides never state:
+
+- **The limit order is the default and market is the exception.** SPE stops being a technique for a particular setup and becomes the way you enter, full stop. The slide's own evidence: the member asking "buy now or limit buy" at 10:37 with price at 0.23861 got filled at **0.23152** — 3% better, which at 10× is 30 points of ROI.
+- **He drew the breakout before entering.** Same as MAVIA: the structure is drawn first, the entry follows it.
+- **Hesitation is a cost, not a disqualification.** The hesitant member still made +224.93%, because the trend was intact. That is the qualifier on "late trade is a loss trade" — see below.
+
+> "Show you the case study immediately because what you learn immediately in the case study is easy for you to understand and absorb."
+
+His stated reason for teaching by live example throughout, which is why the case studies are scattered across all six modules rather than collected in Module 6.
+
+### Hold without a TP while the fan opens
+
+> "With all this opening, you tell me how can it be dumping because all of it is wide opening. So sharing this yeah opening nicely, enter here then pumping up ... Pumping it up and then people also join, pumping up earning very nicely because **by looking at the EMA, the opening is exponentially, never cross yet so means that you can hold very nicely without a TP as well.** So you can see, all not crossing each other. The lines not crossing each other, it's okay."
+
+This is new, and it is an exit rule. The fan-width rule from part 6 said a widening fan confirms the trend on entry; this says the same widening fan is your permission to run a position **without a fixed target**, with the EMA cross as the exit trigger instead. It does not touch the stop, which stays resting. Carried into [04 §2](04-sniper-entry-exit.md) and the SOP as the second of two exit regimes.
+
+### The retracement test
+
+> "Even though you may be doubtful. Okay, when see crossing red death cross, golden cross, death cross, golden cross, death cross, it's all ranging around here. But somehow coming down. **If let's say one line down, two line down, three line down, but not against going below EMA155. It is only a retracement only.** Retrace and then pump back. So EMA155 as I say, full body like this one obviously all full body at least three full body candles above it, it is still considered uptrend. This one even 5 minutes you can see it."
+
+The first rule in the course for **when a fall stops being a dip**: losing one, two or three of the fast EMAs is a retracement; three full-body candles below the pivot line is the trend change. Symmetric with the direction rule, and it is what makes the five-line set's extra entries usable — the fast-line touches are entries while the pivot holds, and not after.
+
+**Note the chart he says this over does not have an EMA 155 on it.** Its lines are 20, 89, 144, 233, 377. He is pointing at EMA 144. "EMA 155" is a role in the fan, not a number; see [06 §6.3](06-case-studies.md) and [03 §2.2](03-entry-direction.md).
+
+### Late trade, and the flip
+
+> "**Late trade is a loss trade. So scalping isn't a copy-paste game.** Pump enter, here and some money still enter and this one manage to short it. She manage to short it from here all the way down. So this red color is the stop loss, this is the entry. So short all the way. Even though short come down here manage to gained that much more profit."
+
+The short is the only trade in the case shown **with its stop drawn**, and it is the one taken against the crowd: entry 0.22516, exit 0.14787, +343.27% at 10×, while the late longs were buying near the same price. Third appearance of the "late trade" line in the deck, and this one gives the qualifier: the hesitant member who entered late inside the trend made money; the late entries that lost were the ones taken after the trend had turned.

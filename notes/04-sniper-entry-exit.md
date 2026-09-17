@@ -32,6 +32,8 @@ SPE is a two-platform confluence entry:
 3. **Bybit** (5-line EMA, Module 3 section 2.2): find the EMA closest to that edge. The entry is a **limit order at that EMA**.
 4. If the EMA sits inside or beyond the zone (above the demand zone for a long), the EMA still wins: the slide's last bullet says the aim can be above the demand zone or below the supply zone when the EMA is there.
 
+**The limit order is the default, not a variant.** From the A8 case study ([06 §6.2](06-case-studies.md)): "Buy now means you enter by market price, limit buy you enter by limit order ... **Don't enter as a market order unless some critical condition.**" The slide's own arithmetic: the member who asked "buy now or limit buy" at a price of 0.23861 was filled at 0.23152, 3.0% better, which at 10× leverage is **30 percentage points of ROI**. A market order is something you have to justify — a breakout you have already drawn, a stop that must go on now — not the normal way in.
+
 So the SMC zone tells you *where* the pullback should end, and the EMA gives the *exact price* to rest the order at. The two are read on different platforms because the SMC indicator is TradingView-only and the trade is placed on Bybit.
 
 ### 1.2 What the slide leaves out
@@ -88,6 +90,20 @@ The Module 4 rule exits **at the climax**, before the pullback, on volume and mo
 | Hard stop (Module 1, Module 5) | Structural level, ROI tier | Whole position, from entry |
 
 The Module 5 ZETA slide ("right trade, but take profit too early?") argued for holding through a retrace. Module 4's own rule would have taken 75% at the first climax on ZETA and left a 25% runner for the eventual tripling. That is a coherent answer to the ZETA slide, and a better one than "hold everything".
+
+### 2.3 The second regime: an opening fan needs no fixed target
+
+From the A8 case study ([06 §6.4](06-case-studies.md)): "by looking at the EMA, the opening is exponentially, never cross yet, so means that **you can hold very nicely without a TP as well.** So you can see, all not crossing each other."
+
+So the course runs **two exit regimes**, and the EMA fan decides which one you are in:
+
+| Fan state | Target | What closes the trade |
+|-----------|--------|----------------------|
+| Fan widening, no two lines crossing | **No fixed TP needed** | The climax rule, then the first EMA cross (9 back through 25). The Wick Tracker still rests as the unattended backstop. |
+| Fan flat, bunched, or lines crossing back and forth | **Set the target** | Wick Tracker level or the ROI target, whichever is nearer. This is also a chart the direction rules say to skip. |
+
+Neither regime touches the stop: it is set before entry, it rests, and it does not move except to lock profit. The A8 rule and the SOMI line ("most of the time it never hits the TP; for a scalper the TP is an art") are the same position stated twice — **the stop is mechanical, the target is conditional** — and the fan width is the test for which case you have. The retracement test ([03 §2.2](03-entry-direction.md)) is what keeps you in during the regime-one hold: losing one, two or three fast lines is a dip, three full bodies below EMA 155 is the exit.
+
 
 ## 3. MMT Wick Tracker
 

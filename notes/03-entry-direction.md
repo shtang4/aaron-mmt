@@ -164,11 +164,12 @@ The five values agree with the earlier chart header (EMA9, EMA25, EMA155, EMA55,
 
 Slide rules for the 5-line set, verbatim:
 
-**Three rules from the session that the slides never state** (notes/08 part 6):
+**Four rules from the session that the slides never state** (notes/08 parts 6 and 9):
 
 - **Fan width is trend strength.** "The wider the gap open, the better it is trend and more confirm the trend." A cross with the lines still bunched is a weak signal; a spread fan is a confirmed trend.
 - **Repeated crossing means ranging.** "If it keeps repeatedly changing up and down, crossing each other, that means it's ranging." Treat a chart where the lines keep swapping as a skip, not as a run of signals.
 - **Wait for the separation to hold before entering.** "Enter after opening wider and no more changing would be more promising."
+- **The retracement test** (A8, [06 §6.4](06-case-studies.md)): "If let's say one line down, two line down, three line down, but not against going below EMA 155, **it is only a retracement only.** Retrace and then pump back." Price losing one, two or even three of the faster lines is a dip; the trend has changed only when three full-body candles print on the far side of EMA 155 — the same test that set the direction. This is the rule that makes the five-line set's extra entries usable: a touch of EMA 9, 25 or 55 is an entry while the pivot holds, and stops being one the moment it does not.
 
 Slide rules for the 5-line set:
 
@@ -177,6 +178,8 @@ Slide rules for the 5-line set:
 - **Green line EMA 155 always acts as the pivotal point of the trend.**
   - If 3 consecutive full-body candles form **above** this line → considered uptrend, can **LONG**.
   - If 3 consecutive full-body candles form **below** this line → considered downtrend, can **SHORT**.
+
+**"EMA 155" is a role, not a number.** On the A8 case-study chart ([06 §6.3](06-case-studies.md)) he states this same rule aloud over a fan of **EMA 20 / 89 / 144 / 233 / 377** — a chart with no EMA 155 on it. The line he points at is EMA 144. So the pivot is *the middle-to-slow line of the five-line fan*, and 155 is this course's choice of length for it. That makes five EMA configurations in the material (10/25/50 on the 2023 charts, 9/25/55/155/255 taught, a single EMA 20 in the handouts, 20/89/144/233/377 on A8). Run the taught set and read every rule on it; when you meet someone else's fan, map the rule to the equivalent line.
 
 This is the first fully mechanical direction rule in the course. It replaces the vague "golden cross, look for a long" with a countable condition: three closed, full-bodied candles on one side of EMA 155. **Confirmed from the session: the rule is read on the Heikin-Ashi chart** with the Bybit setup switched on. So "full body" is the Heikin-Ashi strong-trend candle from section 1.2: the body sits on the trade side of EMA 155 and there is no wick on the opposite side (no lower wick on a green candle for a long, no upper wick on a red candle for a short). Three of those in a row, closed, and direction is set. Two consequences: Heikin-Ashi smooths, so the rule confirms a little earlier and a little more often than it would on real candles; and every price that goes into an order (entry, stop, TP) is still read from real candles, because Heikin-Ashi prices are averages.
 

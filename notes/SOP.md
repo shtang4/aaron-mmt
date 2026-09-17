@@ -19,6 +19,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 1. **EMA 155 rule, read on the Heikin-Ashi chart:** three consecutive candles with the body on one side of EMA 155 and no wick on the other side. Above → long only; below → short only. Nothing else sets direction. Order prices still come from real candles.
 2. Heikin-Ashi run with no trend-side wicks confirms. Dojis or small-body clusters → **wait two to three candles**; same colour after = congestion, trend continues; colour change = the turn.
 3. **EMA fan width is trend strength**: bunched lines are a weak signal, a spread fan is confirmed. Lines repeatedly crossing back and forth = ranging → skip.
+   **Retracement test, once you are in**: losing one, two, even three of the fast EMAs is a dip. It is a trend change only when three full-body candles print on the far side of EMA 155. ("EMA 155" is the fan's pivot line; on a different EMA set, the equivalent line.)
 4. Donchian ribbon solid in the same colour confirms. Mixed → skip.
 5. Seahorse (vertical move done, flat beak, EMAs converging) → stay out.
 6. Hockey stick (slow decline, sharp V, vertical blade): enter only on the golden cross *with* the EMA 155 three-candle rule. Never buy the blade.
@@ -26,7 +27,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 ## 3. Sniper entry (Diagnose, SPE)
 1. TradingView: nearest demand zone below (long) or supply zone above (short), and any FVG. Take the near edge.
 2. Bybit: **EMA 9** is the first target; if the zone edge sits deeper, the EMA closest to the edge. That is the price.
-3. Rest a limit order there. Re-place it if the EMA moves. Never market-buy the running candle.
+3. Rest a limit order there. Re-place it if the EMA moves. **Limit is the default; a market order needs a reason** ("don't enter as a market order unless some critical condition"). Never market-buy the running candle.
 4. Correlated alts making the same move at the same minute are one trade. Size the total.
 
 ## 4. Size and stop (Dose)
@@ -37,6 +38,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 
 ## 5. Exit plan, both ways (Discharge)
 1. TP first. Wick Tracker is a Bybit TP trigger at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on **Last**; set it slightly inside the expected wick so it fills.
+   **Two regimes, decided by the fan.** Fan widening with no two lines crossing → no fixed target is needed; ride it on the climax rule and the EMA cross, with the Wick Tracker resting only as the unattended backstop. Fan flat, bunched or crossing → set the target and take it. The stop is mechanical either way; only the target is conditional.
 2. SL from step 4, trigger on Mark, **resting before the entry fills**. Both orders in before you look away.
 3. Climax exit: volume bar that is the tallest since entry and at least 2× VOLMA 10 (working rule) + MACD histogram at its **tallest bar**, confirmed when the next bar prints shorter → close 75%. Move the runner's SL to entry.
 4. Runner: Hunting SL locks a rising ROI. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.

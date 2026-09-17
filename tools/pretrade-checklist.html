@@ -323,6 +323,10 @@
         <span>Three consecutive full-body candles on the trade side of <b>EMA 155</b>
           <span class="hint">The only mechanical direction rule in the course. Also the confirmed hockey-stick entry.</span></span></label>
 
+      <label class="check"><input type="checkbox" id="fanOpen">
+        <span>EMA fan is still <b>opening</b> and no two lines have crossed
+          <span class="hint">A8 case study: a widening fan with no crosses can be held without a fixed target. Losing one, two or three fast lines is a retracement; three full bodies past EMA 155 is the trend change.</span></span></label>
+
       <label class="check"><input type="checkbox" id="seahorse">
         <span>Chart shows a seahorse: vertical move already done, flat beak forming, EMAs converging
           <span class="hint">If ticked, the course says stay out.</span></span></label>
@@ -448,7 +452,7 @@
         <div class="field" id="tpPriceField">
           <label for="tpPrice">Wick Tracker price</label>
           <input type="number" id="tpPrice" step="any" value="0.3576" inputmode="decimal">
-          <div class="hint">Bybit TP trigger by Last. Prior wick high, supply-zone bottom, or a liquidation cluster, set slightly inside the wick.</div>
+          <div class="hint">Bybit TP trigger by Last. Prior wick high, supply-zone bottom, or a liquidation cluster, set slightly inside the wick. If the EMA fan is still opening, this is the backstop, not the target.</div>
         </div>
         <div class="field" id="tpRoiField" hidden>
           <label for="tpRoi">Net ROI wanted %</label>
@@ -510,7 +514,7 @@
     <pre id="planText" aria-live="polite"></pre>
   </div>
 
-  <p class="foot">Rules and numbers come from the course notes in this repository: stop tiers and the ROI-to-price conversion (Module 5 §3.2–3.3), the Hunting SL formula (§3.3), the isolated-margin and 5–10× guidance (§3.2), the SPE entry (Module 4 §1), the climax take-profit with 75% partial (Module 4 §2), the Wick Tracker trigger types (Module 4 §3.2), and from the handouts (notes/07): the screener scorecard, the stop-before-fill rule and the 1–2% of equity ceiling. Fields prefilled with an example from the SEI hockey-stick screenshot; replace them. Liquidation is an estimate using a 0.5% maintenance margin. Not financial advice.</p>
+  <p class="foot">Rules and numbers come from the course notes in this repository: stop tiers and the ROI-to-price conversion (Module 5 §3.2–3.3), the Hunting SL formula (§3.3), the isolated-margin and 5–10× guidance (§3.2), the SPE entry (Module 4 §1), the climax take-profit with 75% partial (Module 4 §2), the Wick Tracker trigger types (Module 4 §3.2), the two exit regimes and the retracement test (Module 6 §6.4), and from the handouts (notes/07): the screener scorecard, the stop-before-fill rule and the 1–2% of equity ceiling. Fields prefilled with an example from the SEI hockey-stick screenshot; replace them. Liquidation is an estimate using a 0.5% maintenance margin. Not financial advice.</p>
 </div>
 
 <script>
@@ -718,6 +722,11 @@
     lines.push(`  TP: ${fmtP(tpPrice, entry)} (Last) = ${pct(tpNet, 0)} net ROI, +${fmtN(tpAbs)} USDT · R:R 1:${Number.isFinite(rr) ? rr.toFixed(2) : '—'}`);
     lines.push(`  climax exit: volume maximal + MACD histogram peak → close ${fmtN(ptp, 0)}%, stop to entry`);
     lines.push(`  runner ${fmtN(runnerPct, 0)}%: Hunting SL at ${fmtP(huntPrice, entry)} once open ROI > ${pct(lockRoi, 0)}; EMA cross-back is the backstop`);
+    if ($('fanOpen').checked) {
+      lines.push(`  fan still opening, no crosses: the TP above is the unattended backstop, not the plan.`);
+      lines.push(`  exit on the climax rule or the first EMA 9 / EMA 25 cross-back. Retracement through one to three`);
+      lines.push(`  fast lines is a dip; three full bodies past EMA 155 ends it. The stop does not move.`);
+    }
     lines.push(`  after close: sweep profit to Funding · next coin · stop at daily target`);
     $('planText').textContent = lines.join('\n');
     $('copyBtn').disabled = state !== 'valid';
