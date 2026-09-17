@@ -252,6 +252,71 @@ Closing caution on the slide: MACD "should not be used in isolation".
 How it fits: EMA 155 gives direction, the faster EMAs give the pullback level, and MACD is the momentum check on the pullback. A long on an EMA touch is stronger when the histogram is contracting toward zero and turning up, and weaker when MACD has already crossed down hard. Reading 3, divergence, is the one that argues against an entry: a pullback after bearish divergence is more likely a reversal than a continuation. The slides do not say any of this; it is how the two tools are normally combined.
 
 
+### 2.6a MACD as he actually teaches it: two shapes only
+
+The slide gives the textbook three readings. The spoken version throws almost all of it away:
+
+> "**MACD is just about histogram only.** Histogram, there's a peak at top here, green colour, and peak at the bottom, red colour. So you just need to recognise these two peaks. Green colour, **mountain**. This red colour is called **iceberg dip**."
+
+> "If you don't understand anything of the MACD, fine, you just remember two things: **mountain peak, the green colour, and iceberg dip, the red colour.** That's it."
+
+So the working MACD in this course is two shapes and a zero line (he calls it the "iso line", equilibrium):
+
+| Shape | Where | What it is |
+|-------|-------|-----------|
+| **Mountain peak** | Tallest green bar above zero | The **long's exit** |
+| **Iceberg dip** | Deepest red bar below zero | The **long's entry** |
+| Iso line / equilibrium | Zero | Halfway back. Where an untaken profit goes first |
+
+**The rule, and the cost of not taking it.** Stated three times in the same passage:
+
+> "You can enter from here to long, but you have to determine to exit, to set TP at **mountain peak**. Otherwise it'll come back, go back to your entry. But if you never exit, they go down further, then you're losing money — because you are long."
+
+> "From here to here, you have to TP here. **If you don't TP here, you'll come back here, at least half of your profit gone.** Then if you don't TP, it will go all the way, same level, you go back to your entry price. If not, you still hold it, then dump all the way — you are losing it."
+
+The ladder is worth keeping because it prices the delay: **peak → equilibrium is half the profit → entry is all of it → below entry is a loss.** Same argument as the ZETA closing slide ([06 §7.5](06-case-studies.md)), made on the indicator rather than on the price.
+
+**Both directions.** "If you want to short, you can enter here short" — at the mountain peak — "and then all the way down here, you TP here", at the iceberg dip. The two shapes swap roles: the long's exit is the short's entry.
+
+**The honesty test he attaches to it.** This is the most useful sentence in the passage:
+
+> "You have to determine whether you have the power to hold. **If you don't have the power to hold, then you better enter long here, exit here.**"
+
+Iceberg dip to mountain peak is the small, complete trade. Holding past the peak for a bigger swing is a different trade that needs the temperament to sit through the give-back. He tells you to pick honestly, and to take the peak-to-peak version if you cannot. That is the same point as the Module 5 ZETA sizing argument, arrived at from the trader's side rather than the position's.
+
+**Confirmation is price, not the indicator alone.** "How to know whether it's peak? Look at the histogram. This is the MACD, this histogram will show you the peak. **Obviously, tally it with the candle.**"
+
+**Where this sits against the rest of the method.** The iceberg-dip entry is a **bottom-fishing entry**: you are buying the deepest red bar, which by construction happens while price is falling. The EMA 155 rule would usually forbid that trade, and the seahorse rule warns against it explicitly. Two readings, and the notes keep the second:
+
+1. Taken literally, MACD gives an entry the direction rule vetoes.
+2. Taken as a **timing** tool inside a direction the EMA has already set — which is how every other part of the course uses MACD — the iceberg dip is *when* to take the pullback the EMA rule already permits, and the mountain peak is *when* to take the profit. That is the RAVE "IceBerg Tip" entry ([05 §3.9](05-risk-and-hedging.md)) and the Module 4 climax exit ([04 §2](04-sniper-entry-exit.md)), and it is consistent with everything else.
+
+### 2.6b The hollow histogram bar: the course's explanation, and what it actually is
+
+A Q&A slide, and he spends longer on this than on anything else in the indicator section.
+
+**The question** (@Like to kern): what does a hollow bar in the MACD histogram mean?
+
+**The answer given** (Jasper Sia, 22 Apr 2024, endorsed and repeated by Aaron at length):
+
+> "Why the hollow bar of MACD histogram is being caused by the **counter volume** (different buying & selling = contraindication). MACD supposedly downtrend by red bar but is counter pump by strong buying volume from the market. **If the trend of MACD is equal to the volume trend, then the bar of histogram will be the same solid colour.**"
+
+Aaron's door analogy for it: "If you are going out from the house, and the door suddenly one pushing from outside — in the end of day you are not getting out from the house, you're being pushed by the force outside. That's why it forms hollow." He also ties it to price: "It contrasts, so it forms a doji, indetermined — this one forms hollow."
+
+**The mechanism is wrong, and it is worth knowing why.** MACD is computed entirely from price: `MACD = EMA(fast) − EMA(slow)`, signal is an EMA of that, histogram is `MACD − signal`. **Volume is not an input at any stage.** The indicator cannot see volume, so volume cannot be what fills or hollows a bar.
+
+What the hollow actually encodes on Bybit (and on TradingView's default MACD, and most platforms): **the bar is smaller in magnitude than the one before it.** Solid = the histogram is still growing; hollow = it is shrinking back toward zero. It is a rendering of the first derivative, not of volume.
+
+**Why their version still lands on the right trades.** A red histogram bar begins shrinking precisely when buyers start pushing back against a down move, and that push usually does show up as buying volume on the same candle. So the correlation they describe is real and the observation is a good one. Only the causal arrow is reversed: the buying does not *make* the bar hollow, the buying and the hollowing are both effects of momentum turning. And the doji connection is the same thing seen on price — a doji is a candle whose net move is small, so the EMAs barely separate, so the histogram bar barely grows.
+
+**The correction makes the signal more useful, not less.** The Module 4 climax exit fires when "the next bar prints shorter than the tallest bar" ([04 §2.1](04-sniper-entry-exit.md)). On Bybit that bar is drawn **hollow**. So:
+
+> **The first hollow bar after a run of solid bars is the climax-exit trigger, visible at a glance.**
+
+No bar-height comparison needed, no volume cross-check required for the exit itself. That is the practical payoff of getting the mechanism right, and it is a better rule than the one the slide states.
+
+*Confidence: the formula's independence from volume is certain. The "hollow = shrinking magnitude" convention is the standard platform behaviour and is consistent with every hollow bar visible on the course's own screenshots (they coincide with dojis and near-zero histogram), but it is worth confirming once on your own Bybit chart before relying on it for the exit.*
+
 ### 2.7 Volume concept
 
 Slide table, transcribed:
@@ -275,7 +340,63 @@ The rule these examples encode: **a volume bar around twice the recent average m
 
 How it fits: volume is the third check on an SPE pullback entry. A pullback on **falling** volume into an EMA is healthy (sellers are thin), and a long there is confirmed. A pullback on a **2× spike** is exhaustion, meaning either the trend is over or the spike marks the low of the pullback; either way, wait for the next candle rather than buying into the spike. **MMT Volume setting** (from the "Volume setting" screenshot): Indicators → Secondary Indicator → Volume → tick **VOLMA 5** (yellow) and **VOLMA 10** (blue), leave the other nine rows unticked at 0, Confirm. This is the Bybit default, so the two volume moving averages on the ZETA screenshots are the course setup.
 
-Note that the S&P and eBay examples are daily charts of stocks and index futures, not 1-minute crypto. The exhaustion pattern is general, but "2× average" on a 1-minute chart is hit constantly by single large orders. A stricter multiple, or the Bybit MA10 line as the baseline, will be needed to make it usable at that timeframe.
+Note that the S&P and eBay examples are daily charts of stocks and index futures, not 1-minute crypto. The exhaustion pattern is general, but "2× average" on a 1-minute chart is hit constantly by single large orders. **The session settles it, and it is the second guess: the threshold is the two VOLMA lines, not a multiple.** See 2.7a.
+
+### 2.7a Abnormal volume, defined: the bar crosses the two VOLMA lines
+
+**This closes the open question these notes carried for the whole course, and it replaces the working rule I had invented in its place.** He does define a volume spike. It is not a multiple of the average:
+
+> "Majority below this line are the normal volume. Suddenly, one spike up, about two spike up. So this is the buying exhaustion ... Above, usually the volume what you see, that's one yellow line one. So, **whichever cross above this line, one sudden pump**."
+
+and, closing the section:
+
+> "So volume, as I say, this one is the line. This is volume line. **Whichever volume bar pump across this two lines. These are the abnormal volume.** This one abnormal by the selling power, abnormal buying power, abnormal selling power, abnormal buying power, abnormal buying power."
+
+**The definition: a volume bar that rises above both VOLMA lines is abnormal.** VOLMA 5 (yellow) and VOLMA 10 (blue) are already in the MMT setup; they are the threshold, and no multiple is needed. Bars under the lines are "normal volume" and carry no signal.
+
+This is a better rule than the "2× VOLMA 10" I proposed, for a reason worth stating: the two moving averages **adapt to the coin and the session**. A fixed multiple is too loose on a quiet 1-minute chart and too strict during a pump; a cross of both lines means "louder than this coin has been over the last five and ten bars", which is the question actually being asked. My 2× rule is retired; it survives only as an optional second filter if the journal shows the exit firing too early.
+
+### 2.7b Reading the abnormal bar: colour, then body or wick
+
+Three things he reads off the bar once it qualifies:
+
+**1. Colour is the side.** "Red colour means sell power." Green is buying. So an abnormal bar is not just "activity", it is directional: abnormal red is a selling event, abnormal green a buying one.
+
+**2. A wick on the candle means it was a liquidity sweep, not a move.** This is the most useful distinction in the passage and it appears nowhere on the slides:
+
+> "How you know? Because suddenly like this, usually **it form a wick one. It's not stable full volume. Because it's just want to sweep the liquidity, it's not a full block like this one.**"
+
+> "The manipulator sell here causing the **long wick**, they just want to grab the liquidity. Then, they sell big volume."
+
+| Abnormal volume bar with … | Reading |
+|---|---|
+| A **long wick** on the price candle | **Liquidity sweep.** Someone reached for the stops resting beyond the level and came back. The move is not real; price usually returns. |
+| A **full body**, no significant wick | **Real move.** The volume and the price agree; the level has actually changed hands. |
+
+That is the discriminator the exhaustion rule in 2.7 was missing. An abnormal green bar with a long upper wick at a high is a sweep and a sell; an abnormal green bar with a full body is a breakout and a hold.
+
+**3. The sequence to watch for.** "The left, all ranging, nothing happens. Suddenly one selling volume pump, so subsequently manipulation here." Quiet range → one abnormal bar → wick → the real move follows. The abnormal bar is the tell that the range is about to end, and the wick tells you which way is the fake.
+
+**How this feeds the Wick Tracker.** Directly, and it refines the level rule:
+
+> "If let's say the last higher was around here, like wick tracker. Suddenly, **you can set somewhere higher a bit. So this one is higher than this one. Then, the next pump will trigger your wick tracker.**"
+
+So the Wick Tracker goes **slightly above the previous wick high**, not at it. The logic is the sweep logic: stops rest above a prior high, so a sweep aiming at that liquidity overshoots it. Carried into [04 §3.1](04-sniper-entry-exit.md). Note it is the opposite framing from "set it inside the wick you expect" — both can hold at once (previous high < your level < the next sweep's extreme), but his reference point is the *previous* high and that is the one to measure from.
+
+### 2.7c Volume as a gate, not a signal
+
+> "Volume determines that trend ... That's why you see the top gainers, how many percentage — that's the volume. **If no volume, like a coin pricing from 0.50, after 4 hours also 0.51, that means no volume.** Like BTC, ETH, SOL, there's no volume during the weekend, today, tomorrow. That's why you cannot trade. Unless something happens, hype happens, some news triggers it and suddenly it pumps alone. Then that's a different story."
+
+This is the weekend rule and the "+4% in two hours is too slow" rule, both already in the SOP, now with the reason attached: the percentage move on the gainers list **is** the volume. It also explains why the majors are the wrong instrument for this method on a quiet day.
+
+A group answer on the same slide makes it a gate rather than a scored check. @eric818 asks whether the volume's two lines are the same as EMA 25/55; **Jasper Sia**, 22 Apr 2024:
+
+> "不一样吧，没注意那两条🤔，主要看那个币有没有volume，如果不活跃，即使其他条件美，没volume你也是一直卡着上下徘徊，很费时。"
+> *Not the same; I haven't paid attention to those two lines. Mainly look at whether that coin has volume. If it's not active, then even if the other conditions are beautiful, without volume you'll just be stuck drifting up and down — a big waste of time.*
+
+Two things in that answer. First, **no volume vetoes a perfect setup**: 4/4 on a dead coin is a time sink, not a trade. Second, and worth noticing, the person answering says he does not watch the two VOLMA lines — the same lines Aaron's whole abnormal-volume definition depends on. The course's own answerers are not using the same rule. Prefer Aaron's, since it is the one that is actually defined.
+
+**Recovering the volume pane.** @kelvin63 lost the volume chart by pressing something; Jasper's answer, with a screenshot: it is **MAVOL** in the indicator row under the chart (BOLL · MA · SAR · **MAVOL** · MACD · KDJ · RSI), and the row scrolls — "在这里，推去左边看看里面有吗" (*here, swipe to the left and see if it is inside*). Worth knowing before you rebuild the whole chart setup.
 
 ### 2.8 What the course claims Diagnose gives you
 

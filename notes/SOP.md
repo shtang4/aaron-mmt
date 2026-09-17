@@ -38,13 +38,15 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 4. Write the money at risk in USDT before entry.
 
 ## 5. Exit plan, both ways (Discharge)
-1. TP first. Wick Tracker is a Bybit TP trigger at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on **Last**; set it slightly inside the expected wick so it fills.
+1. TP first. Wick Tracker is a Bybit TP trigger at a level a wick will reach: **slightly above** the prior wick high (a sweep aims at the stops resting beyond it), the supply-zone bottom, a liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on **Last**; set it inside the wick you expect, above the wick already made.
    **Two regimes, decided by the fan.** Fan widening with no two lines crossing → no fixed target is needed; ride it on the climax rule and the EMA cross, with the Wick Tracker resting only as the unattended backstop. Fan flat, bunched or crossing → set the target and take it. The stop is mechanical either way; only the target is conditional.
 2. SL from step 4, trigger on Mark, **resting before the entry fills**. Both orders in before you look away.
-3. Climax exit: volume bar that is the tallest since entry and at least 2× VOLMA 10 (working rule) + MACD histogram at its **tallest bar**, confirmed when the next bar prints shorter → close 75%. Move the runner's SL to entry.
-4. Runner: Hunting SL locks a rising ROI. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.
-5. Stop hit = the plan worked. Take it.
-6. **Take the written level — not sooner, not never.** ZETA is the course's own proof: the Wick Tracker at 2.8530 fired 1.5 cents under the high, and the coin was at 0.045 two years later. "Never exit will liquidate."
+3. Climax exit: a volume bar **above both VOLMA lines** ("abnormal", session-defined — no multiple) + the MACD histogram at its **mountain peak**, confirmed when the next bar prints shorter — **on Bybit that next bar is drawn hollow** → close 75%. Move the runner's SL to entry.
+   Abnormal volume with a **long wick** is a liquidity sweep, not a move; with a **full body** it is real. Colour gives the side: red selling, green buying.
+4. **MACD is two shapes.** Iceberg dip (deepest red bar) times the entry; mountain peak (tallest green) is the exit. Short reverses them. Miss the peak and you give back half at the zero line, all of it back at your entry, then it is a loss. If you cannot sit through a give-back, trade dip-to-peak and stop there.
+5. Runner: Hunting SL locks a rising ROI. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.
+6. Stop hit = the plan worked. Take it.
+7. **Take the written level — not sooner, not never.** ZETA is the course's own proof: the Wick Tracker at 2.8530 fired 1.5 cents under the high, and the coin was at 0.045 two years later. "Never exit will liquidate."
 
 ## 6. After the close (Follow up)
 1. Sweep realised profit from Derivatives to Funding.

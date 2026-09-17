@@ -542,7 +542,25 @@ That is the same structure as the full method (screener → direction → SPE �
 
 The member's question about timeframe was not answered on the slide. From the rest of the course the answer is: direction on the higher frames, entry on the 1-minute.
 
-### 12.2 Everything else
+### 12.2 "What does a hollow MACD histogram bar mean?"
+
+Asked by **@Like to kern**; answered by **Jasper Sia**, 22 April 2024, on a slide headed "CASE Study 个案研究" over a GLMRUSDT 1-minute chart with two hollow bars circled. Aaron then re-explains it at length in the session, so this is the course's position twice over.
+
+> "Why the hollow bar of MACD histogram is being caused by the **counter volume** (different buying & selling = contraindication). MACD supposedly downtrend by red bar but is counter pump by strong buying volume from the market. If the trend of MACD is equal to the volume trend, then the bar of histogram will be the same solid colour."
+
+**The mechanism is wrong** — MACD is computed from price EMAs and never reads volume — **and the correction turns it into the best exit signal in the course.** A hollow bar means the histogram shrank relative to the previous bar, which is exactly the Module 4 climax trigger. Full treatment: [03 §2.6b](03-entry-direction.md).
+
+### 12.3 "Are the volume's two lines the same as EMA 25/55?"
+
+**@eric818**, answered by Jasper Sia, 22 April 2024: no — and he adds that he does not watch them, because the question that matters is simply whether the coin has volume at all. "即使其他条件美，没volume你也是一直卡着上下徘徊，很费时" — *even if the other conditions are beautiful, without volume you'll just be stuck drifting up and down, a big waste of time.* Volume is a **gate on the coin**, not a scored check. [03 §2.7c](03-entry-direction.md).
+
+Note the inconsistency: Aaron's entire abnormal-volume definition is the bar crossing those two lines, and the member answering says he ignores them. Prefer Aaron's, since it is the one that is defined.
+
+### 12.4 "I lost my volume chart, how do I get it back?"
+
+**@kelvin63**, 6 April 2024. It is **MAVOL** in the indicator row under the Bybit chart (BOLL · MA · SAR · **MAVOL** · MACD · KDJ · RSI), and the row scrolls horizontally: "在这里，推去左边看看里面有吗" — *here, swipe to the left and see if it's inside.*
+
+### 12.5 Everything else
 
 No other questions were captured on slides. Anything else was answered verbally and is only in the transcript ([08](08-transcript.md)).
 

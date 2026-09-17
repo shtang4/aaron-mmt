@@ -422,3 +422,43 @@ The weekly chart runs to April 2026. Entry 0.8570, Wick Tracker exit 2.8530 agai
 **This is the course's strongest argument for its own exit rule, and he makes it against his own showcase trade.** It also completes a pair: the Module 5 slide prices exiting early (you miss the pump), this one prices never exiting (you are liquidated). Together they are one rule — take the written level, not sooner, not never. The correction that follows is recorded in [05 §2.4](05-risk-and-hedging.md).
 
 **What is still missing: a stop.** Across four timeframes and two modules, the ZETA trade is shown with an entry and a target and never a stop, while he refers to "your stop losses" being hunted. At 50× a stop would sit inside about 1.7% of entry. The trade had no survivable stop; the take-profit was doing the work of both.
+
+## Part 13: MACD and volume, spoken — and the one indicator claim that is wrong
+
+The spoken versions of [03 §2.6](03-entry-direction.md) and [03 §2.7](03-entry-direction.md), plus three Q&A slides now written up at [06 §12.2–12.4](06-case-studies.md).
+
+### MACD is two shapes
+
+> "MACD is just about histogram only ... you just need to recognise these two peaks. Green colour, **mountain**. This red colour is called **iceberg dip** ... If you don't understand anything of the MACD, fine, you just remember two things: mountain peak the green colour, and iceberg dip the red colour. That's it."
+
+Long: enter at the iceberg dip, **TP at the mountain peak**. Short: the two swap. And the ladder that prices hesitation:
+
+> "If you don't TP here, you'll come back here, **at least half of your profit gone**. Then if you don't TP, it will go all the way, same level, you go back to your entry price. If not, you still hold it, then dump all the way — you are losing it."
+
+Plus the honesty test: **"If you don't have the power to hold, then you better enter long here, exit here."** Take the peak-to-peak trade rather than the swing you cannot sit through. Full note with the direction-rule conflict: [03 §2.6a](03-entry-direction.md).
+
+### Abnormal volume, finally defined
+
+> "Majority below this line are the normal volume ... whichever cross above this line, one sudden pump ... **Whichever volume bar pump across this two lines. These are the abnormal volume.**"
+
+**A bar above both VOLMA lines is abnormal. No multiple involved.** That closes open question E2 and retires the 2× working rule these notes had been carrying. Colour gives the side, and then the discriminator that is worth more than the threshold itself:
+
+> "Usually **it form a wick one. It's not stable full volume. Because it's just want to sweep the liquidity, it's not a full block** ... The manipulator sell here causing the long wick, they just want to grab the liquidity."
+
+Abnormal volume + long wick = liquidity sweep, price returns. Abnormal volume + full body = real move. [03 §2.7b](03-entry-direction.md).
+
+He also pins the Wick Tracker level to this: "the last higher was around here, like wick tracker — **you can set somewhere higher a bit** ... then the next pump will trigger your wick tracker." Above the previous high, because a sweep aims at the stops resting beyond it.
+
+### And volume as a gate
+
+> "If no volume, like a coin pricing from 0.50, after 4 hours also 0.51, that means no volume. Like BTC, ETH, SOL, there's no volume during the weekend ... That's why you cannot trade."
+
+The reason behind the weekend rule and the "+4% in two hours is too slow" rule: the gainers-list percentage *is* the volume.
+
+### The hollow bar: the course's one mechanically wrong claim
+
+Jasper Sia's answer, repeated and extended by Aaron with a door analogy: a hollow MACD histogram bar is "caused by the counter volume", buyers overriding sellers.
+
+**MACD cannot see volume.** It is `EMA(fast) − EMA(slow)`, a signal EMA of that, and the difference between them. Price only. What hollow actually encodes is that the bar is **smaller than the previous one** — the histogram shrinking back toward zero.
+
+Their observation is still a good one (a red bar starts shrinking exactly when buyers push back, and that usually does show as buying volume), but the arrow is reversed. And the correction pays: **the first hollow bar after a run of solid bars is the Module 4 climax-exit trigger, visible at a glance** instead of requiring a bar-height comparison. [03 §2.6b](03-entry-direction.md).

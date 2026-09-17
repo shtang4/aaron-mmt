@@ -84,9 +84,17 @@ Five-step flow, verbatim:
 
 **Step 1, volume maximal.** The exhaustion spike from Module 3 section 2.7: a volume bar far above the VOLMA 5 and 10 lines, at the climax of the move. In a long, that bar is the buyers' last push. The take-profit process starts on that candle, not after it.
 
-Confirmed from the session: the course has **no numeric definition** of "maximal". Working rule, mine, to be checked against the journal after 30 trades: the bar counts as maximal when it is **both** the tallest volume bar since the entry candle **and** at least **2× the VOLMA 10** line. The first condition stops an early spike from firing the exit on a move that is still building; the second stops a quiet swing's biggest bar, which may be nothing, from counting. If the journal shows exits firing too early, raise the multiple to 3×; if too late, drop the "tallest since entry" condition.
+**Defined, from the spoken session** ([03 §2.7a](03-entry-direction.md)), and it replaces the working rule these notes carried: *"whichever volume bar pump across this two lines — these are the abnormal volume."* **A bar that rises above both VOLMA lines (5 and 10) is abnormal; bars under the lines carry no signal.** The threshold is the indicator, not a multiple, which is better because the two averages adapt to the coin and the session.
 
-**Steps 2 and 3, MACD mid histogram.** With the MMT setting (8, 13, 9) the histogram reacts fast. Confirmed from the session: "mid histogram" is **the tallest bar** of the swing. The partial fires when the next bar prints shorter than it: momentum has peaked even though price may still be rising. That is the same signal the RAVE example in Module 5 annotated "IceBerg Tip" at the bottom of a crash, used in reverse at a top. In practice the tallest bar is only known once the next bar is shorter, so the exit is one candle after the peak, on the 1-minute chart.
+Two readings come with it. **Colour is the side** — red is selling power, green buying. And **a long wick on the candle means the bar was a liquidity sweep, not a move**: "it's just want to sweep the liquidity, it's not a full block". A full-bodied candle on abnormal volume is the real thing. So for the exit: an abnormal green bar with a long upper wick at a high is the climax; an abnormal green bar with a full body may be a breakout that keeps going.
+
+The stricter filter I had proposed (tallest since entry, and 2× VOLMA 10) is retired as the definition but is worth keeping as an optional second gate if the journal shows the exit firing too early.
+
+**Steps 2 and 3, MACD mid histogram.** With the MMT setting (8, 13, 9) the histogram reacts fast. Confirmed from the session: "mid histogram" is **the tallest bar** of the swing — his "**mountain peak**" ([03 §2.6a](03-entry-direction.md)). The partial fires when the next bar prints shorter than it: momentum has peaked even though price may still be rising.
+
+**And that bar is visible without measuring it.** On Bybit a histogram bar smaller than the one before it is drawn **hollow**. So **the first hollow bar after a run of solid bars is this trigger** — no height comparison needed. The course explains the hollow bar as "caused by counter volume", which is mechanically impossible since MACD is computed from price EMAs alone and never sees volume; the correction and why it makes the signal better are in [03 §2.6b](03-entry-direction.md). Confirm the convention once on your own chart before relying on it.
+
+**The cost of missing the peak, in his own ladder:** peak → equilibrium is **half the profit gone** → back to entry is all of it → below entry is a loss. Same argument as the ZETA closing slide, made on the indicator instead of the price. That is the same signal the RAVE example in Module 5 annotated "IceBerg Tip" at the bottom of a crash, used in reverse at a top. In practice the tallest bar is only known once the next bar is shorter, so the exit is one candle after the peak, on the 1-minute chart.
 
 **Step 4, TP or PTP 75%.** Either close the whole position, or close **75%** and keep 25% as the runner. On the runner, move the stop to entry (it can no longer lose) or apply the Hunting SL from Module 5 section 3.3 (lock a rising fraction of ROI). Note the number: 75% off is a much larger partial than the Module 5 example's "take 20% profit, leave 80% for the wick", which was about locking ROI with a stop, not about position size. Here most of the position is closed at the climax.
 
@@ -133,7 +141,7 @@ The "possible wick hit level" is not defined on the slide. Everything earlier in
 
 | Level | Source |
 |-------|--------|
-| A prior swing high's wick | Price action, this slide. A member rule endorsed on the MAVIA slide ([06 §5.2](06-case-studies.md)): on a manipulative coin, "set higher price, refer to previous high or set even higher" |
+| **Slightly above** the prior swing high's wick | Price action, this slide. Session ([03 §2.7b](03-entry-direction.md)): "the last higher was around here, like wick tracker — you can set somewhere higher a bit, so this one is higher than this one. Then the next pump will trigger your wick tracker." Stops rest above a prior high, so a sweep aiming at that liquidity overshoots it. A member rule endorsed on the MAVIA slide ([06 §5.2](06-case-studies.md)): on a manipulative coin, "set higher price, refer to previous high or set even higher" |
 | Bottom of the next supply zone | SMC, Module 3 section 3 |
 | The next FVG's near edge | SMC, Module 3 section 3 |
 | A liquidation cluster above price | Coinglass heatmap, Module 3 section 4.2 |
@@ -174,5 +182,6 @@ Module 5's rule 11 teased "how to be a Wick Catcher without a Master". This slid
 ## Open questions
 
 - Where does the SPE stop go: below the zone, or at the ROI tier, when the two disagree?
-- Does the course have a worked example of the full sequence on one trade, with entry, stop, PTP and runner all shown? (No: see Module 6.)
-- Volume "maximal" is defined by my working rule (tallest since entry and ≥ 2× VOLMA 10), not the course's. Validate against the journal.
+- Does the course have a worked example of the full sequence on one trade, with entry, stop, PTP and runner all shown? (No: see Module 6. ZETA comes closest and still shows no stop.)
+- ~~Volume "maximal" is defined by my working rule, not the course's.~~ **Answered:** a bar above both VOLMA lines is "abnormal"; no multiple. See §2.1 and [03 §2.7a](03-entry-direction.md).
+- Does the hollow-bar convention on Bybit match the standard "smaller than the previous bar"? Confirm once on a live chart; the climax trigger becomes a glance if so.

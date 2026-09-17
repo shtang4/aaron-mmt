@@ -55,7 +55,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | # | Question | Module | Why it matters |
 |---|----------|--------|----------------|
 | ~~E1~~ | ~~What is "mid histogram"?~~ Session: **the tallest bar** of the swing. The 75% partial fires when the next bar is shorter. | 4 §2.1 | |
-| ~~E2~~ | ~~Volume "maximal" definition?~~ Session: no specific rule. **Working rule (mine, to be validated in the journal):** the bar is the tallest since entry and at least 2× VOLMA 10. | 4 §2.1 | |
+| ~~E2~~ | ~~Volume "maximal" definition?~~ **Answered from the spoken session, and my working rule is retired.** The threshold is the indicator, not a multiple: **a bar that rises above both VOLMA lines (5 and 10) is "abnormal" volume**; bars under the lines are normal and carry no signal. Colour gives the side; a long wick on the candle means a liquidity sweep rather than a real move. My "2× VOLMA 10" survives only as an optional stricter filter. | 3 §2.7a, 4 §2.1 | |
 | ~~E3~~ | ~~Wick Tracker: limit or trigger?~~ Session: a **TP trigger**; when price reaches it the position closes automatically. Set it to trigger on Last so a wick reaches it; expect the fill a few ticks after the touch. | 4 §3.2 | |
 | E4 | Which timeframe is the EMA cross-back exit read on? | 1 §3.3 | On 1m it is late; on 15m it is a different trade. |
 | E5 | Is there a minimum reward-to-risk ratio? | 1 §3.3 | Never stated in six modules. |

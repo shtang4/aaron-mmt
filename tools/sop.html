@@ -128,10 +128,11 @@
     <section>
       <h2><span class="n">5</span> Exit plan, both ways <span class="d">Discharge</span></h2>
       <ol>
-        <li><b>TP first.</b> Wick Tracker is a Bybit TP trigger at a level a wick will reach: prior wick high, supply-zone bottom, liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on <b>Last</b>; set it slightly inside the expected wick so it fills.</li>
+        <li><b>TP first.</b> Wick Tracker is a Bybit TP trigger at a level a wick will reach: <b>slightly above</b> the prior wick high (a sweep aims at the stops resting beyond it), the supply-zone bottom, a liquidation cluster, or 50% ROI raised to 55–60% for fees. Trigger on <b>Last</b>; inside the wick you expect, above the wick already made.</li>
         <li><b>Two regimes, decided by the fan.</b> Fan widening, no two lines crossing → <b>no fixed target needed</b>: ride it on the climax rule and the EMA cross, Wick Tracker resting only as the unattended backstop. Fan flat, bunched or crossing → set the target and take it.</li>
         <li><b>SL</b> from step 4, trigger on Mark, <b>resting before the entry fills</b>. Both in before you look away.</li>
-        <li><b>Climax exit:</b> volume bar tallest since entry and ≥ 2× VOLMA 10 (working rule) + MACD histogram at its <b>tallest bar</b>, confirmed when the next bar prints shorter → close <b>75%</b>. Move SL on the runner to entry.</li>
+        <li><b>Climax exit:</b> a volume bar <b>above both VOLMA lines</b> ("abnormal" — session-defined, no multiple) + the MACD histogram at its <b>mountain peak</b>, confirmed when the next bar prints shorter — <b>on Bybit that bar is drawn hollow</b> → close <b>75%</b>. Move SL on the runner to entry.<br>Abnormal volume with a <b>long wick</b> is a liquidity sweep, not a move; with a <b>full body</b> it is real. Red bar = selling, green = buying.</li>
+        <li><b>MACD is two shapes.</b> <b>Iceberg dip</b> (deepest red) times the entry, <b>mountain peak</b> (tallest green) is the exit; a short reverses them. Miss the peak → half the profit gone at the zero line, all of it back at your entry, then a loss. Cannot sit through a give-back? Trade dip-to-peak and stop there.</li>
         <li><b>Runner:</b> Hunting SL locks a rising ROI, <code>entry ± entry × ROI ÷ leverage</code>. EMA 9 crossing back through EMA 25 is the backstop: exit, no questions.</li>
         <li><b>The TP is a plan, not a promise.</b> "Most of the time it never hits the TP." Watch it; take the move if liquidity offers it early. The stop stays untouched.</li>
         <li><b>Be flat or already paid around the funding settlements</b> — 8 AM, 4 PM, midnight MYT. Midnight is the one he names for manipulation.</li>
