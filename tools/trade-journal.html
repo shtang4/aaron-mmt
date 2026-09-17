@@ -89,6 +89,7 @@
   .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
   .check { display: flex; align-items: flex-start; gap: 6px; font-size: 12.5px; }
   .check input { margin-top: 3px; accent-color: var(--accent); }
+  .check .q { display: block; font-size: 11.5px; color: var(--ink-3); margin-top: 1px; }
   .breaks { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; background: var(--surface-2); }
   .breaks .lbl { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
   .actions { grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
@@ -223,6 +224,9 @@
           <div class="field"><label for="f_pnl">Net P&amp;L USDT</label><input type="number" id="f_pnl" step="any" inputmode="decimal" required></div>
           <div class="field"><label for="f_hold">Hold, minutes</label><input type="number" id="f_hold" step="1" min="0" inputmode="numeric"></div>
         </div>
+        <label class="check"><input type="checkbox" id="f_challenged"><span>Price came <b>back and challenged</b> the entry after the fill
+          <span class="q">His test for a real sniper entry: a good one is never revisited, and the distance from your level keeps growing.</span></span></label>
+
         <div class="field"><label for="f_notes">What you would do differently</label><textarea id="f_notes" placeholder="One sentence. Which D would have changed the outcome?"></textarea></div>
       </fieldset>
 
@@ -284,6 +288,7 @@
       entry: fnum($('f_entry').value), stop: fnum($('f_stop').value), tp: fnum($('f_tp').value),
       stake: fnum($('f_stake').value), lev: fnum($('f_lev').value), mode: $('f_mode').value,
       exitReason: $('f_exitReason').value, exit: fnum($('f_exit').value), pnl: fnum($('f_pnl').value), hold: fnum($('f_hold').value),
+      challenged: $('f_challenged').checked,
       breaks: [...document.querySelectorAll('.brk:checked')].map(b => b.value), notes: $('f_notes').value.trim()
     };
     if (t.mode === 'cross' && !t.breaks.includes('cross')) t.breaks.push('cross');
@@ -296,6 +301,7 @@
     $('f_entry').value = t.entry ?? ''; $('f_stop').value = t.stop ?? ''; $('f_tp').value = t.tp ?? '';
     $('f_stake').value = t.stake ?? ''; $('f_lev').value = t.lev ?? ''; $('f_mode').value = t.mode || 'isolated';
     $('f_exitReason').value = t.exitReason || 'tp'; $('f_exit').value = t.exit ?? ''; $('f_pnl').value = t.pnl ?? ''; $('f_hold').value = t.hold ?? '';
+    $('f_challenged').checked = t.challenged === true;
     document.querySelectorAll('.brk').forEach(b => { b.checked = (t.breaks || []).includes(b.value); });
     $('f_notes').value = t.notes || '';
     derive();
@@ -398,6 +404,7 @@
       slice('Long', list.filter(t => t.side === 'long')), slice('Short', list.filter(t => t.side === 'short')),
       slice('Screener 4 / 4', list.filter(t => t.screener === 4)), slice('Screener below 4', list.filter(t => t.screener < 4)),
       slice('Isolated', list.filter(t => t.mode !== 'cross')), slice('Cross', list.filter(t => t.mode === 'cross')),
+      slice('Entry never challenged', list.filter(t => t.challenged === false)), slice('Entry challenged', list.filter(t => t.challenged === true)),
       slice('Held over 60 min', list.filter(t => t.hold != null && t.hold > 60)),
     ].filter(r => r.n);
     $('bd').querySelector('tbody').innerHTML = rows.length ? rows.map(r => `<tr><td>${esc(r.label)}</td><td class="n">${r.n}</td><td class="n">${fmt(r.wr * 100, 0)}%</td><td class="n ${cls(r.exp)}">${sgn(r.exp)}</td><td class="n">${r.expR == null ? '—' : sgn(r.expR)}</td></tr>`).join('')
@@ -465,7 +472,7 @@
 
   // ---- CSV
   $('csvBtn').addEventListener('click', async () => {
-    const cols = ['ts', 'coin', 'side', 'setup', 'regime', 'screener', 'ema155', 'entry', 'stop', 'tp', 'stake', 'lev', 'mode', 'exitReason', 'exit', 'pnl', 'hold', 'breaks', 'notes'];
+    const cols = ['ts', 'coin', 'side', 'setup', 'regime', 'screener', 'ema155', 'entry', 'stop', 'tp', 'stake', 'lev', 'mode', 'exitReason', 'exit', 'pnl', 'hold', 'challenged', 'breaks', 'notes'];
     const q = (v) => { const s = Array.isArray(v) ? v.join('|') : v == null ? '' : String(v); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
     const csv = [cols.join(','), ...[...trades].sort((a, b) => (a.ts || '').localeCompare(b.ts || '')).map(t => cols.map(c => q(t[c])).join(','))].join('\n');
     const dl = window.claude && window.claude.use ? await window.claude.use('downloads') : null;

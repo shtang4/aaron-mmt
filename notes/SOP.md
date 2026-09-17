@@ -26,7 +26,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 
 ## 3. Sniper entry (Diagnose, SPE)
 1. TradingView: nearest demand zone below (long) or supply zone above (short), and any FVG. Take the near edge.
-2. Bybit: **EMA 9** is the first target; if the zone edge sits deeper, the EMA closest to the edge. That is the price.
+2. Bybit: **EMA 9** is the first target; if the zone edge sits deeper, the EMA closest to the edge. That is the price. **Any of the five lines is parkable** — EMA 9 fills most often, EMA 155 is the deep one with the pivot behind it, EMA 255 is "the last guard". Trail the order up the line as the trend advances.
 3. Rest a limit order there. Re-place it if the EMA moves. **Limit is the default; a market order needs a reason** ("don't enter as a market order unless some critical condition"). Never market-buy the running candle.
 4. Correlated alts making the same move at the same minute are one trade. Size the total.
 
@@ -48,7 +48,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 1. Sweep realised profit from Derivatives to Funding.
 2. Close and go. Next coin. Never re-enter the same beak. **Nothing is held past 24 hours** (session: "minutes, hours, not more than days").
 3. Stop at the daily target or ten trades, whichever first. Rest.
-4. Log it in the journal: which D, which rule, what you would change. Thirty trades before you believe any number.
+4. Log it in the journal: which D, which rule, what you would change, **and whether price came back and challenged your entry** — his test for whether it was a sniper entry at all. Thirty trades before you believe any number.
 
 ## 7. When it goes wrong (Discharge)
 1. The stop is the answer. It was written before entry; honour it.

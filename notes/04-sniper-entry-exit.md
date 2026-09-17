@@ -36,14 +36,30 @@ SPE is a two-platform confluence entry:
 
 So the SMC zone tells you *where* the pullback should end, and the EMA gives the *exact price* to rest the order at. The two are read on different platforms because the SMC indicator is TradingView-only and the trade is placed on Bybit.
 
-### 1.2 What the slide leaves out
+### 1.2 What he says SPE actually means, and why it is not a rule
+
+From the ZETA walkthrough, the only time in the course he defines the term:
+
+> "What do you mean sniper price entry? Sniper price entry whereby **whatever price entry you enter and it will come back and challenge you, that's not considered.** But if let's say keep on retrace, go up, retrace go up, and **the further the distance from your entry level the better** is. This is what you call sniper price entry."
+
+Read it carefully, because it is a **verdict, not a procedure**. A sniper entry is defined by what happens *after* the fill: price never returns to challenge the level, and the gap between price and your entry keeps widening. Nothing in that definition tells you where to put the order. You find out whether your entry was a sniper entry by waiting.
+
+Three consequences worth being clear about:
+
+- **The actionable content of SPE is elsewhere**: the zone edge, the EMA, the limit order, and the EMA 155 direction rule. That is the procedure in 1.1. The definition above grades it afterwards.
+- **It is a good grading rule even so.** "Price came back and challenged my entry" is a clean, checkable journal field, and a run of challenged entries means you are buying into the move rather than in front of it. It belongs in the journal, not in the checklist.
+- **It quietly rules out chasing.** An entry taken into a running candle is, by this definition, almost never a sniper entry: price is already extended and any pause brings it back through your level. That is the same rule as "don't enter as a market order unless some critical condition", arrived at from the other direction.
+
+**Every line is parkable, and the order follows the line.** "If you miss this, you can up here. If you miss this here, you park here. **Just follow along the line.**" So the resting order is re-placed up the EMA as the trend advances, and any of the five lines qualifies — he points at EMA 155 on the ZETA chart. EMA 9 (the confirmed first target) is the shallowest and most frequently filled; EMA 155 is the deepest with the pivot rule behind it; EMA 255 is "the last guard". The choice is a trade-off between fill rate and how far the stop must sit.
+
+### 1.3 What the slide leaves out
 
 - **The stop.** SPE places the entry and says nothing about the stop. The structural stop for a zone entry is just beyond the far edge of the zone: below the bottom of the demand zone for a long, above the top of the supply zone for a short. The stop distance is set by the ROI tier in Module 5 section 3.2 converted to price. **Confirmed from the session: when the zone's far edge is further than the tier allows, lower the leverage until the tier stop sits beyond the zone.** The tier (and so the money at risk) stays fixed; the leverage gives. Formula: max leverage = entry × tier ROI ÷ |entry − zone far edge|. The pre-trade checklist prints this number.
 - **Which EMA first.** Confirmed from the session: **EMA 9.** That is the shallowest pullback and the most frequent fill, and it is also the line price slices through first when the trend ends. The consequences: the stop does the filtering (it must sit beyond the zone, not just under EMA 9), the EMA 155 three-candle rule must already be true, and on a 1-minute chart the EMA 9 moves every candle, so the limit order has to be re-placed as it moves. A deeper line with a zone behind it is a more conservative variant, not the taught one.
 - **Direction is assumed.** SPE only tells you where to enter once the direction is set. The direction comes from EMA 155 (three full-body candles on one side, Module 3 section 2.2) and the screener (Module 2 section 5).
 - **Time-in-force.** A resting limit at an EMA goes stale as the EMA moves. On a 1-minute chart EMA 9 moves every candle. Either re-place the order each candle or aim at the slower line.
 
-### 1.3 How SPE connects to what came before
+### 1.4 How SPE connects to what came before
 
 | Earlier slide | What it said | What SPE adds |
 |---------------|-------------|---------------|

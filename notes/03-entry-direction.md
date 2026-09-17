@@ -156,7 +156,7 @@ Exact settings from the "MMT 5 Lines EMA setting" screenshot (Bybit → Chart Se
 | ✓ | **25** | Blue | |
 | ✓ | **55** | Pink / magenta | |
 | ✓ | **155** | **Green** | **Pivot of the trend** |
-| ✓ | **255** | Indigo | Slowest line |
+| ✓ | **255** | Indigo | Slowest line. **"Considered support. That is the last guard."** |
 
 Unticked rows in the screenshot (Bybit defaults, not used): 7, 14, 28, 0, a second 25, a second 55. Press **Confirm**.
 
@@ -175,7 +175,7 @@ Slide rules for the 5-line set:
 
 - Each individual line can be the support line or resistance line for entry-point consideration.
 - Each line is a guidance line of SPE (Sniper Price Entry, Module 4).
-- **Green line EMA 155 always acts as the pivotal point of the trend.**
+- **Green line EMA 155 always acts as the pivotal point of the trend.** Spoken, on the ZETA walkthrough: **"EMA 155 is the most powerful EMA I would say in this world."** His claim, recorded as his. EMA 255 below it is "the last guard": the final support before the structure is gone.
   - If 3 consecutive full-body candles form **above** this line → considered uptrend, can **LONG**.
   - If 3 consecutive full-body candles form **below** this line → considered downtrend, can **SHORT**.
 
@@ -198,12 +198,23 @@ What this means in practice: with two lines, the only entries are the cross and 
 The example also shows the downside. After the spike to 0.0680 at 09:00, price fell through EMA 9, 25 and 55 in a few minutes. A pullback entry at any of those lines during the fall would have been stopped. The 5-EMA method produces more entries, and more of them are in the last leg of a move. The Discharge rules from Module 1 (take profit set first at the nearest resistance) are what make the extra entries survivable.
 
 
-**Second example: ZETAUSDT, 1-minute chart.** Same chart shown twice, both with "Entry 0.8570" drawn as a horizontal line and a highlighted box at about 17:30 to 18:00, after a spike to 0.9828 and a pullback.
+**Second example: ZETAUSDT, the same trade at three timeframes.** Entry 0.8570 and exit 2.8530 drawn as blue lines on all of them. Full trade write-up: [06 §7.2](06-case-studies.md) and [05 §2.3](05-risk-and-hedging.md).
 
-- 2 EMA (Basic): labelled **"No clue"**. With two lines there is nothing at 0.8570 to justify an entry.
-- 5 EMA (Advance): labelled **"SPE Entry"** and "LONG". The pullback lands on one of the faster EMAs of the 5-line set, price holds it, and that touch is the entry. Price then grinds higher to about 0.90.
+| Chart | What it shows | His verdict |
+|-------|--------------|-------------|
+| **1 Month** | Three candles. Low 0.6742, high 2.8813. The entry line sits at the base of the first one | The trade, seen whole |
+| **1 Day**, 2 EMA vs 5 EMA | The whole move, 01/30 to 03/15 | "Seriously by using 1 day, **you can't really see clearly with the EMA, even by using 2 EMA**. 5 EMA relatively you can peer through." |
+| **1 minute**, 2 EMA vs 5 EMA | The entry itself: a spike to 0.9828, a pullback into a box at 0.8570, then the grind up | 2 EMA: **"No clue."** 5 EMA: **"SPE Entry"**, "LONG". "By using smaller 1 minute, 5 EMA you can actually precisely enter it." |
 
-This is the clearest statement yet of what Sniper Price Entry (Module 4) is: **a pullback to an EMA of the 5-line set, in the direction EMA 155 confirms**. The 2-EMA chart cannot produce it because the intermediate lines do not exist.
+Two things follow from that table, and the second one is not flattering.
+
+**The daily chart does not produce the entry, on either EMA set.** He says so directly. Direction comes from the higher frames; the price comes from the 1-minute chart. That is the strongest statement in the course that **the 1-minute chart is the execution chart**, and it is made while admitting the method's own indicator is unreadable on the timeframe most people would check first: "So there's some other tools that you need to use, try all of them."
+
+**ZETA was a day-one or day-two listing.** "That time when she traded, that time this coin just started day 1 or day 2 only. Day 1 or day 2, she managed to enter at this pricing, 0.8570." The monthly chart confirms it: three candles of history in total. So the "most powerful EMA in this world" was, on that 1-minute chart, an average of about **155 minutes — two and a half hours — of a brand-new listing's price**. EMA 255 was four and a quarter hours old. The lines were computable but they were not describing a trend; they were describing a launch. This is also Golden Rule 4 ("new-born coins: trade for a few days only") being broken by the same trade that breaks Golden Rule 6, since it was then held about two and a half weeks ([05 §5](05-risk-and-hedging.md)).
+
+**The entry count, restated and now larger.** On this chart he counts the parkable levels out loud: "How many attempts you can enter, if you miss one, by using the 5 EMA comparatively to the 2 EMA? If you want to base on this EMA 155, you got 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 opportunity for you to enter before it pumps." Eleven here, eight on the slide in part 8 of the transcript. **The number is a property of the chart, not of the method** — it counts how many times price touched a line on a move that happened to keep going. On a move that turned, the same touches are the same number of chances to be stopped.
+
+**Parking, and following the line.** "Whatever 3 full body candles above the EMA 155, obviously you can enter as long ... If you miss this, you can up here. If you miss this here, you park here. **Just follow along the line.**" So the resting limit order is trailed up the EMA as the trend advances, and **any** of the five lines is a legitimate place to park, not only EMA 9: on this chart he points at EMA 155 itself. Reconciling with the confirmed answer that EMA 9 is the first target — EMA 9 is the shallowest and the most frequently filled, EMA 155 is the deepest with the pivot rule behind it, and EMA 255 is the last guard. Which one you use sets how often you are filled and how far the stop has to sit.
 
 Both ZETA screenshots also show MACD in the lower pane, which is why MACD is the next indicator taught.
 
@@ -456,5 +467,5 @@ Reading:
 - ~~Which SMC indicator and platform?~~ Answered: TradingView, Market Structure by Leviathan.
 - ~~Which site supplies the liquidation heatmap?~~ Coinglass, per the RAVE example screenshot in Module 5.
 - When two of the seven chart tools disagree, which wins? Only EMA 155 has stated priority.
-- In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?
+- ~~In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?~~ Answered: any of them. He walks the chart parking at successive lines and points at **EMA 155** as the one to base the count on. EMA 9 is the first and shallowest target; EMA 255 is "the last guard".
 - Which two of the five EMAs (9, 25, 55, 155, 255) are the "basic" pair, and does the Module 1 stop rule's "EMA 50" mean EMA 55?

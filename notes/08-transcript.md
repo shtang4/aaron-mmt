@@ -358,3 +358,41 @@ The headline says she did not succeed by increasing leverage. The cards on that 
 And **the ZETA card is the ZETA case study**: entry 0.8570, current 2.8530, the exact prices from Module 3 and Module 5, now with the leverage attached — **50×, +11,339.67%**. The "don't take profit too early" lesson was taught over a 50× position held about two weeks. See [05 §2.3](05-risk-and-hedging.md), now corrected with that fact.
 
 "Learn the EMA well and you can pump your profit up to 11,000 percent ROI" attributes to the EMA what the leverage did: 233% of price × 50 = the card. At the taught 5–10× the same read returns roughly 1,150% to 2,300%, which is still exceptional and does not need a position a 2% wick can end.
+
+## Part 11: the ZETA walkthrough, and what SPE actually means
+
+Four slides: the ZETA trade at **Month**, **Day** (2 EMA vs 5 EMA) and **Minute** (5 EMA alone, then 2 EMA vs 5 EMA side by side). Entry 0.8570 and exit 2.8530 drawn on every one. Chart detail in [03 §2.3](03-entry-direction.md); the definition in [04 §1.2](04-sniper-entry-exit.md).
+
+### The definition of Sniper Price Entry, the only one in the course
+
+> "What do you mean sniper price entry? Sniper price entry whereby **whatever price entry you enter and it will come back and challenge you, that's not considered.** But if let's say keep on retrace, go up, retrace go up, and **the further the distance from your entry level the better** is. This is what you call sniper price entry."
+
+It is a **verdict, not a procedure**: an entry is a sniper entry if price never comes back to it and the gap keeps widening. You learn whether yours qualified by waiting. The placement rules (zone edge, EMA, limit order, EMA 155 direction) are the procedure; this is the grade. It is still a good journal field, and it rules out chasing by construction.
+
+### The timeframe walk, and an admission
+
+> "Enter from here, this blue line 0.8570, and then exit means TP around 2.8530, by month chart. If using by day chart, you can see the upper blue line, this is the exit, the lower blue line is the entry ... **seriously by using 1 day, you can't really see clearly with the EMA even by using 2 EMA. 5 EMA relatively you can peer through. So there's some other tools that you need to use, try all of them.** But the 5 EMA actually gives you more precision. By using smaller 1 minute, 5 EMA you can actually precisely enter it."
+
+The daily chart does not produce the entry on either EMA set, by his own account. The 1-minute chart does. That is the clearest statement in the course that the 1-minute chart is the execution chart — made while conceding the indicator is unreadable on the daily.
+
+### ZETA was a day-1 or day-2 listing
+
+> "Basically that time when she traded, that time this coin just started day 1 or day 2 only. Day 1 or day 2, she managed to enter at this pricing, 0.8570."
+
+The monthly chart has three candles. An EMA 155 on a 1-minute chart of a two-day-old coin averages about two and a half hours of a launch, and EMA 255 about four and a quarter. The lines compute; they are not describing a trend. This trade breaks Golden Rule 4 as well as Golden Rule 6.
+
+### Parking, following the line, and the count
+
+> "As I say, EMA 155, the green colour, you can place it here. So the moment it comes down here, triggered. If you miss another one, you got another one. **How many attempts you can enter, if you miss one, by using the 5 EMA comparatively to the 2 EMA?** If you want to base on this EMA 155, you got 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, **11 opportunity for you to enter before it pumps.**"
+
+> "If this one, only two lines, where got clue? **No clue.** But after you put in the EMA 5 lines, whatever 3 full body candles above the EMA 155, obviously you can enter as long. So it's here. If you miss this, you can up here. If you miss this here, you park here. **Just follow along the line.** So this will be your sniper price entry."
+
+- **Eleven here, eight in part 8.** The count is a property of the chart, not of the method: it counts touches on a move that kept going. On a move that turned, they are the same number of chances to be stopped.
+- **The order is trailed up the line**, re-placed as the EMA advances.
+- **Any of the five lines is parkable**, not only EMA 9. He points at EMA 155 on this chart.
+
+### The two role statements
+
+> "**EMA 255 considered support. That is the last guard. EMA 155 is the most powerful EMA I would say in this world.**"
+
+Recorded as his claim. EMA 255 now has a stated role for the first time: the final support below the pivot.

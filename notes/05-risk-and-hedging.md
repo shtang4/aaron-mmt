@@ -70,6 +70,8 @@ TradingView, ZETAUSDT perpetual (Bybit), **4-hour** chart, with a Multi EMA over
 
 The entry price is the same 0.8570 as the ZETA 1-minute SPE example in Module 3. It is one trade shown at two timeframes: entered on the 1-minute chart, held for about two weeks on the 4-hour chart, exited at roughly +233% of price.
 
+**ZETA was a day-one or day-two listing when she entered.** From the walkthrough: "that time this coin just started day 1 or day 2 only ... she managed to enter at this pricing, 0.8570." The monthly chart carries three candles in total. So the trade breaks **Golden Rule 4** (new-born coins, a few days only) as well as Golden Rule 6, and the EMA 155 it was entered on had about two and a half hours of a brand-new listing behind it on the 1-minute chart. See [03 §2.3](03-entry-direction.md).
+
 **The Jane case study names the leverage: 50×** ([06 §7.2](06-case-studies.md)). Her Bybit card carries exactly these prices, 0.8570 to 2.8530, and reads **+11,339.67% ROI**. So this slide's lesson — hold through the retrace, do not take profit too early — was taught over a **50× position held for two weeks**, on which roughly a 2% adverse move is a liquidation at any point before the gain builds. The retrace it praises (1.90 down to 1.20) was survivable only because price was already more than double the entry by then. Nothing about the argument transfers to a position taken at 50× and then retraced early, which is the position a student copying it would be in.
 
 Slide caption: "You exited early, then watched the price pump without you." Follow-up slides:
