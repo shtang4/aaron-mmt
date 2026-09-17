@@ -27,7 +27,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
    **Retracement test, once you are in**, in order of severity: EMA 9/25/55 tangling with each other while all three stay **above** EMA 155 is noise, hold · three full-body candles past EMA 155 is the **warning** that direction has gone · the fan **fully inverted** (255 > 155 > 55 > 25 > 9) is the confirmation — "cut loss or exit". ("EMA 155" is the fan's pivot; on another EMA set, the equivalent line.)
 4. Donchian ribbon (period 20) solid in the same colour confirms. Mixed → skip. **The ribbon colour is a BOS proxy**: a pullback that is only a CHoCH leaves the colour alone; a CHoCH followed by a BOS flips it. Colour holds = retracement, colour flips = the structure broke. Sensitive on 1m.
 5. **SMC sequence, the one entry trigger it gives:** equal lows at a strong low → CHoCH → BOS = long ("pump like crazy"). Equal highs → CHoCH → BOS = short ("dump very hard"). All three, in that order. The sweep itself is the abnormal-volume bar with the long wick.
-6. Seahorse (vertical move done, flat beak, EMAs converging) → stay out.
+6. **Seahorse** — a wait, not a skip (session). 1H shows the shape: vertical move done, then a flat "beak". Drop to **15m** for the beak's red Heikin-Ashi candles. **Do not enter inside the beak.** Draw the line across it, wait for the **breakout**, then long. Beak length = how long the wait is; a long beak means watch another coin meanwhile. **The stop must not sit under the beak's low** — that run of equal lows is exactly where the sweep goes: "manipulation can happen and hunt your stop loss at the bottom."
 7. Hockey stick (slow decline, sharp V, vertical blade): enter only on the golden cross *with* the EMA 155 three-candle rule. Never buy the blade.
 
 ## 3. Sniper entry (Diagnose, SPE)
@@ -84,7 +84,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 - A position without a resting stop. Handouts: "set it before the entry order fills."
 - Hedging instead of taking the stop. The only hedge is on an accidental cross-mode position, and it ends with closing it.
 - Holding a loser to breakeven.
-- Trading a mixed heatmap or a seahorse.
+- Trading a mixed heatmap. **Entering inside a seahorse's beak** — the breakout of the beak is the trade, not the chop.
 - Entering on a chat call without the chart check. "If you don't know the setup, don't take the shot."
 - Shorting a pump that is still running. "No one can tell where the pump will get."
 - Holding for days. This is not swing trading.

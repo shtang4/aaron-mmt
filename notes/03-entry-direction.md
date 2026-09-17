@@ -755,9 +755,45 @@ The shape, read off the ETH chart:
 | Tail and body (vertical) | A sharp, near-vertical rise: ETH from 1,571 to 1,698 in about 90 minutes |
 | Head with long beak (horizontal) | The flat chop that follows: price oscillates in a narrow band around 1,660 to 1,680 for six or more hours, with the EMAs converging and flattening underneath |
 
-**Rule: when the vertical move has ended and the "beak" is forming, do not enter. Watch.** It is the Module 2 "ranging" condition and the Heikin-Ashi doji-cluster condition, described by shape instead of by indicator. The trap it names is chasing: buying the small green candles in the beak because the big move is still fresh in memory, then selling the small red ones.
+**Rule, as the slide states it: when the vertical move has ended and the "beak" is forming, do not enter. Watch.** The session extends this — the beak is a wait, and its *breakout* is a long. See 6.1a, which is the version to follow. It is the Module 2 "ranging" condition and the Heikin-Ashi doji-cluster condition, described by shape instead of by indicator. The trap it names is chasing: buying the small green candles in the beak because the big move is still fresh in memory, then selling the small red ones.
 
-This is the clearest Skip rule in the course, and the only one described as a pattern to avoid rather than one to trade. Its mirror image, a slow decline ending in a vertical rise, is the hockey stick in Module 2 section 6.
+The slides present this as the clearest Skip rule in the course. **The session reclassifies it as a setup with a waiting period** (6.1a); what is forbidden is entering inside the beak, not trading the coin. Its mirror image, a slow decline ending in a vertical rise, is the hockey stick in Module 2 section 6.
+
+### 6.1a The session changes this rule: the seahorse is a *wait*, not a *skip*
+
+The slide says "just stay and observe, **don't go in**". These notes had carried that into the SOP as a hard Skip, and into the "Never" list. **The spoken version is materially different and it is the one to follow.**
+
+> "This is called seahorse pattern. **It workable.** It means that you don't simply enter. The moment you see seahorse pattern is something that **probably going to pump further**, but you have to spare it — at this timing is a ranging. So it's not good that simply just enter. **You let it come down and then you enter, you draw a line, bullish line, then after that you wait for the breakout and then it pump further.** ... **When it start to break up, that time it's a good sign for you to long.**"
+
+So the seahorse is a **continuation setup with a waiting period**, not a coin to abandon:
+
+| Phase | What it is | What you do |
+|-------|-----------|-------------|
+| Tail and body | The vertical move, already finished | Too late. Not your entry |
+| **The beak** | The sideways range after it | **Do not enter.** This is the "don't go in" the slide means |
+| **The breakout of the beak** | Price leaves the range upward | **This is the long.** "A good sign for you to long" |
+
+The procedure he gives is concrete: **draw the line across the beak, wait for the breakout, then enter.** That is the same shape as the hockey stick ([02 §6](02-coin-selection.md)), the same "wait for the separation to hold" as the EMA fan rule, and the same thing he did on A8 — "already break out, I draw it break out" ([06 §6.2](06-case-studies.md)). The course has one entry pattern in several costumes: **consolidation, drawn boundary, breakout, enter.**
+
+**The beak's length is the range's duration.** "The longer the beak is, the longer the time the sideways it is, it will be." So a long beak is not a better setup, it is a longer wait — and on a method whose holding period is minutes to hours, a long beak is a reason to watch a different coin until it resolves.
+
+**He claims it as his own**: "This is how I actually create it for that." Recorded as his, not verified.
+
+**The risk he names, and it is the one that matters:**
+
+> "But is it possible that this thing will dump back down? **Yes, possible, because the manipulation can happen and to hunt your stop loss at the bottom.**"
+
+The bottom of the beak is a run of **equal lows**, which is exactly the liquidity a sweep aims at ([03 §3.2a](03-entry-direction.md), [03 §4.2b](03-entry-direction.md)). So the one place a stop must **not** sit on this setup is just under the beak. Put it beyond the sweep, or lower the leverage until the tier stop reaches beyond it. This is the seahorse version of the general rule, and the pattern makes it unusually predictable: on a seahorse you know in advance where the stop hunt is going.
+
+**The timeframes, stated for the first time:**
+
+> "You only recognise — go to **one hour**, if you see this kind seahorse pattern, that is one. And then you go to **15 minutes**, you will start to see this kind of **red candles with Heikin-Ashi**. Obviously then there's something that you can expect to have a **long setup around this area — let it finish first.**"
+
+**1H for the shape, 15m for the beak's candles.** Not the 1-minute chart. The red Heikin-Ashi candles on the 15-minute are the beak forming, and they are the signal that a long setup is coming — not that one is here. "Let it finish first."
+
+That also reconciles the pattern with the Heikin-Ashi rules in §1.2: a beak on 15m is a doji-and-small-body cluster, and the rule there is already "wait two to three candles and let the colour resolve". The seahorse is that rule applied to a six-hour range instead of three candles.
+
+**What is corrected, plainly.** The Skip reading was wrong in one direction: it treats the seahorse as a coin to drop, when he treats it as a coin to *queue*. The slide's warning is about entering **inside** the beak, and that part stands — chasing the chop is the "painful loss" it names. The SOP and the "Never" list are updated accordingly.
 
 ### 6.2 The chart's indicator set is not the MMT set
 

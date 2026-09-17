@@ -328,8 +328,8 @@
           <span class="hint">A8 case study: a widening fan with no crosses can be held without a fixed target. Losing one, two or three fast lines is a retracement; three full bodies past EMA 155 is the trend change.</span></span></label>
 
       <label class="check"><input type="checkbox" id="seahorse">
-        <span>Chart shows a seahorse: vertical move already done, flat beak forming, EMAs converging
-          <span class="hint">If ticked, the course says stay out.</span></span></label>
+        <span>Price is <b>inside</b> a seahorse beak — vertical move done, flat range not yet broken
+          <span class="hint">Session: the beak is a wait, not a skip. Do not enter in the chop — draw the line across it, wait for the breakout, then long. Untick once the breakout is confirmed. The stop must not sit under the beak's low; that is where the sweep goes.</span></span></label>
 
       <div class="field">
         <label>Coin Trend Screener (tick what passes for this direction)</label>
@@ -589,7 +589,7 @@
     if (regime === 'bearish' && side === 'long') warns.push('Long on a mostly-red heatmap: only valid if this coin is decoupling (an uncorrelated pump). Size as if it is not.');
     if (regime === 'bullish' && side === 'short') warns.push('Short on a mostly-green heatmap: against the money flow.');
     if (!$('ema155').checked) fails.push('EMA 155 three-candle rule not confirmed. Direction is not set.');
-    if ($('seahorse').checked) fails.push('Seahorse shape on the chart. Stay out.');
+    if ($('seahorse').checked) fails.push('Inside a seahorse beak. Wait for the breakout of the range, then long; do not enter the chop.');
     const scr = ['scrEma', 'scrOi', 'scrFr', 'scrDepth'].filter(id => $(id).checked).length;
     const tierName = $('tier').value === '10' ? 'beginner' : $('tier').value === '35' ? 'intermediate' : $('tier').value === '60' ? 'advanced' : 'beginner';
     const minScr = tierName === 'beginner' ? 3 : tierName === 'intermediate' ? 2 : 1;
@@ -709,7 +709,7 @@
     lines.push(`${coin || '(coin)'}  ${side.toUpperCase()}  ${new Date().toISOString().slice(0, 16).replace('T', ' ')}  verdict: ${$('state').textContent}`);
     lines.push('');
     lines.push('DIAGNOSE');
-    lines.push(`  heatmap ${regime} · EMA155 ${$('ema155').checked ? 'confirmed' : 'NOT confirmed'} · seahorse ${$('seahorse').checked ? 'YES' : 'no'} · screener ${scr}/4`);
+    lines.push(`  heatmap ${regime} · EMA155 ${$('ema155').checked ? 'confirmed' : 'NOT confirmed'} · in seahorse beak ${$('seahorse').checked ? 'YES — wait for breakout' : 'no'} · screener ${scr}/4`);
     lines.push(`  zone edge ${fmtP(zoneNear, entry)} · nearest EMA ${fmtP(emaP, entry)} · structural ${fmtP(structural, entry)}`);
     lines.push(`  entry: limit ${fmtP(entry, entry)}`);
     lines.push('');

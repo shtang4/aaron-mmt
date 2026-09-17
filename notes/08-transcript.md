@@ -618,3 +618,29 @@ Community sentiment on the same page (79% bullish, 5.6K votes) is the Fear & Gre
 ### The caution
 
 **Trend lines are the only subjective tool in the whole stack.** EMA 155, the Donchian ribbon, BOS and CHoCH, the liquidation bands, the volume threshold — all computed, all identical for any two people. A trend line depends on which two points you pick, and on the RARE chart he draws three different lines from three different anchors inside three minutes. Keep them subordinate: trend line versus EMA 155, EMA 155 wins, and **a broken trend line is not a BOS**.
+
+## Part 18: the seahorse, spoken — and it is not the Skip rule the slide says
+
+Full rewrite: [03 §6.1a](03-entry-direction.md). **This corrects a rule these notes had in the SOP and in the "Never" list.**
+
+The slide says "just stay and observe, **don't go in**", and I had carried that as: seahorse on the chart → drop the coin. The session says something materially different:
+
+> "This is called seahorse pattern. **It workable.** It means that you don't simply enter. The moment you see seahorse pattern is something that **probably going to pump further**, but you have to spare it — at this timing is a ranging ... **You let it come down and then you enter, you draw a line, bullish line, then after that you wait for the breakout and then it pump further** ... When it start to break up, that time it's **a good sign for you to long**."
+
+**The seahorse is a continuation setup with a waiting period.** The beak is the wait; the *breakout of the beak* is the entry. What is forbidden is entering **inside** the chop — which is what the slide's "painful loss" warning is actually about.
+
+That makes it the same shape as the hockey stick, the "wait for the fan to open" rule, and what he did on A8 ("already break out, I draw it break out"). One entry pattern in several costumes: **consolidation → draw the boundary → breakout → enter.**
+
+### The details the slides never gave
+
+- **Beak length = length of the wait.** "The longer the beak is, the longer the time the sideways it is, it will be." A long beak is not a better setup; on a minutes-to-hours method it is a reason to watch another coin until it resolves.
+- **Timeframes: 1H for the shape, 15m for the beak.** "Go to one hour, if you see this kind seahorse pattern, that is one. And then you go to 15 minutes, you will start to see this kind of **red candles with Heikin-Ashi** ... you can expect to have a long setup around this area — **let it finish first**." Not the 1-minute chart.
+- **He claims to have coined it**: "This is how I actually create it for that." Recorded as his.
+
+### The risk he names, and where the stop must not go
+
+> "Is it possible that this thing will dump back down? **Yes, possible, because the manipulation can happen and to hunt your stop loss at the bottom.**"
+
+The bottom of the beak is a run of **equal lows** — precisely the liquidity a sweep aims at. So on a seahorse, the one place the stop must **not** sit is just under the beak. Put it beyond the sweep or lower the leverage until the tier stop reaches past it. The pattern's value here is that **you know in advance where the stop hunt is going**, which is rare.
+
+Updated: the SOP direction step, the "Never" list (now "entering inside a seahorse's beak", not "a seahorse"), and the pre-trade checklist, where the checkbox now reads "price is **inside** a seahorse beak" and the refusal says to wait for the breakout rather than to stay out. Checklist re-verified in headless Chromium.
