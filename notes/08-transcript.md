@@ -536,3 +536,25 @@ He does not say what the toggle does or which he uses. On the same 12h window th
 Both the slide and the spoken version call the clusters support and resistance. **A liquidation cluster is a magnet, not a barrier.** A band below price is where longs are force-closed: price is drawn down into it and the forced selling accelerates *through* it. A band above is where shorts are force-closed. The reversal, when it comes, is *after* the liquidity is consumed, not at the edge of the band.
 
 Buying a cluster below as "support" means buying exactly where the forced selling starts. Same error as the SMC glossary's "weak high = resistance": liquidity beyond a level is a target, not a wall. And as there, **his own practice is right** — the Wick Tracker aims at clusters and the RAVE entry buys after one is swept. Only the vocabulary is backwards. Full rules table: [03 §4.2b](03-entry-direction.md).
+
+### Part 15b: the two models, and the KL-to-Penang route
+
+**Model 1 versus Model 2, answered** (this closes open question F4):
+
+> "Earlier one is **model one, for short timing period like scalping and day traders**. **Model 2** ... this one relatively more to like **longer period**, but it doesn't mean that they won't go there. But it's just to confirm that **if let's say model one and model two also showing here the hottest one, so this one obviously they will come and hunt this liquidity here.**"
+
+Model 1 is the working view for this method. Model 2 is a second opinion, and **the rule is confluence: a band that is hottest in both models is the one that gets hunted.** A level only one model likes is a weaker target. Note the dollar figures are **not comparable across models** — the scale maxima differ (84.08M on the Model 1 view, 29.73M on Model 2) — so rank bands within a model and compare models only on *position*.
+
+**The route model, which is the best thing said about this tool:**
+
+> "Obviously, you see 66 versus 84. Obviously, **I want to go from KL to Penang to grab this liquidity here.** But if let's say, would it be possible come down to **Melaka or Seremban** from KL to this liquidity before it pump up there? **Can, possible. It depends on the money maker.**"
+
+Price leaves Kuala Lumpur. The 84M band is Penang to the north — the destination. The smaller bands below are Seremban (near) and Melaka (further) to the south — detours that may be taken first.
+
+1. **The biggest cluster is where price is going.** Rank by the dollar figures: 84.08M, 66.77M, 28.53M, 26.79M.
+2. **It says nothing about when, or in what order** — "it depends on the money maker".
+3. **A cluster on the opposite side is often visited first.** A run south before the trip north is a route, not a change of destination.
+
+The consequence, and it is why the heatmap check sits in Dose rather than Diagnose: **a cluster between you and your stop will be swept before the move you are waiting for.** Either the stop goes beyond it or the leverage comes down until it does. And a sweep into a near cluster is not automatically a trend change — on this model it is the detour.
+
+His language throughout is "**grab this liquidity**", "**come and hunt this liquidity**" — the magnet model, stated properly. The "support and resistance" wording in [03 §4.2b](03-entry-direction.md) is loose vocabulary on the slides, not the model he actually teaches.

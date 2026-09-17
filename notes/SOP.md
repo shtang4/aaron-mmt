@@ -5,7 +5,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 ## 0. Setup, once
 - **Bybit chart:** Heikin-Ashi on · EMA 9, 25, 55, 155, 255 · MACD 8/13/9 · Volume VOLMA 5, 10.
 - **TradingView:** Market Structure (Leviathan), BOS on close, CHoCH on · Donchian Trend Ribbon 20.
-- **Coinglass:** liquidation heatmap. **12h is the working view** (session default); 24h for a longer read, 1w for context only. Pick the **Bybit** pair, not Binance. Yellow = the cluster, blue-black = empty. Tap a band for its size in dollars.
+- **Coinglass:** liquidation heatmap. **12h is the working view** (session default); 24h for a longer read, 1w for context only. **Model 1** is the scalping view, **Model 2** the longer one — a band hottest in **both** is the one that gets hunted. Pick the **Bybit** pair, not Binance. Yellow = the cluster, blue-black = empty. Tap a band for its size in dollars; rank within a model, compare models on position only.
 - **Account:** isolated margin · one-way mode · TP triggers on Last, SL on Mark · Order by Value.
 - **Access:** Bybit is blocked by MCMC in Malaysia. VPN on before the session starts, and check it is still up before placing an order.
 
@@ -36,6 +36,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 1. Isolated margin. Leverage 5× to 10×.
 2. Margin per trade: $20 to learn; then 1% of wallet; never above 10%. Bigger wallet, smaller trade. **Loss at the stop never above 1–2% of account equity**, whatever the confluence score.
 3. **Check the heatmap before you place the stop.** A cluster just beyond it will be swept before the move you want — move the stop past it or lower the leverage. A cluster is a **magnet, never support**: price is drawn into it and the forced orders accelerate through it.
+   **KL to Penang:** the biggest band is the destination, but a smaller band on the *other* side is a detour often taken first — "it depends on the money maker". A sweep into the near cluster is the route, not a change of destination. Size the stop for the detour.
 4. Stop as ROI on margin by tier: beginner 5–20%, intermediate 20–50%, advanced 50%+. Convert to price; it must sit beyond the structural level (far edge of the zone, or the heel low). If it does not, **lower the leverage** until it does (session-confirmed). Never move the level, never widen the tier.
 5. Write the money at risk in USDT before entry.
 

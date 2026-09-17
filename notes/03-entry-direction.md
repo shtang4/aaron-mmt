@@ -593,7 +593,34 @@ His default is **12h**, not the 1-week view the RAVE screenshot happened to use.
 
 **Reading a single band.** Tap a band and a tooltip gives the timestamp, the **price**, and the **"Liquidation Leverage"** — the size of the cluster in dollars. From the screenshots: 77,643.44 → **84.08M**; 75,949.64 → **66.77M**; 78,490.34 → **28.53M**; 74,989.82 → **26.79M**. So the tool gives you a number, not just a colour, and clusters can be ranked. That is what makes a heatmap level usable as a Wick Tracker target: you can say "the nearest 80M band above me is at 77,643" rather than "it looks bright up there".
 
-**Model 1 versus Model 2, unexplained.** He never says what the toggle does or which he uses. From the screenshots the two render differently on the same 12h window: one produces **sharp discrete bands** with a scale maximum of 84.08M over a 72,901–80,015 range; the other a **smoothed field** topping out at 29.73M over a wider 69,747–83,730 range. So the two models disagree about both where the liquidity is and how much of it there is, which is worth knowing before you place a target on one of them. Open question: what the two models assume, and which one the course uses.
+**Model 1 versus Model 2, answered — and the pair is more useful than either alone.**
+
+> "Earlier one is **model one, for short timing period like scalping and day traders**. **Model 2** ... this one relatively more to like **longer period**, but it doesn't mean that they won't go there. But it's just to confirm that **if let's say model one and model two also showing here the hottest one, so this one obviously they will come and hunt this liquidity here.**"
+
+| | Horizon | Use |
+|---|---|---|
+| **Model 1** | Short — "scalping and day traders" | The working model for this method |
+| **Model 2** | Longer | A second opinion, not a different market |
+
+**The rule is confluence, not choice: a band that is hottest in *both* models is the one that gets hunted.** That is the answer to the obvious objection — the two models disagree about where the liquidity sits, so a level only one of them likes is a weaker target. Where they agree, you have two independent estimates pointing at the same price.
+
+One caution on the arithmetic. The scale maxima differ (84.08M on the Model 1 view, 29.73M on the Model 2 view), so the **dollar figures are not comparable across models**. Rank bands by size *within* a model; compare models only on **position**.
+
+### 4.2c The KL-to-Penang model: the heatmap tells you where, not when or by what route
+
+The clearest thing he says about this tool, and it is the magnet reading stated properly:
+
+> "Obviously, you see 66 versus 84. Obviously, **I want to go from KL to Penang to grab this liquidity here**. But if let's say, would it be possible come down to **Melaka or Seremban** from KL to this liquidity before it pump up there? **Can, possible. It depends on the money maker.**"
+
+Price is a vehicle leaving Kuala Lumpur. The 84M cluster is **Penang, north — the destination**. The smaller clusters below are **Seremban (nearer) and Melaka (further), south — detours that may be taken first**. Three things follow, and all three are worth holding:
+
+1. **The biggest cluster is where price is going.** Rank the bands by their dollar figures and the largest one is the target. On these screenshots: 84.08M, then 66.77M, then 28.53M, then 26.79M.
+2. **It says nothing about when, or in what order.** "It depends on the money maker."
+3. **A cluster on the opposite side will often be visited first.** A trip south to Seremban before the run north to Penang is a normal route, not a change of destination.
+
+**The trading consequence, which is the point of the whole tool:** if there is a cluster between you and your stop, expect it to be swept *before* the move you are waiting for. That is why the heatmap check belongs in Dose, before the stop is placed — either the stop sits beyond the nearer cluster, or the leverage comes down until it does. And a sweep down into a cluster below is not automatically a trend change; on this model it is the detour, and the destination is still the big band.
+
+Note also that his own language here is the magnet model, not the support model: **"grab this liquidity", "come and hunt this liquidity".** The vocabulary problem in 4.2b is confined to the word "support"; the mental model he actually teaches is correct.
 
 ### 4.2b "Support and resistance" is the wrong word, and it matters
 
