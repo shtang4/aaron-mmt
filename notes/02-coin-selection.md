@@ -288,17 +288,30 @@ The slide lists the order as Day → 1H → 4H → 15m → 5m → 1m. The 1H and
 - It **does not** replace the Bybit Opportunities scan. The scan produces candidates; the screener grades them. The scan is broad and free, the screener is per coin and manual.
 - The manipulation warning is the course acknowledging that all four checks can be gamed on a thin coin. That points back to the volume criterion in section 1: run the screener on liquid coins only.
 
-### 5.3 The newborn-coin shortcut: EMA plus OI
+### 5.3 Newborn coins only: the EMA-plus-OI exception
 
-From the ZETA walkthrough ([06 §7.5](06-case-studies.md)), the one place he reduces the screener:
+**Scope first, because it is the whole point of this rule.** From the ZETA walkthrough ([06 §7.5](06-case-studies.md)):
 
 > "You can use the EMA indicator, at the same time using the **OI data value, especially for a newborn coin**, that's good enough."
 
-On a day-one or day-two listing there is no higher-timeframe history: the daily chart has two candles and a 1-minute EMA 155 averages two and a half hours of a launch. His answer is not to skip the check but to **lean on the one signal that does not need history**. Open interest is a live count of contracts outstanding; it is meaningful from the first hour. Funding needs a settlement or two before it means anything, and depth on a new listing is thin by definition, so the two checks that degrade most on a newborn are the two he drops.
+This is an **exception for day-one and day-two listings, not a shortcut anyone may take**. On a coin with history the screener is four checks and the handouts' threshold applies: below 3 in one direction, no trade. Nothing here relaxes that. The exception exists because a brand-new listing cannot be screened the normal way.
 
-Read on Bybit: **Order Book / Trades / OI Data / Contract tabs → OI Data**, which plots Open Interest as a line over Trading Volume bars, with a timeframe row (5 m, 15 m, 30 m, 1 H, 4 H, 1 D). The ZETA screenshot uses **5 m** and shows OI climbing 8.24M → 8.45M across the session while price rose: the "price up + OI up = real buying" cell of the 2×2 in [07 §1.4](07-handouts.md), read live rather than on Coinglass.
+**What is actually unavailable, and what is merely unreliable.** The distinction matters, because it tells you when the exception expires.
 
-So the screener has a documented reduced form: **EMA direction + OI direction, on the 5-minute OI view, for a coin with no history.** It is 2 of the 4 checks and he calls it "good enough", which sits against the handouts' "below 3 in one direction, do not trade". The handout rule is for a coin with history; this is the exception he states for one without. Note what it costs: a 2/4 screen is the *advanced* tier in his own grading ([08 part 3](08-transcript.md)), not the beginner one.
+| Check | On a day-1 or day-2 listing |
+|-------|----------------------------|
+| **Multi-timeframe EMA direction** (1D → 1m) | **Impossible.** The daily chart has two candles. Even on 1m, EMA 155 averages two and a half hours of a launch and EMA 255 about four. The check cannot be run as written; only the low timeframes exist at all. |
+| **Open interest** | **Fully available.** OI is a live count of open contracts, meaningful from the first hour. It is the one check a new listing does not degrade. |
+| Funding | Data exists — Bybit funds a new perpetual from listing — but one or two settlements on a launch price is noise, not positioning. |
+| Order-book depth | Data exists, but the book is thin by definition and a single order moves the reading. Gameable, and the course's own manipulation warning applies hardest here. |
+
+So it is not that a newborn has "no data". It is that **one check is impossible and two are uninformative**, leaving OI as the only one that carries its normal meaning. That is why the pairing is EMA-plus-OI and not some other pair.
+
+**When the exception expires:** the moment the coin has enough history for the higher-timeframe EMA check to be real — a few days, at which point Golden Rule 4 says stop trading it as a newborn anyway. Then it is a four-check coin again. The exception has a short life by construction.
+
+**Where to read the OI.** Bybit → the tab row under the chart: **Order Book / Trades / OI Data / Contract** → **OI Data**. It plots Open Interest as a line over Trading Volume bars with a timeframe row (5 m, 15 m, 30 m, 1 H, 4 H, 1 D). The ZETA screenshot uses **5 m** and shows OI climbing 8.24M → 8.45M while price rose, which is the "price up + OI up = real buying" cell of the 2×2 in [07 §1.4](07-handouts.md), read live on Bybit rather than on Coinglass.
+
+**What it costs, stated plainly.** Two checks passing is a **2/4 screen**, which in his own grading ([08 part 3](08-transcript.md)) is the *advanced* tier — intermediates at 2/4, beginners at 4/4 or a cautious 3/4. And the argument cuts two ways: if the reason to drop checks is that the data is unreliable, that is also a reason to trade the coin **smaller, or not at all**, rather than to lower the bar. He lowers the bar on the least reliable chart type in crypto. A beginner should read this rule as "newborn coins are an advanced trade, so skip them", not as permission to run a 2/4 screen.
 
 ## 6. MMT Hockey Stick Recognition (MMT 曲棍球棒模式识别)
 
