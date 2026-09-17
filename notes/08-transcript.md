@@ -590,3 +590,31 @@ The call itself read **"Look for LONG Retracement!!"**, not "buy now" — the li
 The critics at 12:38 and 12:43 were commenting three hours after a window that had already paid, and on direction they were late. But "**FR has no indication it will pump. It's only a hope to catch it early**" is a fair objection at 9:32 — funding says nothing about a pump that has not started, and what actually carried the trade was the news and the heatmap. And the member who said "**I wait for the FR to reset, sometimes the coin drop then I short**" is describing the same insight as the flip rule by another route: after a pump, funding is heavily positive, longs pay, and the unwind coincides with the run at the lower cluster.
 
 **Note the timestamps on his own evidence.** The heatmap screenshots presented as the reason for the call are stamped **10:40 and 10:41** — after the 9:32 call and after the 10:32 long window closed. He may well have looked earlier; as presented, the evidence post-dates the trade it justifies. The rule in §8.2 stands on its own merits, but this slide *demonstrates* it rather than documenting the decision.
+
+## Part 17: trend lines drawn live, and the research tabs
+
+Five screen recordings of his TradingView workspace, 01:50 to 01:59 — one nine-minute demo on BTCUSDT.P and RAREUSDT.P, both **1D**. Caption: *"This one is the BTC & RARE chart. **Go to CoinMarketCap for basic fundamental of a coin and check X and Telegram for News.**"* Written up at [03 §5.1–5.3](03-entry-direction.md).
+
+### The four tabs
+
+Visible in every screenshot: **TradingView** (the chart) · **CoinMarketCap** (the coin page) · **X**, the project's own account (@BlockSt_HQ, @SuperRare) · **Coinglass** (that coin's liquidation heatmap). Plus **Telegram** in the caption, which appears nowhere else in the course. This is the first time the deck shows the **research** layer rather than the chart layer, and it is four tabs on one coin at once.
+
+### Where trend lines live
+
+Both examples are the **daily** chart, with the SMC indicator running underneath the hand-drawn lines. So trend lines belong to the direction and context layer, drawn once, not to the 1-minute execution chart. And they sit **on top of** BOS / CHoCH / EQH / EQL rather than replacing them — the one thing a trend line adds that nothing else in the stack has is a level that **slopes**, so it moves with time.
+
+Drawing order on RARE, across three screenshots: purple descending line from the 0.29 high down to ~0.046 · teal ascending line from the 0.0925 low up to ~0.199 · then both, with a red descending line through 0.172 → 0.083. Where the ascending and descending lines overlap is the **tunnel**. Standard construction, as already confirmed.
+
+The BTC chart is a **scenario map**: 1D at 63,629.7 with the x-axis run out to November 2027, horizontal levels at 114,400 / 113,300 / 110,555 / 108,651 (a pink supply band), 94,140, 81,204, 69,477, 66,480, 60,561, and a hand-drawn zigzag sketched between 81,204 and 94,140. The levels are the usable part; the zigzag is one possible path, not a forecast.
+
+### Two numbers on the CoinMarketCap page he does not name
+
+Mine, not his, but they are on his own screen. **Block Street (BSB):** market cap $84.99M, 24h volume $110.7M — **Vol/MktCap 93.94%**. **SuperRare (RARE)** in the search results: market cap $13.7M, volume $28.9M — **over 200%**.
+
+**Volume ÷ market cap above about 50% means the entire float is changing hands in a day.** That is the quantitative signature of a pump, and it complements the "who pump?" exchange check from part 16: that one says which venue, this one says how hard. And **FDV ÷ market cap** — BSB is 4.5× with only 22% of supply circulating — is the fundamental reason behind Golden Rule 6, since every rally is sold into by unlocks.
+
+Community sentiment on the same page (79% bullish, 5.6K votes) is the Fear & Greed gauge in another costume. A crowding clue, never a direction.
+
+### The caution
+
+**Trend lines are the only subjective tool in the whole stack.** EMA 155, the Donchian ribbon, BOS and CHoCH, the liquidation bands, the volume threshold — all computed, all identical for any two people. A trend line depends on which two points you pick, and on the RARE chart he draws three different lines from three different anchors inside three minutes. Keep them subordinate: trend line versus EMA 155, EMA 155 wins, and **a broken trend line is not a BOS**.

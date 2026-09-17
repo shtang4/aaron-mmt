@@ -5,6 +5,9 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 ## 0. Setup, once
 - **Bybit chart:** Heikin-Ashi on · EMA 9, 25, 55, 155, 255 · MACD 8/13/9 · Volume VOLMA 5, 10.
 - **TradingView:** Market Structure (Leviathan), BOS on close, CHoCH on · Donchian Trend Ribbon 20.
+- **Research tabs, four on every coin** (session): TradingView chart · **CoinMarketCap** page · the project's **X** account · Coinglass heatmap. "Go to CoinMarketCap for basic fundamental, and check X and **Telegram** for news."
+- **On the CoinMarketCap page, two numbers** (mine, not his): **volume ÷ market cap** — above ~50% the whole float is churning today, which is a pump, not accumulation (BSB 94%, RARE 211% on his own screenshots); and **FDV ÷ market cap**, the unlock overhang, which is why nothing is held for days. Community sentiment on that page is worth nothing.
+- **Trend lines / tunnel:** standard construction, drawn on the **1D** chart, alongside the SMC labels rather than instead of them. They are the only subjective tool in the stack — keep them **subordinate**: if a trend line and the EMA 155 rule disagree, EMA 155 wins, and a broken trend line is not a BOS.
 - **Coinglass:** liquidation heatmap. **12h is the working view** (session default); 24h for a longer read, 1w for context only. **Model 1** is the scalping view, **Model 2** the longer one — a band hottest in **both** is the one that gets hunted. Pick the **Bybit** pair, not Binance. Yellow = the cluster, blue-black = empty. Tap a band for its size in dollars; rank within a model, compare models on position only.
 - **Account:** isolated margin · one-way mode · TP triggers on Last, SL on Mark · Order by Value.
 - **Access:** Bybit is blocked by MCMC in Malaysia. VPN on before the session starts, and check it is still up before placing an order.

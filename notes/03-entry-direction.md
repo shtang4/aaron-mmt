@@ -686,6 +686,60 @@ Standard construction, for reference:
 - **Tunnel (channel) trend line**: the trend line plus a parallel line through the opposite swing points. Price oscillates between the two; the far line is the take-profit target and the near line is the pullback entry.
 
 
+### 5.1 The live demonstration: BTC and RARE, drawn on screen
+
+Five screen recordings of his actual TradingView workspace, timestamped 01:50 to 01:59, so this is one continuous nine-minute demo. It adds no new *rule* — the construction is standard, as confirmed — but it shows three things the slides never do.
+
+**The workspace is four browser tabs, and that is the research stack.** Visible across every screenshot:
+
+| Tab | What it is for |
+|-----|---------------|
+| **TradingView** | The chart. Bybit perpetual data, **1D**, with the SMC indicator running |
+| **CoinMarketCap** | The coin's page: fundamentals, supply, volume |
+| **X (Twitter)** | The project's own account — @BlockSt_HQ, @SuperRare |
+| **Coinglass** | The liquidation heatmap for that coin |
+
+His caption for the section is the instruction: **"Go to CoinMarketCap for basic fundamental of a coin, and check X and Telegram for News."** Telegram is new here; it has not appeared elsewhere in the course. Together with the Coinglass tab this is the first time the course shows the **research** layer rather than the chart layer, and it is four tabs open at once on the same coin.
+
+**Trend lines go on the daily chart, not the entry chart.** Both worked examples — BTCUSDT.P and RAREUSDT.P — are **1D**. The 1-minute chart is still the execution chart; trend lines belong to the direction and context layer, alongside the multi-timeframe EMA check, and they are drawn once rather than per trade.
+
+**Trend lines sit on top of the SMC labels, not instead of them.** Both charts carry BOS, CHoCH, EQH, EQL, "Strong High" and "Weak Low" from the Leviathan indicator **and** hand-drawn lines. The two layers are complementary: SMC marks where structure broke, the trend line gives a level that **moves with time**, which no horizontal level or SMC label does. That sloping projection is the one thing trend lines add to this stack.
+
+**The drawing order on RARE**, across the three screenshots:
+
+1. A **purple descending line** from the 0.29 high (Aug 2024) down to about 0.046 — the long downtrend.
+2. A **teal ascending line** from the 0.0925 low (Jan 2024) up to about 0.199 — the advance before it.
+3. Both together with a red descending line from 0.172 down through 0.083, so the ascending and descending lines overlap: **that overlap is the tunnel.**
+
+Up line from the lows, down line from the highs, tunnel where both are live. Standard, and that is the point.
+
+**The BTC chart is a scenario map, not a forecast.** BTCUSDT 1D at 63,629.7, with the x-axis extended to **November 2027** and a hand-drawn pink zigzag sketched between roughly 81,204 and 94,140. The horizontal levels on it are the usable part — 114,400 / 113,300 / 110,555 / 108,651 (a pink supply band), then 94,140, 81,204, 69,477, 66,480, 60,561 — and the zigzag is a sketch of *a* path between them, not a prediction of one. Read it as "these are the levels that matter next", which is how the levels feed the Wick Tracker and the stop.
+
+### 5.2 What CoinMarketCap actually tells you, beyond "fundamentals"
+
+He says to check it and moves on. The page he leaves on screen has two numbers on it that are worth more than the word "fundamental", and these are **my reading, not his**:
+
+**Block Street (BSB), the coin on screen:** $0.3817, −5.74% · rank #219 · market cap **$84.99M** · 24h volume **$110.7M, +92.34%** · **Vol/Mkt Cap 93.94%** · FDV $381.72M · circulating 222.65M of 1B · holders 56.64K.
+
+**SuperRare (RARE), in the search results:** market cap **$13.7M** · 24h volume **$28.9M** · +34.51%. That is **Vol/Mkt Cap above 200%**.
+
+| Metric | What it says | On these coins |
+|--------|-------------|----------------|
+| **Volume ÷ market cap** | How much of the float changed hands today. Above ~50% the entire coin is churning daily; that is the quantitative signature of a pump, not of accumulation | BSB **94%**, RARE **211%** |
+| **FDV ÷ market cap** | Unlock overhang. Tokens not yet circulating that will be | BSB **4.5×** ($381.72M vs $84.99M), only 22% of supply circulating |
+
+The first is the useful one for this method, and it complements the "who pump?" exchange-volume check from [02 §1.2](02-coin-selection.md): that one tells you *which venue* is doing it, this one tells you *how hard*. A coin turning over its whole market cap in a day is tradeable today and is not an investment.
+
+The second is why "hold for days" fails on coins like these even when the chart looks fine: with 78% of supply still locked, every rally is sold into by unlocks. It is the fundamental reason behind Golden Rule 6.
+
+**Community sentiment (79% bullish, 5.6K votes) is on the same page and is worth nothing.** It is the same class of signal as the Fear & Greed gauge in [02 §4.1](02-coin-selection.md): a clue about crowding, never a direction.
+
+### 5.3 The caution the course does not state
+
+Trend lines are the **only subjective tool in the whole stack**. Everything else — EMA 155, the Donchian ribbon, BOS and CHoCH, the liquidation bands, the volume threshold — is computed and would be drawn identically by anyone. A trend line depends on which two points you pick, and on the RARE chart he draws three different lines from three different anchors inside three minutes.
+
+That is not a reason to skip them; the sloping level is genuinely useful and the construction is market-standard. It is a reason to keep them **subordinate**: if the trend line and the EMA 155 rule disagree, the EMA 155 rule is the one with a stated priority ([03 §2.2](03-entry-direction.md)), and a broken trend line is not a BOS. Draw the line for context, take the signal from the tools that cannot be nudged.
+
 ## 6. Seahorse pattern (海马图案)
 
 ### 6.1 What it is
