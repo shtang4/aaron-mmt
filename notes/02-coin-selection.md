@@ -399,6 +399,41 @@ The rest of the trade follows the course's other rules:
 
 The RAVE example in Module 5 section 3.9 bought the heel itself, at 0.507, on the deepest MACD bar and the volume spike, before any blade existed. That is the aggressive version: earlier, better price, no confirmation, and a stop that is only a few ticks away or does not exist. The hockey stick as shown here is the confirmed version: the blade is already visible. The pullback entry in 6.4 is the compromise between them. The session named the confirmed version (golden cross plus three candles above the EMA) as the rule.
 
+### 6.6 Spoken: most hockey sticks fail, and EMA 155 is what separates them
+
+The session adds the filter the slides never state, and it confirms the reading taken in 6.4 above (EMA 155, not the faster lines).
+
+**The shape is only a warning.**
+
+> "Why I call it hockey stick? Because wherever this thing down down down down and then it start going up. So if let's say start going up, **you be wary** — this is hockey stick."
+
+Not "this is a long". *Be wary.* And then, immediately, the failures:
+
+> "If let's say this one **cross above the green EMA 155** and then something like that. **This one doesn't cross, so it may consider continue to down.** This one also never cross, may continue to down like this. **It may just come down, retrace — see, never break through the EMA 155 — and down further. So retrace, if never break through, also will down further.**"
+
+**A hockey-stick shape that does not cross EMA 155 is not a reversal. It is a retracement inside a downtrend, and price continues down.** He says it three times in a row, over three different charts, which is the strongest emphasis anywhere in the module. The shape is common; the cross is rare; the cross is the trade.
+
+| What you see | Read |
+|---|---|
+| Down, down, then turning up | A hockey stick is *possible*. Watch |
+| The turn **fails to cross EMA 155** | Not a reversal. A retracement in a downtrend — **continues down** |
+| The turn **crosses EMA 155**, then **three full-body candles** hold above it | "Pumping up already." This is the long |
+| Price crosses **below EMA 255** | "Cross the last barrier which is 255, all the way down" — full breakdown |
+
+**He states plainly that he cannot call it in advance:** "So this hockey stick, whether it can pump up through or not, **I can't tell.**" The pattern marks a decision point, not a direction. That is the most honest sentence in the module and it is worth keeping next to the slide's confident framing.
+
+**It is a two-sided pattern.** "All this hockey stick is for you to determine whether you want to **enter here to long or you want to enter here to short**. See this one probably enter here to short." So a *failed* hockey stick — the turn that cannot clear EMA 155 — is a **short** setup, not merely a skip. That is new; the slides only ever present it as a long.
+
+**And the entry still waits for a retrace.** "One candle, two candle, three full body candle, you have to enter here to long. **You have to wait here, and then this thing will retrace and then pump further.**" Three full bodies above EMA 155 sets direction; the entry is the pullback after it. SPE again, and it confirms 6.4: the trade is the continuation, not the V.
+
+**The live judgement call, which links the EMA test to the SMC layer:**
+
+> "This one, good question — see, it's forming golden cross, opening one or two line, and this thing somehow **only one full body candle**. So you have to determine the next few minutes: if let's say **three full body candle up and then these three lines facing up**, this thing will probably ... **this is a changing trend, not just CHoCH but it could be BOS as well.**"
+
+So **three full bodies above EMA 155 plus the three fast lines turning up is the same event as a BOS**; one candle is only a CHoCH. The EMA test and the SMC test are one event read twice, which is why the Donchian ribbon (a BOS proxy, [03 §4.1](03-entry-direction.md)) flips at roughly the same moment. Three tools, one signal — that is the confluence the course is actually built on, and this is the only place it is said out loud.
+
+**The screenshots.** SEIUSDT 1m (−10.79%, 0.35245), DATAUSDT 1m (−15.80%, 0.06142), JASMYUSDT **1D** (+11.59%, 0.006381, running the older WR 14/20 panel), SOLUSDT (+8.50%, 94.110) with the **Contract tab open: market 94.110, mark 94.094, index 93.996, funding 0.0671% per 8 hours**. Two things follow: the pattern is read on whatever timeframe you trade, not only the 1-minute; and **SOL's funding at +0.0671% is above the handouts' +0.05% "long squeeze risk" threshold** ([07 §1.3](07-handouts.md)) while being shown as a long candidate. Under the scorecard that is a 3-of-4 at reduced size with a tighter stop, not a full-size trade.
+
 ## Timeframe: resolved by the screener
 
 The four-phase diagram in section 3.1 is daily. The scalping definition in Module 1 is minutes. The screener's EMA check runs on every timeframe from daily to 1 minute, which makes the method explicitly multi-timeframe: **direction is set from the daily down, entry is timed on 1m to 15m.** A coin whose EMAs disagree across timeframes fails check 1.

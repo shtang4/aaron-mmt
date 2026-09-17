@@ -644,3 +644,43 @@ That makes it the same shape as the hockey stick, the "wait for the fan to open"
 The bottom of the beak is a run of **equal lows** — precisely the liquidity a sweep aims at. So on a seahorse, the one place the stop must **not** sit is just under the beak. Put it beyond the sweep or lower the leverage until the tier stop reaches past it. The pattern's value here is that **you know in advance where the stop hunt is going**, which is rare.
 
 Updated: the SOP direction step, the "Never" list (now "entering inside a seahorse's beak", not "a seahorse"), and the pre-trade checklist, where the checkbox now reads "price is **inside** a seahorse beak" and the refusal says to wait for the breakout rather than to stay out. Checklist re-verified in headless Chromium.
+
+## Part 19: the hockey stick spoken, and the scalping tips
+
+Two sections: [02 §6.6](02-coin-selection.md) and [03 §7.1–7.2](03-entry-direction.md).
+
+### Most hockey sticks fail, and EMA 155 is the filter
+
+> "Why I call it hockey stick? Because wherever this thing down down down down and then it start going up. So if let's say start going up, **you be wary** — this is hockey stick."
+
+Then, three times over three charts:
+
+> "If let's say this one **cross above the green EMA 155** ... **This one doesn't cross, so it may consider continue to down.** This one also never cross, may continue to down. **It may just come down, retrace — see, never break through the EMA 155 — and down further. So retrace, if never break through, also will down further.**"
+
+**A hockey-stick shape that does not cross EMA 155 is a retracement inside a downtrend, and it continues down.** The shape is common, the cross is rare, and the cross is the trade. That filter is not on any slide.
+
+Three more things:
+
+- **It is two-sided.** "Whether you want to enter here to long **or you want to enter here to short** ... this one probably enter here to short." A failed hockey stick is a short setup, not merely a skip.
+- **He cannot call it in advance, and says so:** "whether it can pump up through or not, **I can't tell**." The pattern marks a decision point.
+- **Three full bodies + three fast lines turning up = a BOS, not just a CHoCH.** "Only one full body candle ... you have to determine the next few minutes; if three full body candle up and then these three lines facing up ... this is a changing trend, not just CHoCH but it could be BOS as well." The EMA test and the SMC test are one event read twice — which is why the Donchian ribbon flips at the same moment. Three tools, one signal, and this is the only place it is said aloud.
+
+Entry still waits: "three full body candle, you have to enter here to long. **You have to wait here, and then this thing will retrace and then pump further.**" The continuation, not the V — confirming [02 §6.4](02-coin-selection.md).
+
+On the screenshots: SEI and DATA on 1m, JASMY on **1D**, and SOL with the Contract tab showing **funding 0.0671% per 8h** — above the handouts' +0.05% "long squeeze risk" line, while being shown as a long candidate.
+
+### The scalping tips, and the stop question closes
+
+> "I will set the amount **1% to 10%** depending on my appetite. If you are **conservative** ... put **isolated** first ... reduce your leverage to probably 1 to 10×, ... **if not, maybe you can start from 1 to 5×**. Because you have to use the capital that you are not using for essential purpose. **It's something that you can lose.** But make sure you have to set the TP and the stop loss."
+
+> "If you are the **aggressive** or risk taker, you can open cross. You can maximise the leverage — but it depends ... **nowadays I never aim the maximum leverage. TP I do not set. Why? Because it keep pumping. But surely you set a stop loss.** What kind of stop loss? Actually set a **hunting stop loss**."
+
+**"But surely you set a stop loss" closes the longest-standing open item in these notes.** The Module 3 seahorse slide's bullet 4 read "I do not set any SL, but increase all my leverage with cross margin", and I had it flagged as the single most important thing to raise with him. His own spoken current practice answers it: a stop always, a **Hunting SL** on the aggressive row, and "nowadays I never aim the maximum leverage". The bullet is superseded by its author, not just by the risk module.
+
+Also: **the beginner leverage figure is 1–5×**, not the 5–10× these notes carried from the Module 5 slide; 5–10× is the intermediate band. SOP updated.
+
+### The risk-profile table
+
+High risk: maximum volatility · timeframe "even up to 1 minute" · quick execution · high tolerance · OI monitored for quick insight · **short-term indicators** · aggressive, aim for high returns. Low risk: lower volatility · "up to day, few hours until 24 hours" · slow · constant monitoring · **"you need to look for FA and long-term indicators"** · conservative.
+
+Two observations. **This is the only place the course prescribes fundamental analysis, and it prescribes it for the low-risk trader** — consistent, since on a 24-hour horizon chart noise dominates and the thesis has to come from elsewhere. And **the MMT method as taught is the high-risk column**: 1-minute execution, maximum volatility, quick execution, high tolerance. Not a criticism, a placement — if your honest answer is low or medium risk, the conservative row (isolated, 1–5×, TP *and* SL set) is the adaptation the course itself offers.

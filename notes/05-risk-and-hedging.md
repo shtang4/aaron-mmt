@@ -120,7 +120,7 @@ Slide text:
 - Take care of the trade by adjusting: isolated with leverage and SL, or cross with leverage and SL.
 - **Isolate**: if liquidated, you only lose the capital you put in. The derivative wallet USDT is preserved.
 - **Cross**: if liquidated, you lose not only the capital you put in; the total amount in the derivative wallet is liquidated ("Burst!!").
-- **Isolate with 5× to 10× leverage**, as it can be adjusted. The smaller your leverage, the further away the liquidation price.
+- **Isolate with 5× to 10× leverage**, as it can be adjusted. The smaller your leverage, the further away the liquidation price. **The spoken version is more conservative still** ([03 §7.1](03-entry-direction.md)): "reduce your leverage to probably 1 to 10× ... maybe you already more than beginner level towards the intermediate. **If not, maybe you can start from 1 to 5×.**" So the beginner figure is **1–5×** and 5–10× is the intermediate band. The SOP now carries the spoken numbers.
 - **SL (stop loss) by risk level:**
 
 | Level | SL |

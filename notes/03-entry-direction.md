@@ -812,7 +812,7 @@ Bullet 4 contradicts the Discharge rule from Module 1 ("stop loss: below EMA 50,
 
 Bullet 3, "no need TA at all", contradicts the whole of Modules 1 to 3.
 
-Treat this slide as a historical artefact of how the author traded before the 3D method was formalised, not as a rule. If it was presented in the session as current advice, that is the single most important thing to raise with Dr. Aaron.
+Treat this slide as a historical artefact of how the author traded before the 3D method was formalised, not as a rule. **Resolved from the session** (§7.1): teaching his own aggressive profile he says "**but surely you set a stop loss** ... actually set a hunting stop loss", and "nowadays I never aim the maximum leverage". So bullet 4 is superseded by his own current practice, not just by the risk module. Nothing left to raise.
 
 ## 7. "My tips of scalping strategy"
 
@@ -832,6 +832,44 @@ Reading:
 - **Aggressive row**, "no TP, set SL": lets winners run past the nearest resistance, with the stop as the only exit. Combined with cross margin and maximum leverage, the stop is doing all the work, and slippage on a fast 1-minute move can make the fill materially worse than the stop level. This row at least keeps a stop; the seahorse slide above drops it.
 - **"Setting entry price with prediction"** means placing a limit order at the level you expect the pullback to reach (an EMA, a demand zone), rather than a market order. That is the Sniper Price Entry mechanic, and Module 4 should make it precise.
 
+
+### 7.1 The spoken version, and it settles the no-stop question
+
+> "Seriously, I will set the amount **1% to 10%** depending on my appetite. Then, if you are **conservative**, I will advise you to put **isolated** first. Then you have to reduce your leverage to probably **1 to 10×** — somewhere one, like maybe you already more than beginner level towards the intermediate, can. If not, maybe you can start from **1 to 5×**. Because you have to use the capital that you are not using for essential purpose. **It's something that you can lose.** But make sure you have to **set the TP and the stop loss**."
+
+> "If you are the **aggressive** or risk taker, you can open **cross**. You can maximise the leverage — but it depends. Sometimes the leverage not too high; like **nowadays I never aim the maximum leverage**. **TP I do not set. Why? Because it keep pumping. But surely you set a stop loss.** What kind of stop loss? Actually set a **hunting stop loss**. And then **setting entry price with prediction**."
+
+Four things this settles or adds:
+
+**1. The stop is mandatory in both rows, stated outright.** "But surely you set a stop loss." That is the third time the spoken session makes the stop non-optional, and it **retires the open item on the seahorse slide's bullet 4** ("I do not set any SL, but increase all my leverage with cross margin", §6.3). These notes had flagged that bullet as the single most important thing to raise with him. His own spoken current practice answers it: a stop always, and on the aggressive row a **Hunting SL** specifically. Treat the seahorse bullet as superseded, which is what [05 §2](05-risk-and-hedging.md) already concluded from the risk module.
+
+**2. "Nowadays I never aim the maximum leverage."** The slide's aggressive row says "maximise leverage". His current practice does not. The result cards throughout the deck (15×, 20×, 50×) are the older behaviour, and this is him saying so.
+
+**3. A beginner floor that is lower than the SOP's.** Conservative is **1–5×** for a beginner and **1–10×** only once you are "more than beginner level towards the intermediate". These notes and the SOP carry 5–10×; the spoken beginner figure is **1–5×**. Updated.
+
+**4. "It's something that you can lose."** The capital test, stated as a precondition rather than a platitude: money not needed for essential purposes. It is the one sentence in the Dose material that is about the account rather than the trade.
+
+**And the aggressive "no TP" is the A8 rule again.** "TP I do not set, why? Because it keep pumping" is the same position as the widening-fan regime in [04 §2.3](04-sniper-entry-exit.md) — the target is conditional, the stop is not. Here it is attached to a risk profile rather than to a chart condition; the chart condition is the better trigger, because "it keeps pumping" is only knowable afterwards.
+
+### 7.2 The risk-profile table, spoken
+
+The slide's three columns, with what he says about each:
+
+| | **Low risk** | **Medium** | **High risk** |
+|---|---|---|---|
+| **Volatility** | Aim for lower volatility | Moderate | "You can touch volatility — **the more volatile, the better it is**" |
+| **Timeframe** | "Up to day, few hours until 24 hours" | Moderate | "Shorter time frame, **even up to 1 minute**" |
+| **Execution** | "Low risk but quite slow" | Moderate | "**Quick execution to capitalise on short-term opportunity**, reward high — like how I did" |
+| **Monitoring** | "Constant, regular" | Moderate | Constant |
+| **Psychology** | "**You cannot take it**" (of the high-risk swings) | Moderate | "**High tolerance** ... able to handle the very change" |
+| **Open interest** | — | — | "You monitor ... for **quick insight**" |
+| **Indicators** | "You need to look for **FA and long-term indicators**" | Moderate | "**Shorter-term indicators**" |
+| **Trading style** | "Take conservatively" | Moderate | "**Aggressive and opportunistic**, aim for high returns" |
+
+Two things worth pulling out:
+
+- **This is the only place in the course that prescribes fundamental analysis**, and it prescribes it for the *low-risk* trader. Everything else in the deck is technical. It is consistent: on a 24-hour horizon the chart noise dominates, so the thesis has to come from somewhere else. It also explains why the CoinMarketCap tab ([03 §5.2](03-entry-direction.md)) exists in the workspace at all.
+- **The whole MMT method is the high-risk column.** 1-minute execution, maximum volatility, quick execution, high tolerance. That is not a criticism, it is a placement: if the honest answer to "what kind of trader am I" is low or medium risk, the method as taught is not built for you, and the conservative row in 7.1 — isolated, 1–5×, TP and SL both set — is the adaptation the course itself offers.
 
 ## Open questions
 

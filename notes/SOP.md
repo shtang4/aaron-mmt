@@ -28,7 +28,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 4. Donchian ribbon (period 20) solid in the same colour confirms. Mixed → skip. **The ribbon colour is a BOS proxy**: a pullback that is only a CHoCH leaves the colour alone; a CHoCH followed by a BOS flips it. Colour holds = retracement, colour flips = the structure broke. Sensitive on 1m.
 5. **SMC sequence, the one entry trigger it gives:** equal lows at a strong low → CHoCH → BOS = long ("pump like crazy"). Equal highs → CHoCH → BOS = short ("dump very hard"). All three, in that order. The sweep itself is the abnormal-volume bar with the long wick.
 6. **Seahorse** — a wait, not a skip (session). 1H shows the shape: vertical move done, then a flat "beak". Drop to **15m** for the beak's red Heikin-Ashi candles. **Do not enter inside the beak.** Draw the line across it, wait for the **breakout**, then long. Beak length = how long the wait is; a long beak means watch another coin meanwhile. **The stop must not sit under the beak's low** — that run of equal lows is exactly where the sweep goes: "manipulation can happen and hunt your stop loss at the bottom."
-7. Hockey stick (slow decline, sharp V, vertical blade): enter only on the golden cross *with* the EMA 155 three-candle rule. Never buy the blade.
+7. **Hockey stick** (slow decline, sharp V, vertical blade): **most fail.** A turn that does not cross EMA 155 is a retracement inside a downtrend and continues down — that is a **short** setup, not merely a skip. Only a cross **plus three full-body candles** above EMA 155 is the long, and even then you wait for the retrace to enter. Three full bodies + the three fast lines turning up = a **BOS**, not just a CHoCH. Below EMA 255, "the last barrier", is full breakdown. Never buy the blade. He says outright he cannot call it in advance.
 
 ## 3. Sniper entry (Diagnose, SPE)
 1. TradingView: nearest demand zone below (long) or supply zone above (short), and any FVG. Take the near edge.
@@ -37,7 +37,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 4. Correlated alts making the same move at the same minute are one trade. Size the total.
 
 ## 4. Size and stop (Dose)
-1. Isolated margin. Leverage 5× to 10×.
+1. Isolated margin. Leverage **1× to 5× as a beginner**, 1× to 10× once past beginner (session). Capital you can lose — "not using for essential purpose".
 2. Margin per trade: $20 to learn; then 1% of wallet; never above 10%. Bigger wallet, smaller trade. **Loss at the stop never above 1–2% of account equity**, whatever the confluence score.
 3. **Check the heatmap before you place the stop.** A cluster just beyond it will be swept before the move you want — move the stop past it or lower the leverage. A cluster is a **magnet, never support**: price is drawn into it and the forced orders accelerate through it.
    **KL to Penang:** the biggest band is the destination, but a smaller band on the *other* side is a detour often taken first — "it depends on the money maker". A sweep into the near cluster is the route, not a change of destination. Size the stop for the detour.
