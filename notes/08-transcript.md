@@ -714,3 +714,56 @@ On "no one outside is willing to teach it": the reason is not secrecy. In **one-
 - **"Do you decide your position size based on how confident you feel?"** is the sharpest diagnostic line in the whole course. Confidence is the input most people actually use and the one with no relationship to risk.
 - **Three inputs, not one:** capital, experience, **and emotional tolerance**. The third is in none of the formulas and it is the one that decides whether you hold.
 - This is the **cheap fix** and it sits in the same module as the expensive one. Exiting winners early is solved by a smaller position — no new technique, no stress, no second leg. Hedging is the answer to the same problem that costs the most to run.
+
+## Part 21: the risk mechanics, and three cases worth more than the win cards
+
+Written up at [05 §3.2, §3.3a–3.3c, §3.5, §3.7a](05-risk-and-hedging.md). He skips reading the isolated/cross, liquidation and high-capital slides aloud, so those stay as captured.
+
+### Low leverage is not safety
+
+> "Even though you are using **5× leverage**, 5× also can drawdown yourself to **100 percent** ... spend 100 dollars with 5×, **100 percent lose, your 100 dollars no more.**"
+
+Right, and the arithmetic is worth memorising: on an isolated position, liquidation sits about **`100 ÷ leverage` percent** of adverse price move away — 5× → 20%, 10× → 10%, 25× → 4%, 50× → 2%. **The stop caps the loss; the leverage only decides how much room the stop has** before liquidation does the job instead.
+
+And: "if you want to use the isolate, you have to use the leverage **and the stop loss**. **Cross also** you need leverage and stop loss." Fourth time the session makes the stop non-optional, first time explicitly for cross.
+
+### The Hunting SL, keyed in properly — and a trap
+
+> "**You do not key in 20% here. Because the moment you key in 20, you will have a minus sign. Automatically you standby to get 20% loss.** So you need to calculate ... 20% profit, you get this value, then you key in here."
+
+**A percentage typed into Bybit's SL field is read as a loss.** Compute the *price* (`entry ± entry × locked ROI ÷ leverage`) and enter the price. "**Hunting stop loss needs to be set manually.**" Once the trigger sits on the profit side of entry, being stopped out *is* the take-profit — he calls it a "**profitable loss**".
+
+**But one line needs guarding.** "When you profited, **only then you set stop loss**" contradicts the handouts' "set your stop loss before the entry order fills". These are **two stops**: the protective stop rests before the fill and is never optional; the Hunting SL **replaces** it once in profit. Read literally, his phrasing leaves you unprotected for exactly the period you need protection. Both are now in the SOP, in that order.
+
+### ATAUSDT: the stop that paid 339%
+
+**Jasper Sia**, 5 Apr 2024: "中我sl了 😅" — *my SL got hit* — ATAUSDT **Short 25×**, entry 0.22241, exit 0.19222, **+339.35%**. Arithmetic checks.
+
+**The best evidence for the Hunting SL in the deck**, and better than any win card, because the mechanism is visible rather than the outcome: the stop fired, and the stop was the profit.
+
+### STORJUSDT: −1881%, and the picture that undercuts the hedging module
+
+Headed "Hold Losing Trade!". Twelve open positions; two on STORJ:
+
+- **Long**, cross 25×, entry 0.4960, mark 0.4957 — −0.17 (−0.40%)
+- **Short**, cross 25×, entry **0.2810**, mark 0.4957 — **−37.06 (−1881.45%)**
+
+His caption: "Please don't hold this kind of losing trade."
+
+**Read the structure, not the label.** A short at 0.2810 ran 76% offside, and a long was then opened at **0.4960, essentially the current price**. That is not "holding a loser" — **that is a hedge**, executed exactly as the hedging module describes: freeze the bleeding leg with an opposite position at market.
+
+So the slide warning against holding losers is **structurally identical to the technique the module teaches**. The difference is intent, not mechanics. And it shows what the hedge buys: the exposure is frozen and the **−37.06 USDT is still there**. "At least break even" is unreachable from that screen without unwinding a leg profitably, which is a new trade, not a repair — while both legs pay funding, in cross margin, across twelve positions.
+
+**The deck's third real loss**, after SOMI (−52.49%) and the ZETA weekly chart. At the beginner stop tier this would have closed at −20%.
+
+### The $4.5M case study, and the figure is wrong
+
+**JQ360**: SOLUSDT **Long, cross 4×**, 590,298 SOL, entry 113.045, mark 144.444, unrealised **18,544,211.67 (110.97%)**. Then: "I just calculated... **His capital for this trade is $4.5M**." Six shocked reactions, no check.
+
+Notional is 590,298 × 113.045 ≈ **$66.7M**; at 4× the margin is ≈ **$16.7M**, which the ROI confirms (18.54M ÷ 1.1097). **The community figure is out by about 3.7×.**
+
+It strengthens his point rather than weakening it: "**you must know how much the risk behind.**" A 110.97% ROI is unremarkable as a percentage and extraordinary only because of the capital behind it — which is the correct way to read **every** card in this deck. **The ROI tells you the leverage and the move, never the money.**
+
+### And the disclaimer
+
+> "There's no always 100% guarantee method ... especially during the news, FOMC, or unexpected market event like black swan. Always remember, **there's no guarantee 100% strategy.**"

@@ -123,7 +123,7 @@
     <section>
       <h2><span class="n">4</span> Size and stop <span class="d">Dose</span></h2>
       <ol>
-        <li><b>Isolated</b> margin. Leverage <b>1× to 5× as a beginner</b>, 1× to 10× once past beginner (session). Capital you can afford to lose — "not using for essential purpose".</li>
+        <li><b>Isolated</b> margin. Leverage <b>1× to 5× as a beginner</b>, 1× to 10× once past beginner (session). Capital you can afford to lose. <b>Low leverage is not safety:</b> liquidation sits about <code>100 ÷ leverage</code> % away (5× → 20%, 25× → 4%). The <b>stop</b> caps the loss; leverage only sets its room.</li>
         <li>Margin per trade: <b>$20</b> to learn; then 1% of wallet; never above 10%. <b>Loss at the stop never above 1–2% of equity</b>, whatever the score.</li>
         <li><b>Check the heatmap before placing the stop.</b> A cluster just beyond it gets swept before the move you want — move the stop past it, or lower the leverage. A cluster is a <b>magnet, never support</b>: price is drawn in and the forced orders accelerate through it. <b>KL to Penang:</b> the biggest band is the destination, but a smaller band on the <i>other</i> side is a detour often taken first — "it depends on the money maker". Size the stop for the detour. <b>Re-read it before any re-entry:</b> once price reaches a cluster it is <b>consumed</b>, and the next destination — and the tradeable direction — flips to the other side. A double top is the symptom; the emptied band is the cause.</li>
         <li>Stop as ROI on margin, by tier: beginner <b>5–20%</b>, intermediate 20–50%, advanced 50%+. Convert to price; it must sit <b>beyond the structural level</b> (far edge of the zone, or the heel low). If it does not, <b>lower the leverage</b> until it does. Never move the level, never widen the tier.</li>
@@ -136,7 +136,8 @@
       <ol>
         <li><b>TP first.</b> Wick Tracker is a Bybit TP trigger at a level a wick will reach: <b>slightly above</b> the prior wick high (a sweep aims at the stops resting beyond it), the supply-zone bottom, <b>the nearest large liquidation cluster</b> (rank by the dollar figure, not the brightness), or 50% ROI raised to 55–60% for fees. Trigger on <b>Last</b>; inside the wick you expect, above the wick already made.</li>
         <li><b>Two regimes, decided by the fan.</b> Fan widening, no two lines crossing → <b>no fixed target needed</b>: ride it on the climax rule and the EMA cross, Wick Tracker resting only as the unattended backstop. Fan flat, bunched or crossing → set the target and take it.</li>
-        <li><b>SL</b> from step 4, trigger on Mark, <b>resting before the entry fills</b>. Both in before you look away.</li>
+        <li><b>SL</b> from step 4, trigger on Mark, <b>resting before the entry fills</b> — the <b>protective</b> stop, never optional, isolated <i>or</i> cross. Both orders in before you look away.</li>
+        <li><b>Then the Hunting SL replaces it</b> once in profit, on the profit side of entry. Two stops, in that order — "when you profited, only then you set stop loss" means <i>replace</i>, not <i>start</i>. <b>Keying it in:</b> a percentage in Bybit's SL field is read as a <b>loss</b> (type 20 → −20% ROI). Compute the <b>price</b> <code>entry ± entry × locked ROI ÷ leverage</code> and enter that. Manual, re-keyed each time. Once the trigger is on the profit side, being stopped out <i>is</i> the take-profit — a "profitable loss" (ATA: SL hit at <b>+339%</b>).</li>
         <li><b>Climax exit:</b> a volume bar <b>above both VOLMA lines</b> ("abnormal" — session-defined, no multiple) + the MACD histogram at its <b>mountain peak</b>, confirmed when the next bar prints shorter — <b>on Bybit that bar is drawn hollow</b> → close <b>75%</b>. Move SL on the runner to entry.<br>Abnormal volume with a <b>long wick</b> is a liquidity sweep, not a move; with a <b>full body</b> it is real. Red bar = selling, green = buying.</li>
         <li><b>MACD is two shapes.</b> <b>Iceberg dip</b> (deepest red) times the entry, <b>mountain peak</b> (tallest green) is the exit; a short reverses them. Miss the peak → half the profit gone at the zero line, all of it back at your entry, then a loss. Cannot sit through a give-back? Trade dip-to-peak and stop there.</li>
         <li><b>Runner:</b> Hunting SL locks a rising ROI, <code>entry ± entry × ROI ÷ leverage</code>. EMA 9 crossing back through EMA 25 is the backstop <b>for the runner only</b> — on a full position, the fast lines crossing each other is noise while all three sit above EMA 155.</li>
@@ -184,7 +185,7 @@
         <li>Cross margin. Liquidation takes the whole wallet.</li>
         <li>A position without a resting stop. "Set it before the entry order fills."</li>
         <li>Hedging instead of taking the stop. The only hedge is on an accidental cross-mode position, and it ends with closing it.</li>
-        <li>Holding a loser to breakeven. Upside zero, downside the account.</li>
+        <li>Holding a loser to breakeven. Upside zero, downside the account — STORJ reached <b>−1881%</b> that way.</li>
         <li>Trading a mixed heatmap. <b>Entering inside a seahorse's beak</b> — the breakout is the trade, not the chop.</li>
         <li>Entering on a chat call without the chart check. "If you don't know the setup, don't take the shot."</li>
         <li>Shorting a pump that is still running. "No one can tell where the pump will get."</li>

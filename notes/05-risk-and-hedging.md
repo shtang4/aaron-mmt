@@ -158,6 +158,23 @@ Slide text:
 - Take care of the trade by adjusting: isolated with leverage and SL, or cross with leverage and SL.
 - **Isolate**: if liquidated, you only lose the capital you put in. The derivative wallet USDT is preserved.
 - **Cross**: if liquidated, you lose not only the capital you put in; the total amount in the derivative wallet is liquidated ("Burst!!").
+**Low leverage is not safety, and he says so.**
+
+> "Even though you are using **5× leverage**, 5× leverage also can lose drawdown yourself to **100 percent**. So it doesn't matter that only the high 10×, 15× leverage will cost you like bad loss ... Let's say you spend 100 dollars to open a trade with 5×. **100 percent lose, your 100 dollars no more.**"
+
+Correct, and worth the arithmetic: **on an isolated position, liquidation sits roughly `100 ÷ leverage` percent of adverse price movement away.**
+
+| Leverage | Adverse price move that wipes the margin |
+|---|---|
+| 5× | **20%** |
+| 10× | 10% |
+| 25× | 4% |
+| 50× | 2% |
+
+So 5× does not make the trade safe; it makes the liquidation 20% away instead of 4%. What caps the loss is the **stop**, not the leverage — and the leverage only decides how much room the stop has before liquidation does the job instead. That is the same point as "if the tier stop does not reach beyond the structural level, lower the leverage".
+
+**And both margin modes need a stop, stated explicitly:** "If you want to use the isolate, you have to use the leverage **and the stop loss**. Cross also you need leverage **and stop loss**." That is the fourth time the spoken session makes the stop non-optional, and the first time it is said of cross mode.
+
 - **Isolate with 5× to 10× leverage**, as it can be adjusted. The smaller your leverage, the further away the liquidation price. **The spoken version is more conservative still** ([03 §7.1](03-entry-direction.md)): "reduce your leverage to probably 1 to 10× ... maybe you already more than beginner level towards the intermediate. **If not, maybe you can start from 1 to 5×.**" So the beginner figure is **1–5×** and 5–10× is the intermediate band. The SOP now carries the spoken numbers.
 - **SL (stop loss) by risk level:**
 
@@ -202,6 +219,77 @@ The slide labels each line "Entry Price", which is a labelling slip; the first l
 
 "Left 80% for the wick" is loose. Locking 20% ROI does not leave 80% of anything; it leaves whatever open ROI exists above 20% exposed to a wick. In the screenshot the open ROI was about 55%, so the 20% lock left about 35 ROI points of room, and the 60% lock would have been *above* the current open profit and unsettable without price moving further first.
 
+### 3.3a How you actually key it in, and the trap that catches everyone
+
+The session adds the mechanics, and the first one is a UI trap that will cost money if you do not know it:
+
+> "How you get this amount? **You do not key in 20% here. Because the moment you key in 20, you will have a minus sign. Automatically you standby to get 20% loss.** So you need to calculate as what I do — like this one, 20% profit, you get this value, then you key in here."
+
+**On Bybit's stop-loss field, a percentage is read as a loss.** Typing 20 into the SL field sets a stop at −20% ROI, which is the opposite of a Hunting SL. To lock in profit you must compute the **price** that corresponds to +20% ROI and enter the **price**, not the percentage. The formula in 3.3 is what produces that price, and the pre-trade checklist prints it for you (`entry ± entry × locked ROI ÷ leverage`).
+
+> "**Hunting stop loss needs to be set manually.**"
+
+No automation. It is re-keyed each time you want to raise the lock.
+
+> "Whatever stop loss you put — let's say this is short, you have to be **below** this level; or the long one, you have to be **above** this level. Then at least whatever stop loss you hit, **it definitely is a profitable loss.**"
+
+**"Profitable loss"** is the right phrase for it: once the trigger sits on the profit side of entry, being stopped out *is* the take-profit. The order type is a stop; the outcome is a win.
+
+**A safety reconciliation that has to be stated.** He also says:
+
+> "Means that **when you profited, only then you set stop loss**. That's why you won't easily get hit the stop loss easily."
+
+Read literally that says: no stop until you are in profit. That contradicts the handouts' absolute rule — "always set your stop loss **before the entry order fills**" ([07 §1.5](07-handouts.md)) — and the Module 1 Discharge rule. **These are two different stops and both exist:**
+
+| Stop | When | Where | Purpose |
+|------|------|-------|---------|
+| **Protective stop** | Resting **before** the entry fills | ROI tier below entry (3.2), beyond the structural level | Caps the loss. Never optional |
+| **Hunting SL** | Only once the position is in profit | On the **profit** side of entry | **Replaces** the protective stop and locks a gain |
+
+The Hunting SL is a *replacement*, not the first stop. If you follow "only then you set stop loss" literally you are unprotected for the whole period the trade is underwater, which is exactly when you need it. The SOP carries both, in that order.
+
+### 3.3b ATAUSDT: the stop that paid 339%
+
+**Jasper Sia**, #mmt-discussion, 5 April 2024 18:15: "中我sl了 😅" — *my SL got hit* — over a Bybit card reading:
+
+| | |
+|-|-|
+| ATAUSDT | **Short 25.0×** |
+| Entry | 0.22241 |
+| Exit | 0.19222 |
+| **ROI** | **+339.35%** |
+
+Check: (0.22241 − 0.19222) ÷ 0.22241 = 13.57% of price × 25 = 339.3%. The card is right.
+
+His comment: "if your trade well by earning good profit ... **it's a stop loss profit. So stop loss, you still gain the 339 percent.**"
+
+**This is the best single piece of evidence for the Hunting SL in the whole deck**, and it is worth more than any of the win cards: it is the one case where the *mechanism* is visible rather than the outcome. The stop was hit, the message is a shrug with a sweating emoji, and the result is +339%. That is what "profitable loss" looks like, and it is the argument for moving the stop rather than watching the screen.
+
+### 3.3c STORJUSDT: −1881%, and the slide that undercuts the hedging module
+
+Headed "**Hold Losing Trade! 持有亏损交易!**" with "−1881% Losing" starburst. A Bybit positions screen, **Positions (12)**, two of them on the same coin:
+
+| | Side | Mode | Size | Entry | Mark | Unrealised P&L |
+|-|------|------|------|-------|------|----------------|
+| STORJUSDT | **Long** | Cross **25×** | 344.9 | 0.4960 | 0.4957 | −0.17 (**−0.40%**) |
+| STORJUSDT | **Short** | Cross **25×** | 172.8 | **0.2810** | 0.4957 | **−37.06 (−1881.45%)** |
+
+Check: the short is 76.4% of price offside; at 25× that is −1910% before fees, and the card reads −1881%. Correct.
+
+His caption: "there are someone also holding losing trade until negative thousand. **Please don't hold this kind of losing trade.**"
+
+**Read the structure, not the label.** A short opened at 0.2810, price ran to 0.4957 against it, and then a long was opened at **0.4960 — essentially the current price**. That is not "holding a loser". **That is a hedge**, executed exactly as the hedging module describes: freeze the bleeding leg with an opposite position at market.
+
+So the slide he uses to warn against holding losers is **structurally identical to the technique he is about to teach**. The difference between them is intent, not mechanics: both are a losing position plus an opposite position on the same coin, in cross margin, at high leverage.
+
+And it shows what the hedge actually buys you. The exposure is frozen, and the −37.06 USDT is **still there**. Hedging stopped the loss growing; it did not recover a cent, and the "at least break even" aim from the module opening is unreachable from here without unwinding one leg profitably — which is a new trade, not a repair. Meanwhile both legs pay funding, on **cross margin**, across a screen with **twelve open positions**.
+
+Three things to take from it:
+
+1. **This is the third real loss in the deck**, after the SOMI blind copy (−52.49%) and the ZETA weekly chart. Like those, it is shown deliberately.
+2. **A −1881% leg is what a stop exists to prevent.** At the beginner tier (5–20% ROI) this position would have closed at −20%; at the advanced tier (50%+) at −50%. It reached −1881% because there was no stop at all.
+3. **It is an argument against the hedging module made with the hedging module's own picture.** Keep the one confirmed case (a position opened in cross mode by mistake) and nothing wider.
+
 ### 3.4 The Bybit screenshots, checked
 
 THETAUSDT 1-minute, a short. Position: qty 43.2, entry 2.814, mark 2.7515, liquidation 3.0493. TP set at 2.4765 (ROI 299.84%). Two SL screens, both labelled "Hunting SL":
@@ -225,7 +313,7 @@ Also on the chart: the EMA header reads EMA 9, 25, 55, 155, 255 and the MACD rea
 
 Slide, verbatim: Total Wallet = Risk Amount ÷ Risk Percentage. Given risk amount 1,000 USDT and risk percentage 1%, total wallet = 1,000 ÷ 0.01 = **100,000 USDT**. "If 1% risk equals 1,000 USDT, the wallet should be 100,000 USDT."
 
-The arithmetic is trivial and correct. The framing is backwards from normal practice: a risk rule is applied *from* the wallet (risk = wallet × 1%), not used to derive the wallet you would need. Read as written, the slide says: if you are putting 1,000 USDT into a trade, you should have 100,000 USDT behind it. The ZETA case study bought 1,000 units, which at 0.857 was about 857 USDT of notional, in that ballpark.
+**Confirmed spoken**, in the same form: "the total wallet is **risk amount over the risk percentage** ... risk amount is 1,000 USDT, your risk percentage equivalent is 1%, so ... **you at least you need 100,000**." The arithmetic is trivial and correct. The framing is backwards from normal practice: a risk rule is applied *from* the wallet (risk = wallet × 1%), not used to derive the wallet you would need. Read as written, the slide says: if you are putting 1,000 USDT into a trade, you should have 100,000 USDT behind it. The ZETA case study bought 1,000 units, which at 0.857 was about 857 USDT of notional, in that ballpark.
 
 **What "risk amount" means here is still not pinned down.** Two readings:
 
@@ -260,6 +348,32 @@ A table of ten trades at increasing capital, with the loss at 5%, 10% and 30% pe
 The totals add up. The point of the slide is the bottom-right cell: at this scale, a bad run of 30% losses costs RM 31,725, which for the course's Malaysian audience is a serious sum. It is the setup for the "start small" argument.
 
 Followed by the disclaimer slide: "There is no always 100% guaranteed method in future trading, especially during the news, FOMC, or unexpected market events."
+
+### 3.7a The $4.5M case study, and the figure is wrong
+
+A #trade-chat slide, used to make the point that a big ROI needs big capital behind it.
+
+**geraldsoh7**, 6 July 2024: "I'm still holding these few shorts", four unrealised cards — **+609.55**, **+422.05**, **+348.67**, **+109.53** USDT — and a boast: "$12k+ per trade in 1 hour technically speaking, if combine both platforms lol".
+
+**JQ360**, 8 July 2024 16:43: "While the retail has been spooked, the smart money not only accumulated good crypto cheap, they also took advantage of the situation." Over a Bybit position:
+
+| | |
+|-|-|
+| SOLUSDT | **Long, Cross 4.00×** |
+| Position size | **590,298 SOL** |
+| Entry | 113.045 |
+| Mark | 144.444 |
+| Unrealised P&L | **18,544,211.67 USDT (110.97%)** |
+
+Then, 17:09: **"I just calculated... His capital for this trade is $4.5M."**
+
+**The $4.5M figure does not follow from the card.** Notional is 590,298 × 113.045 ≈ **$66.7M**. At cross 4×, the margin behind it is ≈ **$16.7M**, which the ROI confirms independently: 18,544,211.67 ÷ 1.1097 ≈ 16.71M. The community's number is out by roughly **3.7×**, and it was posted with six shocked-face reactions and no check.
+
+That is worth recording for its own sake — the deck repeats community arithmetic without verifying it — but it **strengthens** the point he is making rather than weakening it:
+
+> "You really need to calculate how much the total you should have. So that much of your gain, **you must know how much the risk behind.**"
+
+A 110.97% ROI is unremarkable as a percentage. It reads as extraordinary only because of the $16.7M standing behind it. That is the correct lesson from a results card, and it applies in reverse to every card in this deck: **the ROI tells you the leverage and the move, never the money.**
 
 ### 3.8 SSWB: Start Small Win Big
 

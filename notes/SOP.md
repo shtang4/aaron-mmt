@@ -37,7 +37,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 4. Correlated alts making the same move at the same minute are one trade. Size the total.
 
 ## 4. Size and stop (Dose)
-1. Isolated margin. Leverage **1× to 5× as a beginner**, 1× to 10× once past beginner (session). Capital you can lose — "not using for essential purpose".
+1. Isolated margin. Leverage **1× to 5× as a beginner**, 1× to 10× once past beginner (session). Capital you can lose — "not using for essential purpose". **Low leverage is not safety:** liquidation sits about `100 ÷ leverage` percent away (5× → 20%, 25× → 4%). The **stop** caps the loss; the leverage only sets how much room it has.
 2. Margin per trade: $20 to learn; then 1% of wallet; never above 10%. Bigger wallet, smaller trade. **Loss at the stop never above 1–2% of account equity**, whatever the confluence score.
 3. **Check the heatmap before you place the stop.** A cluster just beyond it will be swept before the move you want — move the stop past it or lower the leverage. A cluster is a **magnet, never support**: price is drawn into it and the forced orders accelerate through it.
    **KL to Penang:** the biggest band is the destination, but a smaller band on the *other* side is a detour often taken first — "it depends on the money maker". A sweep into the near cluster is the route, not a change of destination. Size the stop for the detour.
@@ -48,7 +48,9 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 ## 5. Exit plan, both ways (Discharge)
 1. TP first. Wick Tracker is a Bybit TP trigger at a level a wick will reach: **slightly above** the prior wick high (a sweep aims at the stops resting beyond it), the supply-zone bottom, **the nearest large liquidation cluster** (rank them by the dollar figure, not the brightness), or 50% ROI raised to 55–60% for fees. Trigger on **Last**; set it inside the wick you expect, above the wick already made.
    **Two regimes, decided by the fan.** Fan widening with no two lines crossing → no fixed target is needed; ride it on the climax rule and the EMA cross, with the Wick Tracker resting only as the unattended backstop. Fan flat, bunched or crossing → set the target and take it. The stop is mechanical either way; only the target is conditional.
-2. SL from step 4, trigger on Mark, **resting before the entry fills**. Both orders in before you look away.
+2. SL from step 4, trigger on Mark, **resting before the entry fills**. Both orders in before you look away. This is the **protective** stop and it is never optional — in isolated *or* cross.
+   **Then, once in profit, the Hunting SL replaces it** on the profit side of entry. Two different stops, in that order. "When you profited, only then you set stop loss" means *replace*, not *start*.
+   **Keying it in:** on Bybit a percentage in the SL field is read as a **loss** — type 20 and you get −20% ROI. Compute the **price** (`entry ± entry × locked ROI ÷ leverage`) and enter the price. Manual, re-keyed each time you raise the lock. Once the trigger is on the profit side, being stopped out *is* the take-profit — a "profitable loss" (ATA: SL hit at **+339%**).
 3. Climax exit: a volume bar **above both VOLMA lines** ("abnormal", session-defined — no multiple) + the MACD histogram at its **mountain peak**, confirmed when the next bar prints shorter — **on Bybit that next bar is drawn hollow** → close 75%. Move the runner's SL to entry.
    Abnormal volume with a **long wick** is a liquidity sweep, not a move; with a **full body** it is real. Colour gives the side: red selling, green buying.
 4. **MACD is two shapes.** Iceberg dip (deepest red bar) times the entry; mountain peak (tallest green) is the exit. Short reverses them. Miss the peak and you give back half at the zero line, all of it back at your entry, then it is a loss. If you cannot sit through a give-back, trade dip-to-peak and stop there.
@@ -84,7 +86,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 - Cross margin. Liquidation takes the whole wallet.
 - A position without a resting stop. Handouts: "set it before the entry order fills."
 - Hedging instead of taking the stop. The only hedge is on an accidental cross-mode position, and it ends with closing it.
-- Holding a loser to breakeven.
+- Holding a loser to breakeven. STORJ reached **−1881%** that way ([05 §3.3c](05-risk-and-hedging.md)).
 - Trading a mixed heatmap. **Entering inside a seahorse's beak** — the breakout of the beak is the trade, not the chop.
 - Entering on a chat call without the chart check. "If you don't know the setup, don't take the shot."
 - Shorting a pump that is still running. "No one can tell where the pump will get."
