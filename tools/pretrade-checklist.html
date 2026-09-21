@@ -375,12 +375,12 @@
       <div class="row">
         <div class="field">
           <label for="wallet">Derivatives wallet (USDT)</label>
-          <input type="number" id="wallet" step="any" value="2000" inputmode="decimal">
+          <input type="number" id="wallet" step="any" value="5000" inputmode="decimal">
         </div>
         <div class="field">
           <label for="stake">Margin this trade (USDT)</label>
-          <input type="number" id="stake" step="any" value="20" inputmode="decimal">
-          <div class="hint">SSWB stake is 20. Course ceiling is 10% of wallet.</div>
+          <input type="number" id="stake" step="any" value="50" inputmode="decimal">
+          <div class="hint">50 on a 5000 wallet is 1%, the course's own per-trade figure. In <b>isolated</b> margin this caps the worst case at the margin itself, so even a liquidation is 1% of equity &mdash; the 1&ndash;2% rule cannot be broken from here. SSWB starts at 20; ceiling is 10% of wallet.</div>
         </div>
       </div>
 
@@ -395,7 +395,7 @@
         </div>
         <div class="field">
           <label for="lev">Leverage ×</label>
-          <input type="number" id="lev" step="1" min="1" max="100" value="10" inputmode="numeric">
+          <input type="number" id="lev" step="1" min="1" max="100" value="5" inputmode="numeric">
           <div class="hint">Course prescribes 5× to 10×. Above 10 is flagged.</div>
         </div>
       </div>
@@ -410,7 +410,7 @@
         <div class="field">
           <label for="tier">Stop-loss tier</label>
           <select id="tier">
-            <option value="10">Beginner · 5–20% ROI</option>
+            <option value="20">Beginner · 5–20% ROI</option>
             <option value="35">Intermediate · 20–50% ROI</option>
             <option value="60">Advanced · above 50% ROI</option>
             <option value="custom">Custom</option>
@@ -418,8 +418,8 @@
         </div>
         <div class="field">
           <label for="stopRoi">Stop at ROI %</label>
-          <input type="number" id="stopRoi" step="any" min="1" max="99" value="10" inputmode="decimal">
-          <div class="hint">Bybit "Trigger by ROI". Price distance = entry × ROI ÷ leverage.</div>
+          <input type="number" id="stopRoi" step="any" min="1" max="99" value="20" inputmode="decimal">
+          <div class="hint">Bybit "Trigger by ROI". Price distance = entry × ROI ÷ leverage. Beginner defaults to the <b>top</b> of its 5–20% band, not the middle: at 5× a 20% stop is 4% of price, which clears his "3% dip is a normal pullback" test. 10% would be a 2% stop — inside the noise.</div>
         </div>
       </div>
 
@@ -591,7 +591,7 @@
     if (!$('ema155').checked) fails.push('EMA 155 three-candle rule not confirmed. Direction is not set.');
     if ($('seahorse').checked) fails.push('Inside a seahorse beak. Wait for the breakout of the range, then long; do not enter the chop.');
     const scr = ['scrEma', 'scrOi', 'scrFr', 'scrDepth'].filter(id => $(id).checked).length;
-    const tierName = $('tier').value === '10' ? 'beginner' : $('tier').value === '35' ? 'intermediate' : $('tier').value === '60' ? 'advanced' : 'beginner';
+    const tierName = $('tier').value === '20' ? 'beginner' : $('tier').value === '35' ? 'intermediate' : $('tier').value === '60' ? 'advanced' : 'beginner';
     const minScr = tierName === 'beginner' ? 3 : tierName === 'intermediate' ? 2 : 1;
     if (scr < minScr) fails.push(`Screener confluence ${scr}/4. Session rule for a ${tierName}: below ${minScr} in one direction, do not trade.`);
     else if (scr < 4) warns.push(`Screener ${scr}/4 as a ${tierName}. Handouts: 3/4 enters at 50% to 75% of planned size with a tighter stop; anything lower is the session's "at your own risk" tier.`);
@@ -610,7 +610,7 @@
     const notional = stake * lev;
     const stakePct = wallet > 0 ? stake / wallet * 100 : NaN;
     if (Number.isFinite(stakePct) && stakePct > 10) fails.push(`Margin is ${stakePct.toFixed(1)}% of the wallet. Course ceiling is 10%.`);
-    else if (Number.isFinite(stakePct) && stakePct > 1 && $('tier').value === '10') warns.push(`Margin is ${stakePct.toFixed(1)}% of the wallet on the beginner tier. Start at 1%.`);
+    else if (Number.isFinite(stakePct) && stakePct > 1 && $('tier').value === '20') warns.push(`Margin is ${stakePct.toFixed(1)}% of the wallet on the beginner tier. Start at 1%.`);
     {
       const lossPctPre = wallet > 0 && Number.isFinite(stake) && Number.isFinite(stopRoi) ? stake * (stopRoi / 100 + 2 * fee * lev / 100) / wallet * 100 : NaN;
       if (Number.isFinite(lossPctPre) && lossPctPre > 2) fails.push(`Loss at the stop is ${lossPctPre.toFixed(2)}% of equity. Handouts: never above 1% to 2% on one trade.`);
@@ -638,10 +638,17 @@
       }
     } else missing.push('structural level');
 
+    // Module 5: "a 3% dip is a normal pullback". A stop nearer than that sits inside the noise band,
+    // so a routine retracement takes it out before the trade has a chance to work.
+    const stopPctPrice = Number.isFinite(stopDist) && Number.isFinite(entry) && entry > 0 ? stopDist / entry * 100 : NaN;
+    if (Number.isFinite(stopPctPrice) && stopPctPrice < 3) {
+      warns.push(`Stop is ${stopPctPrice.toFixed(2)}% from entry, inside the normal pullback band. His own test: "a 3% dip is a normal pullback" \u2014 a routine retracement reaches this stop before the move does anything. At ${fmtN(lev, 0)}\u00d7 you need a stop ROI of ${Math.ceil(3 * lev)}% to clear 3%, or drop to ${Math.max(1, Math.floor(stopRoi / 3))}\u00d7 leverage at this ROI.`);
+    }
+
     setV('notional', fmtN(notional) + ' USDT');
     setV('stakePct', pct(stakePct, 2), stakePct > 10 ? 'bad' : stakePct > 1 ? 'warn' : '');
     setV('stopPrice', fmtP(stopPrice, entry), structFail ? 'bad' : side === 'long' ? 'short' : 'long');
-    setV('stopDist', Number.isFinite(stopDist) ? `${fmtP(stopDist, entry)} (${pct(stopDist / entry * 100, 2)})` : '—');
+    setV('stopDist', Number.isFinite(stopDist) ? `${fmtP(stopDist, entry)} (${pct(stopDist / entry * 100, 2)})` : '—', Number.isFinite(stopPctPrice) && stopPctPrice < 3 ? 'warn' : '');
     setV('structOut', fmtP(structural, entry));
     setV('levMax', Number.isFinite(levMax) ? `${Math.floor(levMax)}×` : '—', Number.isFinite(levMax) && lev > levMax ? 'bad' : '');
     setV('liq', fmtP(liq, entry));
@@ -682,7 +689,7 @@
 
     // ---- Chips and verdict
     const d1 = fails.some(f => /Skip|ranging|EMA 155|Seahorse|confluence/.test(f)) ? 'fail' : warns.some(w => /confluence|Funding|chasing|heatmap/.test(w)) ? 'warn' : 'ok';
-    const d2 = fails.some(f => /stop loss|Cross|wallet|liquidation|structural|Structural|equity/.test(f)) ? 'fail' : warns.some(w => /Leverage|beginner tier|equity|50% to 75%/.test(w)) ? 'warn' : 'ok';
+    const d2 = fails.some(f => /stop loss|Cross|wallet|liquidation|structural|Structural|equity/.test(f)) ? 'fail' : warns.some(w => /Leverage|beginner tier|equity|50% to 75%|normal pullback/.test(w)) ? 'warn' : 'ok';
     const d3 = fails.some(f => /Take-profit/.test(f)) ? 'fail' : warns.some(w => /trigger|Reward/.test(w)) ? 'warn' : 'ok';
     const rrS = !Number.isFinite(rr) ? '' : rr < 1 ? 'warn' : 'ok';
     $('chipD1').dataset.s = d1; $('chipD2').dataset.s = d2; $('chipD3').dataset.s = d3;
@@ -872,10 +879,10 @@
   });
 
   const example = { coin: 'SEIUSDT', zoneNear: '0.3490', emaPrice: '0.3496', entry: '0.3496', structural: '0.3478',
-    wallet: '2000', stake: '20', lev: '10', stopRoi: '10', tpPrice: '0.3576', tpRoi: '50', ptp: '75', lockRoi: '20', fee: '0.055', mmr: '0.5' };
+    wallet: '5000', stake: '50', lev: '5', stopRoi: '20', tpPrice: '0.3576', tpRoi: '50', ptp: '75', lockRoi: '20', fee: '0.055', mmr: '0.5' };
   $('resetBtn').addEventListener('click', () => {
     for (const k in example) $(k).value = example[k];
-    $('tier').value = '10'; $('tpMode').value = 'price'; $('tpPriceField').hidden = false; $('tpRoiField').hidden = true;
+    $('tier').value = '20'; $('tpMode').value = 'price'; $('tpPriceField').hidden = false; $('tpRoiField').hidden = true;
     $('ema155').checked = true; $('seahorse').checked = false; $('trig').checked = true;
     ['scrEma', 'scrOi', 'scrDepth'].forEach(id => $(id).checked = true); $('scrFr').checked = false;
     setSeg('side', 'long'); setSeg('regime', 'bullish'); setSeg('mode', 'isolated');

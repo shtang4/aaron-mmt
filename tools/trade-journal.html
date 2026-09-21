@@ -308,7 +308,7 @@
   }
   function clearForm() {
     editingId = null; $('formTitle').textContent = 'Log a trade'; $('deleteBtn').hidden = true; $('msg').textContent = '';
-    fillForm({ ts: localIso(new Date()), lev: 10, stake: 20 });
+    fillForm({ ts: localIso(new Date()), lev: 5, stake: 50 });
     try { const d = JSON.parse(localStorage.getItem('mmt-journal-defaults') || 'null'); if (d) { $('f_lev').value = d.lev; $('f_stake').value = d.stake; } } catch (e) {}
     derive();
   }
