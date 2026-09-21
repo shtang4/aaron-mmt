@@ -767,3 +767,57 @@ It strengthens his point rather than weakening it: "**you must know how much the
 ### And the disclaimer
 
 > "There's no always 100% guarantee method ... especially during the news, FOMC, or unexpected market event like black swan. Always remember, **there's no guarantee 100% strategy.**"
+
+## Part 22: "How much to put?" — and lateness becomes a dial
+
+Three Dose slides. Written up at [05 §3.7b–3.7e](05-risk-and-hedging.md).
+
+### The nine-card margin board
+
+"Different Margin, Similar Profit. **Margin alone does not determine profit.**" Nine of Jane's positions, all cross, three of them tokenised equities (SNDK, PLTR, and SPY on the next slide) — which is where the "same method on stocks and indexes" claim comes from.
+
+The claim is true and trivially so: the **smallest** margin on the board, **148.51 USDT on ALLO**, produced the second-largest profit (+1,351.09 at +909.76%), while the **largest**, 2,003.67 on SUI, produced +1,522.93 at +76%. Because **P&L = margin × ROI**, and margin is one factor of two.
+
+**The half the slide omits is the half that matters: margin is the factor you choose, ROI is the factor the market gives you.** A bigger margin multiplies whatever ROI arrives, *including a negative one*. Read the same table backwards and ALLO at −909% takes 1,351 USDT off a 148 USDT position — and on **cross** that does not stop at the margin.
+
+From the session, the actual relationship: "**your margin, your margin with leverage X, determine your position size**" — `margin × leverage = notional`. Three quantities, two free, and the two you control are margin and leverage.
+
+### Risk first, margin second
+
+The SPY pair, on a **Future Trends FZCO** slide: 10× with **132.69 SPY and 10,008.67 margin**, versus 20× with **131.98 SPY and 4,999.93 margin**. Both about **$100k of notional**.
+
+**Near-identical exposure; doubling the leverage halves the margin.** That is the cleanest statement of leverage's real job in the deck: **leverage does not change your exposure, it changes how much cash sits behind it.** (The P&L differs because the entries differ — do not read the higher ROI as a reward for more leverage.)
+
+And the instruction on the slide: **"Never copy their position size, calculate your own risk & margin."** That is the direct answer to the SOMI blind copy. A call gives you a price; it can never give you a size.
+
+### Late entry, smaller dose — Jane's rule, and the best line in this module
+
+ALLOUSDT, 29 May 2026. He posts at 15:33: entry 0.14043 → exit 0.21468, **+1,057.46%**, realised **+2,019.35**. Jane, three hours later: "**Late to the manager's party** 😂 But caught the fun ride" — entry **0.17879** → 0.26523, **+966.92%**, 1,435.97 USDT.
+
+Asked how, she answers:
+
+> "**148.5 USDT.** Was late, so **manage risk with small size** and took a quick trade instead. **If you're early and have time to manage the trade, you can always scale bigger.**"
+
+Every number checks: +48.35% of price × 20 = 966.9%; 1,435.97 ÷ 9.6692 = **148.51 USDT**, exactly her figure and exactly the margin on the ALLO card in the nine-card board.
+
+**"Late trade is a lost trade" has appeared four times in this course — BMT, MAVIA, A8, ZETA 2025 — always as a prohibition. Here it becomes a dial:**
+
+| Timing | Dose | Trade |
+|---|---|---|
+| **Early**, time to manage | **Scale bigger** | Partials, trailing stop, runner |
+| **Late**, move already running | **Smaller size** | "A quick trade instead" |
+
+First time the deck gives a late entry a procedure rather than a warning, and it is internally consistent: a late entry has a worse price, so the distance to invalidation is larger, so the same money at risk buys a smaller position. **Lateness is a sizing input.** Now in the SOP.
+
+Discount: her entry was 27% above his and she still made 967% **because the coin ran another 48%** — that is the trend holding, not the sizing rule paying off. The sizing rule is what would have protected her if it had not. Both cards are 20× cross. And "2 months' manager's salary from $150" does not reconcile: +2,019.35 at +1,057% implies about **191 USDT** of margin.
+
+### "Capital size does not determine your result"
+
+> "Small capital cannot make meaningful return from trading — **it's wrong. Because capital size does not determine your result.**"
+
+Half right, and **he argued the opposite two slides earlier**: the $16.7M SOL position was there to prove "you must know how much the risk behind". Both are true of different quantities and the deck swaps between them:
+
+- **ROI % is capital-independent.** 909% is 909% on 148 USDT or on 148,000.
+- **Money is entirely capital-dependent.** 909% of 148 is 1,351; of 148,000 it is 1.35M.
+
+So small capital can produce a large *percentage* return; it cannot produce a large *absolute* return without leverage or volatility — and those two **are** the risk. Jane's 148.51 at 20× sat roughly 5% of adverse price movement from liquidation the whole time. That is what the 909% cost, and neither slide names it.

@@ -23,6 +23,9 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 | PEOPLEUSDT | Module 5 | An actual hedge, resolved by closing the loser | Net about +81 USDT | [05 §4.11](05-risk-and-hedging.md) |
 | **ATAUSDT** | Module 5, Hunting SL | **The stop that paid.** "中我sl了" — SL hit, and it was the take-profit | Short 25×, 0.22241 → 0.19222, **+339.35%** | [05 §3.3b](05-risk-and-hedging.md) |
 | **STORJUSDT** | Module 5, "Hold Losing Trade!" | A short hedged at market. **Structurally the hedging module's own technique**, shown as a warning | **−37.06 USDT, −1881.45%** at cross 25× | [05 §3.3c](05-risk-and-hedging.md) |
+| **ALLOUSDT** | Module 5, "Late Entry, Smaller Dose" | **Lateness as a dial.** Jane enters 27% above his price, sizes down, takes a quick trade | Him +1,057% / +2,019 USDT; her **+966.92% on 148.51 USDT** | [05 §3.7d](05-risk-and-hedging.md) |
+| Nine-card margin board | Module 5, "How Much To Put?" | Margin alone does not set profit — but margin is the factor you choose and ROI the one you are given | 148 USDT → +1,351; 2,004 USDT → +1,523 | [05 §3.7b](05-risk-and-hedging.md) |
+| SPYUSDT pair | Module 5, "Risk First, Margin Second" | Same exposure, double the leverage, half the margin. "Never copy their position size" | +0.06% vs +0.81%, entries differ | [05 §3.7c](05-risk-and-hedging.md) |
 | SOLUSDT (JQ360) | Module 5, high-capital risk | A community post; the "$4.5M capital" figure is out by ~3.7× | +18.54M USDT, +110.97% at cross 4× | [05 §3.7a](05-risk-and-hedging.md) |
 | CARVUSDT, RARE, REEF and others | Module 5 SSWB | Result cards, no method shown | Various, wins only | [05 §3.10](05-risk-and-hedging.md) |
 | AERGOUSDT ("Kpnd") | Module 6 | Uncorrelated pump during a BTC crash | Entry 0.078, +657% ROI at 10× | §12 below |

@@ -375,6 +375,96 @@ That is worth recording for its own sake — the deck repeats community arithmet
 
 A 110.97% ROI is unremarkable as a percentage. It reads as extraordinary only because of the $16.7M standing behind it. That is the correct lesson from a results card, and it applies in reverse to every card in this deck: **the ROI tells you the leverage and the move, never the money.**
 
+### 3.7b "How much to put?" — three quantities, two of them yours
+
+A nine-card slide headed **"Different Margin, Similar Profit. Margin alone does not determine profit."** All nine positions are Jane's, all **Cross**, dated 2026, and three of them are tokenised equities — which is where the "she also uses the same strategy on stocks and indexes" claim comes from.
+
+| Coin | Lev | **Margin (USDT)** | Unrealised P&L | ROI | P&L ÷ margin |
+|------|-----|------------------|----------------|-----|--------------|
+| ALLOUSDT | 20× | **148.51** | +1,351.09 | **+909.76%** | **9.1×** |
+| LABUSDT Perp | 20× | **164.56** | +1,133.46 | +688.79% | 6.9× |
+| LABUSDT | 20× | **99.68** | +538.21 | +539.92% | 5.4× |
+| ARKMUSDT | 20× | 250.36 | +389.84 | +155.71% | 1.6× |
+| NEARUSDT | 20× | 249.94 | +158.22 | +63.30% | 0.6× |
+| PLUMEUSDT | 20× | 800.00 | +551.34 | +68.91% | 0.7× |
+| SNDKUSDT (SanDisk) | 10× | 819.43 | +3,992.45 | +487.22% | 4.9× |
+| PLTRUSDT (Palantir) | 10× | 1,006.69 | +323.19 | +32.10% | 0.3× |
+| SUIUSDT | 20× | **2,003.67** | +1,522.93 | +76.00% | 0.8× |
+
+**The claim is true and trivially so.** The smallest margin on the board (148.51 on ALLO) produced the second-largest profit; the largest (2,003.67 on SUI) produced less. Because **P&L = margin × ROI**, and margin is one factor of two.
+
+**What the slide does not say, and it is the half that matters:**
+
+> **Margin is the factor you choose. ROI is the factor the market gives you.**
+
+A larger margin multiplies whatever ROI arrives — *including a negative one*. Read the same table backwards: ALLO at −909.76% would have taken 1,351 USDT off a 148 USDT position, which on **cross margin** does not stop at the margin. That is the reading the headline invites and does not guard against, and all nine cards are cross.
+
+**The mechanical relationship, from the session:** "it depends on how you adjust these three things: your margin, your margin with leverage X, determine your position size."
+
+```
+margin × leverage = position size (notional)
+P&L = margin × ROI = notional × price move %
+```
+
+Three quantities, **two of them free**: pick any two and the third follows. You control margin and leverage completely, and the price move not at all.
+
+### 3.7c "Risk first, margin second" — the SPY pair
+
+A **Future Trends FZCO** slide headed **"First ask: How much can I afford to lose if I'm wrong. Risk First. Margin second."**, with the instruction that matters at the bottom: **"Never copy their position size, calculate your own risk & margin."**
+
+Two SPYUSDT longs, both cross:
+
+| | Leverage | Position (SPY) | **Margin (USDT)** | Unrealised | ROI |
+|-|---------|----------------|-------------------|-----------|-----|
+| A | **10×** | 132.69 | **10,008.67** | +6.63 | +0.06% |
+| B | **20×** | 131.98 | **4,999.93** | +40.91 | +0.81% |
+
+Implied notional is about **$100k on both** (132.69 × ~754, 131.98 × ~758). So: **near-identical exposure, and doubling the leverage halves the margin.** That is the whole demonstration, and it is the cleanest statement of leverage's actual job anywhere in the deck — **leverage does not change your exposure, it changes how much cash is parked behind it.**
+
+(The P&L differs, +6.63 against +40.91, which means the two were entered at different prices; the pair isolates margin, not performance. Do not read the +0.81% as a reward for more leverage.)
+
+**"Never copy their position size" is the direct answer to the SOMI blind copy** ([06 §2.4](06-case-studies.md)), where a member took the called levels at their own leverage and lost 52% of margin. The call gives you a price, never a size. Size is computed from *your* wallet and *your* tolerance, and it is the one number no trade call can supply.
+
+### 3.7d "Late entry, smaller dose" — lateness as a dial
+
+This is the most useful thing in the batch and it is Jane's line, not his.
+
+**The event.** ALLOUSDT, 29 May 2026. He posts at 15:33: **Long 20×, entry 0.14043, exit 0.21468, +1,057.46% ROI, realised +2,019.35 USDT**, with the caption "by using **#MMT Wick Tracker**, easily Earned Nearly 2 Months Manager's Salary just in less than 8 Hours ONLY with **Small Cap of $150**!!"
+
+Jane, at 18:43: "**Late to the manager's party** 😂 But caught the fun ride." Her card: Long 20×, entry **0.17879**, close **0.26523**, **+966.92%**, 1,435.97 USDT.
+
+A member asks how. Her answer, 31 May, is the rule:
+
+> "**148.5 USDT.** Was late, so **manage risk with small size** and took a quick trade instead. **If you're early and have time to manage the trade, you can always scale bigger.**"
+
+**Arithmetic, all of it checks.** Her entry 0.17879 → 0.26523 is +48.35% of price; ×20 = 966.9%, and the card reads 966.92%. Her P&L 1,435.97 ÷ 9.6692 = **148.51 USDT of margin**, exactly the figure she quotes, and exactly the margin on the open ALLO card in 3.7b. His own numbers check too: 0.14043 → 0.21468 is +52.87%, ×20 = 1,057.5%.
+
+**Why the rule is worth keeping.** "Late trade is a lost trade" has appeared four times in this course — BMT, MAVIA, A8 and the 2025 ZETA call — always as a **prohibition**. Here it becomes a **dial**:
+
+| Your timing | Dose | Trade type |
+|-------------|------|-----------|
+| **Early**, with time to manage it | **Scale bigger** | Managed: partials, trailing stop, runner |
+| **Late**, the move already running | **Smaller size** | "A quick trade instead" — in and out |
+
+That is the first time the deck gives a late entry a legitimate procedure instead of a warning, and it is consistent with everything else: a late entry has a worse price, so the distance to the invalidation level is larger, so the same money at risk buys a smaller position. **Lateness is a sizing input.** Carried into the SOP.
+
+**What to discount.** Her entry is 27% above his (0.17879 vs 0.14043) on the same trade, which is what "late" cost — and she still made 967% because the coin ran another 48%. That is the trend being intact, not the sizing rule working; the sizing rule is what would have protected her if it had not. Both cards are 20× **cross**. And "2 Months Manager's Salary from $150" is promotion: the $150 does not reconcile with the realised 2,019.35 at +1,057% ROI, which implies about **191 USDT** of margin.
+
+### 3.7e "Capital size does not determine your result" — true of ROI, false of money
+
+> "Small capital cannot make meaningful return from trading — **it's wrong. Because capital size does not determine your result.** It's the correct D, the correct dose, plus how much you putting in for the trade."
+
+Half right, and the half that is wrong matters because **he argued the opposite two slides earlier**. In [§3.7a](05-risk-and-hedging.md) the lesson from the $16.7M SOL position was "**you must know how much the risk behind**" — i.e. the absolute gain came from the capital. Here the lesson is that capital does not determine the result.
+
+Both are true of different quantities, and the deck uses them interchangeably:
+
+| | Depends on capital? |
+|-|--------------------|
+| **ROI %** | **No.** 909% on 148 USDT and 909% on 148,000 USDT are the same number |
+| **Money** | **Yes, entirely.** 909% of 148 is 1,351; 909% of 148,000 is 1.35M |
+
+So: **small capital can produce a large percentage return. It cannot produce a large absolute return without leverage or volatility — and those two are the risk.** Jane's 148.51 USDT at 20× was roughly 5% of adverse price movement from liquidation the whole time it was open. That is the price of the 909%, and neither slide names it.
+
 ### 3.8 SSWB: Start Small Win Big
 
 Framing slide. Three student objections quoted: "How much money am I risking each trade?", "Small capital can start?", "Small capital cannot make meaningful returns from trading." Verdict: **"Wrong. Capital size does not determine your result. The correct Dose does: how much you are putting in for a trade. The percentage is identical."**
