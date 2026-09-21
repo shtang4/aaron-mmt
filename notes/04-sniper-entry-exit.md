@@ -36,6 +36,36 @@ SPE is a two-platform confluence entry:
 
 So the SMC zone tells you *where* the pullback should end, and the EMA gives the *exact price* to rest the order at. The two are read on different platforms because the SMC indicator is TradingView-only and the trade is placed on Bybit.
 
+### 1.1a The colour key, the mechanism, and which EMA to aim at
+
+**Colours, from the session** — these are the Leviathan indicator's defaults and the slides never name them:
+
+| Zone | Colour |
+|------|--------|
+| **Supply zone** | **Pink** |
+| **Demand zone** | **Blue** |
+| **Bullish FVG** | **Light green** |
+| **Bearish FVG** | **Dark red** |
+
+**The mechanism behind the proximal-edge rule.** The slides state the rule; the session gives the reason, and it is the liquidity argument:
+
+> "Aim at the **bottom of the supply zone** if you plan to short. **Because when the thing short come down, short they have to retrace. Short you retrace, you touch the bottom of the supply zone first before it dump further.** That's the reason."
+
+> "Aim at the **top of demand zone** if planning to long ... this long position have to retrace. So come retrace at the top of demand zone, **sweep**, and then pump further."
+
+So the proximal edge is **the first price the retrace meets**, and his word for what happens there is **sweep** — the same word as the liquidity mechanics in [03 §2.7b](03-entry-direction.md) and the equal-high/equal-low sequence in [03 §3.2a](03-entry-direction.md). The zone edge is not support; it is where the retrace collects resting orders before continuing. That is why the entry belongs there and not deeper.
+
+**Which of the five EMAs — the directional rule, stated for the first time:**
+
+> "Let's say you want to short it, so you look at the **higher one**, because the short one came down, retrace, and go down further, so **you aim the higher EMA line**. If let's say you want to long, so maybe you **aim the lower line**. So expect the long position retrace and then come back."
+
+| Direction | Aim at an EMA … |
+|-----------|----------------|
+| **Long** | **Below** current price — price retraces down into it, then continues up |
+| **Short** | **Above** current price — price retraces up into it, then continues down |
+
+Obvious once said, and it is the piece that makes "EMA 9 is the first target" operational: **EMA 9 on the retrace side.** For a long in an uptrend the fast lines sit below price; for a short in a downtrend they sit above. If the line you want is on the wrong side of price, the pullback has not started yet and there is nothing to rest an order at.
+
 ### 1.2 What he says SPE actually means, and why it is not a rule
 
 From the ZETA walkthrough, the only time in the course he defines the term:
@@ -72,6 +102,18 @@ Three consequences worth being clear about:
 
 Title slide: **"MAVol + MACD + Take Profit / Mãn Mãn Tiàp → Sip the profit slowly."** "Mãn Mãn Tiàp" is Hokkien for "slowly sip" (慢慢啜).
 
+**And the acronym is the procedure.** From the session:
+
+> "MMT, it can break down ... as a take profit strategy: **MA volume for the first M, MACD is the second M, T is the take profit.** So *mamamtiap*, or take the profit slowly."
+
+| Letter | Step |
+|--------|------|
+| **M** | **MA**Vol — wait for the volume bar above both VOLMA lines |
+| **M** | **M**ACD — read the histogram extreme |
+| **T** | **T**ake profit — full, or partial with the stop moved |
+
+A backronym on the brand name rather than its origin (MMT is Momentum Mastery Trading), but it is a usable mnemonic and it matches the three steps exactly.
+
 Five-step flow, verbatim:
 
 1. When the **Volume hits maximal**
@@ -90,13 +132,26 @@ Two readings come with it. **Colour is the side** — red is selling power, gree
 
 The stricter filter I had proposed (tallest since entry, and 2× VOLMA 10) is retired as the definition but is worth keeping as an optional second gate if the journal shows the exit firing too early.
 
-**Steps 2 and 3, MACD mid histogram.** With the MMT setting (8, 13, 9) the histogram reacts fast. Confirmed from the session: "mid histogram" is **the tallest bar** of the swing — his "**mountain peak**" ([03 §2.6a](03-entry-direction.md)). The partial fires when the next bar prints shorter than it: momentum has peaked even though price may still be rising.
+**Steps 2 and 3, MACD mid histogram.** With the MMT setting (8, 13, 9) the histogram reacts fast. Confirmed from the session: "mid histogram" is **the tallest bar** of the swing — his "**mountain peak**" ([03 §2.6a](03-entry-direction.md)).
+
+**And it resolves both directions.** In this session he describes a volume maximum where "the MACD that time was actually reaching the **iceberg dip**", and then equates the two: "choose the mid, the middle of the histogram, **which is the iceberg dip**." So **"mid histogram" means the histogram's extreme bar, whichever side it is on**: the **mountain peak** when you are long, the **iceberg dip** when you are short. One rule, mirrored. That is consistent with the two shapes in [03 §2.6a](03-entry-direction.md), where the long's exit and the short's exit are the same two points swapped. The partial fires when the next bar prints shorter than it: momentum has peaked even though price may still be rising.
 
 **And that bar is visible without measuring it.** On Bybit a histogram bar smaller than the one before it is drawn **hollow**. So **the first hollow bar after a run of solid bars is this trigger** — no height comparison needed. The course explains the hollow bar as "caused by counter volume", which is mechanically impossible since MACD is computed from price EMAs alone and never sees volume; the correction and why it makes the signal better are in [03 §2.6b](03-entry-direction.md). Confirm the convention once on your own chart before relying on it.
 
 **The cost of missing the peak, in his own ladder:** peak → equilibrium is **half the profit gone** → back to entry is all of it → below entry is a loss. Same argument as the ZETA closing slide, made on the indicator instead of the price. That is the same signal the RAVE example in Module 5 annotated "IceBerg Tip" at the bottom of a crash, used in reverse at a top. In practice the tallest bar is only known once the next bar is shorter, so the exit is one candle after the peak, on the 1-minute chart.
 
-**Step 4, TP or PTP 75%.** Either close the whole position, or close **75%** and keep 25% as the runner. On the runner, move the stop to entry (it can no longer lose) or apply the Hunting SL from Module 5 section 3.3 (lock a rising fraction of ROI). Note the number: 75% off is a much larger partial than the Module 5 example's "take 20% profit, leave 80% for the wick", which was about locking ROI with a stop, not about position size. Here most of the position is closed at the climax.
+**Step 4, TP or PTP — and the slide and the session give different numbers.**
+
+| Source | Figure |
+|--------|--------|
+| The slide | "TP, or **PTP 75%**" |
+| The session | "either you want the TP fully, or you want to partial TP ... **25%**, and set SL to entry, or you want to set hunting SL" |
+
+**This matters and it is not a detail.** Closing **75%** locks most of the gain and leaves a quarter running; closing **25%** leaves three-quarters exposed to the give-back the climax rule exists to avoid. The two prescriptions are near-opposites.
+
+Unresolved, and flagged as such. These notes keep **75%** as primary because it is the written figure, because Bybit's partial-close field takes the percentage *to close*, and because it is the reading consistent with "do not be greedy" in the same breath. But if 25% is what he means — closing a quarter and trailing the rest — that is a materially more aggressive plan and worth confirming before you trade it. **Whichever you use, the other half of step 4 is unambiguous: move the stop to entry, or switch to the Hunting SL.**
+
+Either close the whole position, or close **75%** and keep 25% as the runner. On the runner, move the stop to entry (it can no longer lose) or apply the Hunting SL from Module 5 section 3.3 (lock a rising fraction of ROI). Note the number: 75% off is a much larger partial than the Module 5 example's "take 20% profit, leave 80% for the wick", which was about locking ROI with a stop, not about position size. Here most of the position is closed at the climax.
 
 **Step 5.** The runner is the concession to greed, and it is small by design.
 
@@ -182,6 +237,7 @@ Module 5's rule 11 teased "how to be a Wick Catcher without a Master". This slid
 ## Open questions
 
 - Where does the SPE stop go: below the zone, or at the ROI tier, when the two disagree?
+- **PTP is 75% on the slide and 25% in the session.** Near-opposite plans. Confirm which before trading it; notes keep 75% as primary. See §2.1.
 - Does the course have a worked example of the full sequence on one trade, with entry, stop, PTP and runner all shown? (No: see Module 6. ZETA comes closest and still shows no stop.)
 - ~~Volume "maximal" is defined by my working rule, not the course's.~~ **Answered:** a bar above both VOLMA lines is "abnormal"; no multiple. See §2.1 and [03 §2.7a](03-entry-direction.md).
 - Does the hollow-bar convention on Bybit match the standard "smaller than the previous bar"? Confirm once on a live chart; the climax trigger becomes a glance if so.

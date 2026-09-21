@@ -1072,3 +1072,45 @@ Fees cost **2× to 11×** what funding does — and funding is **zero** unless y
 > "**You follow the rules, you won't move wrongly. If you do not follow, anything can turn wrong. It's written rules here already.**"
 
 Which is true of eleven of them. Rule 12 — "10% is the strategy, 90% is the mindset" — is the one that cannot be followed or broken, and the reason it is flagged in [05 §5.1](05-risk-and-hedging.md) as the escape hatch: when the method fails, the diagnosis lands on the student.
+
+## Part 29: Module 4 spoken — the colour key, which EMA, and a 75%/25% conflict
+
+Written up at [04 §1.1a, §2.1](04-sniper-entry-exit.md).
+
+### Colours the slides never name
+
+Supply zone **pink** · demand zone **blue** · bullish FVG **light green** · bearish FVG **dark red**. Now in the SOP, since you cannot use the indicator without them.
+
+### Why the near edge — the mechanism, not just the rule
+
+> "Aim at the **bottom of the supply zone** if you plan to short. **Because when the thing short come down, short they have to retrace. Short you retrace, you touch the bottom of the supply zone first before it dump further.** That's the reason."
+> "Aim at the **top of demand zone** if planning to long ... come retrace at the top of demand zone, **sweep**, and then pump further."
+
+The proximal edge is **the first price the retrace meets**, and his word for what happens there is **sweep** — the same mechanism as the liquidity rules in [03 §2.7b](03-entry-direction.md). The zone edge is not support; it is where the retrace collects resting orders before continuing. That is the argument for putting the entry there rather than deeper.
+
+### Which of the five EMAs — the directional rule, stated for the first time
+
+> "If you want to short it, you look at the **higher one** ... you aim the **higher EMA line**. If you want to long, you aim the **lower line**."
+
+**Long → an EMA below price. Short → an EMA above price.** Obvious once said, and it makes "EMA 9 is the first target" operational: **EMA 9 on the retrace side.** If the line you want is on the wrong side of price, the pullback has not started and there is nothing to rest an order at.
+
+### M-M-T is the exit procedure
+
+> "MMT, it can break down as a take profit strategy: **MA volume for the first M, MACD is the second M, T is the take profit.** So *mamamtiap*, take the profit slowly."
+
+A backronym on the brand, but it maps to the three steps exactly and is worth keeping as the mnemonic.
+
+### "Mid histogram" resolves for both directions
+
+He describes a volume maximum where the MACD "was actually reaching the **iceberg dip**", then says "choose the mid, the middle of the histogram, **which is the iceberg dip**". So **"mid histogram" means the histogram's extreme bar, whichever side it is on** — mountain peak when long, iceberg dip when short. One rule, mirrored, consistent with the two shapes in [03 §2.6a](03-entry-direction.md).
+
+### And a conflict worth confirming before you trade it
+
+| Source | Partial take-profit |
+|---|---|
+| The slide | "TP, or **PTP 75%**" |
+| The session | "partial TP ... **25%**, and set SL to entry, or set hunting SL" |
+
+**Near-opposite plans.** Closing 75% locks most of the gain and leaves a quarter running; closing 25% leaves three-quarters exposed to exactly the give-back the climax rule exists to avoid.
+
+Kept as **75%** — it is the written figure, Bybit's partial-close field takes the percentage *to close*, and it is the reading consistent with "do not be greedy" in the same breath. Flagged as an open question in [04](04-sniper-entry-exit.md) and noted in the checklist. The rest of step 4 is unambiguous either way: **move the stop to entry, or switch to the Hunting SL.**
