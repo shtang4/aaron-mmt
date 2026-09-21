@@ -705,11 +705,6 @@ Note the inconsistency: Aaron's entire abnormal-volume definition is the bar cro
 
 No other questions were captured on slides. Anything else was answered verbally and is only in the transcript ([08](08-transcript.md)).
 
-## 14. Closing slide: "Synchronization"
-
-"Resonance at the SAME frequency, attraction of the SAME nature" (同频共振，同质相吸). A mindset close, matching the "90% mindset" Golden Rule and the Know / Enlighten / Do pyramid from Module 0. No trading content.
-
-
 
 ## Open questions
 
