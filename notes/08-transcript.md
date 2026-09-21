@@ -935,3 +935,50 @@ Three Discord posts: "4300%+ total gain" (16 Dec 2023), "6250%+ total gain" (26 
 **That is the journal practice, from a student, unprompted** — and the only acknowledgement anywhere in the results section that losing trades exist. It is also the argument for the trade journal in this repo: the review is worth nothing without a record.
 
 Leverage across these slides, for the record: 5×, 10×, 12.5×, 15×, 16.67×, 25×, 50× — and **ETHUSDT Short 100.0×** on the "3 Figure Target" slide. Against an SOP ceiling of 10×.
+
+## Part 26: the SSWB SOP walked with cards — and $20 is the one figure that checks out
+
+Five slides: the eight-step SOP (already transcribed at [05 §3.12](05-risk-and-hedging.md), and it matches) plus four numbered illustration slides. Full working at [05 §3.12a–3.12b](05-risk-and-hedging.md).
+
+### The correction that matters
+
+Backing margin out of the "#3 Execute 10 trades" positions screen (`margin = P&L ÷ ROI`):
+
+| Coin | Lev | ROI | P&L | **Implied margin** |
+|---|---|---|---|---|
+| LUNA2USDT | 20× | 105.1% | +20.79 | **$19.78** |
+| 1000BONKUSDT | 20× | 203.1% | +40.16 | **$19.77** |
+| SEIUSDT | 50× | 332.1% | +64.68 | **$19.47** |
+| 1000000VINUUSDT | 12.5× | 14.6% | +2.93 | **$20.05** |
+| YFIUSDT | 20× | 717.8% | +70.99 | $9.89 |
+| GODSUSDT | 20× | 395.0% | +11.71 | $2.96 |
+
+**Four of six land between $19.47 and $20.05.** The $20 stake is real and visible in the arithmetic — **the only stated stake figure in this course that the cards confirm.** Against the $150, which the RAVE cards put at $324 and $224. The stake-size table in [05 §3.13](05-risk-and-hedging.md) is now resolved on evidence rather than inference: **$20 is the practice stake.**
+
+### The daily model reconciles too
+
+"#4" shows Bybit's cumulative P&L: **137.19%, +252.07 USD, period 2023-11-15** — one day. Deployed margin = 252.07 ÷ 1.3719 = **$183.74**, which at $20 a trade is **about nine trades**. Exactly step 7's "up to 10 trades … sometimes you may reach the $100 target even before reaching 10 trades."
+
+And it **beat its own target 2.5×**: the plan is 10 × $10 = $100; the card is **+$252.07**, about $28 a trade. Consistent with step 4's clause about setting the Wick Tracker below the previous wick high.
+
+"#2" is the same story: MBLUSDT Long 16.67×, entry 0.005708 → 0.006023, **+91.20%** (checks: +5.52% × 16.67 = 92.0%) against a stated 50% target.
+
+### One slide that does not illustrate its own headline
+
+"#1 Initial Investment for Each Trade: **$20**" shows 1000PEPEUSDT Short 50×, entry 0.0013950 → 0.0013067, **+20.90**. That is +6.33% of price × 50 = **316.5% ROI**, so the margin was about **$6.60**. The $20 on the card is the **profit**, not the investment. Chosen because the number matched.
+
+**And every illustration position is cross margin** — with liquidation prices on screen, one at 50× — against an SOP and a user-confirmed practice of **isolated** at 5–10×.
+
+### What he says over them
+
+> "Start small win big — **taking action is already a win** ... Trading [cannot] make you rich overnight, but **it's the best business in long term**. So **always use a stop loss**. **Behind every consistent profitable trader there's a lot of losses, mistakes and lessons learned.**"
+
+*(The third sentence is garbled in transcription; the "but" makes the intended sense plain.)*
+
+**"Always use a stop loss" — the fifth time in the spoken session, and said over the one SOP in the course whose eight steps omit it.** And "behind every consistent profitable trader there's a lot of losses" is the second acknowledgement of losses in the whole results section, after Jane's — and the first from him.
+
+Which gives the pattern across this module in one line:
+
+> **The narration mandates stops and acknowledges losses. The slides show neither.**
+
+Not an accusation — that is what a results deck is for. But it means the deck cannot serve as evidence of the method. For that there is the student's daily calendar ([05 §3.8a](05-risk-and-hedging.md)), the only place losses are visible, and your own journal, the only place they will ever be visible for your trading.

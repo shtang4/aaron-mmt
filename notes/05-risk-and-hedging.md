@@ -843,6 +843,61 @@ So the screenshot demonstrates the stake size and nothing else about the SOP. Th
 
 **Closing slide.** "What will you have when implementing Dose: knowing how much money you are risking; can grow from small capital to big profits."
 
+### 3.12a The four illustration slides — and the $20 stake is the one figure that checks out
+
+Four slides walk the SOP with evidence cards. Backing the margin out of each (`margin = P&L ÷ ROI`) produces the most important correction in this whole section.
+
+**#3 "Execute 10 trades, 30 mins trade"** — two Bybit position screens:
+
+| Coin | Side / lev | Entry → mark | Implied ROI | P&L | **Implied margin** |
+|------|-----------|--------------|-------------|-----|-------------------|
+| LUNA2USDT | Long, cross 20× | 0.7476 → 0.7889 | 105.1% | +20.79 | **$19.78** |
+| 1000BONKUSDT | Long, cross 20× | 0.0038868 → 0.0042815 | 203.1% | +40.16 | **$19.77** |
+| SEIUSDT | Long, cross **50×** | 0.25800 → 0.27549 | 332.1% | +64.68 | **$19.47** |
+| 1000000VINUUSDT | Long, cross 12.5× | 0.014955 → 0.015131 | 14.6% | +2.93 | **$20.05** |
+| YFIUSDT | Short, cross 20× | 13,580 → 8,652 | 717.8% | +70.99 | $9.89 |
+| GODSUSDT | Long, cross 20× | 0.3057 → 0.3667 | 395.0% | +11.71 | $2.96 |
+
+**Four of six positions sit between $19.47 and $20.05.** That is the $20 rule being followed, visible in the arithmetic, on a live positions screen. **It is the only stated stake figure in the entire course that the cards confirm** — and it stands in direct contrast to the $150 in [§3.9a](05-risk-and-hedging.md), which the RAVE cards put at $324 and $224.
+
+**So the SSWB stake rule is real and it is $20.** Where the course quotes $150, $30 or "I scale up accordingly", those are later rungs of the ladder in [§3.10a](05-risk-and-hedging.md) or illustrations. The number to start from is **$20**, and this slide is why.
+
+**#4 "Each resulting $10 profit totaling $100 profit"** — a Bybit cumulative P&L card:
+
+| | |
+|-|-|
+| Cumulative P&L % | **137.19%** |
+| Cumulative P&L | **+252.07 USD** |
+| Calculation period | **2023-11-15** (one day) |
+
+Back out the deployed margin: 252.07 ÷ 1.3719 = **$183.74**. At $20 a trade that is **about nine trades** — which is exactly what step 7 describes ("up to 10 trades … sometimes you may reach the $100 target even before reaching 10 trades"). **The model reconciles.**
+
+It also **beat its own target by 2.5×**: the stated plan is 10 × $10 = $100 a day; the card shows **+$252.07** on one day, about **$28 per trade**. Consistent with step 4's "sometimes you may set to the lower level than the previous high wick spike, then you may gain more profit than 50%."
+
+**#2 "Aiming $100 profit with 50% gain"** — MBLUSDT **Long 16.67×**, entry 0.005708 → 0.006023, ROI **+91.20%**. Check: +5.52% of price × 16.67 = 92.0%, against the card's 91.20%. Correct, and again roughly **double the 50% target**. Posted "Scalping in 20mins", 20 Nov 2023, which fits step 5's 30-minutes-to-an-hour.
+
+**#1 "Initial Investment for Each Trade: $20 (RM80+)"** — and this one does not illustrate what it claims. The card is 1000PEPEUSDT **Short 50×**, entry 0.0013950 → 0.0013067, P&L **+20.90**. That is +6.33% of price × 50 = **316.5% ROI**, so the margin was about **$6.60**. The "$20" on the card is the **profit**, not the investment. The slide headlines a $20 *stake* and shows a $20 *gain* on a $6.60 position. Treat it as a chosen number, not an example.
+
+**A standing caveat on all of them: every position is cross margin**, with estimated liquidation prices on screen, and one is **50×**. The SOP and the user-confirmed practice are **isolated**, and the taught range is 5–10×. The stake rule checks out; the mode and the leverage on the illustration cards do not.
+
+### 3.12b What he says over these slides, and the gap it admits
+
+> "Start small win big — **taking action is already a win**. Once you know the skill, you are playing around with the position, margin and the leverage. Trading ~~can~~ make you rich overnight, but **it's the best business in long term**. So **always use a stop loss**. **Behind every consistent profitable trader there's a lot of losses, mistakes and lessons learned.**"
+
+*(The third sentence is garbled in transcription. The "but" makes the intended sense plain — trading **cannot** make you rich overnight, but it is the best long-term business. Read it that way; the literal words say the opposite of what the conjunction requires.)*
+
+Two things here matter more than the cards.
+
+**1. "Always use a stop loss" — for the fifth time in the spoken session, and over the one SOP in the course that omits it.** None of the eight steps on the slide mentions a stop. He adds it verbally, every time. The gap is between the printed material and the delivery, and the delivery is the correct half.
+
+**2. "Behind every consistent profitable trader there's a lot of losses, mistakes and lessons learned."** This is the second acknowledgement of losses anywhere in the results section, after Jane's ([§3.10d](05-risk-and-hedging.md)) — and the first from him.
+
+Taken together, the pattern across this entire module is now clear and worth stating once, plainly:
+
+> **The narration repeatedly mandates stops and acknowledges losses. The slides show neither.**
+
+That is not an accusation of dishonesty; it is a description of what a results deck is for. It does mean the deck cannot be used as evidence of the method — for that you need the daily calendar in [§3.8a](05-risk-and-hedging.md), which is the only place losses are visible, and your own journal, which is the only place they will ever be visible for *your* trading.
+
 ### 3.13 The three stake sizes the module has now given
 
 | Slide | Stake per trade |
@@ -852,7 +907,18 @@ So the screenshot demonstrates the stake size and nothing else about the SOP. Th
 | CARV short (implied by P&L and ROI) | about $2,500 |
 | 1% rule slide | $1,000 (implying a $100,000 wallet) |
 
-None of these are reconciled. The defensible reading is that $20 is the practice stake, $150 is the "graduated" stake, and the larger positions are the author's own. Whatever the stake, the rule that survives all the slides is the same: isolated margin, a stop, and sweep profits out.
+Plus **$30** from the spoken session ([§3.10c](05-risk-and-hedging.md)), on a first-day listing.
+
+**Resolved, by checking the cards rather than the captions** ([§3.12a](05-risk-and-hedging.md), [§3.9a](05-risk-and-hedging.md)):
+
+| Figure | Does the evidence support it? |
+|--------|------------------------------|
+| **$20** | **Yes.** Four of six positions on the "#3 Execute 10 trades" screen imply **$19.47 to $20.05** of margin. The only stated stake in the course the cards confirm |
+| $150 | **No.** The RAVE cards that carry the "$150 capital per trade" caption imply **$324** and **$224** |
+| $30 | Unverifiable; one anecdote, no card |
+| ~$2,500 (CARV), $1,000 (1% slide) | The author's own later size, not a starting rule |
+
+**So the reading is now evidenced, not inferred: $20 is the practice stake.** The larger figures are later rungs of the profit ladder in [§3.10a](05-risk-and-hedging.md) or his own trading. Whatever the stake, the rule that survives every slide is the same: **isolated margin, a stop, and sweep profits out** — the first and second of which the illustration cards themselves break.
 
 ## 4. Advance tool: MMT Hedging (Discharge)
 
