@@ -889,3 +889,49 @@ The short: 17.48477 → 0.74187 is **−95.76%**; ×20 = **1,915.1% ROI**. Margi
 **But the return came from the move, not the method.** RAVE ran **+154% then −96%** in about a week, on a **−94.83% day** with a 24h range of 1.24 to 27.79 — the largest single-coin moves in the deck. A 3,078% ROI requires a 154% price move at 20×; no skill manufactures one. And the slide criticising "common people" for over-leveraging shows **20×** on both cards, 2× the SOP ceiling and 4× the spoken beginner tier.
 
 **The wallet run, plainly:** 1,993 → 18,287 is **9.17×, about +818%, in ten days**, 87% of it from two trades on one coin that later traded at 1.35.
+
+## Part 25: SSWB finally defined — a ladder of profit targets, not a stake
+
+Five result-card slides plus the passage that explains them. Written up at [05 §3.10a–3.10d](05-risk-and-hedging.md).
+
+### The definition these notes were missing
+
+> "**Don't be greedy, start with two figure.** Because you say you can't make it. Train yourself, train your mindset. Then after that slowly scale up. **From two figure to three figure. Then, hundred to thousand.**"
+
+And two slides are captioned exactly that: **"2 Figure Target"** and **"3 Figure Target"**.
+
+| Rung | Target **profit per trade** | Cards on the slide |
+|---|---|---|
+| 1 | **Two figures**, $10–99 | +24.07 to +42.97 |
+| 2 | **Three figures**, $100–999 | +94.72 to +142.41 |
+| 3 | **Four figures**, $1,000+ | up to +1,069.74 |
+
+**SSWB is a ladder of profit targets climbed as your psychology allows — not a $150 stake rule.** The stake is whatever produces the target at the ROI you can actually get, and you do not move up until the current rung is routine. It also reframes the SSWB SOP in [05 §3.12](05-risk-and-hedging.md): "$20 stake, $100 day, then stop" is rung one.
+
+Jane's progression, spoken: "**hundred PnL, until four hundred, then four hundred until eight hundred, then nearly two thousand.**" The card sequence matches.
+
+### The "Gradual Increase Position Size" arrow is not in the numbers
+
+Every card carries entry, exit and leverage, so the margin can be recovered: `margin = P&L ÷ ROI`. Across seventeen cards the implied margins run **~$97 to ~$988 with no upward trend**. The card producing **+850.05 used ~$149** of margin; the one producing **+301.68 used ~$301**.
+
+**What climbs across the row is ROI — 51% to 572% — not size.** So the slide's causal story is not what its own numbers say: the results grew because the returns grew, on broadly similar money. If you scale your *stake* expecting that ladder, you are scaling the variable that did not produce it, and the one that multiplies losses too. Exactly one of seventeen cards lands near $150.
+
+### A third starting figure
+
+> "It was one of my **first day listed coin** trade ... I was actually used to use **30 as a capital** ... **30 grow thousand bucks. All the cost 30.**"
+
+So: **$20** (the SSWB SOP), **$150** (four separate slides), and now **$30** — plus "I didn't even start with hundred fifty". Take the ladder as the rule and the dollar figures as illustrations. Worth noting $30 → ~$1,000 is **+3,233% ROI**, needing **+129% of price at 25×** — a first-day listing, which is what he says it was, and exactly the case the reduced screener covers ([02 §5.3](02-coin-selection.md)).
+
+### Jane's posts, and the only student text in the deck that names losses
+
+Three Discord posts: "4300%+ total gain" (16 Dec 2023), "6250%+ total gain" (26 Dec), and "22,500+% Total Gain" with "the most MeMe Trade of the year, **11,300%+ in one trade**" (21 Feb 2024) — **which confirms the ZETAUSDT 50× card, +11,339.67%, 0.8570 → 2.8530, as hers and dates it.**
+
+**The totals do not reconcile with the cards beside them**: the "6250%+" post shows ten cards summing to about **2,084%**, and the 7,161 USDT slide shows twelve summing to about **3,814**. Probably cards off-screen, but not verifiable as presented.
+
+**And the sentence worth more than every card in this section:**
+
+> "We didn't start off with perfect weather, **we do have stormy tornado bad trades too** ... **Bad trade helps surface out our knowledge gap, it's a learning opportunity. Always review back the bad trades**, try to get advice from coaches ... U can spend less time on trial and error."
+
+**That is the journal practice, from a student, unprompted** — and the only acknowledgement anywhere in the results section that losing trades exist. It is also the argument for the trade journal in this repo: the review is worth nothing without a record.
+
+Leverage across these slides, for the record: 5×, 10×, 12.5×, 15×, 16.67×, 25×, 50× — and **ETHUSDT Short 100.0×** on the "3 Figure Target" slide. Against an SOP ceiling of 10×.

@@ -701,6 +701,83 @@ Several are **unrealised** P&L, which is an open position, not a result. Several
 
 **CARV slide.** CARVUSDT short at 5×, entry 1.2638, current 0.7447, unrealised +5,191 USDT ("~22,740+ MYR"). A 41% price move at 5× is a 205% ROI, which implies about 2,530 USDT of margin. That is not a $150 trade. Alongside it: an "Always use a stop loss" graphic and two quotes ("Trading can't make you rich overnight but it is the best business in long term", "Behind every consistently profitable trader there is a lot of losses, mistakes and lessons learned").
 
+### 3.10a SSWB defined at last: a target ladder on profit, not a stake
+
+Five result-card slides, and the spoken passage that goes with them finally says what SSWB **is**. These notes had it as "a $150 stake". It is not a stake rule at all.
+
+> "**Don't be greedy, start with two figure.** Because you say you can't make it. Train yourself, train your mindset. Then after that slowly scale up. **From two figure to three figure. Then, hundred to thousand.**"
+
+And the slides are labelled to match — one is captioned **"2 Figure Target"**, the next **"3 Figure Target"**:
+
+| Stage | Target **profit per trade** | Slide evidence |
+|-------|----------------------------|----------------|
+| 1 | **Two figures** — $10 to $99 | Cards from +24.07 to +42.97 |
+| 2 | **Three figures** — $100 to $999 | Cards from +94.72 to +142.41 |
+| 3 | **Four figures** — $1,000+ | "hundred to thousand"; cards up to +1,069.74 |
+
+**SSWB is a ladder of profit targets, climbed as your psychology allows.** That is a materially different rule from "$150 per trade", and it is the one to carry: the stake is whatever produces the target at the ROI you can actually get, and you do not move up a rung until the current one is routine. It also explains the SSWB SOP in [§3.12](05-risk-and-hedging.md), whose "$100 target then stop" is rung one completed.
+
+**Jane's progression, spoken:** "she actually grow initially **hundred PnL**, until **four hundred**, then from four hundred until **eight hundred**, then nearly **two thousand**." The card sequence on the first slide matches: +101.80 · +113.95 · +182.56 · +185.37 · +195.17 · +301.68 · +394.20 · +453.79 · +481.90, then +246.12 · +249.18 · +402.50 · +455.55 · +850.05 · +855.03 · +952.51 · +1,013.10.
+
+### 3.10b The "Gradual Increase Position Size" arrow is not in the numbers
+
+The slide draws two arrows across those cards: **"Gradual Increase Position Size"** and **"Scale Up Trading Psychology"**. The profit ladder is real. **The position-size ladder is not** — and every card carries the two numbers needed to check it.
+
+Backing margin out of each card (`margin = P&L ÷ ROI`, with ROI = price move × leverage):
+
+| Card | Entry → exit | Lev | Implied ROI | **Implied margin** |
+|------|-------------|-----|-------------|-------------------|
+| +101.80 | 0.2008 → 0.2049 | 25× | 51.0% | **~199** |
+| +113.95 | 0.1602 → 0.1660 | 25× | 90.5% | **~126** |
+| +182.56 | 0.2744 → 0.2873 | 25× | 117.5% | **~155** |
+| +185.37 (ORCA short) | 2.537 → 2.056 | 10× | 189.6% | **~98** |
+| +195.17 | 0.1821 → 0.1967 | 25× | 200.4% | **~97** |
+| +301.68 | 0.2142 → 0.2228 | 25× | 100.3% | **~301** |
+| +394.20 | 0.1631 → 0.1749 | 25× | 180.8% | **~218** |
+| +453.79 | 0.1928 → 0.2043 | 25× | 149.1% | **~304** |
+| +481.90 | 0.2065 → 0.2201 | 25× | 164.6% | **~293** |
+| +850.05 | 0.2557 → 0.3142 | 25× | 571.9% | **~149** |
+| +952.51 | 0.2743 → 0.3171 | 25× | 390.1% | **~244** |
+| +1,013.10 (REEF short) | 0.004966 → 0.004457 | 10× | 102.5% | **~988** |
+
+**The margins oscillate between roughly $97 and $988 with no upward trend.** The card producing +850.05 used **less** margin (~$149) than the one producing +301.68 (~$301). What actually climbs across the row is **ROI**, from 51% to 572%.
+
+So the slide's causal story — bigger size produced bigger results — is not what its own numbers say. **The results grew because the ROI grew, on broadly similar money.** That matters practically: if you scale your *stake* expecting this ladder, you are scaling the variable that did not produce it, and you are scaling the one that multiplies losses too. Rung-climbing should follow demonstrated ROI, not precede it.
+
+(Note also that exactly one of seventeen cards lands near $150 of margin. The house figure is not the practice — see [§3.9a](05-risk-and-hedging.md).)
+
+### 3.10c A third starting figure: $30
+
+> "During that time, it was one of my **first day listed coin** trade. This coin is quite new, first day listed. So I was actually used to use **30 as a capital**. I use this start small win big. **30 grow thousand bucks. All the cost 30.**"
+
+The course has now given **three** starting stakes: **$20** (the SSWB SOP, [§3.12](05-risk-and-hedging.md)), **$150** (SSWB slide, RAVE, the student, the ALLO post), and now **$30**. Plus "I didn't even start with hundred fifty". Take the *ladder* as the rule and the dollar figures as illustrations.
+
+Two things worth noting about this one. **$30 → ~$1,000 is +3,233% ROI**, which at 25× needs a **+129% price move** — achievable only on a first-day listing, which is what he says it was. And a **day-one listing is exactly the case the reduced screener covers** ([02 §5.3](02-coin-selection.md)): EMA direction plus OI only, because the higher-timeframe checks do not exist yet. The two rules line up.
+
+### 3.10d Jane's own account, and the only student text that names losses
+
+Three Discord posts, December 2023 to February 2024.
+
+| Date | Claim | Headline card |
+|------|-------|---------------|
+| 16 Dec 2023 | "#SSWB #MMT **4300%+ total gain**" | +731.56%, 0.22404 → 0.25682, plus nine 1000RATS cards (+522.31% down to +237.85%) |
+| 26 Dec 2023 | "#SSWB #MMT **6250%+ total gain**. Thx fr coaching Dr @AARON" | +430.40% short, 0.026353 → 0.021816 (−17.2% of price × 25 = 430.4% ✓), plus nine cards |
+| 21 Feb 2024 | "#MMT **22,500+% Total Gain**" · "the most MeMe Trade of the year with **11,300%+ in one trade**" | **ZETAUSDT Long 50×, +11,339.67%, entry 0.8570, current 2.8530** |
+
+**That last card is the ZETA trade already in these notes**, and this slide confirms both the owner and the date: **Jane's, posted 21 February 2024**. See [06 §7.2](06-case-studies.md) and [05 §2.3](05-risk-and-hedging.md).
+
+**The totals do not reconcile with the cards shown.** The 26 December claim is "6250%+"; the ten visible cards sum to about **2,084%**. Her 7,161 USDT slide shows twelve cards summing to about **3,814 USDT**, 53% of the stated total. Most likely there are cards off-screen — these are screenshots of longer posts — but as presented the totals are not verifiable from the evidence beside them.
+
+**And then the part that is worth more than all of it.** Her February message is the only student text anywhere in this deck that admits losing trades and says what to do about them:
+
+> "Trading alone can have blind spot & **we don't know what we don't know**. We didn't start off with perfect weather, **we do have stormy tornado bad trades too**. Just that we take it as learning experience to improve trading skill & didn't give up on the journey."
+
+> "**Bad trade helps surface out our knowledge gap, it's a learning opportunity. Always review back the bad trades**, try to get advice from coaches during 1-on-1 coaching to diagnose trading error. U can spend less time on trial and error, get 2nd opinion & insights to gain new knowledge and stay inspired."
+
+**"Always review back the bad trades" is the journal practice, stated by a student, unprompted.** It is the single most useful sentence from any testimonial in the course, and it is the only acknowledgement in the entire results section that losing trades exist at all. It is also the argument for the trade journal in this repository: the review is worth nothing without a record of what you did.
+
+**The leverage on these slides**, for the record: 5×, 10×, 12.5×, 15×, 16.67×, 25×, 50× — and on the "3 Figure Target" slide, **ETHUSDT Short 100.0×**. Against an SOP ceiling of 10×.
+
 ### 3.11 What to take from the results section
 
 - **The entry and sizing rules are the content; the cards are marketing.** Every number that can be checked reconciles, so the screenshots are real. What they are not is a track record: no losses, no dates, some open positions, and a referral code on every card.
@@ -711,6 +788,8 @@ Several are **unrealised** P&L, which is an open position, not a result. Several
 
 
 ### 3.12 The SSWB procedure (the actual SOP)
+
+**Read this as rung one of the ladder in [§3.10a](05-risk-and-hedging.md)** — a two-figure profit target, $20 stake, $100 day. Rungs two and three are the same procedure with a larger stake, moved up only once the current rung is routine.
 
 Eight steps, transcribed with light cleanup:
 
