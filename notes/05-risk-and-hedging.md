@@ -1188,17 +1188,52 @@ Twelve rules across two slides, transcribed with light cleanup:
 | # | Rule | Reading |
 |---|------|---------|
 | 1 | If the market is too volatile with a sideways trend but high volume, do not trade this kind of coin or hold too long. | The seahorse and heatmap "ranging" Skip condition, restated. |
-| 2 | How to earn from a trade is not just ROI%. Consider the funding rate (FR); expected profit and actual profit at close differ slightly. | Correct. Funding is charged every 8 hours on Bybit and shows up as the gap between the TP/SL screen's "expected profit" and the realised figure. It only matters if you hold across a funding time, which rule 6 says not to do. |
+| 2 | How to earn from a trade is not just ROI%. Consider the funding rate (FR); expected profit and actual profit at close differ slightly. | **Two-sided, and he says so: "funding rate as earning revenue."** Funding is a charge when you are on the crowded side and **income** when you are on the other. It settles every 8 hours and only lands if you hold across one, which rule 6 says not to do. See 5.0a for what the gap actually is. |
 | 3 | "Close and Go", then "Open and Wait" for the next potential coin. | Take the profit, leave the coin, scan again. This is the SSWB loop. |
 | 4 | New-born coins: trade for a few days only, avoid keeping them long. | New listings pump then fade; there is no EMA 155 history to lean on. |
 | 5 | Frequent long and short scalping earns faster, for those who can monitor. | Both directions, high frequency, screen time required. |
 | 6 | **Do not hold the coin too long. We are not doing swing trades.** Observe the volume percentage. | The rule the showcase trades break: ZETA (two weeks), BMT (five days), GMX (overnight on a loser). |
-| 7 | **Bigger wallet → smaller trade → lasts longer. Smaller wallet → bigger trade → will not last.** | The one sizing principle in the course stated as a rule. It is correct and it is the argument against cross margin, which makes every trade wallet-sized. |
+| 7 | **"Bigger wallet, you use smaller trade, you last longer. Smaller wallet, bigger trade, you die faster."** | His exact words, and the sharpest sizing line in the course. It is correct and it is the argument against cross margin, which makes every trade wallet-sized. |
 | 8 | PTP (partial take profit) and SL to entry, versus awaiting TP; Hunting SL. | Section 3.3. Take some, move the stop to breakeven, trail the rest. |
 | 9 | Know the trend of a new-born coin. | Pairs with rule 4. Not elaborated. |
 | 10 | We can make money with small capital and flipping our own wallet. | SSWB restated. |
 | 11 | Let's become a "Wick Player". How to be a "Wick Catcher" without a Master? | A teaser for the Module 4 Wick Tracker. |
 | 12 | **10% is the strategy, 90% is the mindset.** | See below. |
+
+### 5.0a Rule 2, made checkable: the gap is fees, not funding
+
+His instruction is concrete and worth turning into a habit:
+
+> "**Whenever closing the trade, please look at the expected profit with the actual shown profits — are actually slightly different. There are some fees.**"
+
+So at every close, compare **gross P&L implied by your actual exit price** with the **net figure the exchange reports**. The difference is the round trip. Compute it as:
+
+```
+gross  = margin × leverage × (exit − entry) ÷ entry     (negate for a short)
+cost   = gross − net reported P&L
+```
+
+**The journal now prints this line automatically** from fields it already collects — see [tools/trade-journal.html](../tools/trade-journal.html).
+
+**And the gap is overwhelmingly fees, not funding.** On a typical SSWB scalp — $20 margin, 20×, $400 notional, a 50% ROI target worth $10:
+
+| Component | Amount | Share of the $10 |
+|-----------|--------|------------------|
+| Round-trip taker fee, `2 × 0.055% × 400` | **$0.44** | **4.4%** |
+| Funding, one settlement at 0.01% | $0.04 | 0.4% |
+| Funding, one settlement at 0.05% | $0.20 | 2.0% |
+
+**Fees cost 2× to 11× what funding does**, and funding is **zero** unless you hold through 8 AM, 4 PM or midnight MYT. Rule 2 names funding first; for this method it is the smaller number. Verified against the journal: a $20 / 20× trade from 0.1000 to 0.1025 shows gross +10.00 and **round-trip cost 0.44, 4.4% of gross**.
+
+**The SSWB buffer is this rule pre-computed, and it tells you the leverage he had in mind.** Fees as ROI on margin are `2 × 0.055% × leverage`:
+
+| Leverage | Fee drag | Gross needed for a 50% net target |
+|---|---|---|
+| 20× | 2.2% | 52.2% |
+| 50× | 5.5% | **55.5%** |
+| 100× | 11.0% | 61.0% |
+
+The SSWB SOP says "50% = $10, **buffer 55%–60%** for the closing fee coverage" ([§3.12](05-risk-and-hedging.md)). That buffer is calibrated for roughly **50×**; at 20× it over-covers by three points. Either the SOP assumes higher leverage than the taught 5–10×, or the buffer is simply conservative — but the number is not arbitrary, and now you can size it for your own leverage instead of copying 55%.
 
 ### 5.1 What the Golden Rules do and do not say
 

@@ -1029,3 +1029,46 @@ No stop set · cross margin · away from the screen. The course already prescrib
 A losing long you will not close, propped up by a second position, is trading what you hope. His psychological point is real though — paralysis is the danger, and any pre-decided response beats freezing. **A resting stop is also a pre-decided response, and it executes while you are washing the dishes.**
 
 *(The car-safety analogy: poor protection = "crash without backup, seat belt without roof, one crash ends in liquidation"; good protection = "a military tank, bulletproof, multi-layered, survives multiple crashes.")*
+
+## Part 28: the Golden Rules, spoken
+
+All twelve are already transcribed at [05 §5](05-risk-and-hedging.md). The delivery adds three things.
+
+### Rule 7, in his own words — the sharpest sizing line in the course
+
+> "**Bigger wallet, you use smaller trade, you last longer. Smaller wallet, bigger trade, you die faster.**"
+
+My paraphrase had "will not last". His version names the failure mode, and it is also the argument against cross margin, which makes every trade wallet-sized by construction.
+
+### Rule 2 is two-sided, and the gap is fees
+
+> "You need to consider **funding rate as earning revenue** is different. Whenever closing the trade, **please look at the expected profit with the actual shown profits — are actually slightly different. There are some fees.**"
+
+**Funding is revenue when you are on the uncrowded side**, not only a cost. My note treated it as a charge; corrected.
+
+And the instruction is concrete, so it is now a habit with a formula. At every close compare the **gross implied by your exit price** with the **net the exchange reports**:
+
+```
+gross = margin × leverage × (exit − entry) ÷ entry      (negate for a short)
+cost  = gross − net
+```
+
+**The journal now prints that line automatically.** Verified: a $20 / 20× trade from 0.1000 to 0.1025 shows gross **+10.00**, **round-trip cost 0.44, 4.4% of gross**.
+
+**And the gap is fees, not funding.** On that same scalp:
+
+| Component | Amount | Share of a $10 target |
+|---|---|---|
+| Round-trip taker, `2 × 0.055% × 400` | **$0.44** | **4.4%** |
+| Funding, one settlement at 0.01% | $0.04 | 0.4% |
+| Funding, one settlement at 0.05% | $0.20 | 2.0% |
+
+Fees cost **2× to 11×** what funding does — and funding is **zero** unless you hold through 8 AM, 4 PM or midnight MYT, which rule 6 says not to do. Rule 2 names funding first; for this method it is the smaller number.
+
+**Bonus: the SSWB buffer tells you the leverage he had in mind.** Fee drag as ROI is `2 × 0.055% × leverage` — 2.2% at 20×, **5.5% at 50×**, 11% at 100×. The SOP's "50% = $10, buffer **55%–60%** for the closing fee coverage" is calibrated for about **50×**; at 20× it over-covers by three points. Set your own buffer from your own leverage instead of copying 55%.
+
+### The framing
+
+> "**You follow the rules, you won't move wrongly. If you do not follow, anything can turn wrong. It's written rules here already.**"
+
+Which is true of eleven of them. Rule 12 — "10% is the strategy, 90% is the mindset" — is the one that cannot be followed or broken, and the reason it is flagged in [05 §5.1](05-risk-and-hedging.md) as the escape hatch: when the method fails, the diagnosis lands on the student.

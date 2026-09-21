@@ -320,6 +320,14 @@
     if (t.entry && t.stop && t.tp) { const rr = Math.abs(t.tp - t.entry) / Math.abs(t.entry - t.stop); parts.push(`Planned R:R <b>1 : ${fmt(rr)}</b>`); }
     if (t.pnl != null && risk) parts.push(`Result <b>${sgn(t.pnl / risk)} R</b>`);
     if (t.pnl != null && t.stake) parts.push(`ROI <b>${sgn(t.pnl / t.stake * 100, 1)}%</b>`);
+    // Golden Rule 2: "look at the expected profit with the actual shown profits" - the gap is fees + funding
+    if (t.pnl != null && t.entry && t.exit && t.stake && t.lev) {
+      const dir = t.side === 'short' ? -1 : 1;
+      const gross = t.stake * t.lev * ((t.exit - t.entry) / t.entry) * dir;
+      const cost = gross - t.pnl;
+      const pctOfGross = gross !== 0 ? Math.abs(cost / gross) * 100 : null;
+      parts.push(`Gross at exit <b>${sgn(gross)}</b> · <b>round-trip cost ${fmt(cost)}</b> USDT${pctOfGross != null ? ` (${fmt(pctOfGross, 1)}% of gross)` : ''}`);
+    }
     $('derived').innerHTML = parts.join(' · ');
   }
   $('form').addEventListener('input', derive);

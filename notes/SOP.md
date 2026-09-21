@@ -65,9 +65,10 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 
 ## 6. After the close (Follow up)
 1. Sweep realised profit from Derivatives to Funding.
-2. Close and go. Next coin. Never re-enter the same beak. **Nothing is held past 24 hours** (session: "minutes, hours, not more than days").
+2. Close and go. **Don't stay the same coin** — next coin, next scan. Never re-enter the same beak. **Nothing is held past 24 hours** (session: "minutes, hours, not more than days").
 3. Stop at the daily target or ten trades, whichever first. Rest.
-4. Log it in the journal: which D, which rule, what you would change, **and whether price came back and challenged your entry** — his test for whether it was a sniper entry at all. Thirty trades before you believe any number.
+4. **At every close, compare the gross implied by your exit price with the net the exchange reports.** `gross = margin × leverage × (exit − entry) ÷ entry`; the gap is the round trip. On a $20 / 20× scalp it is about **$0.44, 4.4% of a $10 target** — and it is **fees**, not funding: funding is zero unless you held through 8 AM, 4 PM or midnight MYT. Fee drag as ROI is `2 × 0.055% × leverage`, so set your own TP buffer from that rather than copying 55%. The journal prints this line for you.
+5. Log it in the journal: which D, which rule, what you would change, **and whether price came back and challenged your entry** — his test for whether it was a sniper entry at all. Thirty trades before you believe any number.
 
 ## 7. When it goes wrong (Discharge)
 1. The stop is the answer. It was written before entry; honour it.
