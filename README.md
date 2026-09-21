@@ -18,7 +18,7 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 | 8 | [notes/08-transcript.md](notes/08-transcript.md) | What the spoken session adds or changes, filed by module as transcript parts arrive. |
 | 99 | [notes/99-open-questions.md](notes/99-open-questions.md) | Every question the deck leaves open, grouped by what it would change |
 
-All modules are captured. Remaining gaps are listed in file 99. until those modules are captured.
+All six modules are captured from the slides, and the spoken session is transcribed in file 8 (parts 1–30). **Three spoken sections are still outstanding:** the GMX and PEOPLE hedging case studies (`05 §4.8`, `§4.11`), the AERGO "trade scam coin, no BTC correlation" section (`06 §12`), and two short Module 5 framing slides (`05 §4.9`, `§4.12`). Questions no transcript can answer — things never said in six modules — are in file 99.
 
 ## Tools
 
