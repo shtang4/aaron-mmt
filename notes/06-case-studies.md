@@ -542,7 +542,15 @@ Three slides, one per D. Each has a schematic chart with **EMA 50 and EMA 5** (t
 
 "A doctor who prescribes without diagnosing does not blame the medicine when the patient gets worse."
 
-The chart: a downtrend, death cross marked, entry marked several candles *after* the cross, price continuing down. The failure is entering long on a "signal" (a trade call, a chat message) without reading direction from the chart. The fix is Module 3: EMA 155 three-candle rule, Heikin-Ashi run, Donchian alignment, all before any entry.
+**The spoken version corrects my reading of this chart.** I had it as entering *long* on a signal into a downtrend. He describes the opposite:
+
+> "Yes, dead cross, you enter here — but the thing is, **later on this thing turn to become golden cross**. So if you **short** over here, you enter in the middle cross here by shorting, but somehow here turning to the golden cross and going to pump, then definitely you going to lose money."
+
+So the trade was a **short, taken on the death cross, after the decline was already spent** — and the next structural event was the golden cross and a pump. That is a better and more specific lesson than "check the chart":
+
+**The death cross is a lagging signal, and entering on it is often entering at the end.** The course admits the lag elsewhere — "by the time these candles are coming down, this candle plays out first before the real crossing, because the EMA needs to do calculation to average it out" ([03 §2.1](03-entry-direction.md)) — and the Diagnose comparison chart in Module 1 shows the cross firing after roughly half the move. Taking the cross as an entry signal on its own puts you in exactly when the move is finished.
+
+The fix is the same Module 3 stack, but the operative part is the **filter**, not the cross: three full-body candles past EMA 155 in the direction you want, the fan still ordered, the Donchian ribbon already flipped. Those conditions are absent at a late cross, which is precisely why they exist. It is the mirror of the hockey-stick rule in [02 §6.6](02-coin-selection.md) — most crosses fail, and the EMA 155 test is what separates them.
 
 ### 10.2 Skip Dose: "Right trade. Wrong size. Could not hold."
 
@@ -553,7 +561,27 @@ The chart: a downtrend, death cross marked, entry marked several candles *after*
 
 "A doctor who prescribes 10× the correct dose does not get 10× the result."
 
-The chart: uptrend above EMA 50, valid entry, a three-candle red dip, "panic cut" at the dip low, then the run resumes. This is the ZETA slide from Module 5 section 2.3 in schematic form. The fix is Module 5 section 3.6: stake small enough that a 3% pullback at your leverage is a tolerable ROI swing. At 20× a 3% dip is −60% ROI; at 5× it is −15%. The "felt like a disaster" is a leverage choice, not a personality flaw.
+The chart: uptrend above EMA 50, valid entry, a three-candle red dip, "panic cut" at the dip low, then the run resumes. This is the ZETA slide from Module 5 section 2.3 in schematic form.
+
+**"A 3% dip is a normal pullback" is a checkable number, and it is the sharpest argument for low leverage in the course.** Convert it to ROI on margin and compare against his own stop tiers ([05 §3.2](05-risk-and-hedging.md): beginner 5–20%, intermediate 20–50%, advanced 50%+):
+
+| Leverage | A normal 3% pullback costs | Against the stop tiers |
+|---|---|---|
+| **5×** | **−15% ROI** | Inside the **beginner** tier. Survivable |
+| 10× | −30% | Past beginner; inside intermediate |
+| 20× | −60% | **Past intermediate**, at the advanced floor |
+| 25× | −75% | Advanced tier only |
+| **50×** | **−150%** | **Liquidated** — 100% is the whole margin |
+
+**At 20× a routine pullback blows through the intermediate stop. At 50× it liquidates you.** So "it felt like a disaster" is not a character flaw; at the leverages on the results cards, a normal pullback *is* a disaster. The fix is the leverage, and this slide is the course arguing against its own testimonial cards.
+
+**And the spoken version names the real mechanism, which is not emotion:**
+
+> "**You are not sure whether it's a retracement or it's a reversal**, change of trend all the way down. Because most of the time it's a retracement — you come up here, retrace and pump up. So if somehow you panic cut here, and after you cut out, this thing pump all the way."
+
+The panic is a **symptom of not having a test**. The course has one — the retracement ladder in [03 §2.2](03-entry-direction.md): fast lines tangling above EMA 155 is noise, three full bodies past EMA 155 is the warning, full fan inversion is the exit. With that test the 3% dip is answerable in seconds; without it, the P&L answers for you, and at 20× the P&L is screaming.
+
+**So the fix is two things, not one: a size you can sit through, and a mechanical test for what you are sitting through.**
 
 ### 10.3 Skip Discharge: "Won the trade. No exit plan. Gave it all back."
 
@@ -569,6 +597,22 @@ The chart: uptrend, entry, "profit window" at the top with "TP (never set)" as a
 
 - The slide names the **EMA exit signal** as the discharge condition that fired and was ignored. So the Module 1 cross-back rule is still part of the plan in this deck, as the backstop. Module 4's climax exit (volume maximal, MACD peak, PTP 75%) would have fired earlier, at the "profit window", and is the primary.
 - "Held and hoped" is the exact behaviour the GMX hedging case study in Module 5 section 4.8 presented as the method. This slide calls it skipping Discharge.
+
+**And the spoken version adds the detail that argues for the Hunting SL over the breakeven stop:**
+
+> "Never TP, never set any hunting stop loss. Suddenly it reverse very fast ... **Stop loss to entry. Suddenly one long wick, you gave it back everything.** ... Then you close at loss, you didn't gain any — **even you have to pay back.**"
+
+Two things in that. First, **a stop moved to entry returns exactly zero.** On a fast reversal the wick takes it out at breakeven and the entire open gain is gone. Compare the two protections available at the same moment:
+
+| Protection on the runner | What you keep after a reversal |
+|---|---|
+| **Stop moved to entry** | **0%.** The gain is fully given back |
+| **Hunting SL locked at 20% ROI** | **20%** |
+| **Hunting SL locked at 60% ROI** | **60%** |
+
+That is the whole case for [05 §3.3](05-risk-and-hedging.md)'s Hunting SL as the default rather than the breakeven stop — and it is why the SOP carries the Hunting SL on the runner. A breakeven stop protects the *capital*; only a hunting stop protects the *profit*.
+
+Second, **"even you have to pay back"** — the outcome is not breakeven but a loss, because fees are paid on both sides of a round trip that netted nothing. On a $20 / 20× trade that is about $0.44 ([05 §5.0a](05-risk-and-hedging.md)). A "gave it all back" trade is a small losing trade, not a scratch.
 
 ## 11. The three failures, mapped to the course's own examples
 

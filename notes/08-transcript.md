@@ -1114,3 +1114,48 @@ He describes a volume maximum where the MACD "was actually reaching the **iceber
 **Near-opposite plans.** Closing 75% locks most of the gain and leaves a quarter running; closing 25% leaves three-quarters exposed to exactly the give-back the climax rule exists to avoid.
 
 Kept as **75%** — it is the written figure, Bybit's partial-close field takes the percentage *to close*, and it is the reading consistent with "do not be greedy" in the same breath. Flagged as an open question in [04](04-sniper-entry-exit.md) and noted in the checklist. The rest of step 4 is unambiguous either way: **move the stop to entry, or switch to the Hunting SL.**
+
+## Part 30: the skipped-D triptych, spoken — and a correction to my reading
+
+Written up at [06 §10](06-case-studies.md).
+
+### Skip Diagnose — I had the direction wrong
+
+I had this chart as *entering long on a signal into a downtrend*. He describes the opposite:
+
+> "Yes, dead cross, you enter here — but the thing is, **later on this thing turn to become golden cross**. So if you **short** over here ... but somehow here turning to the golden cross and going to pump, then definitely you going to lose money."
+
+The trade was a **short taken on the death cross, after the decline was already spent**, and the next structural event was the golden cross. Corrected in the notes, and it is a better lesson than "check the chart":
+
+**The death cross is a lagging signal, so entering on it is often entering at the end.** The course admits the lag itself — "the EMA needs to do calculation to average it out" — and its own Module 1 comparison shows the cross firing after half the move. The operative fix is the **filter**, not the cross: three full bodies past EMA 155, fan ordered, ribbon already flipped. None of those is true at a late cross. Mirror of the hockey-stick rule: most crosses fail, and EMA 155 is what separates them.
+
+### Skip Dose — "a 3% dip is a normal pullback" is the best leverage argument in the course
+
+| Leverage | A normal 3% pullback costs | vs his own stop tiers |
+|---|---|---|
+| **5×** | **−15% ROI** | inside the **beginner** tier |
+| 10× | −30% | past beginner |
+| 20× | −60% | **past intermediate** |
+| 50× | **−150%** | **liquidated** |
+
+**At 20× a routine pullback blows through the intermediate stop; at 50× it liquidates you.** "It felt like a disaster" is not a character flaw — at the leverages on the results cards, a normal pullback *is* a disaster. This slide is the course arguing against its own testimonial cards.
+
+And the spoken version names the real mechanism, which is not emotion:
+
+> "**You are not sure whether it's a retracement or it's a reversal** ... most of the time it's a retracement — you come up here, retrace and pump up. So if somehow you panic cut here, and after you cut out, this thing pump all the way."
+
+**The panic is a symptom of not having a test.** The course has one — the retracement ladder in [03 §2.2](03-entry-direction.md). With it, a 3% dip is answerable in seconds. Without it, the P&L answers for you, and at 20× the P&L is screaming. **The fix is two things: a size you can sit through, and a mechanical test for what you are sitting through.**
+
+### Skip Discharge — why the Hunting SL beats a breakeven stop
+
+> "Never TP, never set any hunting stop loss ... **Stop loss to entry. Suddenly one long wick, you gave it back everything** ... Then you close at loss, you didn't gain any — **even you have to pay back.**"
+
+| Protection on the runner | Kept after a fast reversal |
+|---|---|
+| **Stop moved to entry** | **0%** |
+| Hunting SL locked at 20% | **20%** |
+| Hunting SL locked at 60% | **60%** |
+
+**A breakeven stop protects the capital; only a hunting stop protects the profit.** That is the case for making the Hunting SL the default on the runner rather than the breakeven move — now stated that way in the SOP.
+
+And "even you have to pay back": the outcome is not a scratch but a **small loss**, because fees are paid on both sides of a round trip that netted nothing — about $0.44 on a $20 / 20× trade.
