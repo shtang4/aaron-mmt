@@ -982,3 +982,50 @@ Which gives the pattern across this module in one line:
 > **The narration mandates stops and acknowledges losses. The slides show neither.**
 
 Not an accusation — that is what a results deck is for. But it means the deck cannot serve as evidence of the method. For that there is the student's daily calendar ([05 §3.8a](05-risk-and-hedging.md)), the only place losses are visible, and your own journal, the only place they will ever be visible for your trading.
+
+## Part 27: MMT hedging, spoken — he scopes it to cross mode himself, and gives the trigger
+
+Full working at [05 §4.3a](05-risk-and-hedging.md). Three things the slides do not contain.
+
+### 1. Isolated mode needs no hedge — his words
+
+> "You forgot to set your stop loss. **You protected for your isolated mode is fine. Then, you don't even need to use hedging.** In cross mode ... [it] opens the whole wallet and probably will burn the rest of your wallet capital inside."
+
+**That settles the scope from his side.** These notes and the SOP had narrowed hedging to one case — an accidental cross-mode position — on the user's confirmation. He teaches the same boundary. The narrow reading is the course's own, not a restriction imposed on it. And it means the whole technique is conditional on the margin mode his own risk section forbids.
+
+### 2. The trigger, and it is strict
+
+The slides give a formula with no entry condition. The session gives the strictest confluence test in the course:
+
+> "Make sure that it's **real change of trend, pivotal change of trend. Confirmed by CHoCH and BOS. Not just retracement** ... If just a CHoCH and it looks like retracement, **you don't enter a short here. You let it be.** But if you confirm that this thing already fall **under the green line EMA 155, even further down below 255** ... and confirm with the SMC — CHoCH, BOS — **Donchian ribbon change**. Yes, that is the time to activate the hedging."
+
+> "Monitor on different timing. **But execute by entering 1 minute.**" And enter **on the retrace**: "the moment it retrace, you open the short here."
+
+All four conditions, or nothing. **Credit where due: applied honestly, almost no losing trade qualifies.** But note what those conditions describe — a confirmed breakdown after capitulation, which is exactly the RAVE "heel" setup the course elsewhere **buys**. The method tells you to open a maximum-leverage short at the point it elsewhere calls a bottom.
+
+### 3. The one-line fix
+
+His stated intent for max leverage: "pull all the way to 25X to counter hedge this higher **to compensate your loss** ... otherwise forever you may never be able to chase it." So he wants recovery, not neutrality — which is why the book ends up over-hedged.
+
+**But the margin half of his formula is exactly right.** Notional = `margin × leverage`, so two legs are flat when the products match:
+
+| Original | Hedge as taught | Hedge that is actually flat |
+|---|---|---|
+| $100 at 15× = $1,500 | >50% loss → $100 at **25×** = $2,500 → **net short $1,000** | $100 at **15×** = $1,500 → **flat** |
+| $100 at 15× = $1,500 | <50% loss → $50 at 25× = $1,250 → net **long $250**, still bleeding | needs $50 at 30× to be flat |
+
+**"Losing >50% → hedge with 100% of the original margin" is a perfect hedge — at matching leverage.** The "maximise the leverage" sentence is what converts it into a leveraged reversal. One half of the method undoes the other. Usable form, now in the SOP: **same margin, same leverage, opposite side — then fix the margin mode and close both.**
+
+### 4. The scenario is three preventable failures
+
+> "You set, triggered, then suddenly turns out haywire, and you're actually taking care of your children, washing your dishes, maybe busy [with a] movie ... when you come back: gosh, what happened?"
+
+No stop set · cross margin · away from the screen. The course already prescribes all three preventions — a resting stop before the fill, isolated margin, and the Wick Tracker as the unattended exit. **The hedging module is an elaborate recovery for a situation three basic rules prevent.**
+
+### 5. The best line, and it argues against the section
+
+> "**Do not expect what you hope for in the trading. You have to trade what you see. Don't trade what you hope.**"
+
+A losing long you will not close, propped up by a second position, is trading what you hope. His psychological point is real though — paralysis is the danger, and any pre-decided response beats freezing. **A resting stop is also a pre-decided response, and it executes while you are washing the dishes.**
+
+*(The car-safety analogy: poor protection = "crash without backup, seat belt without roof, one crash ends in liquidation"; good protection = "a military tank, bulletproof, multi-layered, survives multiple crashes.")*

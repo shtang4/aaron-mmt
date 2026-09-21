@@ -958,6 +958,83 @@ Slide text, verbatim:
 
 "Lose the trade < 50%" is ROI on margin, consistent with the rest of the module. The "initial capital amount" is the margin on the original position.
 
+### 4.3a The spoken version: he scopes it to cross mode himself, and gives the trigger
+
+Three things the slides do not contain.
+
+#### 1. He rules out hedging for isolated positions, in his own words
+
+> "Let's say you long, suddenly it dump, then you realise you forgot to set your stop loss. **You protected for your isolated mode is fine. Then, you don't even need to use hedging.** In cross mode, turns out [it does] not automatically protect your wallet ... because cross mode means [it] opens the whole wallet and probably will burn the rest of your wallet capital inside."
+
+**This settles the scope question from his side.** These notes and the SOP had narrowed hedging to one case — a position opened in cross mode by mistake — on the user's confirmation. He teaches the same boundary: **isolated mode needs no hedge.** The narrow reading is not a restriction imposed on the course; it is the course's own.
+
+It also means the entire technique is conditional on being in the margin mode [§3.2](05-risk-and-hedging.md) of this same module forbids.
+
+#### 2. The trigger, and it is a high bar
+
+The slides give a formula with no entry condition. The session gives one, and it is the strictest confluence test anywhere in the course:
+
+> "Make sure that it's **real change of trend, pivotal change of trend**. Means confirmed by **CHoCH and BOS**. Not just retracement ... If just a CHoCH and it looks like retracement ... **you don't enter a short here. You let it be.** But if you confirm that this thing already fall **under the green line EMA 155, even further down below 255** ... and then confirm with the SMC — also CHoCH, BOS — **Donchian ribbon change**. Yes, that is the time where you have to activate the hedging."
+
+> "You use your different timing to monitor. **But execute by entering 1 minute. That is the most accurate one.**"
+
+| Hedge trigger — all of it | Cross-reference |
+|---|---|
+| Price closed **below EMA 155**, better still **below EMA 255** | [03 §2.2](03-entry-direction.md) — the fan-inversion test |
+| **CHoCH followed by BOS** — not a CHoCH alone | [03 §3.2a](03-entry-direction.md) — CHoCH warns, BOS confirms |
+| **Donchian ribbon flips colour** | [03 §4.1](03-entry-direction.md) — the ribbon is a BOS proxy |
+| Monitor on higher frames, **execute on 1-minute** | |
+| Enter **on the retrace**, not at the low: "the moment it retrace, you open the short here" | SPE logic applied to the hedge leg |
+
+**This is good and it should be credited.** It means the great majority of losing trades do not qualify — a retracement is explicitly excluded, and he says so twice. A student who applies the trigger honestly will almost never hedge.
+
+**And it creates a problem the slides hide.** The trigger describes a *confirmed breakdown after capitulation* — exactly the condition under which a violent reversal is most likely, and exactly the condition the RAVE "heel" entry in [§3.9](05-risk-and-hedging.md) buys. So the method tells you to open a **maximum-leverage short** at the point the course elsewhere identifies as a **bottom**.
+
+#### 3. The one-line fix: do not maximise the hedge leverage
+
+He is explicit about why he wants maximum leverage on the counter-trade:
+
+> "Whatever, both this one or this one, the condition should be followed by **increasing the leverage X level to the maximum level** ... you have to pull all the way to 25X to counter hedge this higher **to compensate your loss**. You must change your leverage, **otherwise forever you may never be able to chase it.**"
+
+So the intent is stated: not to freeze the loss but to *recover* it. That is why the book ends up over-hedged, as computed in [§4.4](05-risk-and-hedging.md).
+
+**But the margin half of his formula is exactly right, and only the leverage instruction breaks it.** Notional is `margin × leverage`, so two legs are flat when both products match:
+
+| Original | Hedge as taught | Hedge that is actually flat |
+|---|---|---|
+| $100 at **15×** = $1,500 | Losing >50% → $100 at **25×** = **$2,500** → net **short $1,000** | $100 at **15×** = $1,500 → **exactly flat** |
+| $100 at **15×** = $1,500 | Losing <50% → $50 at **25×** = **$1,250** → net **long $250**, still bleeding | $100 at **15×** = $1,500 → flat |
+
+**His ">50% → hedge with 100% of the original margin" rule produces a perfect hedge, provided the hedge leg uses the same leverage as the original.** It is the "maximise the leverage" instruction that converts it into a leveraged reversal. One sentence of the method undoes the other.
+
+And the "<50%" case cannot be flat at any leverage he would use: 50% of the margin needs **double** the original leverage to match notional, which is the one setting he does not prescribe. At 25× against 15× it leaves you 17% net long and still bleeding on every further tick.
+
+So, if this technique is to be used at all — on an accidental cross position, on the full trigger above — the usable form is:
+
+> **Match the notional. Same margin, same leverage, opposite side. Then fix the margin mode and close both.**
+
+That freezes the loss, which is all a hedge can do. Recovering the loss requires a directional bet, and a directional bet should be sized and stopped as a trade, not disguised as protection.
+
+#### 4. The scenario that opens the section is three preventable failures
+
+> "You set, triggered, then pump, suddenly turns out haywire, and you're actually taking care of your children, washing your dishes, maybe you're busy [with a] movie ... when you come back: gosh, what happened? It turned red and maybe you don't know what to do."
+
+Read the preconditions he lists: **no stop was set**, the position was **cross**, and the trader was **away from the screen**. Each is independently preventable, and the course already prescribes all three preventions — a resting stop before the fill ([07 §1.5](07-handouts.md)), isolated margin ([§3.2](05-risk-and-hedging.md)), and the Wick Tracker as the unattended exit ([04 §3](04-sniper-entry-exit.md)).
+
+**The hedging module is an elaborate recovery for a situation the course's own three basic rules prevent.** That is worth saying once, plainly, because it is the strongest argument for keeping the technique where the SOP keeps it: damage control for an execution error, never a planned part of a trade.
+
+#### 5. Two lines worth keeping
+
+> "**Do not expect what you hope for in the trading. You have to trade what you see. Don't trade what you hope.**"
+
+The best sentence in the section, and it argues against the section: a losing long you are unwilling to close, propped up by a second position, is trading what you hope.
+
+> "When the trade goes wrong, **you still have a plan**. You don't feel blank ... keep holding, holding, and hope that God can actually bring back the candle."
+
+The psychological point is real — the danger of a losing position is paralysis, and having *any* pre-decided response beats freezing. **A resting stop is also a pre-decided response, and it executes while you are washing the dishes.**
+
+*(Transcription note: "you're actually activate a pack war" is garbled; the sense is that the two legs now fight each other.)*
+
 ### 4.4 What the formula actually does: the arithmetic
 
 Take the SOP numbers. Original position: long, margin **$20**, leverage **20×**, notional **$400**. Price falls 2%: ROI −40% (loss $8). That is the "< 50%" case.
