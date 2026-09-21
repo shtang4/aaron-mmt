@@ -684,3 +684,33 @@ Also: **the beginner leverage figure is 1–5×**, not the 5–10× these notes 
 High risk: maximum volatility · timeframe "even up to 1 minute" · quick execution · high tolerance · OI monitored for quick insight · **short-term indicators** · aggressive, aim for high returns. Low risk: lower volatility · "up to day, few hours until 24 hours" · slow · constant monitoring · **"you need to look for FA and long-term indicators"** · conservative.
 
 Two observations. **This is the only place the course prescribes fundamental analysis, and it prescribes it for the low-risk trader** — consistent, since on a 24-hour horizon chart noise dominates and the thesis has to come from elsewhere. And **the MMT method as taught is the high-risk column**: 1-minute execution, maximum volatility, quick execution, high tolerance. Not a criticism, a placement — if your honest answer is low or medium risk, the conservative row (isolated, 1–5×, TP *and* SL set) is the adaptation the course itself offers.
+
+## Part 20: how Module 5 is pitched, and what hedging actually costs
+
+Written up in the preamble of [05](05-risk-and-hedging.md).
+
+### The module map, confirmed
+
+"SSWB, start small win big — **advance dose**. MMT hedging — **discharge**. Golden rules — **follow up**." Matches the title slide exactly. Worth noticing that **hedging is classified as Discharge**: it and the stop are both *exits*, competing for the same job.
+
+### The hedging pitch, in his words
+
+> "Hedge your position is a **safety pin** add-on to your risk management. **Ultimately we just want to break even for hedging** ... there is a **secret method, secret tools, which created by me** ... Our aim is to at least break even, but if you can, at least you minimise your loss."
+
+> "**It's easy to cut loss. Hedging is a way troublesome and it's very stressful strategy.** That's why outside there's no one willing to teach ... let me walk the path for you, I have walked through this path for you, so you don't need to go through the suffering path as what I have been through."
+
+**He states the terms of the offer honestly, and they are not good.** Cutting loss is "easy" and costs the pre-sized stop — 1–2% of equity if Dose was done right. Hedging is "way troublesome", "very stressful", pays fees and funding on two legs, and its **best case is zero**. That trade is only worth making if the stop was unaffordable, which is a Dose problem, and the fix for a Dose problem is a smaller position, not a second one.
+
+On "no one outside is willing to teach it": the reason is not secrecy. In **one-way mode** a hedge is arithmetically identical to closing the position, except you now pay funding on two legs. In **hedge mode** you hold both legs flat while both bleed. Neither recovers the loss; both defer *realising* it, which is the disposition effect these notes already flag in [05 §4](05-risk-and-hedging.md). Recorded as his claim with the standard objection beside it.
+
+**What survives is the narrow case already confirmed:** a position opened in cross mode by mistake. Freeze it, fix the margin mode, close the hedge. Damage control on an execution error. That is in the SOP; the general framing is not.
+
+### The Dose argument, and the best question in the course
+
+> "**Right trade, you took profit too early** ... Diagnose maybe correct, but **the wrong position — which is Dosing — created too much pressure to hold.**"
+
+> "**Do you know exactly how much you could lose? Or do you decide your position size based on how confident you feel?** Can you stay calm when the position moves against you? Your position size must match your **capital, experience and emotional tolerance**."
+
+- **"Do you decide your position size based on how confident you feel?"** is the sharpest diagnostic line in the whole course. Confidence is the input most people actually use and the one with no relationship to risk.
+- **Three inputs, not one:** capital, experience, **and emotional tolerance**. The third is in none of the formulas and it is the one that decides whether you hold.
+- This is the **cheap fix** and it sits in the same module as the expensive one. Exiting winners early is solved by a smaller position — no new technique, no stress, no second leg. Hedging is the answer to the same problem that costs the most to run.

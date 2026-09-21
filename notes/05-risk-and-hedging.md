@@ -15,6 +15,44 @@ SSWB is new: it is not in the course outline from the opening slides. The acrony
 
 The last three slides of this batch carry a different copyright line, "Future Trends FZCO", instead of "Dr. Aaron MMT". They may be shared with another product of the same company.
 
+### How he pitches the module, and the trade hedging actually makes
+
+The spoken opening confirms the table above word for word — "SSWB, start small win big, **advance dose** ... MMT hedging, **discharge** ... golden rules that are for the **follow up**" — and then makes the case for hedging:
+
+> "Hedge your position is something that is a **safety pin** add-on to your risk management. **Ultimately we just want to break even for hedging.** Some of you all cut loss, but actually there is a **secret method, secret tools, which created by me**, that actually can go through this and you do not need to lose that much of your capital. Our aim is to **at least break even**, but if you can, at least you minimise your loss."
+
+> "**It's easy to cut loss. Hedging is a way troublesome and it's very stressful strategy.** That's why outside there's no one willing to teach, and also they didn't find their own way. Let me walk the path for you — I have walked through this path for you, so you don't need to go through the suffering path as what I have been through."
+
+**Read the offer as stated, because he states its terms honestly and they are not good.** By his own three sentences:
+
+| | Cut the loss | Hedge |
+|---|---|---|
+| Difficulty | "**Easy**" | "**Way troublesome**" |
+| Stress | — | "**Very stressful**" |
+| Best case | Lose the pre-sized stop: **1–2% of equity** if Dose was done right | "**At least break even**" — zero |
+| Costs along the way | One taker fee | Two positions' fees, funding on both legs, and the spread each time you adjust |
+| Worst case | The stop. Bounded, known before entry | Two positions managed badly. Unbounded in practice |
+
+So the trade is: **give up a small, known, pre-sized loss in exchange for a stressful process whose best outcome is zero.** That is only worth it if the stop was too large to accept — which is a Dose problem, and Dose is the *other* half of this module. The fix for "I cannot afford to take this stop" is a smaller position, not a second position.
+
+**On "outside there's no one willing to teach it."** The reason the rest of the industry does not teach retail hedging is not secrecy. On a **one-way-mode** account a hedge is arithmetically identical to closing the position — you are flat either way, except you are now paying funding on two legs instead of none. On **hedge mode** you hold both legs and your net exposure is zero while both legs bleed fees and funding. Neither recovers the loss; both defer *realising* it. That is the **disposition effect**, which these notes already flag in §4 (the disposition effect) — the reluctance to book a loss, dressed as a technique. Recorded as his claim, with the standard objection next to it.
+
+**What survives, and it is genuinely useful.** Confirmed from the session, hedging in this course is for **one case only**: a position opened in **cross mode by mistake**. There, freezing the exposure while you fix the margin mode is real damage control on an execution error, and that is how the SOP carries it. The general "hedge instead of cutting loss" framing is not the rule; it is the pitch.
+
+**One thing the pitch gets right.** Classifying hedging as **Discharge** is correct and it is the clearest way to see the problem: hedging and the stop are both *exits*, competing for the same job. One is a resting order that costs a known amount and needs no attention. The other needs you at the screen, under stress, to reach zero.
+
+### The Dose argument, spoken
+
+> "**Right trade, you took profit too early.** You exit early, then you watch the price pump without you. So the problem wasn't the trade ... **Diagnose maybe correct, but the wrong position — which is Dosing — created too much pressure to hold.**"
+
+> "**Do you know exactly how much you could lose?** Or **do you decide your position size based on how confident you feel?** Can you stay calm when the position moves against you? Your position size must match your **capital, experience and emotional tolerance**."
+
+Three things to keep:
+
+1. **"Do you decide your position size based on how confident you feel?"** is the sharpest diagnostic question in the course. Confidence is the input most people actually use and the one with no relationship to risk. The journal's Dose fields exist to replace it.
+2. **Position size has three inputs**, not one: capital, experience, **and emotional tolerance**. The first two are in the formulas; the third is not, and it is the one that decides whether you hold. It is why the Dose tier ladder is graded by experience level rather than by account size alone.
+3. It is the **honest half of this module**: the fix for exiting early under pressure is a smaller position, which costs nothing and needs no new technique. Compare that with the hedging pitch above, and the module contains both the cheap fix and the expensive one, in that order.
+
 ## 1. Scalping tips (delivered at the end of Module 3)
 
 Captured in [03-entry-direction.md, section 7](03-entry-direction.md#7-my-tips-of-scalping-strategy). Summary:

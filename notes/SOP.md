@@ -43,7 +43,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
    **KL to Penang:** the biggest band is the destination, but a smaller band on the *other* side is a detour often taken first — "it depends on the money maker". A sweep into the near cluster is the route, not a change of destination. Size the stop for the detour.
    **And re-read it before any re-entry.** Once price has reached a cluster, that cluster is **consumed** and the next destination is the one on the other side — the direction flips with it. "Finish liquidity here already ... then they have to come down to hunt this." A double top is the symptom; the emptied band is the cause.
 4. Stop as ROI on margin by tier: beginner 5–20%, intermediate 20–50%, advanced 50%+. Convert to price; it must sit beyond the structural level (far edge of the zone, or the heel low). If it does not, **lower the leverage** until it does (session-confirmed). Never move the level, never widen the tier.
-5. Write the money at risk in USDT before entry.
+5. Write the money at risk in USDT before entry. **Size on three inputs — capital, experience and emotional tolerance — never on confidence.** "Do you decide your position size based on how confident you feel?" If you could not sit through that stop calmly, the size is wrong, and that is the whole fix for exiting winners early.
 
 ## 5. Exit plan, both ways (Discharge)
 1. TP first. Wick Tracker is a Bybit TP trigger at a level a wick will reach: **slightly above** the prior wick high (a sweep aims at the stops resting beyond it), the supply-zone bottom, **the nearest large liquidation cluster** (rank them by the dollar figure, not the brightness), or 50% ROI raised to 55–60% for fees. Trigger on **Last**; set it inside the wick you expect, above the wick already made.
@@ -67,6 +67,7 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 2. If you skipped the stop and are underwater: close it. The loss is the loss.
 3. If you want the opposite direction: close the loser first, open the new trade as its own sized position with its own stop. Never both legs at once.
 4. **The one hedging case:** a position opened in cross mode by mistake. Hedge it to freeze exposure, then close it or switch it to isolated, then close the hedge. Damage control for an execution error, nothing more.
+   **Why not as a general alternative to the stop** — his own terms: cutting loss is "easy", hedging is "way troublesome" and "very stressful", and its best case is "at least break even", i.e. **zero**. You would be giving up a small, known, pre-sized loss for a stressful process whose best outcome is nothing, while paying fees and funding on two legs. If a stop feels unaffordable, the position is too big. **Fix Dose, not Discharge.**
 5. News, FOMC, black-swan candles: no method is 100%. Smaller dose, or flat.
 
 ## Formulas
