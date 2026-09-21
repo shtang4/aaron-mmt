@@ -821,3 +821,39 @@ Half right, and **he argued the opposite two slides earlier**: the $16.7M SOL po
 - **Money is entirely capital-dependent.** 909% of 148 is 1,351; of 148,000 it is 1.35M.
 
 So small capital can produce a large *percentage* return; it cannot produce a large *absolute* return without leverage or volatility — and those two **are** the risk. Jane's 148.51 at 20× sat roughly 5% of adverse price movement from liquidation the whole time. That is what the 909% cost, and neither slide names it.
+
+## Part 23: the student case — 200×, and the one screenshot that reconciles
+
+Written up at [05 §3.8a](05-risk-and-hedging.md).
+
+A full-time Sunway undergraduate, **"zero income, zero experience"**, Discord handle **chickenoyster**. Before: total beginner, no income, couldn't afford courses, **zero trading capital**. After: started with **US$150 (≈RM636)**, grew to **five-figure accumulated profits**, "extreme speed, precision and risk control **over two years**". Slide thesis: **"Capital is not bottleneck — skill is."**
+
+### The numbers
+
+| | |
+|-|-|
+| **MEXC** ENAUSDT Perpetual | **Long · 200×** |
+| ROI | **+10,620.65%** |
+| Entry / fair | 0.3458 / 0.5442 (**+57.4% of price**) |
+| Equity | 10,040.13 USDT |
+| **30-day PnL** | **+9,815.74 (+3,016.6%)** → base ≈ **325 USDT** |
+
+### The part worth keeping
+
+The July 2025 **daily PnL calendar** is on screen, and it **reconciles**. Summing the visible days gives **≈ +9,967.84** against the stated **+9,815.74** — inside 1.5%, with one day unreadable.
+
+More importantly it shows the **path**, not just the outcome: 23 trading days, **five of them losing** (−12.81, −23.36, −7.25, −293.69, **−563.34**), with the worst day landing right after the best run — about 9% of equity at the time.
+
+**This is the only equity-curve-shaped evidence in the entire deck, and the only place a student's losing days appear.** Every other results image is a card with a rocket on it. Credit where due.
+
+### And the part the slide does not say
+
+**200× breaks every leverage rule in this course by a factor of 20 to 40.** The SOP says 5–10× isolated; the spoken beginner tier is 1–5×; his own words last module were "**nowadays I never aim the maximum leverage**". At 200×, **liquidation sits about 0.5% of adverse price movement away**.
+
+So **"capital is not bottleneck — skill is" draws the wrong conclusion from its own evidence.** What removed the capital constraint was **leverage** — the very thing that substitutes notional for cash. The honest version: *capital is not the bottleneck because leverage removes it, and leverage is the risk the slide never names.*
+
+**Two things that do not reconcile.** "Five-figure profits over two years" means $10k–$99k; the single month on screen made **$9,815.74** — roughly the whole two-year total in thirty days. His own message supports the outlier reading: "**I've been quiet for several months.**" Treat the month as the exception, not the average. And the **$150** here is the same $150 as the SSWB stake, the RAVE example and the ALLO "small cap of $150" — one house figure, not four independent observations.
+
+**Survivorship, plainly:** a zero-income student took a 200× position. Half a percent the other way first and there is no slide, no photo, no case study.
+
+**The modest claim is the true one:** you can start with $150 and learn the method on real money. Start small because it is how you learn without ruin — not because small capital compounds like this.

@@ -484,6 +484,81 @@ Comparison slide:
 
 "The percentage is identical" is true and also the weak point of the argument. Returns scale with capital, so a $150 stake at the RAVE example's +277% is about $415 of profit. The claim that small capital *can* start is correct; the implied claim that it makes meaningful money is only true after compounding, and compounding a 1-minute scalping method assumes a positive expectancy the course has not yet demonstrated on a sample of trades.
 
+### 3.8a "Small capital discipline": the student case, and the only honest results screenshot in the deck
+
+Three slides. A full-time undergraduate at Sunway Blockchain Club — **"Zero income, Zero experience"** — Discord handle **chickenoyster**.
+
+| Before structure | After structure |
+|------------------|-----------------|
+| Total beginner, no income | Started with **US$150 (≈ RM636)** |
+| Couldn't afford expensive courses | Grew to **five-figure accumulated profits** |
+| **Zero trading capital** | "Used extreme speed, precision, and risk control **over two years**" |
+
+Third slide's thesis: **"Capital is not bottleneck — skill is."**
+
+#### What the evidence actually shows
+
+His message, 21 July 2025 23:39, translated: *"Hi Dr Aaron, long time no see. I've been quiet for several months, but now there's something I must share with you. I just left mybw's deepblue event and said hi to Jonathan and the other FT friends. I got in the car and opened my trading orders — I can't describe how I feel, but you're the first person I wanted to tell, so I'll just send you the picture."*
+
+**The card:**
+
+| | |
+|-|-|
+| Exchange | **MEXC** (not Bybit), referral code 33ZNC |
+| ENAUSDT Perpetual | **Long · 200×** |
+| ROI | **+10,620.65%** |
+| Entry | $0.3458 |
+| Fair price | $0.5442 |
+
+Check: 0.3458 → 0.5442 is **+57.4% of price**; ×200 = 11,473% gross, and the card reads 10,620.65% after costs. Consistent.
+
+**The account screen, and this is the part worth having:**
+
+| | |
+|-|-|
+| Equity | **10,040.13 USDT** |
+| Today's PnL | +1,019.88 (+11.3%) |
+| 7-day PnL | +5,057.03 (+101.48%) |
+| **30-day PnL** | **+9,815.74 (+3,016.6%)** |
+
+Back out the base: 9,815.74 ÷ 30.166 ≈ **325 USDT** at the start of the window. So this screen is **≈325 → ≈10,040 USDT in thirty days.**
+
+#### The daily calendar reconciles, and nothing else in this deck does
+
+July 2025, day by day, as visible: +70.21 · **−12.81** · **−23.36** · +97 · +16.09 · +57.65 · +43.42 · +101.84 · +164.04 · +709.05 · **−7.25** · +819.72 · +526.67 · +489.85 · +271.25 · +1,355.31 · +1,789.38 · **−293.69** · **−563.34** · +488.64 · +1,205.34 · +1,630.81 · +1,032.02
+
+**Sum ≈ +9,967.84 against a stated 30-day figure of +9,815.74** — inside 1.5%, with one day unreadable. **The screenshot reconciles with itself.**
+
+That matters more than the ROI. Every other results image in this course is an **outcome**: a card, a percentage, a rocket. This one shows the **path** — 23 visible trading days, **five of them losing**, a worst day of **−563.34** immediately after the best run, and a drawdown of roughly 9% of equity at the time. It is the only equity-curve-shaped evidence in the entire deck and the only place a student's losses appear at all.
+
+Credit where it is due: **this is the most honest results screenshot in the course.** If you want one image from the deck to reason about, it is this one.
+
+#### And now the part the slide does not say
+
+**200× leverage breaks every rule this course teaches, by a factor of 20 to 40.**
+
+| Source | Leverage |
+|---|---|
+| SOP / Module 5 risk slide | Isolated, **5×–10×** |
+| Spoken, beginner tier ([03 §7.1](03-entry-direction.md)) | **1×–5×** |
+| Spoken, his own current practice | "**Nowadays I never aim the maximum leverage**" |
+| **This slide's hero card** | **200×** |
+
+At 200×, **liquidation sits about 0.5% of adverse price movement away** — roughly `100 ÷ leverage`, the arithmetic in [§3.2](05-risk-and-hedging.md). A 0.5% wick against you and the position is gone. That is not "extreme speed, precision and risk control"; it is a position with almost no tolerance for being wrong, taken by someone the slide describes as having zero income.
+
+**"Capital is not bottleneck — skill is" is the wrong conclusion from this evidence.** What removed the capital constraint was **leverage**, which is precisely the thing that substitutes notional for cash. A $150 account reaching five figures did not do it by being skilful about small size; it did it by controlling large notional with small margin. The honest version of the slide's thesis:
+
+> **Capital is not the bottleneck because leverage removes it — and leverage is the risk the slide never names.**
+
+**Two more things that do not reconcile.**
+
+1. **The two-year story and the thirty-day screen describe very different rates.** "Five-figure accumulated profits over two years" means somewhere between $10,000 and $99,999. The single month on screen produced **$9,815.74** — approximately the entire two-year total in thirty days. So either July 2025 was an extraordinary outlier against 23 flat or losing months, or the two figures are not measuring the same account. His own message supports the first reading: *"I've been quiet for several months."* Take the two-year line as the story and the thirty-day screen as the exception, not as an average.
+2. **The $150 recurs.** The same number is the SSWB stake in [§3.8](05-risk-and-hedging.md), the RAVE example's "$150 per trade that changed everything" in [§3.9](05-risk-and-hedging.md), and the "Small Cap of $150" in the ALLO post in [§3.7d](05-risk-and-hedging.md). It reads as the course's standard figure rather than four independent observations.
+
+**Survivorship, stated plainly.** A zero-income student who could afford to lose $150 took a 200× position. Had ENA moved half a percent the other way first, there would be no slide, no photograph, and no case study. The deck shows the student who is here.
+
+**What to actually take from it.** The useful claim is the modest one, and it is true: **you can start with $150 and learn the method on real money.** The claim the slide makes — that skill rather than capital produced 3,016% in a month — is not supported by its own evidence, which shows 200× leverage doing that work. Start small because it is how you learn without ruin, not because small capital compounds like this.
+
 ### 3.9 Real example: RAVE, "$150 per trade that changed everything"
 
 Three screenshots, captioned "Advance method: how to enter and exit."

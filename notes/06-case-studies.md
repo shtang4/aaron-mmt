@@ -21,6 +21,7 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 | BMTUSDT | Module 5 | A chat trade call; "late trade is a losing trade" | +3,736% ROI at cross 15× | [05 §3.10](05-risk-and-hedging.md) |
 | GMXUSDT | Module 5 | Held a loser to breakeven, taught as "hedging" | Closed at entry on a wick, zero | [05 §4.8](05-risk-and-hedging.md) |
 | PEOPLEUSDT | Module 5 | An actual hedge, resolved by closing the loser | Net about +81 USDT | [05 §4.11](05-risk-and-hedging.md) |
+| **ENAUSDT (chickenoyster)** | Module 5, "Small capital discipline" | A zero-income student, $150 start. **The only results screenshot in the deck that shows losing days and reconciles** | +10,620.65% at **200×**; ~325 → ~10,040 USDT in 30 days, 5 losing days | [05 §3.8a](05-risk-and-hedging.md) |
 | **ATAUSDT** | Module 5, Hunting SL | **The stop that paid.** "中我sl了" — SL hit, and it was the take-profit | Short 25×, 0.22241 → 0.19222, **+339.35%** | [05 §3.3b](05-risk-and-hedging.md) |
 | **STORJUSDT** | Module 5, "Hold Losing Trade!" | A short hedged at market. **Structurally the hedging module's own technique**, shown as a warning | **−37.06 USDT, −1881.45%** at cross 25× | [05 §3.3c](05-risk-and-hedging.md) |
 | **ALLOUSDT** | Module 5, "Late Entry, Smaller Dose" | **Lateness as a dial.** Jane enters 27% above his price, sizes down, takes a quick trade | Him +1,057% / +2,019 USDT; her **+966.92% on 148.51 USDT** | [05 §3.7d](05-risk-and-hedging.md) |
@@ -36,6 +37,8 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 **Two exceptions carry the whole deck: the SOMI trade call (§2) and the ZETA arc (§7.2 and §7.5).** SOMI is the only case with a planned entry, stop, target, two members taking it and a real loss. ZETA is the only case followed to its end: entry, target, exit, and then the coin at 98% off the high with the caption "never exit will liquidate". Read both before any win card.
 
 SOMI's loss is the number to hold on to: **−52.49%, −103.42 USDT** on a blind copy that did take the stop. ZETA's is the chart: **2.8700 high, 0.04533 two years later**, on a position he says would have been liquidated had the target not been written down in advance.
+
+**The only path-shaped evidence in the deck** is the student's July 2025 daily PnL calendar ([05 §3.8a](05-risk-and-hedging.md)): 23 trading days, five of them losing, a worst day of −563.34, and a total that reconciles with the stated 30-day figure to within 1.5%. Every other results image is an outcome; that one is a record.
 
 **A third real loss** is in Module 5: **STORJUSDT at −1881.45%** ([05 §3.3c](05-risk-and-hedging.md)), a short left to run 76% offside at cross 25× and then frozen with an opposing long. All three are shown deliberately, and together they are the most instructive material in the course.
 
