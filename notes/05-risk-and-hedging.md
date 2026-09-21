@@ -882,11 +882,21 @@ It also **beat its own target by 2.5×**: the stated plan is 10 × $10 = $100 a 
 
 ### 3.12b What he says over these slides, and the gap it admits
 
-> "Start small win big — **taking action is already a win**. Once you know the skill, you are playing around with the position, margin and the leverage. Trading ~~can~~ make you rich overnight, but **it's the best business in long term**. So **always use a stop loss**. **Behind every consistent profitable trader there's a lot of losses, mistakes and lessons learned.**"
+> "Start small win big — **taking action is already a win**. Once you know the skill, you are playing around with the position, margin and the leverage. **Trading can't make you rich overnight, but it's the best business in long term.** So **always use a stop loss**. **Behind every consistent profitable trader there's a lot of losses, mistakes and lessons learned.**"
 
-*(The third sentence is garbled in transcription. The "but" makes the intended sense plain — trading **cannot** make you rich overnight, but it is the best long-term business. Read it that way; the literal words say the opposite of what the conjunction requires.)*
+*(Wording confirmed.)*
 
-Two things here matter more than the cards.
+**Three** things here matter more than the cards.
+
+**0. "Trading can't make you rich overnight, but it's the best business in the long term" is the most important sentence in Module 5, and the deck's own marketing contradicts it.** Set it beside the captions on the slides in this same module:
+
+| His sentence | The captions around it |
+|---|---|
+| "Trading **can't** make you rich overnight" | "To Earn your 4X in just **< 30 mins**" ([06 §6.1](06-case-studies.md)) · "Nearly **2 Months Manager's Salary** just in less than **8 Hours**" ([§3.7d](05-risk-and-hedging.md)) · "$150 per trade for **manager's monthly salary**" ([§3.9a](05-risk-and-hedging.md)) · "**+3,016.6%** in 30 days" ([§3.8a](05-risk-and-hedging.md)) |
+
+Every one of those is an overnight-riches claim, and they are on his slides. The spoken sentence is the corrective, and it is the one to keep: **the method is a long-horizon skill business, and the cards are the exception days.** That reading is also what the student's daily calendar supports — five losing days out of twenty-three, most days in the tens or low hundreds, two outlier days carrying the month.
+
+Two more things.
 
 **1. "Always use a stop loss" — for the fifth time in the spoken session, and over the one SOP in the course that omits it.** None of the eight steps on the slide mentions a stop. He adds it verbally, every time. The gap is between the printed material and the delivery, and the delivery is the correct half.
 

@@ -87,6 +87,12 @@ Distilled from Modules 0 to 6. Only what the course itself states, minus what it
 | Max leverage for a structural stop | `entry × ROI% ÷ |entry − level|` |
 | Hunting SL trigger | `entry ± entry × locked ROI% ÷ leverage` |
 
+## The sentence to keep above all of it
+
+> **"Trading can't make you rich overnight, but it's the best business in the long term."** — Dr. Aaron, Module 5
+
+His own slides contradict it on every page: "4X in < 30 mins", "nearly 2 months' manager's salary in under 8 hours", "$150 per trade for a manager's monthly salary", "+3,016.6% in 30 days". Those are the exception days. The only path-shaped evidence in the course — a student's daily calendar — shows five losing days in twenty-three, most days in the tens or low hundreds, and two outliers carrying the month. **Size and plan for the ordinary day.**
+
 ## Never, because the course's own risk module says so
 - Cross margin. Liquidation takes the whole wallet.
 - A position without a resting stop. Handouts: "set it before the entry order fills."

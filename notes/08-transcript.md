@@ -971,9 +971,9 @@ And it **beat its own target 2.5×**: the plan is 10 × $10 = $100; the card is 
 
 ### What he says over them
 
-> "Start small win big — **taking action is already a win** ... Trading [cannot] make you rich overnight, but **it's the best business in long term**. So **always use a stop loss**. **Behind every consistent profitable trader there's a lot of losses, mistakes and lessons learned.**"
+> "Start small win big — **taking action is already a win** ... **Trading can't make you rich overnight, but it's the best business in long term.** So **always use a stop loss**. **Behind every consistent profitable trader there's a lot of losses, mistakes and lessons learned.**"
 
-*(The third sentence is garbled in transcription; the "but" makes the intended sense plain.)*
+**That middle sentence is the most important line in Module 5, and his own slides contradict it** — "4X in less than 30 mins", "nearly 2 months' manager's salary in under 8 hours", "$150 per trade for a manager's monthly salary", "+3,016.6% in 30 days". Those are overnight-riches claims; this is the corrective, and the corrective is the one to keep.
 
 **"Always use a stop loss" — the fifth time in the spoken session, and said over the one SOP in the course whose eight steps omit it.** And "behind every consistent profitable trader there's a lot of losses" is the second acknowledgement of losses in the whole results section, after Jane's — and the first from him.
 
