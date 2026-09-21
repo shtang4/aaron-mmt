@@ -857,3 +857,35 @@ So **"capital is not bottleneck — skill is" draws the wrong conclusion from it
 **Survivorship, plainly:** a zero-income student took a 200× position. Half a percent the other way first and there is no slide, no photo, no case study.
 
 **The modest claim is the true one:** you can start with $150 and learn the method on real money. Start small because it is how you learn without ruin — not because small capital compounds like this.
+
+## Part 24: the RAVE wallet run — and the $150 figure finally gets tested
+
+Written up at [05 §3.9a](05-risk-and-hedging.md). **Different trades from the RAVE in §3.9** — that was Bitunix, 2 April, around 0.5. These are Bybit, 14–22 April, with RAVE between 1.24 and 27.79.
+
+### The slide
+
+"How much capital do you think to start this TRADE?" over **RAVEUSDT Long 20×, +3,078.63%, entry 8.41423, exit 21.36641**. Then the before/after: wallet **1,993.1833 → 18,287.8148 USDT**, captioned "**$150 Capital per trade** · Start small, grow $1,993 wallet to $18,287". Two realised cards: the long **+9,959.95**, and a **Short 20×, entry 17.48477, exit 0.74187, +4,283.64**.
+
+### The ROI checks — and it disproves the caption
+
+The long: 8.41423 → 21.36641 is **+153.93%** of price; ×20 = **3,078.6%**, against the card's 3,078.63%. Exact.
+
+Back out the margin: **9,959.95 ÷ 30.7863 = 323.52 USDT.** Not $150.
+
+The short: 17.48477 → 0.74187 is **−95.76%**; ×20 = **1,915.1% ROI**. Margin: **4,283.64 ÷ 19.1513 = 223.67 USDT.** Also not $150, and not the same as the long.
+
+**This is the first time the course's signature number sits beside figures that can test it, and it fails twice.** The same $150 is the SSWB stake, the student case's starting capital, the earlier RAVE "per trade", and the ALLO "small cap of $150". It is a **house figure, not a measurement.**
+
+**He undercuts it himself in the same passage:** "**Last time, I didn't even start with hundred fifty. I scale up accordingly.**" That is the better rule, and it contradicts the caption above it — $324 on a $1,993 wallet is **16%**, above the SOP's 10% ceiling; on the $18,287 wallet it would be 1.8%. The stake did not change, the wallet did. **Size by percentage, not by a fixed number.** Now in the SOP.
+
+### The wallet figures do not close
+
+1,993.18 + 9,959.95 + 4,283.64 = **16,236.77**, against an "After" of **18,287.81**. About **2,051 USDT unexplained** — other trades, a deposit, or a "Before" that is not the true start. The chart carries an unexplained "PnL +4,403.36" marker.
+
+### What is genuinely good in it
+
+**He caught the same coin both ways, on marked levels.** The short's entry, 17.48477, is a drawn horizontal on the "Before" chart — not a round number. And he names the tool: "**see Heat Map that monitor from here all the way up here**", tying it to the liquidation-cluster rules. Long the pump, short the collapse, both planned. Same two-sided pattern as MAVIA and A8.
+
+**But the return came from the move, not the method.** RAVE ran **+154% then −96%** in about a week, on a **−94.83% day** with a 24h range of 1.24 to 27.79 — the largest single-coin moves in the deck. A 3,078% ROI requires a 154% price move at 20×; no skill manufactures one. And the slide criticising "common people" for over-leveraging shows **20×** on both cards, 2× the SOP ceiling and 4× the spoken beginner tier.
+
+**The wallet run, plainly:** 1,993 → 18,287 is **9.17×, about +818%, in ten days**, 87% of it from two trades on one coin that later traded at 1.35.

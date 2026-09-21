@@ -480,7 +480,7 @@ Comparison slide:
 | | Risk control first |
 | | Grow through execution, not gambling |
 
-**The $150 number.** This is the concrete Dose for students: $150 of margin per trade. Against the 1% rule slide (1% = $1,000 implies a $100,000 wallet), $150 at 1% implies a $15,000 wallet, and at 10% a $1,500 wallet. The course does not say which; "start small" suggests $150 is simply the fixed starting stake regardless of wallet, and the percentage rule applies once the wallet grows. The two slides are not reconciled.
+**The $150 number.** This is the concrete Dose for students: $150 of margin per trade. **It does not survive the one slide where it can be checked** — the RAVE cards in [§3.9a](05-risk-and-hedging.md) imply $323.52 and $223.67 of margin against a "$150 capital per trade" caption, and he says in the same passage "last time I didn't even start with hundred fifty, I scale up accordingly". Read $150 as the course's house figure, and size by **percentage of wallet** instead. Against the 1% rule slide (1% = $1,000 implies a $100,000 wallet), $150 at 1% implies a $15,000 wallet, and at 10% a $1,500 wallet. The course does not say which; "start small" suggests $150 is simply the fixed starting stake regardless of wallet, and the percentage rule applies once the wallet grows. The two slides are not reconciled.
 
 "The percentage is identical" is true and also the weak point of the argument. Returns scale with capital, so a $150 stake at the RAVE example's +277% is about $415 of profit. The claim that small capital *can* start is correct; the implied claim that it makes meaningful money is only true after compounding, and compounding a 1-minute scalping method assumes a positive expectancy the course has not yet demonstrated on a sample of trades.
 
@@ -577,6 +577,83 @@ Observations:
 - **The arithmetic**: 0.507 to 0.709 is +40% on price. +277% ROI implies roughly 7× leverage on $150, so about $415 of profit. Consistent with the "start small" numbers.
 - **The heatmap dates (04-12 to 04-19) do not match the trade date (04/02).** The heatmap screenshot is illustrative, not the one used for this entry.
 
+
+### 3.9a The RAVE wallet run, and the first time the $150 figure can be checked
+
+Two more slides on RAVE, and these are **different trades from 3.9** — that one was Bitunix, 2 April, around 0.5. These are **Bybit, 14–22 April**, with RAVE between 1.24 and 27.79. Same coin, a fortnight later, two orders of magnitude higher. (Confirmed by the "Before" chart header: last 1.35296, **−94.83%**, 24h high **27.78584**, 24h low **1.24081**, turnover 1.34B.)
+
+**Slide 1** asks "How much capital do you think to start this TRADE?" over one card:
+
+| RAVEUSDT | **Long 20.0×** |
+|-|-|
+| ROI | **+3,078.63%** |
+| Entry | 8.41423 |
+| Exit | 21.36641 |
+
+**Slide 2**, "Real example: Start Small Win Big (SSWB) — $150 per trade for manager's monthly salary":
+
+| | Before | After Class |
+|-|--------|-------------|
+| Available | **1,993.1833 USDT** | **18,287.8148 USDT** |
+
+with two realised cards and the caption "**$150 Capital per trade** · Start small, grow $1,993 wallet to $18,287 ($72,254 MYR)":
+
+| | Side | Entry | Exit | Realised P&L |
+|-|------|-------|------|--------------|
+| RAVEUSDT | **Long 20×** | 8.41423 | 21.36641 | **+9,959.95** |
+| RAVEUSDT | **Short 20×** | **17.48477** | **0.74187** | **+4,283.64** |
+
+#### The ROI arithmetic is right, and it disproves the caption
+
+**The long:** 8.41423 → 21.36641 is **+153.93%** of price. ×20 = **3,078.6%**, and the card reads 3,078.63%. Exact.
+
+**Now back out the margin.** Realised P&L ÷ ROI:
+
+```
+9,959.95 ÷ 30.7863 = 323.52 USDT
+```
+
+**Not $150. $323.52** — 2.16× the caption on the same slide.
+
+**The short:** 17.48477 → 0.74187 is **−95.76%** of price; ×20 = **1,915.1% ROI**, which the card does not print. Its margin:
+
+```
+4,283.64 ÷ 19.1513 = 223.67 USDT
+```
+
+**Also not $150**, and not the same as the long either.
+
+So the two trades on this slide used roughly **$324** and **$224** of margin. **This is the first time in the course the $150 figure sits next to numbers that can test it, and it fails both times.** The same $150 appears as the SSWB stake ([§3.8](05-risk-and-hedging.md)), the student case's starting capital ([§3.8a](05-risk-and-hedging.md)), the earlier RAVE example's "per trade" ([§3.9](05-risk-and-hedging.md)) and the ALLO post's "small cap of $150" ([§3.7d](05-risk-and-hedging.md)). Treat it as **the course's house figure, not a measurement.**
+
+**And he undercuts it himself in the same breath:** "Last time, **I didn't even start with hundred fifty. I scale up accordingly.**" That is a better rule than the fixed number and it contradicts the caption above it. **Scale the stake with the wallet; do not fix it.** A $324 margin on a $1,993 wallet is **16%** — above the SOP's "never above 10%" — and on the $18,287 wallet it would be 1.8%, which is the rule working as intended. The stake did not change; the wallet did.
+
+#### The wallet figures do not close
+
+```
+1,993.18  before
++ 9,959.95  long
++ 4,283.64  short
+= 16,236.77
+  18,287.81  after
+-------------------
+   2,051.04  unexplained
+```
+
+About **2,051 USDT** is unaccounted for by the two cards shown — other trades, a deposit, or a "Before" screenshot that is not the true starting point. The chart carries an unexplained "PnL +4,403.36" marker, which may be part of it. Not wrong, but the before/after story is not complete on the evidence given.
+
+#### What is genuinely impressive, and what it actually demonstrates
+
+**He caught the same coin in both directions, on marked levels.** The short's entry, **17.48477**, is a drawn horizontal level on the "Before" chart — not a round number, not a market fill. And he credits the tool: "**see Heat Map that monitor from here all the way up here**", which ties this to the liquidation-cluster rules in [03 §4.2b–4.2c](03-entry-direction.md). Long the pump, short the collapse, both on levels read in advance. That is real level-based execution and it is the same two-sided pattern as MAVIA and A8.
+
+**But the return came from the move, not the method.** RAVE travelled **+154% and then −96%** inside about a week; the "Before" chart shows a **−94.83% day** with a 24-hour range of 1.24 to 27.79. Those are the two largest single-coin moves anywhere in this deck. A 3,078% ROI needs a 154% price move at 20×; no amount of skill manufactures one. **The skill claim rests on two trades inside the most extreme move the course has shown.**
+
+**"Start small, trade with structure, scale with discipline" is shown at 20×.** The comparison table on this slide criticises "common people" for over-leveraging to grow fast, and both cards are **20×** — 2× the SOP's ceiling and 4× the spoken beginner tier. As elsewhere in the deck, the results cards run hotter than the taught rules.
+
+**The wallet growth, stated plainly:** 1,993 → 18,287 is **9.17×, about +818%, in roughly ten days** (chart 04/14 to 04/22). Two trades account for 87% of it. That is one coin, one week, and a coin that subsequently traded at 1.35.
+
+#### What to take
+
+The defensible claim is the small one and he states it twice: **"you don't need a big capital"** to *start*, and **"then you slightly scale up"**. Both true. The number to carry forward is not $150 — it is the **percentage**: margin as a share of the wallet, which the SOP already caps at 10% and starts at 1%. On the evidence of this slide his own trade was at 16% of the wallet, which is the tail wagging the rule.
 
 ### 3.10 SSWB results slides, checked
 

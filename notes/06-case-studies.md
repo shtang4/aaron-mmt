@@ -17,7 +17,8 @@ Several Module 6 slides carry the "Future Trends FZCO" copyright line rather tha
 | **ZETAUSDT (2025)** | Trade-call case study | **The liquidity flip**: long while the upper cluster is unconsumed, short once it is. Plus the four-question news-pump pre-check | Long window +15% to +200%; three "LOSER" markers on the late longs | §8 below |
 | **RADUSDT** | Module 6 slides | Multi-timeframe EMA alignment, all five lines, four frames | None. Screen reading only | §9 below |
 | **ZETAUSDT (2024)** | Modules 3 and 5, and the Jane case | The other full arc: SPE entry, the retrace, the Wick Tracker exit, **and what the coin did after** | 0.8570 → 2.8530, **+11,339.67%** at 50×. Then **0.045**: "never exit will liquidate" | §7.2 and **§7.5** below, [03 §2.3](03-entry-direction.md), [05 §2.3](05-risk-and-hedging.md) |
-| RAVEUSDT | Module 5 | Heel / crash-bottom entry on a liquidation cluster | +277% ROI on a $150-style stake | [05 §3.9](05-risk-and-hedging.md) |
+| RAVEUSDT (Apr 2) | Module 5 | Heel / crash-bottom entry on a liquidation cluster | +277% ROI | [05 §3.9](05-risk-and-hedging.md) |
+| **RAVEUSDT (Apr 14–22)** | Module 5 SSWB | **The wallet run**, long the pump and short the collapse on marked levels. **The one slide where the $150 figure is checkable — and it is $324 and $224** | +3,078.63% and +1,915%; wallet 1,993 → 18,287 in ~10 days | [05 §3.9a](05-risk-and-hedging.md) |
 | BMTUSDT | Module 5 | A chat trade call; "late trade is a losing trade" | +3,736% ROI at cross 15× | [05 §3.10](05-risk-and-hedging.md) |
 | GMXUSDT | Module 5 | Held a loser to breakeven, taught as "hedging" | Closed at entry on a wick, zero | [05 §4.8](05-risk-and-hedging.md) |
 | PEOPLEUSDT | Module 5 | An actual hedge, resolved by closing the loser | Net about +81 USDT | [05 §4.11](05-risk-and-hedging.md) |
