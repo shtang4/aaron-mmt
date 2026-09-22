@@ -18,11 +18,11 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 | 8 | [notes/08-transcript.md](notes/08-transcript.md) | What the spoken session adds or changes, filed by module as transcript parts arrive. |
 | 99 | [notes/99-open-questions.md](notes/99-open-questions.md) | Every question the deck leaves open, grouped by what it would change |
 
-All six modules are captured from the slides, and the spoken session is transcribed in file 8 (parts 1–30). **Three spoken sections are still outstanding:** the GMX and PEOPLE hedging case studies (`05 §4.8`, `§4.11`), the AERGO "trade scam coin, no BTC correlation" section (`06 §12`), and two short Module 5 framing slides (`05 §4.9`, `§4.12`). Questions no transcript can answer — things never said in six modules — are in file 99.
+All six modules are captured from the slides, and the spoken session is transcribed in file 8 (parts 1–30). **Nothing is outstanding:** the full 259-page deck was supplied on 22 Sep 2026 and the three sections that had been missing — the GMX and PEOPLE hedging cases and the AERGO "trade scam coin" section — are captured in `05 §8`. Questions no transcript can answer — things never said in six modules — are in file 99.
 
 ## Source slides
 
-`slides/mmt-part1.pdf` and `slides/mmt-part2.pdf` — the course deck as supplied by the author, deck pages 1–160 of 259 (part 2 page *N* = deck page *80+N*). Page images only, no text layer, so it is read with a PDF page renderer rather than by search. Notes cite it as `slides/mmt-part1.pdf p.NN`, which makes every arithmetic claim in this repository re-checkable against the original slide. Remaining parts to be added.
+`slides/mmt-part1.pdf`, `slides/mmt-part2.pdf` and `slides/mmt-part3.pdf` — **the complete course deck as supplied by the author, all 259 pages** (part 2 page *N* = deck page *80+N*; part 3 page *N* = deck page *160+N*). Page images only, no text layer, so it is read with a PDF page renderer rather than by search. Notes cite it as `slides/mmt-part1.pdf p.NN`, which makes every arithmetic claim in this repository re-checkable against the original slide. Remaining parts to be added.
 
 ## Tools
 

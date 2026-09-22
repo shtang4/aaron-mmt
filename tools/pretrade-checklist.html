@@ -468,9 +468,14 @@
           <div class="hint">Course: 75% at volume-maximal + MACD extreme (mountain peak long, iceberg dip short). Then stop to entry. Note: the slide says 75%, the spoken session says 25% — near-opposite plans, unresolved; 75% is the written figure.</div>
         </div>
         <div class="field">
-          <label for="lockRoi">Hunting SL, lock ROI %</label>
-          <input type="number" id="lockRoi" step="any" min="0" value="20" inputmode="decimal">
-          <div class="hint">Trailing stop for the runner, in ROI on margin.</div>
+          <label for="huntMode">Hunting SL set by</label>
+          <select id="huntMode">
+            <option value="price">Structure &mdash; price under the last wick low</option>
+            <option value="roi">ROI % on margin</option>
+          </select>
+          <input type="number" id="huntPriceIn" step="any" inputmode="decimal" value="0.3540" style="margin-top:4px">
+          <input type="number" id="lockRoi" step="any" min="0" value="20" inputmode="decimal" hidden>
+          <div class="hint" id="huntHint">His own practice (deck p.245&ndash;247, MOODENG): "I move the dotted orange line upwards to search an ideal Hunting SL line <b>just below the current Support line</b> &hellip; just below the previous Wick low." The ROI% is whatever that price implies &mdash; it is the output, not the input. The 20%/60% worked examples on p.139 are the other way round.</div>
         </div>
       </div>
 
@@ -545,6 +550,12 @@
   });
   $('stopRoi').addEventListener('input', () => { $('tier').value = 'custom'; });
 
+  $('huntMode').addEventListener('change', () => {
+    const byPrice = $('huntMode').value === 'price';
+    $('huntPriceIn').hidden = !byPrice; $('lockRoi').hidden = byPrice;
+    update();
+  });
+
   $('tpMode').addEventListener('change', () => {
     const roi = $('tpMode').value === 'roi';
     $('tpPriceField').hidden = roi; $('tpRoiField').hidden = !roi;
@@ -566,6 +577,7 @@
   };
   const fmtN = (x, d = 2) => Number.isFinite(x) ? x.toFixed(d) : '—';
   const pct = (x, d = 1) => Number.isFinite(x) ? x.toFixed(d) + '%' : '—';
+  const sgnPct = (x, d = 0) => Number.isFinite(x) ? (x > 0 ? '+' : '') + x.toFixed(d) + '%' : '—';
   const setV = (id, text, cls) => { const el = $(id); el.textContent = text; el.className = 'v' + (cls ? ' ' + cls : ''); };
 
   function update() {
@@ -684,7 +696,20 @@
     if (Number.isFinite(rr) && rr < 1) warns.push(`Reward:risk is ${rr.toFixed(2)} - the target is nearer than the stop. You need better than a ${beWr.toFixed(0)}% win rate just to break even. The deck's own calls are labelled 1:3.72 (SOMI), 1:4 and 1:24 (BMT); nothing in it is planned below 1:3.`);
     else if (Number.isFinite(rr) && rr < 3) warns.push(`Reward:risk is ${rr.toFixed(2)}, below the 1:3 the deck's own trades are planned at (SOMI 1:3.72, BMT 1:4 late and 1:24 early). Breakeven win rate here is ${beWr.toFixed(0)}%. No rule states a minimum - this is the course's revealed practice, not its stated rule.`);
     const runnerPct = Number.isFinite(ptp) ? 100 - ptp : NaN;
-    const huntPrice = entry * (1 + dir * (lockRoi / 100) / lev);
+    // Deck p.245-247: the Hunting SL is placed just under the last wick low / support, and the ROI
+    // is read off it. p.139 gives the reverse (pick an ROI, compute the price). Support both.
+    const huntMode = $('huntMode').value;
+    let huntPrice, huntRoi;
+    if (huntMode === 'price') {
+      huntPrice = num('huntPriceIn');
+      huntRoi = (Number.isFinite(huntPrice) && Number.isFinite(entry) && entry > 0)
+        ? dir * (huntPrice - entry) / entry * lev * 100 : NaN;
+      if (Number.isFinite(huntRoi) && huntRoi < 0) warns.push(`Hunting SL at ${fmtP(huntPrice, entry)} is on the losing side of entry (${pct(huntRoi, 0)} ROI). It is a protective stop, not a hunting stop - the hunting stop only exists once the trigger sits in profit.`);
+      else if (Number.isFinite(huntRoi) && huntRoi === 0) warns.push('Hunting SL is at entry - that is a breakeven stop, which returns 0% on a fast reversal. Move it onto the profit side.');
+    } else {
+      huntRoi = lockRoi;
+      huntPrice = entry * (1 + dir * (lockRoi / 100) / lev);
+    }
 
     setV('tpOut', fmtP(tpPrice, entry), side === 'long' ? 'long' : 'short');
     setV('tpGross', pct(tpGross));
@@ -694,7 +719,7 @@
     setV('rr', Number.isFinite(rr) ? `1 : ${rr.toFixed(2)}` : '—', rr < 1 ? 'warn' : '');
     setV('beWr', pct(beWr, 0));
     setV('runner', Number.isFinite(runnerPct) ? `${runnerPct.toFixed(0)}% of position, stop moved to ${fmtP(entry, entry)}` : '—');
-    setV('huntPrice', Number.isFinite(huntPrice) ? `${fmtP(huntPrice, entry)} (locks +${pct(lockRoi, 0)})` : '—');
+    setV('huntPrice', Number.isFinite(huntPrice) ? `${fmtP(huntPrice, entry)} (locks ${sgnPct(huntRoi)})` : '—', Number.isFinite(huntRoi) && huntRoi <= 0 ? 'bad' : '');
 
     // ---- Chips and verdict
     const d1 = fails.some(f => /Skip|ranging|EMA 155|Seahorse|confluence/.test(f)) ? 'fail' : warns.some(w => /confluence|Funding|chasing|heatmap/.test(w)) ? 'warn' : 'ok';
@@ -737,7 +762,7 @@
     lines.push('DISCHARGE');
     lines.push(`  TP: ${fmtP(tpPrice, entry)} (Last) = ${pct(tpNet, 0)} net ROI, +${fmtN(tpAbs)} USDT · R:R 1:${Number.isFinite(rr) ? rr.toFixed(2) : '—'}`);
     lines.push(`  climax exit: volume maximal + MACD histogram peak → close ${fmtN(ptp, 0)}%, stop to entry`);
-    lines.push(`  runner ${fmtN(runnerPct, 0)}%: Hunting SL at ${fmtP(huntPrice, entry)} once open ROI > ${pct(lockRoi, 0)}; EMA cross-back is the backstop`);
+    lines.push(`  runner ${fmtN(runnerPct, 0)}%: Hunting SL at ${fmtP(huntPrice, entry)} (${sgnPct(huntRoi)} ROI, ${huntMode === 'price' ? 'placed under the last wick low' : 'computed from ROI'}); EMA cross-back is the backstop`);
     if ($('fanOpen').checked) {
       lines.push(`  fan still opening, no crosses: the TP above is the unattended backstop, not the plan.`);
       lines.push(`  exit on the climax rule or the first EMA 9 / EMA 25 cross-back. Retracement through one to three`);
@@ -750,7 +775,7 @@
     try {
       localStorage.setItem('mmt-check', JSON.stringify({
         wallet: $('wallet').value, lev: $('lev').value, tier: $('tier').value, stopRoi: $('stopRoi').value,
-        fee: $('fee').value, ptp: $('ptp').value, lockRoi: $('lockRoi').value, stake: $('stake').value, mmr: $('mmr').value
+        fee: $('fee').value, ptp: $('ptp').value, lockRoi: $('lockRoi').value, stake: $('stake').value, mmr: $('mmr').value, huntMode: $('huntMode').value
       }));
     } catch (e) {}
   }
@@ -895,7 +920,7 @@
   });
 
   const example = { coin: 'SEIUSDT', zoneNear: '0.3490', emaPrice: '0.3496', entry: '0.3496', structural: '0.3478',
-    wallet: '5000', stake: '50', lev: '5', stopRoi: '20', tpPrice: '0.3576', tpRoi: '50', ptp: '75', lockRoi: '20', fee: '0.055', mmr: '0.5' };
+    wallet: '5000', stake: '50', lev: '5', stopRoi: '20', tpPrice: '0.3576', tpRoi: '50', ptp: '75', lockRoi: '20', huntPriceIn: '0.3540', fee: '0.055', mmr: '0.5' };
   $('resetBtn').addEventListener('click', () => {
     for (const k in example) $(k).value = example[k];
     $('tier').value = '20'; $('tpMode').value = 'price'; $('tpPriceField').hidden = false; $('tpRoiField').hidden = true;
@@ -911,6 +936,7 @@
     if (saved) {
       for (const k of ['wallet', 'lev', 'stopRoi', 'fee', 'ptp', 'lockRoi', 'stake', 'mmr']) if (saved[k] != null) $(k).value = saved[k];
       if (saved.tier) $('tier').value = saved.tier;
+      if (saved.huntMode) { $('huntMode').value = saved.huntMode; const bp = saved.huntMode === 'price'; $('huntPriceIn').hidden = !bp; $('lockRoi').hidden = bp; }
     }
   } catch (e) {}
   update();

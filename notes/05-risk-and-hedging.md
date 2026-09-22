@@ -1445,3 +1445,149 @@ Exactly the tiers the SOP and the tool already use. No change needed.
 **p.124** [44] maps timeframe to risk tier: Low Risk = "Medium to long-term timeframes (e.g., daily)", Medium = "Short to medium-term (e.g., hourly)", **High Risk = "Short-term timeframes (e.g., 1-minute)"**, with "Aggressive profit targets and **looser stop-loss levels**" and "larger position sizes".
 
 MMT is taught on the 1-minute chart. So on the course's own taxonomy the method sits in the **High Risk Trader** column — which is worth holding next to the "beginner, 1–5×, $20 stake" framing elsewhere. The two are not the same trader.
+
+---
+
+## 8. What the slide deck adds (`slides/mmt-part3.pdf`, deck pages 161–259)
+
+Part 3 page *N* = deck page *160 + N*. The deck is now complete at 259 pages. This part contains all three sections that were outstanding: the GMX and PEOPLE hedging cases, and AERGO.
+
+### 8.1 The GMX "hedging" case study contains no hedge — open question C5
+
+Deck **p.180–183** [20–23] is titled *Hedging* and reads, in his own words:
+
+> I bought GMXUSDT for LONG on 16/3/23. Then i had a **paperloss of up to -180USDT**. But i did not close it as i want to recoup my loss. So i kept it until today morning. Went thru the whole market volatility… Finally the Hair / "wick" （影线) touched back my entry price, then i **totally saved my loss**!! Phew…
+
+The position card on **p.181**: `GMXUSDT Long Cross 15.00x`, unrealized **−87.83 (−30.61%)**, size 37.78, entry 78.015, mark 75.665, est. liq. 51.470. Checks: 37.78 × (75.665 − 78.015) = **−$88.78** ✓; margin = 87.83 ÷ 0.3061 = **$286.93**; notional 37.78 × 78.015 = $2,947 ÷ 286.93 = **10.3×** (labelled 15×, partially funded in cross).
+
+**There is no counter-position on GMX anywhere in the sequence.** The other tickets visible on **p.182** are `NEOUSDT Long Cross 10x` and `ARPAUSDT Long Cross 12.5x` — unrelated longs, both in profit, not hedges. What the slide actually describes is **holding a losing position until price returned to entry** — the exact behaviour the course's own Never list forbids and that STORJ (−1881%) is used to illustrate.
+
+So **C5 is answered, but not in the way the section title promises**: the course's flagship hedging case study is a hold-to-breakeven story.
+
+**And the "Lesson of my sharing" slide (p.184) contradicts itself in five lines:**
+
+> 1. Pls Set SL (Stop Loss) eventhough the market is Happy in your way of position.
+> 2. **Never give up to retrieve your loss -> gain.** So, dont let your frustration to close the position so early…
+> 3. …**retrieve yr loss by closing it when reaching back yr initial entry price.**
+
+Lesson 1 and Lessons 2–3 cannot both be followed. If the stop had been set, you never reach the hold-to-breakeven. This is the sharpest internal contradiction in the deck, and it sits on a single slide.
+
+*(Also worth noting: **p.185** re-uses the identical STORJ screenshot from p.141 under a different headline — "Over Trade! 22 Trades" rather than "Hold Losing Trade!". Same evidence, two diagnoses.)*
+
+### 8.2 The PEOPLE hedge is real, checkable — and deliberately over-hedged — open question F2
+
+Deck **p.187** [27], "Real example: Hedging Losing Trade":
+
+| Leg | Side | Size | Entry | Mark | Lev | P&L |
+|---|---|---|---|---|---|---|
+| Losing trade | Long | 9,600 | 0.04450 | 0.03106 | Cross 12.5× | **−128.92 (−374.87%)** |
+| Hedging entry | Short | 19,205 | 0.03850 | 0.03106 | Cross 12.5× | **+142.69 (135.42%)** |
+| Then "close losing trade, let the runner win" | Short | 19,205 | 0.03850 | 0.02751 | Cross 12.5× | **+209.71 (351.93%)** |
+
+Arithmetic checks: long 9,600 × (0.03106 − 0.04450) = **−$129.02** ✓; short 19,205 × (0.03850 − 0.03106) = **+$142.89** ✓. Implied margins: long 128.92 ÷ 3.7487 = **$34.39**; short 142.69 ÷ 1.3542 = **$105.37**.
+
+**The hedge does not match the notional.** Long notional at entry = 9,600 × 0.04450 = **$427.20**. Short notional = 19,205 × 0.03850 = **$739.39**. The short is **1.73× the long**, so the pair is not flat — it is **net short about $312 of notional**.
+
+That is why it made money: price kept falling (0.03106 → 0.02751) and the *excess* short ran. Net outcome +$80.79 — but the entire profit comes from the over-hedge, not the hedge. Had price reversed, the same 1.73× imbalance would have compounded the loss.
+
+**This is not an accident. It is the stated method.** Deck **p.179** [19], "Advance Risk Management — MMT Hedging":
+
+> - When setting a trade with Cross position, **don't maximise the leverage X**. Set lower or moderate leverage first.
+> - If you lose the trade **< 50%**, Hedge by opening counter trade putting **extra 50%** of your initial capital.
+> - If you lose the trade **> 50%**, Hedge by opening counter trade putting **extra 100%** of your initial capital.
+> - Remember that both of above condition followed by **increasing the leverage X level to maximal level** to counter hedging higher to compensate your loss.
+
+My earlier reading is confirmed verbatim and should now be stated more sharply: **the margin rule is exact at matching leverage; the "maximal level" instruction is what turns the hedge into a directional bet.** "Counter hedging higher to compensate your loss" is the deck saying so out loud — it is a reversal with extra size, labelled as protection.
+
+Note also the internal tension: p.179 says *don't* maximise leverage on the original cross position, while **p.125** told the aggressive tier to *"Cross, maximise leverage, NO TP"*.
+
+### 8.3 Two more hedge cases — and both show what a real hedge returns
+
+**Linda (p.188–191)** — "After attending the one-to-one coaching session with Dr.Aaron, I learned that **Hedge Mode is the best strategy**." Her own screenshots show **matched** pairs in isolated margin:
+
+- SLERF Isolated 5×: **+39.348** and **−38.163** → net **+$1.19** on ~$599 of margin (**+0.2%**)
+- 1000000MOG Isolated 10×: **+16.601** and **−15.066** → net **+$1.54**
+
+**A properly matched hedge returns approximately zero.** That is precisely the criticism the SOP makes — "best case at least break even = zero" — and Linda's slides are the course's own demonstration of it, presented as a success.
+
+**RAVE / miakadir (p.192)** — RAVE Short 14.5× at **−341.64%** (7.87449 → 9.72988) and RAVE Long 14.5× at **+231.70%** (9.06525 → 10.51382). Both check exactly: −23.56% × 14.5 = −341.6% ✓; +15.98% × 14.5 = +231.7% ✓. **On equal margins that nets −109.9%** — a loss of more than one full margin unit. The caption says *"Recover back with a bit of profit. sakit jantung sudah"* ("my heart hurts already"). The recovery only works if the long leg carried substantially more margin than the short; the slide does not show margins.
+
+So of the four hedging cases in the course: **one isn't a hedge (GMX), one is an over-hedge that profited from being unbalanced (PEOPLE), one nets ~zero (Linda), and one nets negative on equal margins (RAVE).** The SOP's position — fix Dose, not Discharge — stands, and now has the course's own evidence behind it.
+
+The deck also states the outcome itself, on **p.178** [18]: `LOSS (LONG) + PROFIT (SHORT) = **BREAK EVEN (0)**`.
+
+### 8.4 The SSWB SOP, stated in full — and the $3,000/month arithmetic
+
+Deck **p.165** [5] is the definitive statement, and it settles the stake question:
+
+> 1. Initiate the Capital starting with **$20** as an trade.
+> 2. Choose the Coin with active Volatile and Volume % usually from Gainers.
+> 3. By using MMT Coins and Trend Screener as SOP to decide the trend.
+> 4. Enter using MMT SPE and set the MMT Wick tracker to **50% = $10** (buffer 55%–60% for the closing fee coverage)…
+> 5. It may take up to **30mins–1Hour**…
+> 6. Once the TP… **immediately transfer your profits from Derivative account back to Funding account**.
+> 7. …repeat… up to **10 trades**… you may reach up to target earn of **$100**… **Stop trading and rest well.**
+> 8. Remember, **DON'T Hold for Longer time.**
+
+Every line of the SOP's SSWB section is confirmed: $20 stake, 50% target, the 55–60% fee buffer, sweep to Funding, stop at ten trades or the daily target.
+
+**The projection on p.166 is where it breaks.** The table runs ten trades × $20 × 50% = $10 each = **+$100/day**, then: *"1 Day = 100 USDT (~RM 400+) · 30 Days = 100 × 30 ✓ **3,000 USDT (~RM 12,000+) per month!**"*
+
+That requires **10 winning trades out of 10, every day, for 30 consecutive days.** Work it at a plausible 60% win rate with the beginner 20% stop: 6 × $10 − 4 × $4 = **$44/day** gross, minus fees of about 10 × $0.44 = $4.40 at 20× on a $20 stake → **≈ $39.60/day, not $100**. And that is before a single losing day; the course's own student calendar shows five in twenty-three.
+
+To his credit, the very next slide (**p.167**) prints "30 Days = 100 USDT × 30 **???**" with three question marks. The certainty is on p.166; the doubt is on p.167.
+
+### 8.5 The Hunting SL is placed by structure, not by ROI — a correction to the SOP
+
+The MOODENG walkthrough (**p.223–259**) is the most completely documented trade in the course, and it changes how the Hunting SL should be described.
+
+He states the placement rule directly (**p.245–247**):
+
+> I move the dotted orange line upwards to search an ideal Hunting SL line **just below the current Support line**…
+> See, **just below the previous Wick low.**
+> Bottom green line is Entry price & i set Violet line as my Hunting SL line for easier monitoring.
+
+The resulting ticket: trigger **0.09388** by Last, reading **756.87%**, captioned *"Estimated Hunting SL (with profits at least of **$308**)"*.
+
+Check: 11,084 × (0.09388 − 0.06609) = **$308.02** ✓ exact; 308.02 ÷ $40.7 margin = **756.8%** ✓ exact.
+
+**So the ROI figure is the output, not the input.** The SOP currently frames the Hunting SL purely as `entry ± entry × locked ROI% ÷ leverage` — pick a percentage, get a price. His actual practice is the reverse: **pick the price just under the last wick low / support, then read whatever ROI it implies.** Both are in the deck (the 20%/60% worked examples on p.139 are ROI-first), but the live trade is structure-first, and structure-first is the better rule because it puts the stop where a sweep will not reach.
+
+The pre-trade tool now accepts the Hunting SL either way.
+
+### 8.6 He ran the showcase trade with no stop at all
+
+Also from MOODENG, **p.244** [84], in his own caption: **"Ok, so far no SL set at all, then how?"** — this is roughly **eleven hours** into the position (05:05 entry, 16:22 timestamp), at +1546% ROI, before any stop existed. The Hunting SL at 756.87% was set only after that.
+
+Set beside the handouts' "set the SL before the entry order fills", Golden Rule "always use a stop loss", and **p.184**'s own "Pls Set SL", this is a straight contradiction between what the course teaches and what the showcase trade did. The tool keeps refusing a plan with no stop; this is recorded as evidence about the course, not as a rule to copy.
+
+### 8.7 MOODENG: the fully verifiable trade
+
+Worth keeping because every number ties, and it is the clearest demonstration of SPE, of trailing the limit up an EMA, and of the wick-low Hunting SL.
+
+- Ticket (**p.218**): `Order Cost 39.9989 USDT`, qty 11,084, Order Price 0.06373, Value 706.3833, **Cross 18.0×**, liq 0.02675. Checks: 11,084 × 0.06373 = **$706.38** ✓; 706.38 ÷ 40.00 = **17.66×** ✓. Captioned *"Started the trade with initial capital of less than $40."*
+- **The SPE adjustment, live:** *"noticed the point hanged in between the EMA55 & EMA155, furthermore it's pumping higher"* → *"I immediately moved my entry price changed to **0.06609 which is falling at EMA55**"* → *"Yup, triggered."* That is the SOP's "trail the order up the line", demonstrated.
+- Progression from entry 0.06609, all at 11,084 units: +69.61% @ 0.06867 … +1281.16% / **+526.26** @ 0.11357 (check: 11,084 × 0.04748 = **$526.24** ✓ exact) … +2078.25% @ 0.14311.
+- Exit (**p.259**): *"See, I TP at the 1st 🟥 Red S => **0.15117**, & then Moodeng immediately DUMP!!!"* → 128.7% price × 18 = **≈2,317% ROI ≈ $927** on a $40 stake.
+- Running alongside: `KOMAUSDT Long Cross 20×` +444.62 (1123.66%), entry 0.02607 → 0.04097. Check: 30,042 × 0.0149 = **$447.6** ✓; margin **$39.57** — another ~$40 stake.
+
+**Screening discipline shown too:** he checks the exchange breakdown and finds volume diffuse (OKX 19.4%, Bitvavo 16.1%, Coinbase 15.2%) with *"checked, there's no news at all"* — the opposite of the AERGO case below. Heatmap read on **Binance MOODENG/USDT, 12h, Model 1**, repeatedly, through the whole hold.
+
+### 8.8 AERGO: "trade scam coin, no BTC correlation" — open question A8
+
+Deck **p.215–218** [55–58], "Case Study - Kpnd". On **7 April "Black Monday"** BTC fell from ~83,800 to 74,456 while AERGO went 0.06647 → 0.13531. His caption: *"There is where **We find opportunity when BTC Dump!!**"*
+
+The CoinMarketCap panel (**p.218**) gives the mechanism: market cap **$69.56M**, 24h volume **$268.55M**, **Vol/Mkt Cap 378.42%**, holders 6.24K — and the exchange breakdown is dominated by Korean won: **Upbit AERGO/KRW 61.58%**, Bithumb AERGO/KRW 9.19%. The slide labels it **"KRW Manipulation"**.
+
+So the answer to A8 is: a "scam coin" here means **a low-cap token whose volume is several times its market cap and concentrated on one national venue**, which decouples it from BTC because it is being moved by one retail pool rather than by the market. The SOP's "who pumps?" check (one venue above ~50%) is exactly this test, and 378% Vol/MktCap is far past the ~50% threshold the SOP names.
+
+Cards check at 10×: +76.82% (0.07797 → 0.08402 = 7.76% × 10 ✓), **+657.25%** (0.07797 → 0.12940 = 65.96% × 10 ✓), +101.09%, +207.76%. The deck also preserves the community exchange *"Is it time to short aergo?" / "Don't be bro… No FOMO ya.." / "Yaloh like missing a lot"*.
+
+### 8.9 Remaining confirmations and one more contradiction
+
+- **PTP 75% is the written figure** — **p.200** [40], the take-profit flow: *"When the Volume hits maximal → Observe MACD → **Choose the mid Histogram** → Then TP or **PTP 75%**, set SL to entry or Hunting SL → Do not be Greedy!!"*. The spoken session's 25% remains the outlier; the checklist note stands. "Mid Histogram" is also the deck's own wording, confirming E1.
+- **SPE, stated in full** — **p.198** [38]: *aim at the bottom of Supply Zone to SHORT, the top of Demand Zone to LONG, same for FVG as baseline, then go back to Bybit and **aim it at the nearest 5 lines EMA***, with the note that the aim can sit higher than the demand zone or lower than the supply zone. Exactly the SOP's step 3.
+- **Order by Value** confirmed as the Bybit order-placement setting (**p.171**).
+- **The 12 Golden Rules** in full (**p.194–195**), including #2 on funding vs. expected profit (the journal's round-trip cost line), #7 *"Bigger Wallet → Smaller Trade will Last Longer"*, and #12 *"10% is the Strategy; BUT 90% is the MindSet."*
+- **The skipped-D triptych, verbatim** (**p.204–206**) — and **p.205 is the source of the 3% rule**: *"The trade dipped **3% - a normal pullback**. But it felt like a disaster. You panicked and cut."* The 3%-stop check added to the tool comes straight from this slide. Note the triptych charts label **EMA 50**, not EMA 155 — the sixth EMA reference in the deck.
+- **A contradiction on monitoring.** The Wick Tracker slide (**p.201**) says the point is that it *"automatically self TP and close trade — **No need monitoring**"*. The MOODENG walkthrough says *"keep staring & monitoring!!"*, *"Keep monitoring the Heat Map"*, and *"closed monitoring like critical ill patients in ICU mah"*. Both are true in scope — the Wick Tracker is the unattended backstop, the monitoring is for taking the move early — but the deck never says so.

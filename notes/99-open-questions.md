@@ -13,7 +13,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | ~~A5~~ | ~~Full-body candle, and on which chart?~~ Session: read on the **Heikin-Ashi** chart with the Bybit setup on. "Full body" is therefore the Heikin-Ashi strong-trend candle from Module 3 §1.2: body on the trade side of EMA 155 with no wick on the opposite side. | 3 §2.2 | |
 | A6 | In the hockey stick rule, is "the EMA" the 155 or a faster line? | 2 §6.4 | Moves the entry by minutes and percent. |
 | A7 | Is the RAVE crash-bottom (heel) entry a taught setup or a one-off? | 5 §3.9 | It contradicts the confirmed hockey stick rule. |
-| A8 | Does the uncorrelated-pump trade during a BTC crash have rules (scan, stop, exit) or is it one observation? | 6 §4 | AERGO on 7 April 2025 is the only evidence. |
+| ~~A8~~ | ~~Does the uncorrelated-pump trade during a BTC crash have rules?~~ **Answered by the deck, p.215–218.** It has one rule and it is the "who pumps?" test: AERGO's CoinMarketCap panel shows **Vol/Mkt Cap 378.42%** on a $69.56M cap, with **Upbit AERGO/KRW at 61.58%** of all volume — the slide's own label is **"KRW Manipulation"**. A coin decouples from BTC when one national retail venue is moving it. Scan = the exchange volume breakdown; the rest of the method is unchanged. Cards verify at 10× (+657.25%: 0.07797 → 0.12940 = 65.96% × 10 ✓). See `05 §8.8`. | 6 §4 | |
 | ~~A9~~ | ~~Strong versus shit coin defined?~~ Session: strong = good background and fundamentals; shit = unknown background, rug-pull or manipulation risk. Then: "all coins are manipulative until proven otherwise." Category is not a filter; volatility and volume are. | 2 §2 | |
 
 | ~~A10~~ | ~~Which EMA rule wins?~~ Session: the handouts are supplementary. The slides' EMA 155 three-candle rule sets direction; EMA 20 on 1D/4H/1H is an optional higher-timeframe filter. | 7 §2.1 | |
@@ -37,7 +37,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | ~~C2~~ | ~~Does the SSWB SOP use a stop?~~ Session: yes, with isolated margin. The ROI tier is the Module 5 §3.2 table. | 5 §3.12 | |
 | ~~C3~~ | ~~Is the stop ever stated as the rule?~~ Yes, in both handouts: "Always set your stop loss before the entry order fills." The hedging section stands contradicted by the course's own handouts. | 7 §1.5 | |
 | ~~C4~~ | ~~What does "hedging when suitable" mean?~~ Session: hedge only for a trade accidentally opened in cross mode. Never as a substitute for the stop on an isolated position. | 5 §4.12 | |
-| C5 | Was Bybit hedge mode mentioned? | 5 §4.5 | Without it a short against a long on one contract closes the long. |
+| ~~C5~~ | ~~Was Bybit hedge mode mentioned?~~ **Yes — and it is required for the method to work at all.** The PEOPLE case (deck p.187) holds a long and a short on the same contract simultaneously, which is only possible in hedge mode; Linda's case (p.188–191) names it outright: *"I learned that **Hedge Mode** is the best strategy."* Switch it on in Bybit before attempting any of this. Note the separate finding that the GMX "hedging" case contains **no hedge at all** — see `05 §8.1`. | 5 §4.5 | |
 
 ## D. Questions that change position size
 
@@ -65,7 +65,7 @@ The full deck (Modules 0 to 6) is captured. These are the questions the slides d
 | # | Question | Module | Why it matters |
 |---|----------|--------|----------------|
 | F1 | Over what period did 1,993 → 18,288 USDT happen, and how many losing trades were in it? | 5 §3.10 | The only account-level result, undated and loss-free. |
-| F2 | How many held-to-breakeven positions did not recover? | 5 §4.8 | GMX is one that did. |
+| F2 | How many held-to-breakeven positions did not recover? | 5 §4.8 | Still unanswerable from the deck, but the sample is now clearer and it is not flattering. GMX recovered (p.180–183); **STORJ did not** and reached **−1881%** (p.141), and the deck re-uses that same screenshot twice under two different lessons (p.141 "Hold Losing Trade!", p.185 "Over Trade! 22 Trades"). So the deck shows one recovery and one catastrophe from the same behaviour, and never says how often each happens. Ask him for the ratio. |
 | F3 | Does any complete trade exist with entry, stop, partial TP and runner all shown? | 6 | None in the deck. |
 | ~~F4~~ | ~~Coinglass heatmap Model 1 vs Model 2?~~ **Answered:** Model 1 is the short-horizon view, "for scalping and day traders"; Model 2 is the longer one. They are not alternatives — **a band that is hottest in both is the one that gets hunted.** Dollar figures are not comparable across models (different scale maxima); compare models on position only. | 3 §4.2a | |
 
