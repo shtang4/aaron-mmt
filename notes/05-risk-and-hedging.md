@@ -1279,3 +1279,61 @@ The SSWB SOP says "50% = $10, **buffer 55%–60%** for the closing fee coverage"
 - Does the course tell students to enable Bybit hedge mode? Without it the hedge as drawn cannot exist. The GMX case study never opened a short, so the question may be moot in practice.
 - How many losing positions has the author held to breakeven that did not recover? The GMX case is one that did.
 - ~~What are the Golden Rules?~~ Captured in section 5. They do not contain a stop-loss rule.
+
+---
+
+## 6. What the slide deck adds (`slides/mmt-part1.pdf`, pages 1–80)
+
+The full deck was supplied as a PDF on 22 Sep 2026 and is archived in `slides/`. It is 259 pages of page images with no text layer, so every reference below is a page number in that file. Four findings from part 1 change something.
+
+### 6.1 The only explicit reward-to-risk number in the course (p.62) — open question E5
+
+The SOMI live-session trade call of **1 Oct 2025, 9:14 PM** is posted in full:
+
+```
+SOMI: 15mh (scalp) long
+Ent:  1.0059
+SL:   0.9551
+TP1:  1.1863
+TP2:  1.1425
+```
+
+and the TradingView position tool on the same slide reads **"Risk/Reward Ratio: 3.72"**, with `Stop: 0.04811 (4.82%)` and `Target: 0.1804 (17.93%)`.
+
+Checked: risk = 1.0059 − 0.9551 = 0.0508, i.e. **5.05% of entry**; reward to TP1 = 0.1804, i.e. 17.93%. 0.1804 ÷ 0.04811 = **3.75**, which is the 3.72 on the slide to within rounding on the entry fill. TP2 at 1.1425 is *nearer* than TP1 at 1.1863, so the two are mislabelled relative to the usual convention; taken as written they are R:R **3.55** and **2.69**.
+
+Two things follow.
+
+- **E5 is now half-answered.** The course still never *states* a minimum reward-to-risk. But this is the first and only place it shows one being planned, and the number is **3.7**, not 1 or 1.5. A plan that comes out at 1:0.6 is nowhere near how he sizes his own calls. Worth putting to him as "is 3:1 the floor?" rather than "is there a floor?".
+- **The stop is 4.82% of price**, which independently corroborates the 3% normal-pullback rule added to the pre-trade tool: his own worked stop sits *outside* the noise band, not inside it.
+
+### 6.2 The "Blind Copy vs 3D Method" slide is mostly a leverage artifact (p.64)
+
+The slide contrasts a blind copier at **−52.49%** with the 3D method at **+554.50%** on the same SOMI call, and reads as a demonstration that the method is worth ~600 points of ROI. The numbers on the two cards say otherwise:
+
+| | Blind copy | 3D method |
+|---|---|---|
+| Entry | 1.0032 | 0.9901 |
+| Exit / latest | 0.9475 | 1.0999 |
+| Leverage | **10×** | **50×** |
+| Price move | −5.55% | **+11.09%** |
+| ROI | −52.49% ✓ | +554.50% ✓ |
+
+Both cards check out exactly at their stated leverage. But the entries are only **1.3% apart**. The whole difference in *price* outcome is that one exited down 5.6% and the other up 11.1% — the method bought a better exit, not a dramatically better entry. **At a matched 10× the 3D trade returns +110.9%, not +554.50%.** Five-sixths of the headline gap is the leverage dial, and 50× is well outside the 1–10× the same course prescribes. Read the slide as "the exit plan turned a −5.6% move into a +11.1% one", which is the real and sufficient claim.
+
+### 6.3 Jane's result cards are in cross margin (p.72) — contradicts the Never list
+
+The beginner case study's cards carry their own position detail, and it reads `Long | 10x | Cross` on SNDK and `Long Cross 20X` on SUI. **The course's own risk module forbids cross margin outright.** The testimonial the deck uses to show the method working was not run under the method's own rule.
+
+The same card also mislabels its leverage. SNDK shows "10x", but its detail panel gives `Size 3.678 SNDK`, `Margin 812.4629`, `Entry 1,142.43`:
+
+- notional = 3.678 × 1,142.43 = **$4,201.86**
+- 4,201.86 ÷ 812.46 = **5.17×**, not 10×
+
+and the ROE follows from the real figure: 3.678 × (2,208.98 − 1,142.43) = **$3,922.77**, ÷ 812.46 = **482.8%**, which is the `+482.82%` printed. So the "10x" is the account's leverage *setting*; in cross mode the position was funded at about half that. Anyone reading the card as "10× returned 483%" has the arithmetic wrong by a factor of two.
+
+Worth noting on sizing too: her margins are **$812 (SNDK)** and **$2,004 (SUI)**, not $20. These are not beginner-sized positions, whatever the "complete beginner" framing says.
+
+### 6.4 Cards that do check out
+
+Verified exactly against their stated leverage, for the record: MAVIA at 25× (+414.89%, +325.27%, +74.19%, +193.94% all within rounding), A8 at 15× and 10× (**+343.27% short is exact**: 0.22516 → 0.14787 is 34.33% × 10), ALLO at 20× (0.17879 → 0.26523 is 48.35% × 20 = **967.0%** vs 966.92% printed), SUI at 20×, ZETA at 50×. The arithmetic on the result cards is, with the SNDK exception above, sound.

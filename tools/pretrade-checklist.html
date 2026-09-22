@@ -803,10 +803,16 @@
       const haC = ha.map(x => x.c);
       const E = {}; for (const n of [9, 25, 55, 155, 255]) E[n] = ema(haC, n);
       const e155s = emaSeries(haC, 155);
-      // EMA 155 three-candle rule on Heikin-Ashi: body on one side, no wick on the other side (tolerance 5% of body)
+      // EMA 155 rule, exactly as the deck states it (slides/mmt-part1.pdf p.58, "MMT 5 lines EMAs"):
+      // "If 3 consecutive Full Body candles formed above this line => Uptrend, can LONG" (and below => SHORT).
+      // The slide says nothing about wicks. The no-wick condition belongs to the separate Heikin-Ashi
+      // trend-strength slides, so it is scored here as extra strength, not as part of the rule.
       const last3 = ha.slice(-3).map((c, i) => ({ c, e: e155s[e155s.length - 3 + i] }));
-      const above = last3.every(({ c, e }) => Math.min(c.o, c.c) > e && (c.c >= c.o) && (Math.min(c.o, c.c) - c.l) <= 0.05 * Math.abs(c.c - c.o));
-      const below = last3.every(({ c, e }) => Math.max(c.o, c.c) < e && (c.c <= c.o) && (c.h - Math.max(c.o, c.c)) <= 0.05 * Math.abs(c.c - c.o));
+      const above = last3.every(({ c, e }) => Math.min(c.o, c.c) > e && (c.c >= c.o));
+      const below = last3.every(({ c, e }) => Math.max(c.o, c.c) < e && (c.c <= c.o));
+      // Stricter Heikin-Ashi reading: no wick on the far side (tolerance 5% of body).
+      const noWickUp = above && last3.every(({ c }) => (Math.min(c.o, c.c) - c.l) <= 0.05 * Math.abs(c.c - c.o));
+      const noWickDn = below && last3.every(({ c }) => (c.h - Math.max(c.o, c.c)) <= 0.05 * Math.abs(c.c - c.o));
       // OI over the last hour versus price
       const oiL = oi.list.map(r => ({ oi: +r.openInterest, ts: +r.timestamp })).sort((a, b) => a.ts - b.ts);
       const oiChg = oiL.length > 1 ? (oiL[oiL.length - 1].oi - oiL[0].oi) / oiL[0].oi * 100 : NaN;
@@ -838,7 +844,8 @@
       $('readout').innerHTML = [
         ro('Last (real)', last.toFixed(d)),
         ro('EMA 9 (HA)', E[9].toFixed(d)), ro('EMA 25', E[25].toFixed(d)), ro('EMA 55', E[55].toFixed(d)), ro('EMA 155', E[155].toFixed(d)), ro('EMA 255', E[255].toFixed(d)),
-        ro('EMA 155 rule (HA, 3 candles)', above ? 'LONG set' : below ? 'SHORT set' : 'not set', above ? 'long' : below ? 'short' : 'warn'),
+        ro('EMA 155 rule (HA, 3 full bodies)', above ? 'LONG set' : below ? 'SHORT set' : 'not set', above ? 'long' : below ? 'short' : 'warn'),
+        ro('Heikin-Ashi strength', (above || below) ? ((noWickUp || noWickDn) ? 'no wick on the far side: clean run' : 'wicks against the trend: weaker') : '\u2014', (noWickUp || noWickDn) ? (above ? 'long' : 'short') : (above || below) ? 'warn' : ''),
         ro('Funding, 8h', fr.toFixed(4) + '% · ' + frRead, frCls),
         ro('OI, last hour', (Number.isFinite(oiChg) ? (oiChg >= 0 ? '+' : '') + oiChg.toFixed(2) + '%' : '—') + ' · ' + oiRead, oiCls),
         ro('Depth, ask ÷ bid (50 levels)', depthRatio.toFixed(2) + ' · ' + depthRead, depthCls),

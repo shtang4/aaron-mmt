@@ -20,6 +20,10 @@ Source material: course slides (Copyright 2026, Dr. Aaron MMT). Not financial ad
 
 All six modules are captured from the slides, and the spoken session is transcribed in file 8 (parts 1–30). **Three spoken sections are still outstanding:** the GMX and PEOPLE hedging case studies (`05 §4.8`, `§4.11`), the AERGO "trade scam coin, no BTC correlation" section (`06 §12`), and two short Module 5 framing slides (`05 §4.9`, `§4.12`). Questions no transcript can answer — things never said in six modules — are in file 99.
 
+## Source slides
+
+`slides/mmt-part1.pdf` — the course deck as supplied by the author, pages 1–80 of 259. Page images only, no text layer, so it is read with a PDF page renderer rather than by search. Notes cite it as `slides/mmt-part1.pdf p.NN`, which makes every arithmetic claim in this repository re-checkable against the original slide. Remaining parts to be added.
+
 ## Tools
 
 | File | What it does |

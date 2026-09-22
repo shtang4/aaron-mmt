@@ -200,7 +200,17 @@ If you take the Module 1 rule literally on a full position you will be stopped o
 
 **"EMA 155" is a role, not a number.** On the A8 case-study chart ([06 §6.3](06-case-studies.md)) he states this same rule aloud over a fan of **EMA 20 / 89 / 144 / 233 / 377** — a chart with no EMA 155 on it. The line he points at is EMA 144. So the pivot is *the middle-to-slow line of the five-line fan*, and 155 is this course's choice of length for it. That makes five EMA configurations in the material (10/25/50 on the 2023 charts, 9/25/55/155/255 taught, a single EMA 20 in the handouts, 20/89/144/233/377 on A8). Run the taught set and read every rule on it; when you meet someone else's fan, map the rule to the equivalent line.
 
-This is the first fully mechanical direction rule in the course. It replaces the vague "golden cross, look for a long" with a countable condition: three closed, full-bodied candles on one side of EMA 155. **Confirmed from the session: the rule is read on the Heikin-Ashi chart** with the Bybit setup switched on. So "full body" is the Heikin-Ashi strong-trend candle from section 1.2: the body sits on the trade side of EMA 155 and there is no wick on the opposite side (no lower wick on a green candle for a long, no upper wick on a red candle for a short). Three of those in a row, closed, and direction is set. Two consequences: Heikin-Ashi smooths, so the rule confirms a little earlier and a little more often than it would on real candles; and every price that goes into an order (entry, stop, TP) is still read from real candles, because Heikin-Ashi prices are averages.
+This is the first fully mechanical direction rule in the course. It replaces the vague "golden cross, look for a long" with a countable condition: three closed, full-bodied candles on one side of EMA 155. **Confirmed from the session: the rule is read on the Heikin-Ashi chart** with the Bybit setup switched on. Two consequences: Heikin-Ashi smooths, so the rule confirms a little earlier and a little more often than it would on real candles; and every price that goes into an order (entry, stop, TP) is still read from real candles, because Heikin-Ashi prices are averages.
+
+**Correction (deck p.58, `slides/mmt-part1.pdf`).** The slide that states this rule — "MMT 5 lines EMAs" — words it as:
+
+> Green Line EMA 155 always acts as the pivotal point of the trend.
+> -> If 3 consecutive Full Body candles formed **above** this line, => considered Uptrend, can LONG
+> -> If 3 consecutive Full Body candles formed **below** this line, => considered Downtrend, can SHORT
+
+**It says nothing about wicks.** Earlier versions of these notes, and the pre-trade tool, added "and no wick on the opposite side". That condition is real but it comes from the *separate* Heikin-Ashi slides ("no lower shadows; trending up"), not from the EMA 155 rule. Carrying it into the rule made the tool **stricter than the course**, refusing setups the course would take. The tool now scores the stated rule (three full bodies on one side) as the pass/fail and reports the no-wick reading as a separate strength line. Treat the wick as confirmation of a clean run, not as a gate.
+
+The same slide adds two things the notes had only inferred: each of the five lines "can be the role of Support Line or Resistant Line ... for the entry point consideration" and is a "Guidance line of SPE" — so **any** of the five is a legitimate SPE park, which the SOP already said; and EMA 155 is explicitly the **green** line.
 
 ### 2.3 "Real example: Sniper Entry", 2 EMA versus 5 EMA
 
