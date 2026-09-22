@@ -22,7 +22,7 @@ All six modules are captured from the slides, and the spoken session is transcri
 
 ## Source slides
 
-`slides/mmt-part1.pdf` — the course deck as supplied by the author, pages 1–80 of 259. Page images only, no text layer, so it is read with a PDF page renderer rather than by search. Notes cite it as `slides/mmt-part1.pdf p.NN`, which makes every arithmetic claim in this repository re-checkable against the original slide. Remaining parts to be added.
+`slides/mmt-part1.pdf` and `slides/mmt-part2.pdf` — the course deck as supplied by the author, deck pages 1–160 of 259 (part 2 page *N* = deck page *80+N*). Page images only, no text layer, so it is read with a PDF page renderer rather than by search. Notes cite it as `slides/mmt-part1.pdf p.NN`, which makes every arithmetic claim in this repository re-checkable against the original slide. Remaining parts to be added.
 
 ## Tools
 

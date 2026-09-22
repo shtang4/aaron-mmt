@@ -391,7 +391,7 @@
             <button type="button" data-v="isolated" aria-pressed="true">Isolated</button>
             <button type="button" data-v="cross" aria-pressed="false">Cross</button>
           </div>
-          <div class="hint">Cross puts the whole wallet behind the position. Refused.</div>
+          <div class="hint">Cross puts the whole wallet behind the position &mdash; "Burst!!" in the deck's words (p.138). The course allows it on its risk-taker tier (p.125) and most of its own cards are cross; this tool refuses it below the advanced tier.</div>
         </div>
         <div class="field">
           <label for="lev">Leverage ×</label>
@@ -606,7 +606,13 @@
     if (!Number.isFinite(stake) || stake <= 0) missing.push('margin');
     if (!Number.isFinite(lev) || lev < 1) missing.push('leverage');
     if (!Number.isFinite(stopRoi) || stopRoi <= 0) fails.push('No stop loss. The Dose is position size AND stop; without a stop there is no dose.');
-    if (mode === 'cross') fails.push('Cross margin. Liquidation takes the whole derivatives wallet. The course prescribes isolated.');
+    // Deck p.125: "Conservative -> Isolated, less leverage 1x-10x, Set TP/SL | Aggressive/Risk taker -> Cross,
+    // maximise leverage, NO TP / Set SL". So cross is the course's risk-taker tier, not a prohibition - and
+    // nearly every result card in the deck is cross. Refuse it on the conservative tiers, warn hard on advanced.
+    if (mode === 'cross') {
+      if (tierName === 'advanced') warns.push('Cross margin. The course allows this on its "Aggressive / Risk taker" tier (deck p.125) and most of its own result cards are cross - but p.138 is blunt about the cost: "if liquidated, not only loss the capital you put, total amount in derivative wallet USDT will be liquidated (Burst!!)". Your stop is the only thing between you and the whole wallet.');
+      else fails.push('Cross margin on the ' + tierName + ' tier. The course prescribes "Conservative -> Isolated" (deck p.125) and warns that a cross liquidation takes the entire derivatives wallet, not just this margin. Switch to isolated, or move to the advanced tier deliberately.');
+    }
     const notional = stake * lev;
     const stakePct = wallet > 0 ? stake / wallet * 100 : NaN;
     if (Number.isFinite(stakePct) && stakePct > 10) fails.push(`Margin is ${stakePct.toFixed(1)}% of the wallet. Course ceiling is 10%.`);
@@ -673,7 +679,10 @@
     if (!$('trig').checked) warns.push('TP must trigger on Last (to catch the wick) and SL on Mark (to ignore it). Set both before entry.');
     const rr = Number.isFinite(tpPrice) && Number.isFinite(stopPrice) ? Math.abs(tpPrice - entry) / Math.abs(entry - stopPrice) : NaN;
     const beWr = Number.isFinite(rr) ? 100 / (1 + rr) : NaN;
-    if (Number.isFinite(rr) && rr < 1) warns.push(`Reward:risk is ${rr.toFixed(2)}. The course states no minimum; below 1 you need better than a ${beWr.toFixed(0)}% win rate just to break even.`);
+    // The course never states a minimum R:R, but it labels its own trades: SOMI 1:3.72 (deck p.62),
+    // BMT 1:24 early and 1:4 late (deck p.156). The lowest it plans at is ~3.7, so warn below 3.
+    if (Number.isFinite(rr) && rr < 1) warns.push(`Reward:risk is ${rr.toFixed(2)} - the target is nearer than the stop. You need better than a ${beWr.toFixed(0)}% win rate just to break even. The deck's own calls are labelled 1:3.72 (SOMI), 1:4 and 1:24 (BMT); nothing in it is planned below 1:3.`);
+    else if (Number.isFinite(rr) && rr < 3) warns.push(`Reward:risk is ${rr.toFixed(2)}, below the 1:3 the deck's own trades are planned at (SOMI 1:3.72, BMT 1:4 late and 1:24 early). Breakeven win rate here is ${beWr.toFixed(0)}%. No rule states a minimum - this is the course's revealed practice, not its stated rule.`);
     const runnerPct = Number.isFinite(ptp) ? 100 - ptp : NaN;
     const huntPrice = entry * (1 + dir * (lockRoi / 100) / lev);
 
@@ -691,7 +700,7 @@
     const d1 = fails.some(f => /Skip|ranging|EMA 155|Seahorse|confluence/.test(f)) ? 'fail' : warns.some(w => /confluence|Funding|chasing|heatmap/.test(w)) ? 'warn' : 'ok';
     const d2 = fails.some(f => /stop loss|Cross|wallet|liquidation|structural|Structural|equity/.test(f)) ? 'fail' : warns.some(w => /Leverage|beginner tier|equity|50% to 75%|normal pullback/.test(w)) ? 'warn' : 'ok';
     const d3 = fails.some(f => /Take-profit/.test(f)) ? 'fail' : warns.some(w => /trigger|Reward/.test(w)) ? 'warn' : 'ok';
-    const rrS = !Number.isFinite(rr) ? '' : rr < 1 ? 'warn' : 'ok';
+    const rrS = !Number.isFinite(rr) ? '' : rr < 3 ? 'warn' : 'ok';
     $('chipD1').dataset.s = d1; $('chipD2').dataset.s = d2; $('chipD3').dataset.s = d3;
     $('chipRR').dataset.s = rrS; $('chipRR').textContent = Number.isFinite(rr) ? `R:R 1 : ${rr.toFixed(1)}` : 'Reward : Risk';
 

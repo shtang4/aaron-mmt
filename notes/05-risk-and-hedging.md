@@ -1337,3 +1337,111 @@ Worth noting on sizing too: her margins are **$812 (SNDK)** and **$2,004 (SUI)**
 ### 6.4 Cards that do check out
 
 Verified exactly against their stated leverage, for the record: MAVIA at 25× (+414.89%, +325.27%, +74.19%, +193.94% all within rounding), A8 at 15× and 10× (**+343.27% short is exact**: 0.22516 → 0.14787 is 34.33% × 10), ALLO at 20× (0.17879 → 0.26523 is 48.35% × 20 = **967.0%** vs 966.92% printed), SUI at 20×, ZETA at 50×. The arithmetic on the result cards is, with the SNDK exception above, sound.
+
+---
+
+## 7. What the slide deck adds (`slides/mmt-part2.pdf`, deck pages 81–160)
+
+Part 2 page *N* = deck page *80 + N*. Citations below use the deck number, with the part-2 page in brackets.
+
+### 7.1 The course does NOT forbid cross margin — and nearly all its own cards use it
+
+This is a correction to my own framing, not to the course. The SOP's Never list said "Cross margin — because the course's own risk module says so." **That attribution was wrong.** Deck **p.125** [45], "My tips of scalping Strategy", offers cross as a sanctioned option:
+
+> Set the Amount 1%–10% (appetite dependent)
+> **Conservative -> Isolated, less leverage 1x-10x, Set TP/SL**
+> **Aggressive/Risk taker -> Cross, maximise leverage, NO TP / Set SL**
+> Setting entry price with prediction
+
+So cross is the *risk-taker tier*, not a prohibition. What the course actually says about it (**p.138** [58]) is a warning, not a ban:
+
+> Isolate -> if liquidated, only loss the capital you put, derivative wallet USDT still preserved
+> Cross -> if liquidated, not only loss the capital you put, total amount in derivative wallet USDT will be liquidated (**Burst!!**)
+
+And the evidence base is overwhelmingly cross. On **p.144** [64] alone — the "Different Margin, Similar Profit" slide — every single position is cross: LABU 20×, PLUME 20×, NEAR 20×, SNDK 10×, ARKM 20×, SUI 20×, ALLO 20×, PLTR 10×. Add SPY 10×/20× (**p.145**), BMT 15× (**p.155**), STORJ 25× (**p.141**), SOL 4× (**p.143**). **A tool that hard-refuses cross refuses the entire worked-example set of the course it claims to implement.**
+
+The pre-trade tool now refuses cross on the beginner and intermediate tiers (the course's "conservative" prescription) and warns hard on the advanced tier (its "risk taker" prescription), instead of refusing outright and mis-citing the reason. The recommendation does not change; the attribution does.
+
+Note also that **p.125 is the true origin of the "maximise leverage" instruction** I flagged as breaking the hedge arithmetic. It is not a hedging-specific slip — it is the course's general advice to the aggressive tier.
+
+### 7.2 Reward-to-risk: the deck labels trades 1:3.7, 1:4 and 1:24 — open question E5 largely closes
+
+Part 1 gave one R:R (SOMI, 3.72). Part 2 gives two more, printed directly on the chart (**p.156** [76], BMT):
+
+| Entry | Date | ROI | Deck's own label |
+|---|---|---|---|
+| 0.08307 | 13/3 18:41 (early) | +3,735.89% | **1:24 RR** |
+| 0.20453 | 18/3 17:45 (late) | +492.70% | **1:4 RR** |
+
+Both check out as plausible stops: at 1:24 the implied stop is ~10.5% below entry; at 1:4, ~12.4%. Plus a community member on **p.136** [56] reasoning in R-multiples: *"if u cut loss 1R, make 4R in re-entry, youre still winning 3R."*
+
+So across the whole deck the observed planned R:R values are **3.7, 4, and 24** — and the *lowest* of them is 3.7. **The pre-trade tool's warning threshold has moved from "below 1:1" to "below 1:3"**, which is where the course's own practice actually sits. E5 stops being "is there a minimum?" and becomes "you plan at 1:4 and better — is 1:3 the floor?".
+
+**One caution on notation.** **p.153** [73] prints "Grow 1:9 RR" over a wallet going 1,993 → 18,287 USDT. That is a **9× return multiple, not a reward-to-risk ratio** — 18,287 ÷ 1,993 = 9.17. Do not read it as an R:R figure; the deck is overloading the notation.
+
+### 7.3 The $150 SSWB claim fails on its own slide — again, and now decisively
+
+**p.152** [72] is titled "$150 per trade for manager's monthly salary" and shows the two RAVE trades that produced the wallet growth:
+
+| | Entry | Exit | Lev | Realised | **Implied margin** |
+|---|---|---|---|---|---|
+| RAVE Long | 8.41423 | 21.36641 | 20× | +9,959.95 | **$323.52** |
+| RAVE Short | 17.48477 | 0.74187 | 20× | +4,283.64 | **$223.66** |
+
+Long: price +153.9%, ×20 = 3,078.6% ROI (the **p.151** card prints exactly +3,078.63% ✓). 9,959.95 ÷ 30.786 = **$323.52**. Short: price −95.76%, ×20 = 1,915.2% ROI; 4,283.64 ÷ 19.152 = **$223.66**. Neither is $150.
+
+Worse for the framing: the wallet went 1,993 → 18,287, a gain of $16,294, and **these two trades alone are $14,243 of it — 87%**. The "start small, win big" transformation is two trades on one coin, at 20×, on a token that fell 95.76% (the short's 17.48 → 0.74). That is not a repeatable scalping process.
+
+**Where $150 is real:** **p.148** [68] — "Started with US$150 (≈ RM 636)" is the student's **starting wallet**, not a per-trade stake. The two figures have been conflated throughout the deck.
+
+**Where a small stake IS fully verifiable:** the BMT trade on **p.155** [75] shows the actual order ticket — Order Cost **30.4705 USDT**, quantity 5,332 BMT at 0.08307, Value 442.9292, Cross 15×. Checks: 5,332 × 0.08307 = $442.93 ✓; 442.93 ÷ 30.47 = 14.5× ✓; P&L 5,332 × (0.29324 − 0.08307) = **$1,120.63** against the card's +1,120.14 ✓. **A $30 stake, arithmetically sound end to end.** That is the one small-capital example in the course that survives checking.
+
+### 7.4 "Late entry, smaller dose" gets a number
+
+**p.146** [66]: janejiaen on ALLOUSDT — *"148.5USDT 😀. Was late, so manage risk with small size and took a quick trade instead. If you're early & have time to manage the trade, you can always scale bigger."* The position card confirms margin **148.5094**. The card's ROI also checks exactly: 0.14043 → 0.21468 is +52.87%, ×20 = **1,057.5%** vs the printed +1,057.46% ✓.
+
+### 7.5 Cards that check out, and one that still does not
+
+Verified exactly: NEAR (3.165% × 20 = 63.3% ✓), ARKM (35,765 × 0.0109 = $389.84 ✓), ALLO (×20 = 909.8% ✓), LABU Perp (20.0× implied ✓), PLTR (10.0× implied ✓), RAVE long (×20 = 3,078.6% ✓), BMT (above), ATA (**p.142**: 13.57% × 25 = **339.4%** vs +339.35% ✓), the 1% risk table (**p.142–143**: 5%/10%/30% of $23,500 = $1,175/$2,350/$7,050 ✓).
+
+**SNDK still does not.** It appears twice, with margin 812.4629 (**p.72**, part 1) and 819.429 (**p.144**), and is labelled "10x" both times. Notional is 3.678 × 1,142.43 = $4,201.86, so the real leverage is **5.13–5.17×**, never 10×. Its own ROE (+482.82% / +487.22%) is consistent with the smaller figure. Anyone reading "10× returned 483%" is out by a factor of two.
+
+**The $4.5M claim is confirmed wrong by 3.7×.** **p.143** [63]: SOLUSDT Long Cross 4.00×, size 590,298, entry 113.045, mark 144.444, P&L 18,544,211.67 (110.97%). Margin = 18,544,211.67 ÷ 1.1097 = **$16.71M**; notional 590,298 × 113.045 = $66.73M ÷ 4 = $16.68M ✓. The community comment "His capital for this trade is $4.5M" understates it 3.7-fold. This reproduces my earlier finding exactly.
+
+### 7.6 −100% at 5× — what your own leverage setting actually risks
+
+**p.136** [56]: 1000BEERUSDT Long **5.0X**, ROI **−100.00%**, entry 0.42780, exit 0.34224, captioned *"Served me right never put SL."* Check: (0.34224 − 0.42780) ÷ 0.42780 = **−20.0%**, ×5 = **−100%** ✓ exact.
+
+At 5×, a **20% adverse move erases the whole margin**. That is the concrete meaning of `100 ÷ leverage`. It is also why the stop, not the leverage, is what caps the loss.
+
+### 7.7 The Hunting SL formula, stated and verified
+
+**p.139** [59] gives the formula with worked numbers, and **p.140** [60] shows the resulting Bybit screen:
+
+> Eg: Take 20% Profit, left 80% for the Wick
+> Entry Price: 2.814 × 20% = 0.5628, then 0.5628 ÷ (25X Leverage) = 0.022512
+> Entry Price: 2.814 − 0.022512 = **2.791488** (Set as Trigger Price for SL)
+> Eg: Take 60% Profit, left 40% for the Wick
+> 2.814 × 60% = 1.6884 ÷ 25 = 0.067536 → 2.814 − 0.067536 = **2.746464**
+
+The Bybit panel confirms both: SL 2.7914 trigger by **Mark**, reading **20.07%**, "Expected profit: 0.9763 USDT (ROI 20.07%)"; and SL 2.7464 at **60.05%**, "Expected profit: 2.9203 USDT". **Bybit itself prints "Expected profit" on a stop loss** — the "profitable loss" is literal.
+
+**Why it subtracts:** the example is a **short**. Entry 2.814, liquidation 3.0493 (*above* entry), TP 2.4765 (*below*). For a short, locking profit moves the stop **down**. So the general form `entry ∓ entry × ROI% ÷ leverage` — minus for a short, plus for a long — is right, and the SOP's `±` should be read with that direction.
+
+Position arithmetic also closes: qty 43.2 × 2.814 = $121.6 notional; expected profit 0.9763 ÷ 0.2007 = **$4.86 margin**; 121.6 ÷ 4.86 = **25.0×** ✓. THETAUSDT, 25×, short.
+
+### 7.8 The stop tiers are confirmed verbatim
+
+**p.138** [58]: "Isolate with 5X–10X leverage, as it can be adjusted. The smaller your leverage X, the higher the liquidation range." and
+
+> - Beginner (Low risk taker) **5%–20%**
+> - Intermediate (Moderate risk taker) **20%–50%**
+> - Advance (High risk taker) **> 50%** above on the amount that comfortable
+
+Exactly the tiers the SOP and the tool already use. No change needed.
+
+### 7.9 By the course's own table, MMT scalping is the high-risk profile
+
+**p.124** [44] maps timeframe to risk tier: Low Risk = "Medium to long-term timeframes (e.g., daily)", Medium = "Short to medium-term (e.g., hourly)", **High Risk = "Short-term timeframes (e.g., 1-minute)"**, with "Aggressive profit targets and **looser stop-loss levels**" and "larger position sizes".
+
+MMT is taught on the 1-minute chart. So on the course's own taxonomy the method sits in the **High Risk Trader** column — which is worth holding next to the "beginner, 1–5×, $20 stake" framing elsewhere. The two are not the same trader.

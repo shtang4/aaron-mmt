@@ -895,3 +895,63 @@ Two things worth pulling out:
 - When two of the seven chart tools disagree, which wins? Only EMA 155 has stated priority.
 - ~~In the ZETA example, which of the five EMAs did price pull back to for the SPE entry?~~ Answered: any of them. He walks the chart parking at successive lines and points at **EMA 155** as the one to base the count on. EMA 9 is the first and shallowest target; EMA 255 is "the last guard".
 - Which two of the five EMAs (9, 25, 55, 155, 255) are the "basic" pair, and does the Module 1 stop rule's "EMA 50" mean EMA 55?
+
+---
+
+## 8. Corrections from the slide deck, part 2 (`slides/mmt-part2.pdf`, deck pages 81–160)
+
+### 8.1 The seahorse slide says AVOID — and its author disclaims the whole method
+
+Deck **p.112–113** [32–33] states the pattern in the original author's words:
+
+> I noticed whenever this kind of "Animal Head with long beak" is definitely sideway trend with fluctuating trend, so **just stay & observe, dont go in**, otherwise, u may end up chasing the ups & downs later on…
+> **Pls BEWARE of this….to Avoid PAINFUL LOSS!!!**
+
+That is the **skip** reading. The spoken session gave the other one — draw the line across the beak, wait for the breakout, then long. **Both are now on record and they are not the same instruction.** The slide is the more conservative of the two; the session is the tradeable version. The tool's behaviour (refuse entry *inside* the beak, tell you to wait for the breakout) is the intersection of the two and stays as is — but the notes should stop presenting "wait then long" as the course's settled position. It is the session's position only.
+
+**And there is a much bigger caveat.** Deck **p.114** [34], the same author, same section:
+
+> This method only suitable to those no enough time to stare at the PC screen (only using HP mobile App) & **no need TA at all to trade**…
+> I created my own way of observation… **i do not set any SL, but increase all my leverage with cross margin…**
+
+The seahorse is **community-contributed**, its author states he uses **no stop loss, maximum leverage and cross margin**, and the deck reproduces it without a caveat. Treat the shape as an observation, never as a method. Its chart also runs **EMA 10 / 25 / 50** — a different set again from the taught 9/25/55/155/255.
+
+### 8.2 The hollow MACD bar claim is a community post, not a first-party one
+
+Deck **p.90** [10] is a screenshot of Jasper Sia in Discord (22/04/2024), not an Aaron slide:
+
+> Why the hollow bar of MACD histogram is being caused by the counter volume (different buying&selling = contraindication)… If the trend of MACD is equal to the volume trend, then the bar of histogram will be the same solid colour.
+
+ending "之前aaron解说的" — *"this is what Aaron explained before"*. So the claim is attributed to Aaron at second hand. The correction stands regardless: **MACD is computed from price EMAs only and cannot read volume.** What the hollow bar actually marks on Bybit is the histogram *contracting* versus the prior bar — which is precisely the climax trigger, so the rule survives its own broken explanation.
+
+### 8.3 An experienced member says he ignores the VOLMA lines
+
+Deck **p.91** [11], @eric818 asks whether the two volume lines are the same as EMA 25/55. Jasper Sia: *"不一样吧，没注意那两条🤔，主要看那个币有没有volume，如果不活跃，即使其他条件美，没volume你也是一直卡着上下徘徊，很费时。"* — "Not the same. **I don't pay attention to those two lines.** The main thing is whether that coin has volume; if it's not active, even if the other conditions are beautiful, you'll just be stuck oscillating, wasting time."
+
+Recorded as dissent: the "abnormal volume = above both VOLMA lines" rule is the deck's, but at least one experienced member reduces it to "is the coin active at all".
+
+### 8.4 Settings confirmed verbatim
+
+- **MACD 8 / 13 / 9** — the Bybit settings screen, deck **p.85** [5]: FastLength 8, SlowLength 13, SignalLength 9 ✓
+- **VOLMA 5 and 10** — deck **p.89** [9]: only the first two rows ticked, values 5 (yellow) and 10 (blue); nine further VOLMA slots at 0, unticked ✓
+- **Market Structure by Leviathan** — deck **p.92** [12]: BOS Confirmation "Candle …" (close), Show CHoCH ✓, Show Swing Points ✓, Show 0.5 Retracement Level ✗
+- **Donchian Trend Ribbon: Channel Period 20** ✓ (same slide)
+- **BSB volume ÷ market cap = 93.94%** — deck **p.108** [28], confirming the SOP's "his own screenshots: BSB 94%"
+
+### 8.5 The heatmap pair in the deck is Binance, not Bybit
+
+Every Coinglass screenshot in deck **p.99–102** [19–22] reads **"Binance BTC/USDT"**, and the ZETA ones on **p.104** [24] read "Binance ZETA/USDT". The SOP currently says "Pick the **Bybit** pair", which came from the spoken session. Both are in the record; the deck's own practice is Binance. Since Binance is the deeper book, its liquidation map is arguably the better one to read — but the two can disagree, so note which you used.
+
+The timeframe dropdown on **p.100** [20] lists 12h / 24h / 3 day / 1w / 1mo / 3 month / 6mo / 1y, with 12h and 24h both used — consistent with "12h is the working view".
+
+### 8.6 The deck includes criticism of its own trade calls
+
+Deck **p.103** [23], on the ZETA 23 Mar call, reproduces community pushback verbatim:
+
+> *"Yes, it's a short call. Why Dr asks to long? He must need some therapy 🤣"*
+> *"…Additionally, **FR has no indication it will pump. It's only a hope to catch it early. Dangerous scalping strategy using low TF.**"*
+> *"i don't trade, i **wait for the FR to reset**, sometimes the coin drop then i short then, made some decent profits"*
+
+and the closing note: *"i'd say not to follow people's trade calls until u understand what exactly their plan is — **that doesn't only apply to dr aaron's trade calls**, but basically anyone's trade calls."*
+
+Two things worth keeping. First, it is to his credit that this is in his own deck. Second, **"FR has no indication it will pump" is a direct challenge to the funding-rate leg of the screener** — one of the four scorecard criteria. Add it to the questions for him.
